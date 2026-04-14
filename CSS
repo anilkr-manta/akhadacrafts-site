@@ -1,0 +1,36 @@
+.signup-form{
+  max-width:520px;
+  margin:20px auto 0;
+  display:grid;
+  gap:14px;
+}
+
+.signup-form input{
+  width:100%;
+  min-height:48px;
+  padding:0 14px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#0f0a07;
+  color:var(--text);
+  font-size:1rem;
+  font-family:inherit;
+}
+
+.signup-form button{
+  min-height:50px;
+  border:none;
+  border-radius:999px;
+  background:var(--gold);
+  color:#1a120a;
+  font-weight:700;
+  font-size:1rem;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.signup-note{
+  margin-top:14px;
+  font-size:.95rem;
+  color:var(--muted);
+}
