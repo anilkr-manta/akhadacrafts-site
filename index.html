@@ -1,79 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akhada Crafts</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Handcrafted Indian clubs, mudgars, samtola, and traditional strength equipment." />
+  <style>
+    :root {
+      --bg: #000;
+      --surface: #0f0f10;
+      --surface-2: #161618;
+      --text: #f5f5f7;
+      --muted: #a1a1a6;
+      --line: rgba(255,255,255,0.08);
+      --accent: #d2a86d;
+      --max: 1280px;
+      --radius: 28px;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(0,0,0,0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: #050505;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.16), rgba(0,0,0,0.62)),
+        url('cover.jpg') center/cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 92px 0 74px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 740px;
+      margin: 0 auto 28px;
+      color: #e5e5e7;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: 0.2s ease;
+    }
+
+    .button.primary {
+      background: var(--text);
+      color: #111;
+      border-color: var(--text);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    section { padding: 92px 0; }
+
+    .intro {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .intro h2,
+    .section-head h2 {
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      margin-bottom: 14px;
+    }
+
+    .intro p,
+    .section-head p,
+    .detail-copy p,
+    .links-grid a span,
+    .contact-card p,
+    .spec-list li,
+    footer {
+      color: var(--muted);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      margin-top: 52px;
+    }
+
+    .feature-visual,
+    .feature-copy,
+    .product-card,
+    .reference-card,
+    .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--surface-2), var(--surface));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .feature-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+    }
+
+    .feature-copy {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .feature-copy h3,
+    .detail-copy h3,
+    .contact-card h3 {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .spec-list li {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      background: #0a0a0a;
+    }
+
+    .detail-copy {
+      padding: 24px 24px 28px;
+      text-align: left;
+    }
+
+    .meta {
+      margin-top: 12px;
+      font-size: 0.96rem;
+      color: #ddd;
+    }
+
+    .availability {
+      margin-top: 14px;
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(210,168,109,0.12);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .references {
+      background: linear-gradient(180deg, #060606, #0b0b0c);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .reference-card {
+      padding: 24px;
+    }
+
+    .reference-card strong {
+      display: block;
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+    }
+
+    .reference-card a {
+      display: block;
+    }
+
+    .reference-card:hover {
+      border-color: rgba(255,255,255,0.16);
+    }
+
+    .contact-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      padding: 42px;
+      text-align: center;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: clamp(1.05rem, 2vw, 1.4rem);
+      color: var(--text);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    footer {
+      padding: 30px 0 44px;
+      text-align: center;
+      color: #808086;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1080px) {
+      .feature-grid,
+      .products-grid,
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-visual img {
+        min-height: 420px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(var(--max), calc(100% - 24px));
+      }
+
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 12px 0;
+      }
+
+      .nav-links {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .feature-copy,
+      .contact-card {
+        padding: 24px;
+      }
+
+      .hero {
+        min-height: 74vh;
+      }
+
+      .hero-content {
+        padding: 72px 0 52px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header class="header">
-  <h1>AKHADA CRAFTS</h1>
-  <p>Traditional Indian Strength Equipment</p>
-</header>
-
-<!-- HERO (cover image) -->
-<section class="hero">
-  <div class="overlay">
-    <h2>The Legacy of Indian Strength</h2>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about">
-  <h2>About</h2>
-  <p>
-    Akhada Crafts produces handcrafted mudgars, clubs, and traditional strength tools.
-    Built for durability, balance, and authentic Indian training.
-  </p>
-</section>
-
-<!-- PRODUCTS WITH YOUR IMAGES -->
-<section class="products">
-  <h2>Our Equipment</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="clubs.jpg">
-      <p>500 gms – 1.5 kg Pair Clubs</p>
+  <div class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top">Akhada Crafts</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#equipment">Equipment</a>
+        <a href="#learning">Lessons</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-
-    <div class="card">
-      <img src="mugdar.jpg">
-      <p>2 kg – 9 kg Mudgars</p>
-    </div>
-
-    <div class="card">
-      <img src="samtola.jpg">
-      <p>10 kg Samtola</p>
-    </div>
-
   </div>
-</section>
 
-<!-- LEARNING -->
-<section class="learning">
-  <h2>Learn & Practice</h2>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="eyebrow">Traditional Indian strength</span>
+        <h1>Handcrafted clubs, mudgars, and samtola.</h1>
+        <p>Built as a refined presentation of traditional Indian training tools, with a focus on clean form, rich wood grain, and timeless utility.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#equipment">Explore equipment</a>
+          <a class="button secondary" href="#learning">View lessons & classes</a>
+        </div>
+      </div>
+    </section>
 
-  <div class="links">
-    <a href="https://www.youtube.com/@backtoprimal/videos" target="_blank">Back to Primal</a>
-    <a href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank">Silambam Gurukul</a>
-    <a href="https://www.youtube.com/@zenkahuna/videos" target="_blank">Zen Kahuna</a>
-    <a href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank">Warrior Yogi</a>
-  </div>
-</section>
+    <section id="about">
+      <div class="container">
+        <div class="intro">
+          <span class="eyebrow">About Akhada Crafts</span>
+          <h2>Traditional tools, presented with a premium retail feel.</h2>
+          <p>Akhada Crafts offers handcrafted Indian strength equipment designed around traditional forms. The collection includes clubs for lighter paired work, mudgars in heavier formats, and samtola for classic leverage-based training.</p>
+        </div>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Contact</h2>
-  <p>akhada.crafts@mantanex.com</p>
-</section>
+        <div class="feature-grid">
+          <div class="feature-visual">
+            <img src="clubs.jpg" alt="Traditional Indian clubs">
+          </div>
+          <div class="feature-copy">
+            <span class="eyebrow">Craft & design</span>
+            <h3>Built around form, grain, balance, and training culture.</h3>
+            <p>Each piece is presented as functional equipment with a strong visual identity. The shapes, profiles, and finishes are intended to reflect traditional Indian training heritage while fitting a refined modern presentation.</p>
+            <ul class="spec-list">
+              <li>Handcrafted wooden clubs and mudgars</li>
+              <li>Traditional silhouettes with premium visual presentation</li>
+              <li>Available in lighter club pairs and heavier strength formats</li>
+              <li>Designed for informational browsing and direct inquiry</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <p>© 2026 Akhada Crafts</p>
-</footer>
+    <section id="equipment">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Equipment</span>
+          <h2>The current collection.</h2>
+          <p>A product-style overview of the available designs and training categories.</p>
+        </div>
 
+        <div class="products-grid">
+          <article class="product-card">
+            <img src="clubs.jpg" alt="Indian clubs">
+            <div class="detail-copy">
+              <span class="eyebrow">Pair clubs</span>
+              <h3>Indian Clubs</h3>
+              <p>Lighter paired tools intended for rhythm, mobility, coordination, and progression-based training.</p>
+              <div class="meta">500 gms pair clubs<br>800 gms – 1 kg pair clubs<br>1.5 kg pair clubs</div>
+              <span class="availability">Available designs</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="mugdar.jpg" alt="Indian mudgar">
+            <div class="detail-copy">
+              <span class="eyebrow">Strength tools</span>
+              <h3>Mudgar</h3>
+              <p>Heavier traditional pieces for leverage, strength work, and more substantial rotational training.</p>
+              <div class="meta">2 kg mudgar<br>5 – 6 kg mugdar<br>8 – 9 kg mugdars</div>
+              <span class="availability">Available designs</span>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img src="samtola.jpg" alt="Traditional samtola">
+            <div class="detail-copy">
+              <span class="eyebrow">Traditional heavy format</span>
+              <h3>Samtola</h3>
+              <p>A classic heavy training format for users looking for larger traditional equipment.</p>
+              <div class="meta">10 kg samtola</div>
+              <span class="availability">Available design</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="learning" class="references">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Lessons & classes</span>
+          <h2>Informational learning links.</h2>
+          <p>Public references for movement patterns, traditional practice, and beginner-to-advanced training inspiration.</p>
+        </div>
+
+        <div class="links-grid">
+          <div class="reference-card">
+            <a href="https://www.youtube.com/@backtoprimal/videos" target="_blank" rel="noopener noreferrer">
+              <strong>Back to Primal</strong>
+              <span>General Indian club practice, movement foundations, and beginner-friendly reference content.</span>
+            </a>
+          </div>
+
+          <div class="reference-card">
+            <a href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank" rel="noopener noreferrer">
+              <strong>Silambam Gurukul</strong>
+              <span>Traditional Indian movement references connected to club practice and heritage-based training forms.</span>
+            </a>
+          </div>
+
+          <div class="reference-card">
+            <a href="https://www.youtube.com/@zenkahuna/videos" target="_blank" rel="noopener noreferrer">
+              <strong>Zen Kahuna</strong>
+              <span>Clubs and related movement flows, useful as a public reference for learning patterns and progression.</span>
+            </a>
+          </div>
+
+          <div class="reference-card">
+            <a href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank" rel="noopener noreferrer">
+              <strong>Warrior Yogi</strong>
+              <span>Traditional training references including movement-based practice and related Indian physical culture themes.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-card">
+          <span class="eyebrow">Contact</span>
+          <h3>Business inquiries</h3>
+          <p>For product information, availability, and general inquiries, contact Akhada Crafts directly.</p>
+          <a class="contact-email" href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Akhada Crafts</div>
+  </footer>
 </body>
 </html>
