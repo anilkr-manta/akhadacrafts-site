@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Akhada Crafts</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
 --accent:#b8904f;
 --max:1200px;
 --radius:18px;
+--shadow:0 16px 40px rgba(85,65,35,0.08);
 }
 
 body{
@@ -28,7 +29,7 @@ color:var(--text);
 }
 
 .container{
-width:min(var(--max),90%);
+width:min(var(--max), calc(100% - 28px));
 margin:auto;
 }
 
@@ -62,13 +63,17 @@ section{
 padding:60px 0;
 }
 
-.grid{
+.products-grid,.workouts-grid,.links-grid{
 display:grid;
 gap:20px;
 }
 
-.products{
+.products-grid{
 grid-template-columns:repeat(3,1fr);
+}
+
+.workouts-grid,.links-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
 .card{
@@ -82,12 +87,10 @@ border:1px solid var(--line);
 background:var(--bg-soft);
 }
 
-iframe{
-border-radius:14px;
-}
-
 @media(max-width:900px){
-.products{grid-template-columns:1fr;}
+.products-grid,.workouts-grid,.links-grid{
+grid-template-columns:1fr;
+}
 }
 </style>
 </head>
@@ -111,7 +114,7 @@ border-radius:14px;
 <div class="container">
 <h2>Equipment</h2>
 
-<div class="grid products">
+<div class="products-grid">
 <div class="card">Indian Clubs (1–3 lb)</div>
 <div class="card">Mudgar (4–20 lb)</div>
 <div class="card">Samtola (22 lb)</div>
@@ -124,7 +127,7 @@ border-radius:14px;
 <div class="container">
 <h2>Beginner Workouts</h2>
 
-<div class="grid">
+<div class="workouts-grid">
 <div class="card">Light clubs circles & swings</div>
 <div class="card">Control and rhythm training</div>
 <div class="card">Flow progression</div>
@@ -134,49 +137,41 @@ border-radius:14px;
 </div>
 </section>
 
-<!-- TRAINING SECTION -->
 <section class="library">
 <div class="container">
 
 <h2 style="text-align:center;">Training</h2>
 
-<!-- VIDEO -->
-<div style="max-width:900px;margin:0 auto 40px;">
-<iframe width="100%" height="420"
-src="https://www.youtube.com/embed?listType=user_uploads&list=viamilitaris"
-allowfullscreen>
-</iframe>
+<div class="links-grid">
 
-<p style="text-align:center;color:var(--muted);margin-top:10px;">
-Beginner flow, shoulder mobility, and traditional club training
-</p>
-</div>
-
-<!-- LINKS -->
-<div class="grid">
 <div class="card">
 <a href="https://www.youtube.com/@viamilitaris/videos" target="_blank">
-Via Militaris
+<strong>Via Militaris</strong><br>
+<span>Traditional Indian club training and beginner routines</span>
 </a>
 </div>
 
 <div class="card">
 <a href="https://www.youtube.com/@backtoprimal/videos" target="_blank">
-Back to Primal
+<strong>Back to Primal</strong><br>
+<span>Beginner-friendly movement</span>
 </a>
 </div>
 
 <div class="card">
 <a href="https://www.youtube.com/@zenkahuna/videos" target="_blank">
-Zen Kahuna
+<strong>Zen Kahuna</strong><br>
+<span>Flow and coordination training</span>
 </a>
 </div>
 
 <div class="card">
 <a href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank">
-Warrior Yogi
+<strong>Warrior Yogi</strong><br>
+<span>Traditional strength practice</span>
 </a>
 </div>
+
 </div>
 
 </div>
