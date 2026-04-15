@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akhada Crafts</title>
-  <meta name="description" content="Handcrafted Indian clubs, mudgars, samtola, and beginner training resources." />
+  <meta name="description" content="Handcrafted Indian clubs, mudgars, samtola, and traditional strength equipment." />
   <style>
     :root {
       --bg: #000;
-      --surface: #0f0f10;
-      --surface-2: #161618;
+      --surface: #16100b;
+      --surface-2: #24170f;
       --text: #f5f5f7;
-      --muted: #a1a1a6;
-      --line: rgba(255,255,255,0.08);
-      --accent: #d2a86d;
+      --muted: #c4b08d;
+      --line: rgba(212,168,109,0.14);
+      --accent: #d4a55d;
       --max: 1280px;
-      --radius: 28px;
+      --radius: 18px;
       --shadow: 0 20px 60px rgba(0,0,0,0.35);
     }
 
@@ -23,7 +23,7 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, Arial, sans-serif;
+      font-family: Georgia, serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.5;
@@ -41,8 +41,8 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(10px);
+      background: rgba(11,7,4,0.88);
       border-bottom: 1px solid var(--line);
     }
 
@@ -55,17 +55,18 @@
     }
 
     .brand {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
       gap: 24px;
       color: var(--muted);
-      font-size: 0.95rem;
-      flex-wrap: wrap;
+      font-size: 0.92rem;
     }
 
     .nav-links a:hover { color: var(--text); }
@@ -85,8 +86,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(0,0,0,0.16), rgba(0,0,0,0.62)),
-        url('cover.jpeg') center/cover no-repeat;
+        linear-gradient(180deg, rgba(0,0,0,0.22), rgba(11,7,4,0.76)),
+        url('cover.jpg') center/cover no-repeat;
       transform: scale(1.02);
     }
 
@@ -95,7 +96,7 @@
       z-index: 2;
       padding: 92px 0 74px;
       width: 100%;
-      text-align: center;
+      text-align: left;
     }
 
     .eyebrow {
@@ -111,7 +112,7 @@
     h1, h2, h3, p { margin: 0; }
 
     h1 {
-      font-size: clamp(3rem, 7vw, 6.4rem);
+      font-size: clamp(3rem, 6vw, 5.4rem);
       line-height: 0.95;
       letter-spacing: -0.05em;
       margin-bottom: 18px;
@@ -119,14 +120,14 @@
 
     .hero p {
       max-width: 740px;
-      margin: 0 auto 28px;
+      margin: 0 0 28px;
       color: #e5e5e7;
       font-size: clamp(1.05rem, 2vw, 1.35rem);
     }
 
     .hero-actions {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 14px;
       flex-wrap: wrap;
     }
@@ -178,8 +179,7 @@
     .links-grid a span,
     .contact-card p,
     .spec-list li,
-    .workout-card p,
-    .workout-card li {
+    .footer {
       color: var(--muted);
     }
 
@@ -194,12 +194,11 @@
     .feature-copy,
     .product-card,
     .reference-card,
-    .contact-card,
-    .workout-card,
-    .cta-banner {
+    .contact-card {
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(180deg, var(--surface-2), var(--surface));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), var(--shadow);
       box-shadow: var(--shadow);
       overflow: hidden;
     }
@@ -212,7 +211,7 @@
     }
 
     .feature-copy {
-      padding: 40px;
+      padding: 34px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -221,11 +220,9 @@
 
     .feature-copy h3,
     .detail-copy h3,
-    .contact-card h3,
-    .workout-card h3,
-    .cta-banner h3 {
-      font-size: clamp(1.45rem, 2.2vw, 2.2rem);
-      line-height: 1.08;
+    .contact-card h3 {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      line-height: 1.05;
       letter-spacing: -0.04em;
     }
 
@@ -248,34 +245,21 @@
       text-align: center;
     }
 
-    .products-grid,
-    .workouts-grid {
-      display: grid;
-      gap: 24px;
-    }
-
     .products-grid {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
-    }
-
-    .workouts-grid {
-      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
     }
 
     .product-card img {
       width: 100%;
-      height: 360px;
+      height: 300px;
       object-fit: cover;
       background: #0a0a0a;
     }
 
-    .detail-copy,
-    .workout-card,
-    .cta-banner {
-      padding: 24px 24px 28px;
-    }
-
     .detail-copy {
+      padding: 24px 24px 28px;
       text-align: left;
     }
 
@@ -296,11 +280,6 @@
       font-size: 0.9rem;
     }
 
-    .workout-card ul {
-      margin: 14px 0 0;
-      padding-left: 18px;
-    }
-
     .references {
       background: linear-gradient(180deg, #060606, #0b0b0c);
       border-top: 1px solid var(--line);
@@ -311,7 +290,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      margin-bottom: 24px;
     }
 
     .reference-card {
@@ -330,15 +308,6 @@
 
     .reference-card:hover {
       border-color: rgba(255,255,255,0.16);
-    }
-
-    .cta-banner {
-      text-align: center;
-    }
-
-    .cta-banner p {
-      color: var(--muted);
-      margin: 10px 0 18px;
     }
 
     .contact-wrap {
@@ -370,8 +339,7 @@
     @media (max-width: 1080px) {
       .feature-grid,
       .products-grid,
-      .links-grid,
-      .workouts-grid {
+      .links-grid {
         grid-template-columns: 1fr;
       }
 
@@ -393,6 +361,7 @@
 
       .nav-links {
         gap: 16px;
+        flex-wrap: wrap;
         justify-content: center;
       }
 
@@ -418,8 +387,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#equipment">Equipment</a>
-        <a href="#workouts">Beginner Workouts</a>
-        <a href="#learning">Training Library</a>
+        <a href="#learning">Learning</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -430,10 +398,10 @@
       <div class="container hero-content">
         <span class="eyebrow">Traditional Indian strength</span>
         <h1>Handcrafted clubs, mudgars, and samtola.</h1>
-        <p>Built as a modern presentation of traditional Indian training tools, with a focus on clean form, rich wood grain, and timeless utility.</p>
+        <p>Built with rich wood grain, heavier visual character, and a grounded presentation inspired by traditional training culture.</p>
         <div class="hero-actions">
           <a class="button primary" href="#equipment">Explore equipment</a>
-          <a class="button secondary" href="#learning">View training library</a>
+          <a class="button secondary" href="#learning">View lessons & references</a>
         </div>
       </div>
     </section>
@@ -448,7 +416,7 @@
 
         <div class="feature-grid">
           <div class="feature-visual">
-            <img src="clubs.png" alt="Traditional Indian clubs" />
+            <img src="clubs.jpg" alt="Traditional Indian clubs" />
           </div>
           <div class="feature-copy">
             <span class="eyebrow">Craft & design</span>
@@ -469,30 +437,30 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Equipment</span>
-          <h2>Available Equipment</h2>
-          <p>A product-style overview of the available models and weights.</p>
+          <h2>Available equipment.</h2>
+          <p>A grounded overview of the current lineup, shapes, and weight formats.</p>
         </div>
 
         <div class="products-grid">
           <article class="product-card">
-            <img src="clubs.png" alt="Indian clubs" />
+            <img src="clubs.jpg" alt="Indian clubs" />
             <div class="detail-copy">
               <span class="eyebrow">Pair clubs</span>
               <h3>Indian Clubs</h3>
               <p>Lighter paired tools intended for rhythm, mobility, coordination, and progression-based training.</p>
-              <div class="meta">1.1 lb pair clubs<br>1.8–2.2 lb pair clubs<br>3.3 lb pair clubs</div>
-              <span class="availability">Available models</span>
+              <div class="meta">500 gms pair clubs<br>800 gms – 1 kg pair clubs<br>1.5 kg pair clubs</div>
+              <span class="availability">Available designs</span>
             </div>
           </article>
 
           <article class="product-card">
-            <img src="mugdar.jpeg" alt="Indian mudgar" />
+            <img src="mugdar.jpg" alt="Indian mudgar" />
             <div class="detail-copy">
               <span class="eyebrow">Strength tools</span>
               <h3>Mudgar</h3>
               <p>Heavier traditional pieces for leverage, strength work, and more substantial rotational training.</p>
-              <div class="meta">4.4 lb mudgar<br>11–13.2 lb mudgar<br>17.6–19.8 lb mugdars</div>
-              <span class="availability">Available models</span>
+              <div class="meta">2 kg mudgar<br>5 – 6 kg mudgar<br>8 – 9 kg mugdars</div>
+              <span class="availability">Available designs</span>
             </div>
           </article>
 
@@ -502,69 +470,9 @@
               <span class="eyebrow">Traditional heavy format</span>
               <h3>Samtola</h3>
               <p>A classic heavy training format for users looking for larger traditional equipment.</p>
-              <div class="meta">22 lb samtola</div>
-              <span class="availability">Available model</span>
+              <div class="meta">10 kg samtola</div>
+              <span class="availability">Available design</span>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="workouts">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Beginner Workouts</span>
-          <h2>Starter practice and weight guidance.</h2>
-          <p>For U.S. users, begin with lighter pairs and progress only after full control and comfort.</p>
-        </div>
-
-        <div class="workouts-grid">
-          <article class="workout-card">
-            <span class="eyebrow">Workout 1</span>
-            <h3>Foundation Circles</h3>
-            <p><strong>Recommended weight:</strong> 1.1 lb pair clubs</p>
-            <ul>
-              <li>Front circles — 2 sets of 20</li>
-              <li>Back circles — 2 sets of 20</li>
-              <li>Pendulum swings — 2 sets of 15</li>
-              <li>Rest 45–60 seconds between sets</li>
-            </ul>
-          </article>
-
-          <article class="workout-card">
-            <span class="eyebrow">Workout 2</span>
-            <h3>Control & Rhythm</h3>
-            <p><strong>Recommended weight:</strong> 1.8–2.2 lb pair clubs</p>
-            <ul>
-              <li>Inside circles — 3 sets of 15</li>
-              <li>Outside circles — 3 sets of 15</li>
-              <li>Cross-body swings — 2 sets of 12</li>
-              <li>Short flow rounds — 3 rounds of 45 seconds</li>
-            </ul>
-          </article>
-
-          <article class="workout-card">
-            <span class="eyebrow">Workout 3</span>
-            <h3>Progression Flow</h3>
-            <p><strong>Recommended weight:</strong> 3.3 lb pair clubs</p>
-            <ul>
-              <li>Alternating circles — 3 sets of 12</li>
-              <li>Figure-8 pattern — 3 sets of 10</li>
-              <li>Continuous flow practice — 4 rounds of 30–45 seconds</li>
-              <li>Use only after lighter pairs feel fully controlled</li>
-            </ul>
-          </article>
-
-          <article class="workout-card">
-            <span class="eyebrow">Workout 4</span>
-            <h3>Intro to Mudgar</h3>
-            <p><strong>Recommended weight:</strong> 4.4 lb mudgar</p>
-            <ul>
-              <li>Single-side swings — 2 sets of 10 each side</li>
-              <li>Shoulder cast pattern — 2 sets of 8</li>
-              <li>Slow, controlled repetitions only</li>
-              <li>Do not begin with 11 lb+ weights</li>
-            </ul>
           </article>
         </div>
       </div>
@@ -573,46 +481,39 @@
     <section id="learning" class="references">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Training Library</span>
-          <h2>Curated learning resources.</h2>
-          <p>Reference channels for beginner practice, traditional forms, flow work, and movement inspiration.</p>
+          <span class="eyebrow">Lessons & references</span>
+          <h2>Training library.</h2>
+          <p>Curated references for beginner practice, traditional movement, and flow-based training inspiration.</p>
         </div>
 
         <div class="links-grid">
           <div class="reference-card">
             <a href="https://www.youtube.com/@backtoprimal/videos" target="_blank" rel="noopener noreferrer">
               <strong>Back to Primal</strong>
-              <span>Best for beginner-friendly movement references and accessible Indian club practice ideas.</span>
+              <span>General Indian club practice, movement foundations, and beginner-friendly reference content.</span>
             </a>
           </div>
 
           <div class="reference-card">
             <a href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank" rel="noopener noreferrer">
               <strong>Silambam Gurukul</strong>
-              <span>Best for traditional Indian movement references and heritage-based practice forms.</span>
+              <span>Traditional Indian movement references connected to club practice and heritage-based training forms.</span>
             </a>
           </div>
 
           <div class="reference-card">
             <a href="https://www.youtube.com/@zenkahuna/videos" target="_blank" rel="noopener noreferrer">
               <strong>Zen Kahuna</strong>
-              <span>Best for club flow, coordination work, and progression-focused patterns.</span>
+              <span>Clubs and related movement flows, useful as a public reference for learning patterns and progression.</span>
             </a>
           </div>
 
           <div class="reference-card">
             <a href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank" rel="noopener noreferrer">
               <strong>Warrior Yogi</strong>
-              <span>Best for traditional training themes and movement-based practice inspiration.</span>
+              <span>Traditional training references including movement-based practice and related Indian physical culture themes.</span>
             </a>
           </div>
-        </div>
-
-        <div class="cta-banner">
-          <span class="eyebrow">Need a starting point?</span>
-          <h3>Request the beginner starter guide by email.</h3>
-          <p>For a simple beginner routine and future class updates, contact Akhada Crafts directly.</p>
-          <a class="button primary" href="mailto:akhada.crafts@mantanex.com">Request Starter Guide</a>
         </div>
       </div>
     </section>
@@ -622,7 +523,7 @@
         <div class="contact-card">
           <span class="eyebrow">Contact</span>
           <h3>Business inquiries</h3>
-          <p>For product information, availability, starter guide requests, and general inquiries, contact Akhada Crafts directly.</p>
+          <p>For product information, availability, and general inquiries, contact Akhada Crafts directly.</p>
           <a class="contact-email" href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
         </div>
       </div>
