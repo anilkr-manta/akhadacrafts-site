@@ -1,114 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akhada Crafts</title>
-  <meta name="description" content="Handcrafted Indian clubs, mudgars, samtola, and beginner training resources." />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#f6f1e8;
-      --bg-soft:#fbf8f3;
-      --card:#ffffff;
-      --text:#2c2a27;
-      --muted:#7a6f60;
-      --line:#e7ddd0;
-      --accent:#b8904f;
-      --accent-soft:#efe2cd;
-      --max:1200px;
-      --radius:18px;
-      --shadow:0 16px 40px rgba(85,65,35,0.08);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter;background:var(--bg);color:var(--text)}
-    .container{width:min(var(--max), calc(100% - 28px));margin:0 auto}
-    .nav{position:sticky;top:0;background:#f6f1e8;border-bottom:1px solid var(--line)}
-    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
-    .brand{font-family:"Cormorant Garamond";font-size:22px;color:var(--accent)}
-    .nav-links{display:flex;gap:15px;color:var(--muted)}
-    .hero{padding:80px 0;background:#efe7da;text-align:center}
-    h1{font-family:"Cormorant Garamond";font-size:48px;margin-bottom:10px}
-    section{padding:60px 0}
-    .products-grid,.workouts-grid,.links-grid{display:grid;gap:20px}
-    .products-grid{grid-template-columns:repeat(3,1fr)}
-    .workouts-grid,.links-grid{grid-template-columns:repeat(2,1fr)}
-    .card{background:#fff;padding:20px;border-radius:14px;border:1px solid var(--line)}
-    .library{background:var(--bg-soft)}
-    iframe{border-radius:14px}
-    @media(max-width:900px){
-      .products-grid,.workouts-grid,.links-grid{grid-template-columns:1fr}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akhada Crafts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#f6f1e8;
+--bg-soft:#fbf8f3;
+--card:#ffffff;
+--text:#2c2a27;
+--muted:#7a6f60;
+--line:#e7ddd0;
+--accent:#b8904f;
+--max:1200px;
+--radius:18px;
+}
+
+body{
+margin:0;
+font-family:Inter;
+background:var(--bg);
+color:var(--text);
+}
+
+.container{
+width:min(var(--max),90%);
+margin:auto;
+}
+
+.nav{
+padding:15px 0;
+border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+}
+
+.brand{
+font-family:"Cormorant Garamond";
+font-size:22px;
+color:var(--accent);
+}
+
+.hero{
+padding:80px 0;
+text-align:center;
+}
+
+h1{
+font-family:"Cormorant Garamond";
+font-size:48px;
+}
+
+section{
+padding:60px 0;
+}
+
+.grid{
+display:grid;
+gap:20px;
+}
+
+.products{
+grid-template-columns:repeat(3,1fr);
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+border:1px solid var(--line);
+}
+
+.library{
+background:var(--bg-soft);
+}
+
+iframe{
+border-radius:14px;
+}
+
+@media(max-width:900px){
+.products{grid-template-columns:1fr;}
+}
+</style>
 </head>
+
 <body>
 
 <div class="nav">
-  <div class="container nav-inner">
-    <div class="brand">Akhada Crafts</div>
-    <div class="nav-links">
-      <a href="#equipment">Equipment</a>
-      <a href="#workouts">Workouts</a>
-      <a href="#library">Training</a>
-    </div>
-  </div>
+<div class="container nav-inner">
+<div class="brand">Akhada Crafts</div>
+</div>
 </div>
 
 <section class="hero">
-  <div class="container">
-    <h1>Traditional Indian Clubs</h1>
-    <p>Calm, authentic strength training tools and beginner guidance.</p>
-  </div>
-</section>
-
-<section id="equipment">
-  <div class="container">
-    <h2>Equipment</h2>
-    <div class="products-grid">
-      <div class="card">Indian Clubs (1–3 lb)</div>
-      <div class="card">Mudgar (4–20 lb)</div>
-      <div class="card">Samtola (22 lb)</div>
-    </div>
-  </div>
-</section>
-
-<section id="workouts">
-  <div class="container">
-    <h2>Beginner Workouts</h2>
-    <div class="workouts-grid">
-      <div class="card">Light clubs – circles & swings</div>
-      <div class="card">Control & rhythm training</div>
-      <div class="card">Flow progression</div>
-      <div class="card">Intro to mudgar</div>
-    </div>
-  </div>
-</section>
-
-<!-- TRAINING VIDEO SECTION -->
-<section id="library" class="library">
-  <div class="container">
-    <h2 style="text-align:center;margin-bottom:20px;">Training</h2>
-
-    <div style="max-width:900px;margin:0 auto 30px;">
-      <iframe width="100%" height="420"
-        src="https://www.youtube.com/embed?listType=user_uploads&list=viamilitaris"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <div class="links-grid">
-      <div class="card"><a href="https://www.youtube.com/@viamilitaris/videos" target="_blank">Via Militaris</a></div>
-      <div class="card"><a href="https://www.youtube.com/@backtoprimal/videos" target="_blank">Back to Primal</a></div>
-      <div class="card"><a href="https://www.youtube.com/@zenkahuna/videos" target="_blank">Zen Kahuna</a></div>
-      <div class="card"><a href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank">Warrior Yogi</a></div>
-    </div>
-  </div>
+<div class="container">
+<h1>Traditional Indian Clubs</h1>
+<p>Calm, authentic strength training tools</p>
+</div>
 </section>
 
 <section>
-  <div class="container" style="text-align:center">
-    <p>Contact: akhada.crafts@mantanex.com</p>
-  </div>
+<div class="container">
+<h2>Equipment</h2>
+
+<div class="grid products">
+<div class="card">Indian Clubs (1–3 lb)</div>
+<div class="card">Mudgar (4–20 lb)</div>
+<div class="card">Samtola (22 lb)</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Beginner Workouts</h2>
+
+<div class="grid">
+<div class="card">Light clubs circles & swings</div>
+<div class="card">Control and rhythm training</div>
+<div class="card">Flow progression</div>
+<div class="card">Intro to mudgar</div>
+</div>
+
+</div>
+</section>
+
+<!-- TRAINING SECTION -->
+<section class="library">
+<div class="container">
+
+<h2 style="text-align:center;">Training</h2>
+
+<!-- VIDEO -->
+<div style="max-width:900px;margin:0 auto 40px;">
+<iframe width="100%" height="420"
+src="https://www.youtube.com/embed?listType=user_uploads&list=viamilitaris"
+allowfullscreen>
+</iframe>
+
+<p style="text-align:center;color:var(--muted);margin-top:10px;">
+Beginner flow, shoulder mobility, and traditional club training
+</p>
+</div>
+
+<!-- LINKS -->
+<div class="grid">
+<div class="card">
+<a href="https://www.youtube.com/@viamilitaris/videos" target="_blank">
+Via Militaris
+</a>
+</div>
+
+<div class="card">
+<a href="https://www.youtube.com/@backtoprimal/videos" target="_blank">
+Back to Primal
+</a>
+</div>
+
+<div class="card">
+<a href="https://www.youtube.com/@zenkahuna/videos" target="_blank">
+Zen Kahuna
+</a>
+</div>
+
+<div class="card">
+<a href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank">
+Warrior Yogi
+</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container" style="text-align:center;">
+<p>akhada.crafts@mantanex.com</p>
+</div>
 </section>
 
 </body>
