@@ -57,50 +57,34 @@
     .section-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.02em;margin-bottom:8px}
     .section-head p{color:var(--muted);font-weight:300}
 
+    /* FILTER BAR */
+    .filter-bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
+    .filter-btn{padding:7px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--muted);cursor:pointer;transition:all .2s}
+    .filter-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
     /* PRODUCTS GRID */
     .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .product-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
     .product-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(80,60,30,.1)}
+    .product-card.hidden{display:none}
     .product-img-wrap{position:relative;overflow:hidden;background:#f0ebe0}
     .product-img-wrap img{width:100%;height:260px;object-fit:cover;transition:transform .4s}
     .product-card:hover .product-img-wrap img{transform:scale(1.04)}
-    .stock-badge{position:absolute;top:12px;right:12px;font-size:.74rem;padding:4px 10px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
-    .stock-badge.in-stock{background:rgba(40,160,80,.15);color:#1a7a3c;border:1px solid rgba(40,160,80,.25)}
-    .stock-badge.low-stock{background:rgba(200,130,20,.15);color:#8a5a00;border:1px solid rgba(200,130,20,.25)}
-    .stock-badge.out-of-stock{background:rgba(30,28,25,.72);color:#fff}
+    .sold-out-badge{position:absolute;top:12px;right:12px;background:rgba(30,28,25,.72);color:#fff;font-size:.74rem;padding:4px 10px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
     .product-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:12px}
     .product-category{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
     .product-name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.1;letter-spacing:-.01em}
     .product-desc{font-size:.88rem;color:var(--muted);font-weight:300;flex:1}
-    .product-meta{display:flex;flex-wrap:wrap;gap:6px;font-size:.78rem;color:var(--muted)}
-    .meta-tag{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
     .product-variants{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
     .variant-btn{padding:5px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-family:'DM Sans',sans-serif;font-size:.8rem;color:var(--muted);cursor:pointer;transition:all .15s}
-    .variant-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+    .variant-btn:hover{border-color:var(--accent);color:var(--accent)}
     .variant-btn.selected{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-dark)}
-    .variant-btn:disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
     .product-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
     .product-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:-.01em}
     .add-to-cart{background:var(--text);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .2s;white-space:nowrap}
-    .add-to-cart:hover:not(:disabled){background:var(--accent)}
+    .add-to-cart:hover{background:var(--accent)}
     .add-to-cart:disabled{background:#c5bfb5;cursor:not-allowed}
-    .stock-info{font-size:.78rem;color:var(--muted);margin-top:4px}
-    .stock-info.low{color:#8a5a00}
-
-    /* BEGINNER KIT */
-    .kit-section{background:var(--text);color:#fff;padding:72px 0}
-    .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
-    .kit-item{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
-    .kit-item-label{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-    .kit-item-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem}
-    .kit-item.book{background:rgba(160,120,64,0.15);border-color:rgba(160,120,64,0.4)}
-    .kit-sidebar{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:20px}
-    .kit-price-label{font-size:.8rem;color:rgba(255,255,255,0.45);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase}
-    .kit-price{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;line-height:1;color:#fff}
-    .kit-features{list-style:none;padding:0;display:grid;gap:8px;margin-bottom:20px}
-    .kit-features li{font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px}
-    .kit-cta{width:100%;padding:14px;font-size:.95rem;border-radius:999px;background:var(--accent);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:background .2s}
-    .kit-cta:hover{background:var(--accent-dark)}
 
     /* CART DRAWER */
     .cart-overlay{position:fixed;inset:0;background:rgba(20,18,14,.4);z-index:199;opacity:0;pointer-events:none;transition:opacity .25s}
@@ -149,46 +133,6 @@
     .modal-actions{display:flex;gap:10px}
     .modal-actions .btn{flex:1}
 
-    /* ADMIN PANEL */
-    .admin-panel{position:fixed;bottom:20px;right:20px;z-index:500}
-    .admin-toggle{background:var(--text);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.2);transition:background .2s}
-    .admin-toggle:hover{background:var(--accent)}
-    .admin-modal-overlay{position:fixed;inset:0;background:rgba(20,18,14,.55);z-index:600;display:none;align-items:center;justify-content:center;padding:20px}
-    .admin-modal-overlay.open{display:flex}
-    .admin-modal{background:var(--bg-soft);border-radius:var(--r);width:min(780px,100%);max-height:90vh;overflow-y:auto;padding:32px}
-    .admin-modal h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:6px}
-    .admin-modal .sub{color:var(--muted);font-size:.9rem;margin-bottom:24px;font-weight:300}
-    .inventory-table{width:100%;border-collapse:collapse;font-size:.88rem}
-    .inventory-table th{text-align:left;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:8px 12px;border-bottom:2px solid var(--line);font-weight:500}
-    .inventory-table td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
-    .inventory-table tr:last-child td{border-bottom:none}
-    .inventory-table tr:hover td{background:var(--bg)}
-    .inv-product{font-family:'Cormorant Garamond',serif;font-size:1.05rem}
-    .inv-input{width:70px;padding:5px 8px;border:1.5px solid var(--line);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--text);background:var(--card);text-align:center;transition:border-color .15s}
-    .inv-input:focus{outline:none;border-color:var(--accent)}
-    .inv-material{font-size:.78rem;color:var(--muted);font-style:italic}
-    .inv-status{display:inline-block;font-size:.72rem;padding:3px 10px;border-radius:999px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
-    .inv-status.in{background:rgba(40,160,80,.1);color:#1a7a3c;border:1px solid rgba(40,160,80,.2)}
-    .inv-status.low{background:rgba(200,130,20,.1);color:#8a5a00;border:1px solid rgba(200,130,20,.2)}
-    .inv-status.out{background:rgba(220,50,50,.1);color:#c0392b;border:1px solid rgba(220,50,50,.2)}
-    .save-inv-btn{background:var(--accent);color:#fff;border:none;border-radius:999px;padding:10px 24px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;transition:background .2s;margin-top:16px}
-    .save-inv-btn:hover{background:var(--accent-dark)}
-    .section-divider{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--accent);padding:14px 0 6px;border-bottom:1px solid var(--line);margin:16px 0 8px;grid-column:1/-1}
-    .admin-tabs{display:flex;gap:8px;margin-bottom:20px}
-    .admin-tab{padding:7px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--muted);cursor:pointer;transition:all .2s}
-    .admin-tab:hover{border-color:var(--accent);color:var(--accent)}
-    .admin-tab.active{background:var(--accent);border-color:var(--accent);color:#fff}
-    .tab-pane{display:none}
-    .tab-pane.active{display:block}
-    .add-variant-form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;align-items:end;margin-top:16px;padding:16px;background:var(--bg);border-radius:12px;border:1px solid var(--line)}
-    .form-group label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;display:block;margin-bottom:5px}
-    .form-group input, .form-group select{width:100%;padding:8px 12px;border:1.5px solid var(--line);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--text);background:var(--card);transition:border-color .15s}
-    .form-group input:focus, .form-group select:focus{outline:none;border-color:var(--accent)}
-    .add-row-btn{background:var(--text);color:#fff;border:none;border-radius:8px;padding:9px 16px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .2s;white-space:nowrap}
-    .add-row-btn:hover{background:var(--accent)}
-    .delete-row{background:none;border:none;cursor:pointer;color:#c5bfb5;font-size:1rem;padding:4px;transition:color .2s}
-    .delete-row:hover{color:#e24b4a}
-
     /* WORKOUTS */
     .workouts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     .workout-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
@@ -216,12 +160,12 @@
     @media(max-width:960px){
       .products-grid{grid-template-columns:repeat(2,1fr)}
       .links-grid{grid-template-columns:repeat(2,1fr)}
-      .kit-grid{grid-template-columns:1fr}
-      .add-variant-form{grid-template-columns:1fr 1fr}
+      #bundle .container > div:last-of-type > div:first-child{grid-template-columns:1fr}
     }
     @media(max-width:680px){
       .products-grid,.workouts-grid,.links-grid{grid-template-columns:1fr}
       .nav-links{display:none}
+      #bundle .bundle-grid{grid-template-columns:1fr !important}
     }
   </style>
 </head>
@@ -232,10 +176,9 @@
   <div class="container nav-inner">
     <a class="brand" href="#top">Akhada Crafts</a>
     <div class="nav-links">
+      <a href="#about">About</a>
       <a href="#shop">Shop</a>
-      <a href="#beginners-kit">Beginner Kit</a>
-      <a href="#mudgars">Mudgars</a>
-      <a href="#samtolas">Samtolas</a>
+      <a href="#bundle">Bundle</a>
       <a href="#workouts">Workouts</a>
       <a href="#library">Library</a>
       <a href="#contact">Contact</a>
@@ -255,118 +198,242 @@
       <h1>Handcrafted clubs, mudgars & samtola.</h1>
       <p>Traditional Indian strength equipment — made by hand, built for practice. Shop directly and receive your equipment with care.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="#beginners-kit">Beginner Kit</a>
-        <a class="btn secondary" href="#shop">Browse all</a>
+        <a class="btn primary" href="#shop">Shop now</a>
+        <a class="btn secondary" href="#workouts">View workouts</a>
       </div>
     </div>
   </section>
 
-  <!-- INDIAN CLUBS SHOP -->
+  <!-- SHOP -->
   <section id="shop">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Equipment</span>
-        <h2>Indian Clubs</h2>
-        <p>All pieces are handcrafted. Select a size and add to your cart. Inquire by email for bulk or custom orders.</p>
+        <h2>Available equipment</h2>
+        <p>All pieces are handcrafted. Select a variant and add to your cart. Inquire by email for bulk or custom orders.</p>
       </div>
-      <div class="products-grid" id="clubs-grid">
-        <!-- clubs rendered by JS -->
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
+        <button class="filter-btn" onclick="filterProducts('clubs',this)">Indian Clubs</button>
+        <button class="filter-btn" onclick="filterProducts('mudgar',this)">Mudgar</button>
+        <button class="filter-btn" onclick="filterProducts('samtola',this)">Samtola</button>
+      </div>
+
+      <div class="products-grid" id="products-grid">
+
+        <!-- CLUBS -->
+        <article class="product-card" data-category="clubs">
+          <div class="product-img-wrap">
+            <img src="clubs.png" alt="Indian Clubs — Starter Pair">
+          </div>
+          <div class="product-body">
+            <span class="product-category">Pair clubs</span>
+            <div class="product-name">Indian Clubs — Starter</div>
+            <div class="product-desc">Lighter paired tools for rhythm, mobility, and coordination. Ideal for beginners building their foundation.</div>
+            <div class="product-variants" data-product="clubs-starter">
+              <button class="variant-btn selected" data-weight="1.1 lb" data-price="38" onclick="selectVariant(this,'clubs-starter')">1.1 lb — $38</button>
+              <button class="variant-btn" data-weight="1.8–2.2 lb" data-price="48" onclick="selectVariant(this,'clubs-starter')">1.8–2.2 lb — $48</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-clubs-starter">$38</span>
+              <button class="add-to-cart" onclick="addToCart('clubs-starter','Indian Clubs — Starter','clubs.png')">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="clubs">
+          <div class="product-img-wrap">
+            <img src="clubs.png" alt="Indian Clubs — Progression Pair">
+          </div>
+          <div class="product-body">
+            <span class="product-category">Pair clubs</span>
+            <div class="product-name">Indian Clubs — Progression</div>
+            <div class="product-desc">Heavier pair for those who've mastered the starter weight. Builds strength and flow patterns.</div>
+            <div class="product-variants" data-product="clubs-prog">
+              <button class="variant-btn selected" data-weight="3.3 lb" data-price="58" onclick="selectVariant(this,'clubs-prog')">3.3 lb — $58</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-clubs-prog">$58</span>
+              <button class="add-to-cart" onclick="addToCart('clubs-prog','Indian Clubs — Progression','clubs.png')">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- MUDGAR -->
+        <article class="product-card" data-category="mudgar">
+          <div class="product-img-wrap">
+            <img src="mugdar.jpeg" alt="Mudgar — Light">
+          </div>
+          <div class="product-body">
+            <span class="product-category">Strength tools</span>
+            <div class="product-name">Mudgar — Light</div>
+            <div class="product-desc">Entry-level mudgar for learning leverage and shoulder cast patterns. Best for new users.</div>
+            <div class="product-variants" data-product="mudgar-light">
+              <button class="variant-btn selected" data-weight="4.4 lb" data-price="54" onclick="selectVariant(this,'mudgar-light')">4.4 lb — $54</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-mudgar-light">$54</span>
+              <button class="add-to-cart" onclick="addToCart('mudgar-light','Mudgar — Light','mugdar.jpeg')">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="mudgar">
+          <div class="product-img-wrap">
+            <img src="mugdar.jpeg" alt="Mudgar — Mid">
+          </div>
+          <div class="product-body">
+            <span class="product-category">Strength tools</span>
+            <div class="product-name">Mudgar — Mid</div>
+            <div class="product-desc">Intermediate mudgar for strength-oriented training. Requires solid technique before use.</div>
+            <div class="product-variants" data-product="mudgar-mid">
+              <button class="variant-btn selected" data-weight="11 lb" data-price="78" onclick="selectVariant(this,'mudgar-mid')">11 lb — $78</button>
+              <button class="variant-btn" data-weight="13.2 lb" data-price="88" onclick="selectVariant(this,'mudgar-mid')">13.2 lb — $88</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-mudgar-mid">$78</span>
+              <button class="add-to-cart" onclick="addToCart('mudgar-mid','Mudgar — Mid','mugdar.jpeg')">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="mudgar">
+          <div class="product-img-wrap">
+            <img src="mugdar.jpeg" alt="Mudgar — Heavy">
+          </div>
+          <div class="product-body">
+            <span class="product-category">Strength tools</span>
+            <div class="product-name">Mudgar — Heavy</div>
+            <div class="product-desc">For experienced practitioners. Serious leverage conditioning. Not for beginners.</div>
+            <div class="product-variants" data-product="mudgar-heavy">
+              <button class="variant-btn selected" data-weight="17.6 lb" data-price="108" onclick="selectVariant(this,'mudgar-heavy')">17.6 lb — $108</button>
+              <button class="variant-btn" data-weight="19.8 lb" data-price="118" onclick="selectVariant(this,'mudgar-heavy')">19.8 lb — $118</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-mudgar-heavy">$108</span>
+              <button class="add-to-cart" onclick="addToCart('mudgar-heavy','Mudgar — Heavy','mugdar.jpeg')">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SAMTOLA -->
+        <article class="product-card" data-category="samtola">
+          <div class="product-img-wrap">
+            <img src="samtola.jpg" alt="Samtola">
+          </div>
+          <div class="product-body">
+            <span class="product-category">Traditional heavy format</span>
+            <div class="product-name">Samtola</div>
+            <div class="product-desc">A larger traditional format for heavier leverage-based conditioning. A serious tool for serious practice.</div>
+            <div class="product-variants" data-product="samtola">
+              <button class="variant-btn selected" data-weight="22 lb" data-price="148" onclick="selectVariant(this,'samtola')">22 lb — $148</button>
+            </div>
+            <div class="product-footer">
+              <span class="product-price" id="price-samtola">$148</span>
+              <button class="add-to-cart" onclick="addToCart('samtola','Samtola','samtola.jpg')">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
-  <!-- BEGINNER KIT -->
-  <section id="beginners-kit" class="kit-section">
+  <!-- BUNDLE -->
+  <section id="bundle" style="background:var(--text);color:#fff;padding:72px 0">
     <div class="container">
       <div class="section-head" style="margin-bottom:48px">
-        <span class="eyebrow" style="color:var(--accent)">Complete starter package</span>
-        <h2 style="color:#fff">Beginner Kit</h2>
-        <p style="color:rgba(255,255,255,0.55)">Everything you need to start your Indian club practice — handcrafted equipment and essential reading, bundled together.</p>
+        <span class="eyebrow" style="color:var(--accent)">Featured kit</span>
+        <h2 style="color:#fff">Complete Beginner Kit</h2>
+        <p style="color:rgba(255,255,255,0.55)">Everything you need to start your Indian club practice — handcrafted equipment and essential knowledge, bundled together.</p>
       </div>
-      <div class="kit-grid">
-        <div style="display:grid;gap:12px">
-          <div class="kit-item">
-            <div>
-              <div class="kit-item-label">Indian Clubs</div>
-              <div class="kit-item-name">500g Pair</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
+        <div>
+          <div style="display:grid;gap:12px">
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Indian Clubs</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">500g Pair</div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="kit-item">
-            <div>
-              <div class="kit-item-label">Indian Clubs</div>
-              <div class="kit-item-name">800g Pair</div>
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Indian Clubs</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">800g Pair</div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="kit-item">
-            <div>
-              <div class="kit-item-label">Indian Clubs</div>
-              <div class="kit-item-name">1.5 kg Pair</div>
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Indian Clubs</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">1.5 kg Pair</div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="kit-item">
-            <div>
-              <div class="kit-item-label">Mudgar</div>
-              <div class="kit-item-name">2 kg Pair</div>
+            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Mudgar</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">2 kg Pair</div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="kit-item book">
-            <div>
-              <div class="kit-item-label">Training Book</div>
-              <div class="kit-item-name" style="line-height:1.2">Karlakattai: Ancient Warrior Practice</div>
-              <div style="font-size:.78rem;color:rgba(255,255,255,0.45);margin-top:4px">Physical copy included with kit</div>
+            <div style="background:rgba(160,120,64,0.15);border:1px solid rgba(160,120,64,0.4);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Kindle Book</div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.2">Karlakattai: Ancient Warrior Practice</div>
+                <a href="https://www.amazon.com/s?k=Karlakattai+Ancient+Warrior+Practice+Kindle" target="_blank" rel="noopener" style="font-size:.78rem;color:var(--accent);margin-top:4px;display:inline-block">View on Amazon ↗</a>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(160,120,64,0.6)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(160,120,64,0.6)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
         </div>
-        <div class="kit-sidebar">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:20px">
           <div>
-            <div class="kit-price-label">Bundle price</div>
-            <div class="kit-price">$849</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,0.45);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase">Bundle price</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;line-height:1;color:#fff">$849</div>
           </div>
           <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
-            <div style="font-size:.85rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-weight:300;line-height:1.6">Includes all 5 items shipped together — equipment and book in one package.</div>
-            <ul class="kit-features">
-              <li><span style="color:var(--accent);font-size:1rem">✓</span> 4 handcrafted wooden pieces</li>
-              <li><span style="color:var(--accent);font-size:1rem">✓</span> Progressive weight system (500g → 2kg)</li>
-              <li><span style="color:var(--accent);font-size:1rem">✓</span> Karlakattai training book included</li>
-              <li><span style="color:var(--accent);font-size:1rem">✓</span> U.S. shipping included</li>
+            <div style="font-size:.85rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-weight:300;line-height:1.6">Includes 5 items shipped together. The Kindle book is a recommended third-party title available separately on Amazon.</div>
+            <ul style="list-style:none;padding:0;display:grid;gap:8px;margin-bottom:20px">
+              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> 4 handcrafted wooden pieces</li>
+              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> Progressive weight system</li>
+              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> Recommended training book included</li>
+              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> U.S. shipping</li>
             </ul>
           </div>
-          <button class="kit-cta" onclick="addKitToCart()">Add Kit to Cart — $849</button>
+          <!-- Gift book toggle -->
+          <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
+            <label style="display:flex;align-items:center;gap:12px;cursor:pointer">
+              <div style="position:relative;width:40px;height:22px;flex-shrink:0">
+                <input type="checkbox" id="gift-toggle" onchange="toggleGiftFields()" style="opacity:0;width:0;height:0;position:absolute">
+                <div id="gift-track" style="position:absolute;inset:0;background:rgba(255,255,255,0.15);border-radius:999px;transition:background .2s"></div>
+                <div id="gift-thumb" style="position:absolute;top:3px;left:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s"></div>
+              </div>
+              <div>
+                <div style="font-size:.88rem;color:#fff;font-weight:500">Gift the Kindle book to someone</div>
+                <div style="font-size:.78rem;color:rgba(255,255,255,0.4);font-weight:300">We'll send the book digitally to their email</div>
+              </div>
+            </label>
+            <div id="gift-fields" style="display:none;margin-top:16px;display:grid;gap:10px;opacity:0;max-height:0;overflow:hidden;transition:all .3s">
+              <div>
+                <label style="font-size:.78rem;color:rgba(255,255,255,0.45);display:block;margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase">Recipient's name</label>
+                <input id="gift-name" type="text" placeholder="e.g. Arjun Kumar" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none">
+              </div>
+              <div>
+                <label style="font-size:.78rem;color:rgba(255,255,255,0.45);display:block;margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase">Recipient's email</label>
+                <input id="gift-email" type="email" placeholder="their@email.com" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none">
+              </div>
+              <div>
+                <label style="font-size:.78rem;color:rgba(255,255,255,0.45);display:block;margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase">Gift message (optional)</label>
+                <textarea id="gift-message" placeholder="A short note for your recipient..." rows="2" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;resize:none"></textarea>
+              </div>
+            </div>
+          </div>
+          <button class="add-to-cart" style="width:100%;padding:14px;font-size:.95rem;border-radius:999px;background:var(--accent);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#7a5c2e'" onmouseout="this.style.background='var(--accent)'" onclick="addBundleToCart()">Add kit to cart — $849</button>
           <p style="font-size:.78rem;color:rgba(255,255,255,0.3);text-align:center;font-weight:300">Inquire by email for international shipping or custom orders.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MUDGARS -->
-  <section id="mudgars" style="background:var(--bg-soft);border-top:1px solid var(--line)">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Strength tools</span>
-        <h2>Mudgars</h2>
-        <p>Traditional leverage tools for shoulder conditioning and strength. Choose your weight level carefully — start light.</p>
-      </div>
-      <div class="products-grid" id="mudgar-grid">
-        <!-- mudgars rendered by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- SAMTOLAS -->
-  <section id="samtolas">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Traditional heavy format</span>
-        <h2>Samtolas</h2>
-        <p>A serious tool for serious practice. Larger format for heavier leverage-based conditioning. For experienced practitioners only.</p>
-      </div>
-      <div class="products-grid" id="samtola-grid">
-        <!-- samtolas rendered by JS -->
       </div>
     </div>
   </section>
@@ -383,7 +450,7 @@
         <article class="workout-card">
           <span class="eyebrow">Workout 1</span>
           <h3>Foundation Circles</h3>
-          <div class="wt">Recommended: 500g pair clubs</div>
+          <div class="wt">Recommended: 1.1 lb pair clubs</div>
           <ul>
             <li>Front circles — 2 sets of 20</li>
             <li>Back circles — 2 sets of 20</li>
@@ -394,7 +461,7 @@
         <article class="workout-card">
           <span class="eyebrow">Workout 2</span>
           <h3>Control & Rhythm</h3>
-          <div class="wt">Recommended: 800g–1kg pair clubs</div>
+          <div class="wt">Recommended: 1.8–2.2 lb pair clubs</div>
           <ul>
             <li>Inside circles — 3 sets of 15</li>
             <li>Outside circles — 3 sets of 15</li>
@@ -405,7 +472,7 @@
         <article class="workout-card">
           <span class="eyebrow">Workout 3</span>
           <h3>Progression Flow</h3>
-          <div class="wt">Recommended: 1.5 kg pair clubs</div>
+          <div class="wt">Recommended: 3.3 lb pair clubs</div>
           <ul>
             <li>Alternating circles — 3 sets of 12</li>
             <li>Figure-8 pattern — 3 sets of 10</li>
@@ -416,12 +483,12 @@
         <article class="workout-card">
           <span class="eyebrow">Workout 4</span>
           <h3>Intro to Mudgar</h3>
-          <div class="wt">Recommended: 2 kg mudgar</div>
+          <div class="wt">Recommended: 4.4 lb mudgar</div>
           <ul>
             <li>Single-side swings — 2 sets of 10 each side</li>
             <li>Shoulder cast pattern — 2 sets of 8</li>
             <li>Slow, controlled repetitions only</li>
-            <li>Do not begin with 5 kg+ weights</li>
+            <li>Do not begin with 11 lb+ weights</li>
           </ul>
         </article>
       </div>
@@ -509,7 +576,7 @@
 <div class="modal-overlay" id="checkout-modal">
   <div class="modal">
     <h3>Checkout</h3>
-    <p class="sub">Review your order and complete via email.</p>
+    <p class="sub">Review your order and complete payment via Stripe.</p>
     <div class="order-summary" id="order-summary"></div>
     <div class="stripe-placeholder">
       <p>Stripe Payment Link goes here. To activate:</p>
@@ -523,414 +590,35 @@
   </div>
 </div>
 
-<!-- ADMIN PANEL -->
-<div class="admin-panel">
-  <button class="admin-toggle" onclick="openAdmin()">⚙ Manage Inventory</button>
-</div>
-
-<div class="admin-modal-overlay" id="admin-modal">
-  <div class="admin-modal">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-      <h3>Inventory Manager</h3>
-      <button class="close-btn" onclick="closeAdmin()" style="font-size:1.4rem">✕</button>
-    </div>
-    <p class="sub">Update stock levels by material, size, and measurements. Changes apply to the storefront immediately.</p>
-    <div class="admin-tabs">
-      <button class="admin-tab active" onclick="switchTab('clubs-tab',this)">Indian Clubs</button>
-      <button class="admin-tab" onclick="switchTab('mudgar-tab',this)">Mudgars</button>
-      <button class="admin-tab" onclick="switchTab('samtola-tab',this)">Samtolas</button>
-      <button class="admin-tab" onclick="switchTab('kit-tab',this)">Beginner Kit</button>
-    </div>
-
-    <!-- CLUBS TAB -->
-    <div class="tab-pane active" id="clubs-tab">
-      <table class="inventory-table" id="clubs-inv-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Weight</th>
-            <th>Material</th>
-            <th>Length</th>
-            <th>Diameter</th>
-            <th>Price ($)</th>
-            <th>Stock (pairs)</th>
-            <th>Status</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="clubs-inv-body"></tbody>
-      </table>
-      <div class="add-variant-form" id="clubs-add-form">
-        <div class="form-group">
-          <label>Weight</label>
-          <input type="text" id="clubs-new-weight" placeholder="e.g. 500g">
-        </div>
-        <div class="form-group">
-          <label>Material</label>
-          <select id="clubs-new-material">
-            <option>Neem wood</option>
-            <option>Teak wood</option>
-            <option>Rosewood</option>
-            <option>Mango wood</option>
-            <option>Sheesham</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Length (cm)</label>
-          <input type="number" id="clubs-new-length" placeholder="45">
-        </div>
-        <div class="form-group">
-          <label>Diameter (cm)</label>
-          <input type="number" id="clubs-new-diam" placeholder="8" step="0.5">
-        </div>
-        <div class="form-group">
-          <label>Price ($)</label>
-          <input type="number" id="clubs-new-price" placeholder="38">
-        </div>
-        <div class="form-group">
-          <label>Stock</label>
-          <input type="number" id="clubs-new-stock" placeholder="10" min="0">
-        </div>
-        <button class="add-row-btn" onclick="addVariant('clubs')">+ Add</button>
-      </div>
-    </div>
-
-    <!-- MUDGAR TAB -->
-    <div class="tab-pane" id="mudgar-tab">
-      <table class="inventory-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Weight</th>
-            <th>Material</th>
-            <th>Length</th>
-            <th>Head Diam.</th>
-            <th>Price ($)</th>
-            <th>Stock (units)</th>
-            <th>Status</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="mudgar-inv-body"></tbody>
-      </table>
-      <div class="add-variant-form">
-        <div class="form-group">
-          <label>Weight</label>
-          <input type="text" id="mudgar-new-weight" placeholder="e.g. 2kg">
-        </div>
-        <div class="form-group">
-          <label>Material</label>
-          <select id="mudgar-new-material">
-            <option>Neem wood</option>
-            <option>Teak wood</option>
-            <option>Rosewood</option>
-            <option>Mango wood</option>
-            <option>Sheesham</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Length (cm)</label>
-          <input type="number" id="mudgar-new-length" placeholder="60">
-        </div>
-        <div class="form-group">
-          <label>Head Diam. (cm)</label>
-          <input type="number" id="mudgar-new-diam" placeholder="12" step="0.5">
-        </div>
-        <div class="form-group">
-          <label>Price ($)</label>
-          <input type="number" id="mudgar-new-price" placeholder="54">
-        </div>
-        <div class="form-group">
-          <label>Stock</label>
-          <input type="number" id="mudgar-new-stock" placeholder="10" min="0">
-        </div>
-        <button class="add-row-btn" onclick="addVariant('mudgar')">+ Add</button>
-      </div>
-    </div>
-
-    <!-- SAMTOLA TAB -->
-    <div class="tab-pane" id="samtola-tab">
-      <table class="inventory-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Weight</th>
-            <th>Material</th>
-            <th>Length</th>
-            <th>Head Diam.</th>
-            <th>Price ($)</th>
-            <th>Stock (units)</th>
-            <th>Status</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="samtola-inv-body"></tbody>
-      </table>
-      <div class="add-variant-form">
-        <div class="form-group">
-          <label>Weight</label>
-          <input type="text" id="samtola-new-weight" placeholder="e.g. 10kg">
-        </div>
-        <div class="form-group">
-          <label>Material</label>
-          <select id="samtola-new-material">
-            <option>Neem wood</option>
-            <option>Teak wood</option>
-            <option>Rosewood</option>
-            <option>Mango wood</option>
-            <option>Sheesham</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Length (cm)</label>
-          <input type="number" id="samtola-new-length" placeholder="90">
-        </div>
-        <div class="form-group">
-          <label>Head Diam. (cm)</label>
-          <input type="number" id="samtola-new-diam" placeholder="20" step="0.5">
-        </div>
-        <div class="form-group">
-          <label>Price ($)</label>
-          <input type="number" id="samtola-new-price" placeholder="148">
-        </div>
-        <div class="form-group">
-          <label>Stock</label>
-          <input type="number" id="samtola-new-stock" placeholder="5" min="0">
-        </div>
-        <button class="add-row-btn" onclick="addVariant('samtola')">+ Add</button>
-      </div>
-    </div>
-
-    <!-- KIT TAB -->
-    <div class="tab-pane" id="kit-tab">
-      <div style="padding:20px;background:var(--bg);border-radius:12px;border:1px solid var(--line);margin-bottom:16px">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;margin-bottom:12px">Beginner Kit Stock</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;align-items:end">
-          <div>
-            <label style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;display:block;margin-bottom:5px">Kits in stock</label>
-            <input type="number" id="kit-stock-input" min="0" style="width:100%;padding:8px 12px;border:1.5px solid var(--line);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--text);background:var(--card)" value="5">
-          </div>
-          <div>
-            <label style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;display:block;margin-bottom:5px">Kit Price ($)</label>
-            <input type="number" id="kit-price-input" min="0" style="width:100%;padding:8px 12px;border:1.5px solid var(--line);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--text);background:var(--card)" value="849">
-          </div>
-          <div id="kit-status-badge" style="font-size:.85rem;color:var(--muted)"></div>
-        </div>
-      </div>
-      <p style="font-size:.84rem;color:var(--muted);font-weight:300;line-height:1.7">The Beginner Kit bundles: 500g clubs, 800g clubs, 1.5kg clubs, 2kg mudgar pair, and the Karlakattai training book. Kit stock is tracked independently — set to 0 to mark as unavailable.</p>
-    </div>
-
-    <div style="display:flex;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:16px;margin-top:4px">
-      <button class="save-inv-btn" onclick="saveInventory()">Save & Apply Changes</button>
-      <span id="save-confirmation" style="font-size:.84rem;color:#1a7a3c;opacity:0;transition:opacity .3s">✓ Changes applied to storefront</span>
-    </div>
-  </div>
-</div>
-
 <script>
-// ─── INVENTORY DATA ───────────────────────────────────────────────
-// Each variant: { id, weight, material, length, diam, price, stock }
-let inventory = {
-  clubs: [
-    { id:'c1', weight:'500g', material:'Neem wood', length:38, diam:6, price:38, stock:12 },
-    { id:'c2', weight:'800g', material:'Neem wood', length:42, diam:7, price:44, stock:10 },
-    { id:'c3', weight:'1 kg', material:'Teak wood', length:45, diam:7.5, price:48, stock:8 },
-    { id:'c4', weight:'1.5 kg', material:'Teak wood', length:50, diam:8, price:56, stock:6 },
-    { id:'c5', weight:'2 kg', material:'Teak wood', length:54, diam:9, price:64, stock:4 },
-    { id:'c6', weight:'3.3 lb', material:'Rosewood', length:58, diam:10, price:72, stock:3 },
-  ],
-  mudgar: [
-    { id:'m1', weight:'2 kg', material:'Neem wood', length:55, diam:11, price:54, stock:8 },
-    { id:'m2', weight:'4 kg', material:'Teak wood', length:62, diam:13, price:72, stock:5 },
-    { id:'m3', weight:'5 kg', material:'Teak wood', length:65, diam:14, price:86, stock:4 },
-    { id:'m4', weight:'6 kg', material:'Rosewood', length:68, diam:15, price:96, stock:2 },
-    { id:'m5', weight:'8 kg', material:'Sheesham', length:72, diam:16, price:110, stock:2 },
-    { id:'m6', weight:'10 kg', material:'Sheesham', length:76, diam:17.5, price:128, stock:1 },
-  ],
-  samtola: [
-    { id:'s1', weight:'10 kg', material:'Neem wood', length:90, diam:18, price:148, stock:3 },
-    { id:'s2', weight:'12 kg', material:'Teak wood', length:95, diam:20, price:168, stock:2 },
-    { id:'s3', weight:'15 kg', material:'Sheesham', length:100, diam:22, price:198, stock:1 },
-  ],
-  kit: { stock: 5, price: 849 }
-};
-
-// ─── CART ─────────────────────────────────────────────────────────
 let cart = [];
 
-// ─── RENDER PRODUCTS ──────────────────────────────────────────────
-function stockStatus(stock) {
-  if (stock === 0) return { label:'Out of stock', cls:'out-of-stock', badgeCls:'out' };
-  if (stock <= 3) return { label:`Only ${stock} left`, cls:'low-stock', badgeCls:'low' };
-  return { label:'In stock', cls:'in-stock', badgeCls:'in' };
-}
-
-function renderClubs() {
-  const grid = document.getElementById('clubs-grid');
-  const variants = inventory.clubs;
-  // Group into product cards by name ranges
-  const cards = [
-    { id:'clubs-starter', name:'Indian Clubs — Starter', desc:'Lighter paired tools for rhythm, mobility, and coordination. Ideal for beginners building their foundation.', img:'clubs.png', cat:'clubs', variants: variants.filter(v => parseFloat(v.weight) <= 1) },
-    { id:'clubs-mid', name:'Indian Clubs — Mid', desc:'Building from the starter weight. Develops rhythm and strength progressively.', img:'clubs.png', cat:'clubs', variants: variants.filter(v => { const w = parseFloat(v.weight); return w > 1 && w <= 2; }) },
-    { id:'clubs-heavy', name:'Indian Clubs — Heavy', desc:'For those who\'ve mastered the lighter weights. Serious strength and flow training.', img:'clubs.png', cat:'clubs', variants: variants.filter(v => parseFloat(v.weight) > 2) },
-  ].filter(c => c.variants.length > 0);
-
-  grid.innerHTML = cards.map(card => renderProductCard(card)).join('');
-}
-
-function renderMudgars() {
-  const grid = document.getElementById('mudgar-grid');
-  const cards = [
-    { id:'mudgar-light', name:'Mudgar — Light', desc:'Entry-level mudgar for learning leverage and shoulder cast patterns. Best for new users.', img:'mugdar.jpeg', cat:'mudgar', variants: inventory.mudgar.filter(v => parseFloat(v.weight) <= 4) },
-    { id:'mudgar-mid', name:'Mudgar — Mid', desc:'Intermediate mudgar for strength-oriented training. Requires solid technique before use.', img:'mugdar.jpeg', cat:'mudgar', variants: inventory.mudgar.filter(v => { const w = parseFloat(v.weight); return w > 4 && w <= 7; }) },
-    { id:'mudgar-heavy', name:'Mudgar — Heavy', desc:'For experienced practitioners. Serious leverage conditioning. Not for beginners.', img:'mugdar.jpeg', cat:'mudgar', variants: inventory.mudgar.filter(v => parseFloat(v.weight) > 7) },
-  ].filter(c => c.variants.length > 0);
-
-  grid.innerHTML = cards.map(card => renderProductCard(card)).join('');
-}
-
-function renderSamtolas() {
-  const grid = document.getElementById('samtola-grid');
-  if (inventory.samtola.length === 0) {
-    grid.innerHTML = '<p style="color:var(--muted);font-weight:300;text-align:center;padding:40px 0;grid-column:1/-1">No samtolas currently listed. Check back soon.</p>';
-    return;
-  }
-  // Each samtola is its own card
-  grid.innerHTML = inventory.samtola.map(v => {
-    const st = stockStatus(v.stock);
-    return `
-    <article class="product-card">
-      <div class="product-img-wrap">
-        <img src="samtola.jpg" alt="Samtola ${v.weight}">
-        <span class="stock-badge ${st.cls}">${st.label}</span>
-      </div>
-      <div class="product-body">
-        <span class="product-category">Traditional heavy format</span>
-        <div class="product-name">Samtola — ${v.weight}</div>
-        <div class="product-desc">A larger traditional format for heavier leverage-based conditioning. A serious tool for serious practice.</div>
-        <div class="product-meta">
-          <span class="meta-tag">📐 ${v.length} cm long</span>
-          <span class="meta-tag">⌀ ${v.diam} cm head</span>
-          <span class="meta-tag">🪵 ${v.material}</span>
-        </div>
-        <div class="product-footer">
-          <span class="product-price">$${v.price}</span>
-          <button class="add-to-cart" onclick="addSingleToCart('${v.id}','samtola')" ${v.stock === 0 ? 'disabled' : ''}>${v.stock === 0 ? 'Sold out' : 'Add to cart'}</button>
-        </div>
-      </div>
-    </article>`;
-  }).join('');
-}
-
-function renderProductCard(card) {
-  const firstV = card.variants[0] || {};
-  const allOut = card.variants.every(v => v.stock === 0);
-  const someOut = card.variants.some(v => v.stock === 0);
-  const st = stockStatus(allOut ? 0 : (card.variants.some(v => v.stock <= 3 && v.stock > 0) ? 2 : 10));
-
-  return `
-  <article class="product-card">
-    <div class="product-img-wrap">
-      <img src="${card.img}" alt="${card.name}">
-      ${allOut ? '<span class="stock-badge out-of-stock">Out of stock</span>' : ''}
-    </div>
-    <div class="product-body">
-      <span class="product-category">${card.cat === 'clubs' ? 'Pair clubs' : 'Strength tools'}</span>
-      <div class="product-name">${card.name}</div>
-      <div class="product-desc">${card.desc}</div>
-      <div class="product-variants" data-product="${card.id}">
-        ${card.variants.map((v,i) => `
-          <button class="variant-btn ${i===0?'selected':''}" 
-            data-varid="${v.id}"
-            data-weight="${v.weight}" 
-            data-price="${v.price}" 
-            data-stock="${v.stock}"
-            data-material="${v.material}"
-            data-length="${v.length}"
-            data-diam="${v.diam}"
-            onclick="selectVariant(this,'${card.id}')"
-            ${v.stock===0?'disabled':''}>
-            ${v.weight}${v.stock===0?' — sold out':''} — $${v.price}
-          </button>`).join('')}
-      </div>
-      <div class="stock-info" id="stock-info-${card.id}"></div>
-      <div class="product-meta" id="meta-${card.id}">
-        <span class="meta-tag">📐 ${firstV.length} cm</span>
-        <span class="meta-tag">⌀ ${firstV.diam} cm</span>
-        <span class="meta-tag">🪵 ${firstV.material}</span>
-      </div>
-      <div class="product-footer">
-        <span class="product-price" id="price-${card.id}">$${firstV.price || 0}</span>
-        <button class="add-to-cart" id="atc-${card.id}" onclick="addToCart('${card.id}','${card.name}','${card.img}')" ${allOut?'disabled':''}>
-          ${allOut ? 'Sold out' : 'Add to cart'}
-        </button>
-      </div>
-    </div>
-  </article>`;
+function getSelectedVariant(productId) {
+  const wrap = document.querySelector(`[data-product="${productId}"]`);
+  const sel = wrap ? wrap.querySelector('.variant-btn.selected') : null;
+  return sel ? { weight: sel.dataset.weight, price: parseFloat(sel.dataset.price) } : null;
 }
 
 function selectVariant(btn, productId) {
   const wrap = document.querySelector(`[data-product="${productId}"]`);
   wrap.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
-  document.getElementById(`price-${productId}`).textContent = `$${btn.dataset.price}`;
-  // Update meta
-  const meta = document.getElementById(`meta-${productId}`);
-  if (meta) meta.innerHTML = `
-    <span class="meta-tag">📐 ${btn.dataset.length} cm</span>
-    <span class="meta-tag">⌀ ${btn.dataset.diam} cm</span>
-    <span class="meta-tag">🪵 ${btn.dataset.material}</span>`;
-  // Stock info
-  const si = document.getElementById(`stock-info-${productId}`);
-  const stock = parseInt(btn.dataset.stock);
-  if (si) {
-    si.textContent = stock === 0 ? 'Out of stock' : stock <= 3 ? `Only ${stock} left` : '';
-    si.className = 'stock-info' + (stock <= 3 && stock > 0 ? ' low' : '');
-  }
-}
-
-// ─── CART FUNCTIONS ───────────────────────────────────────────────
-function getSelectedVariant(productId) {
-  const wrap = document.querySelector(`[data-product="${productId}"]`);
-  const sel = wrap ? wrap.querySelector('.variant-btn.selected') : null;
-  if (!sel) return null;
-  return { varid: sel.dataset.varid, weight: sel.dataset.weight, price: parseFloat(sel.dataset.price), stock: parseInt(sel.dataset.stock), material: sel.dataset.material };
+  const priceEl = document.getElementById(`price-${productId}`);
+  if (priceEl) priceEl.textContent = `$${btn.dataset.price}`;
 }
 
 function addToCart(productId, name, img) {
   const variant = getSelectedVariant(productId);
-  if (!variant || variant.stock === 0) return;
+  if (!variant) return;
   const key = `${productId}-${variant.weight}`;
   const existing = cart.find(i => i.key === key);
-  if (existing) { existing.qty++; }
-  else { cart.push({ key, productId, name, img, weight: variant.weight, price: variant.price, qty: 1 }); }
-  bumpCart();
-}
-
-function addSingleToCart(varid, type) {
-  const v = inventory[type].find(x => x.id === varid);
-  if (!v || v.stock === 0) return;
-  const key = `${type}-${varid}`;
-  const existing = cart.find(i => i.key === key);
-  const name = type === 'samtola' ? `Samtola — ${v.weight}` : `Mudgar — ${v.weight}`;
-  const img = type === 'samtola' ? 'samtola.jpg' : 'mugdar.jpeg';
-  if (existing) { existing.qty++; }
-  else { cart.push({ key, productId: key, name, img, weight: `${v.weight} · ${v.material}`, price: v.price, qty: 1 }); }
-  bumpCart();
-}
-
-function addKitToCart() {
-  if (inventory.kit.stock === 0) { alert('The Beginner Kit is currently out of stock.'); return; }
-  const key = 'beginner-kit';
-  const existing = cart.find(i => i.key === key);
-  if (existing) { existing.qty++; }
-  else { cart.push({ key, productId: key, name:'Beginner Kit', img:'clubs.png', weight:'500g + 800g + 1.5kg clubs · 2kg mudgar · Karlakattai book', price: inventory.kit.price, qty:1 }); }
-  bumpCart();
-  toggleCart();
-}
-
-function bumpCart() {
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ key, productId, name, img, weight: variant.weight, price: variant.price, qty: 1 });
+  }
   renderCart();
+  // Bump animation
   const countEl = document.getElementById('cart-count');
   countEl.classList.add('bump');
   setTimeout(() => countEl.classList.remove('bump'), 300);
@@ -946,13 +634,17 @@ function renderCart() {
   countEl.textContent = totalQty;
   subtotalEl.textContent = `$${total}`;
   checkoutBtn.disabled = cart.length === 0;
-  if (cart.length === 0) { container.innerHTML = '<div class="cart-empty">Your cart is empty.</div>'; return; }
+  if (cart.length === 0) {
+    container.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
+    return;
+  }
   container.innerHTML = cart.map(item => `
     <div class="cart-item">
       <img src="${item.img}" alt="${item.name}">
       <div class="cart-item-info">
         <h4>${item.name}</h4>
         <div class="variant-label">${item.weight}</div>
+        ${item.gift ? `<div style="margin-top:6px;display:inline-flex;align-items:center;gap:5px;background:var(--accent-soft);color:var(--accent-dark);font-size:.75rem;padding:3px 10px;border-radius:999px;font-weight:500">🎁 Book gifted to ${item.gift.name || item.gift.email || 'recipient'}</div>` : ''}
         <div class="cart-item-controls">
           <button class="qty-btn" onclick="changeQty('${item.key}',-1)">−</button>
           <span class="qty-display">${item.qty}</span>
@@ -961,7 +653,8 @@ function renderCart() {
         <button class="remove-item" onclick="removeItem('${item.key}')">Remove</button>
       </div>
       <div class="cart-item-price">$${item.price * item.qty}</div>
-    </div>`).join('');
+    </div>
+  `).join('');
 }
 
 function changeQty(key, delta) {
@@ -984,119 +677,85 @@ function toggleCart() {
 function openCheckout() {
   const summary = document.getElementById('order-summary');
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  let giftSection = '';
+  let emailGiftLines = '';
+  const bundleItem = cart.find(i => i.key === 'complete-beginner-kit' && i.gift);
+  if (bundleItem && bundleItem.gift && (bundleItem.gift.name || bundleItem.gift.email)) {
+    giftSection = `
+      <div style="margin-top:12px;padding:12px;background:var(--accent-soft);border-radius:10px;border:1px solid var(--line)">
+        <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:6px">🎁 Kindle book gift details</div>
+        ${bundleItem.gift.name ? `<div class="order-row"><span>Recipient name</span><span>${bundleItem.gift.name}</span></div>` : ''}
+        ${bundleItem.gift.email ? `<div class="order-row"><span>Recipient email</span><span>${bundleItem.gift.email}</span></div>` : ''}
+        ${bundleItem.gift.message ? `<div class="order-row"><span>Message</span><span style="max-width:180px;text-align:right">"${bundleItem.gift.message}"</span></div>` : ''}
+      </div>`;
+    emailGiftLines = `%0A%0A--- KINDLE BOOK GIFT ---%0ATo: ${bundleItem.gift.name || ''} <${bundleItem.gift.email || ''}>${bundleItem.gift.message ? `%0AMessage: ${bundleItem.gift.message}` : ''}`;
+  }
   summary.innerHTML = cart.map(i =>
     `<div class="order-row"><span>${i.name} (${i.weight}) × ${i.qty}</span><span>$${i.price * i.qty}</span></div>`
-  ).join('') + `<div class="order-row total"><span>Total</span><span>$${total}</span></div>`;
-  const emailBody = cart.map(i => `${i.name} x${i.qty} = $${i.price * i.qty}`).join('%0A') + `%0A%0ATotal: $${total}`;
+  ).join('') + `<div class="order-row total"><span>Total</span><span>$${total}</span></div>` + giftSection;
+  const emailBody = cart.map(i => `${i.name} x${i.qty} = $${i.price * i.qty}`).join('%0A') + `%0A%0ATotal: $${total}` + emailGiftLines;
   document.getElementById('stripe-btn').href = `mailto:akhada.crafts@mantanex.com?subject=Order%20from%20Akhada%20Crafts&body=${emailBody}`;
   document.getElementById('checkout-modal').classList.add('open');
   toggleCart();
 }
 
-function closeCheckout() { document.getElementById('checkout-modal').classList.remove('open'); }
-
-// ─── ADMIN / INVENTORY ────────────────────────────────────────────
-function openAdmin() { document.getElementById('admin-modal').classList.add('open'); renderAllInventoryTables(); }
-function closeAdmin() { document.getElementById('admin-modal').classList.remove('open'); }
-
-function switchTab(tabId, btn) {
-  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.admin-tab').forEach(b => b.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
-  btn.classList.add('active');
+function closeCheckout() {
+  document.getElementById('checkout-modal').classList.remove('open');
 }
 
-function invStatusHtml(stock) {
-  const s = stockStatus(stock);
-  return `<span class="inv-status ${s.badgeCls}">${stock === 0 ? 'Out of stock' : stock <= 3 ? 'Low' : 'In stock'}</span>`;
-}
-
-function renderInventoryTable(type, tbodyId) {
-  const tbody = document.getElementById(tbodyId);
-  tbody.innerHTML = inventory[type].map(v => `
-    <tr data-id="${v.id}" data-type="${type}">
-      <td class="inv-product">${v.weight}</td>
-      <td><span class="inv-material">${v.material}</span></td>
-      <td>${v.length} cm</td>
-      <td>${v.diam} cm</td>
-      <td><input class="inv-input" type="number" value="${v.price}" min="0" data-field="price" onchange="updateField('${type}','${v.id}','price',this.value)"></td>
-      <td><input class="inv-input" type="number" value="${v.stock}" min="0" data-field="stock" onchange="updateField('${type}','${v.id}','stock',this.value)"></td>
-      <td>${invStatusHtml(v.stock)}</td>
-      <td><button class="delete-row" onclick="deleteVariant('${type}','${v.id}')" title="Remove">✕</button></td>
-    </tr>`).join('');
-}
-
-function renderAllInventoryTables() {
-  renderInventoryTable('clubs', 'clubs-inv-body');
-  renderInventoryTable('mudgar', 'mudgar-inv-body');
-  renderInventoryTable('samtola', 'samtola-inv-body');
-  document.getElementById('kit-stock-input').value = inventory.kit.stock;
-  document.getElementById('kit-price-input').value = inventory.kit.price;
-  updateKitStatusBadge();
-}
-
-function updateKitStatusBadge() {
-  const stock = parseInt(document.getElementById('kit-stock-input').value) || 0;
-  const badge = document.getElementById('kit-status-badge');
-  const s = stockStatus(stock);
-  badge.innerHTML = `<span class="inv-status ${s.badgeCls}">${stock === 0 ? 'Out of stock' : stock <= 3 ? `Low — ${stock} left` : `${stock} in stock`}</span>`;
-}
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('kit-stock-input') && document.getElementById('kit-stock-input').addEventListener('input', updateKitStatusBadge);
-});
-
-function updateField(type, id, field, value) {
-  const item = inventory[type].find(v => v.id === id);
-  if (!item) return;
-  item[field] = field === 'stock' || field === 'price' ? parseFloat(value) : value;
-  // Refresh status cell in same row
-  const row = document.querySelector(`[data-id="${id}"][data-type="${type}"]`);
-  if (row && field === 'stock') {
-    const cells = row.querySelectorAll('td');
-    cells[cells.length - 2].innerHTML = invStatusHtml(parseFloat(value));
+function toggleGiftFields() {
+  const toggle = document.getElementById('gift-toggle');
+  const fields = document.getElementById('gift-fields');
+  const track = document.getElementById('gift-track');
+  const thumb = document.getElementById('gift-thumb');
+  if (toggle.checked) {
+    fields.style.display = 'grid';
+    setTimeout(() => { fields.style.opacity = '1'; fields.style.maxHeight = '300px'; }, 10);
+    track.style.background = 'var(--accent)';
+    thumb.style.transform = 'translateX(18px)';
+  } else {
+    fields.style.opacity = '0';
+    fields.style.maxHeight = '0';
+    setTimeout(() => { fields.style.display = 'none'; }, 300);
+    track.style.background = 'rgba(255,255,255,0.15)';
+    thumb.style.transform = 'translateX(0)';
   }
 }
 
-function deleteVariant(type, id) {
-  if (!confirm('Remove this variant?')) return;
-  inventory[type] = inventory[type].filter(v => v.id !== id);
-  renderAllInventoryTables();
+function addBundleToCart() {
+  const key = 'complete-beginner-kit';
+  const isGift = document.getElementById('gift-toggle').checked;
+  const giftName = isGift ? document.getElementById('gift-name').value.trim() : '';
+  const giftEmail = isGift ? document.getElementById('gift-email').value.trim() : '';
+  const giftMessage = isGift ? document.getElementById('gift-message').value.trim() : '';
+  const existing = cart.find(i => i.key === key);
+  if (existing) {
+    existing.qty++;
+    if (isGift) { existing.gift = { name: giftName, email: giftEmail, message: giftMessage }; }
+  } else {
+    cart.push({
+      key, productId: key,
+      name: 'Complete Beginner Kit',
+      img: 'clubs.png',
+      weight: '500g clubs + 800g clubs + 1.5kg clubs + 2kg mudgar pair + Karlakattai book',
+      price: 849, qty: 1,
+      gift: isGift ? { name: giftName, email: giftEmail, message: giftMessage } : null
+    });
+  }
+  renderCart();
+  const countEl = document.getElementById('cart-count');
+  countEl.classList.add('bump');
+  setTimeout(() => countEl.classList.remove('bump'), 300);
+  toggleCart();
 }
 
-function addVariant(type) {
-  const weight = document.getElementById(`${type}-new-weight`).value.trim();
-  const material = document.getElementById(`${type}-new-material`).value;
-  const length = parseFloat(document.getElementById(`${type}-new-length`).value) || 0;
-  const diam = parseFloat(document.getElementById(`${type}-new-diam`).value) || 0;
-  const price = parseFloat(document.getElementById(`${type}-new-price`).value) || 0;
-  const stock = parseInt(document.getElementById(`${type}-new-stock`).value) || 0;
-  if (!weight || !price) { alert('Please fill in at least weight and price.'); return; }
-  const newId = type[0] + Date.now();
-  inventory[type].push({ id: newId, weight, material, length, diam, price, stock });
-  // Clear inputs
-  [`${type}-new-weight`,`${type}-new-length`,`${type}-new-diam`,`${type}-new-price`,`${type}-new-stock`].forEach(id => { const el = document.getElementById(id); if(el) el.value = ''; });
-  renderAllInventoryTables();
-}
 
-function saveInventory() {
-  // Apply kit stock/price from inputs
-  inventory.kit.stock = parseInt(document.getElementById('kit-stock-input').value) || 0;
-  inventory.kit.price = parseInt(document.getElementById('kit-price-input').value) || 849;
-  // Re-render storefront
-  renderClubs();
-  renderMudgars();
-  renderSamtolas();
-  // Show confirmation
-  const conf = document.getElementById('save-confirmation');
-  conf.style.opacity = '1';
-  setTimeout(() => { conf.style.opacity = '0'; }, 3000);
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.classList.toggle('hidden', cat !== 'all' && card.dataset.category !== cat);
+  });
 }
-
-// ─── INIT ─────────────────────────────────────────────────────────
-renderClubs();
-renderMudgars();
-renderSamtolas();
-renderCart();
 </script>
 </body>
 </html>
