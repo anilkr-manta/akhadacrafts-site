@@ -3,31 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akhada Training & Equipment</title>
+<title>Akhada</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #0b0c10;
-  color: white;
+  background: #0a0a0a;
+  color: #eaeaea;
 }
 
 /* NAV */
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
-  background: #111;
-  border-bottom: 1px solid #222;
+  padding: 20px 50px;
+  border-bottom: 1px solid #1c1c1c;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 nav a {
-  color: #aaa;
+  margin-left: 25px;
   text-decoration: none;
-  margin-left: 20px;
+  color: #888;
+  font-size: 14px;
 }
 
 nav a:hover {
@@ -37,151 +42,144 @@ nav a:hover {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px 50px;
+  padding: 90px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 10px;
 }
 
 .hero p {
-  color: #aaa;
+  color: #777;
+  font-size: 15px;
 }
 
 /* SECTION */
 .section {
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .section h2 {
-  margin-bottom: 20px;
+  font-size: 20px;
+  margin-bottom: 25px;
+  border-left: 3px solid white;
+  padding-left: 10px;
 }
 
-/* GRID */
-.grid {
+/* EQUIPMENT GRID */
+.equipment {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 15px;
 }
 
-/* CARD */
 .card {
-  background: #15171c;
-  border: 1px solid #222;
-  border-radius: 12px;
-  padding: 15px;
+  border: 1px solid #1f1f1f;
+  border-radius: 10px;
+  padding: 18px;
   transition: 0.2s;
 }
 
 .card:hover {
-  border-color: #3a82f7;
-  transform: translateY(-4px);
+  border-color: #444;
+  background: #111;
 }
 
-/* IMAGE */
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* TITLE */
-.title {
+.card-title {
   font-weight: 600;
-  margin-top: 10px;
 }
 
-/* TEXT */
-.desc {
+.card-desc {
   font-size: 13px;
-  color: #aaa;
-  margin-top: 5px;
+  color: #777;
+  margin-top: 6px;
 }
 
-/* LINK */
-.link {
-  display: block;
-  margin-top: 8px;
-  color: #8ab4f8;
+/* LIBRARY */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  padding: 14px 16px;
+  border: 1px solid #1f1f1f;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.item:hover {
+  border-color: #444;
+  background: #111;
+}
+
+.item a {
   text-decoration: none;
-}
-
-.link:hover {
-  text-decoration: underline;
+  color: #eaeaea;
+  font-size: 14px;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 40px;
-  color: #666;
+  font-size: 12px;
+  color: #555;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-  <div><strong>Akhada</strong></div>
+  <div class="logo">AKHADA</div>
   <div>
     <a href="#equipment">Equipment</a>
-    <a href="#catalog">Catalog</a>
     <a href="#library">Library</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <h1>Traditional Strength Training</h1>
-  <p>Handcrafted teak wood equipment + curated training knowledge</p>
+  <h1>Traditional Strength</h1>
+  <p>Teak wood equipment. Real training. No noise.</p>
 </div>
 
 <!-- EQUIPMENT -->
 <div class="section" id="equipment">
-  <h2>Equipment (Teak Wood)</h2>
+  <h2>Equipment</h2>
 
-  <div class="grid">
+  <div class="equipment">
 
     <div class="card">
-      <img src="https://via.placeholder.com/400x300" />
-      <div class="title">Indian Clubs (Beginner Kit)</div>
-      <div class="desc">500g, 800g, 1.5kg, 2kg set — sold as full kit only</div>
+      <div class="card-title">Indian Clubs (Beginner Kit)</div>
+      <div class="card-desc">
+        1.1 lb · 1.8 lb · 3.3 lb · 4.4 lb<br>
+        (500g · 800g · 1.5kg · 2kg)<br>
+        Sold only as full kit<br>
+        Solid teak wood
+      </div>
     </div>
 
     <div class="card">
-      <img src="https://via.placeholder.com/400x300" />
-      <div class="title">Mugdar Set</div>
-      <div class="desc">Traditional gada training pairs in multiple weights</div>
+      <div class="card-title">Mugdar Sets</div>
+      <div class="card-desc">
+        Approx. 2 lb – 9 lb range<br>
+        Traditional gada training<br>
+        Solid teak wood
+      </div>
     </div>
 
     <div class="card">
-      <img src="https://via.placeholder.com/400x300" />
-      <div class="title">Samtola</div>
-      <div class="desc">Heavy balance and strength tool — $349</div>
-    </div>
-
-  </div>
-</div>
-
-<!-- CATALOG -->
-<div class="section" id="catalog">
-  <h2>Catalog</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://via.placeholder.com/400x300" />
-      <div class="title">Full Beginner Bundle</div>
-      <div class="desc">Includes clubs + training material</div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/400x300" />
-      <div class="title">Advanced Training Kit</div>
-      <div class="desc">Heavy clubs + mugdar combination</div>
+      <div class="card-title">Samtola</div>
+      <div class="card-desc">
+        Heavy balance training tool<br>
+        Fixed build<br>
+        Solid teak wood
+      </div>
     </div>
 
   </div>
@@ -191,48 +189,39 @@ footer {
 <div class="section" id="library">
   <h2>Training Library</h2>
 
-  <div class="grid">
+  <div class="list">
 
-    <div class="card">
-      <div class="title">Silambam Training</div>
-      <a class="link" href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk/videos" target="_blank">
-        Watch Channel
+    <div class="item">
+      <a href="https://www.youtube.com/@viamilitaris" target="_blank">Via Militaris</a>
+    </div>
+
+    <div class="item">
+      <a href="https://www.youtube.com/@zenkahuna" target="_blank">Zen Kahuna</a>
+    </div>
+
+    <div class="item">
+      <a href="https://www.youtube.com/@backtoprimal" target="_blank">Back to Primal</a>
+    </div>
+
+    <div class="item">
+      <a href="https://www.youtube.com/@Godswarrioryogi" target="_blank">God’s Warrior Yogi</a>
+    </div>
+
+    <div class="item">
+      <a href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank">
+        Jothisilambam Guruk
       </a>
     </div>
 
-    <div class="card">
-      <div class="title">Primal Movement</div>
-      <a class="link" href="https://www.youtube.com/@backtoprimal/videos" target="_blank">
-        Watch Channel
-      </a>
-    </div>
-
-    <div class="card">
-      <div class="title">Zen Philosophy</div>
-      <a class="link" href="https://www.youtube.com/@zenkahuna/videos" target="_blank">
-        Watch Channel
-      </a>
-    </div>
-
-    <div class="card">
-      <div class="title">Warrior Yoga</div>
-      <a class="link" href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank">
-        Watch Channel
-      </a>
-    </div>
-
-    <div class="card">
-      <div class="title">Heroic Sport</div>
-      <a class="link" href="https://www.youtube.com/@HeroicSport/videos" target="_blank">
-        Watch Channel
-      </a>
+    <div class="item">
+      <a href="https://www.youtube.com/@HeroicSport" target="_blank">Heroic Sport</a>
     </div>
 
   </div>
 </div>
 
 <footer>
-Akhada Training © 2026
+© Akhada 2026
 </footer>
 
 </body>
