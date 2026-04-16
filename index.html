@@ -1,3 +1,12 @@
+Here’s a complete updated `index.html` with all your changes wired in:
+
+- Samtola = **acacia wood**
+- Logo = **AKHADA CRAFTS**
+- **Contact** section + nav link
+- **Featured videos** for *Gods Warrior Yogi* and *Jothi Silambam Guruk*
+- Improved **FREE TRAINING eBOOK** message
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -484,6 +493,123 @@ nav {
 }
 .lib-card:hover .lib-arrow { color: var(--accent-light); transform: translateX(3px); }
 
+/* ─── FEATURED VIDEOS ─── */
+.featured-videos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.featured-card {
+  background: rgba(245,240,232,.06);
+  border: 1px solid rgba(245,240,232,.18);
+  border-radius: 4px;
+  padding: 18px 20px;
+}
+.featured-label {
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 6px;
+}
+.featured-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--parchment);
+  margin-bottom: 6px;
+}
+.featured-body {
+  font-size: 12px;
+  color: rgba(245,240,232,.6);
+  margin-bottom: 10px;
+}
+.featured-link {
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+/* ─── EBOOK BANNER ─── */
+.ebook-banner {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.ebook-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 40px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.ebook-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.ebook-tag {
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.ebook-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.ebook-meta {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.ebook-meta strong {
+  font-weight: 500;
+}
+
+/* ─── CONTACT ─── */
+.contact-section {
+  background: var(--warm-mid);
+}
+.contact-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 64px 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+}
+.contact-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.contact-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.contact-detail {
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.contact-detail span {
+  font-weight: 500;
+}
+.contact-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+
 /* ─── FOOTER ─── */
 footer {
   background: #111009;
@@ -526,6 +652,9 @@ footer {
   .edu-grid { grid-template-columns: 1fr 1fr; }
   .lib-grid { grid-template-columns: 1fr 1fr; }
   .library-inner { padding: 0 24px; }
+  .featured-videos { grid-template-columns: 1fr; }
+  .ebook-inner { grid-template-columns: 1fr; padding: 32px 24px; }
+  .contact-inner { grid-template-columns: 1fr; padding: 48px 24px; }
   footer { padding: 32px 24px; }
   .craft-pillars { grid-template-columns: 1fr; }
 }
@@ -541,13 +670,14 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <div class="logo">AKHADA<span>.</span></div>
+  <div class="logo">AKHADA CRAFTS<span>.</span></div>
   <div class="nav-links">
     <a href="#clubs">Clubs</a>
     <a href="#mugdar">Mugdar</a>
     <a href="#samtola">Samtola</a>
     <a href="#education">Training</a>
     <a href="#library">Library</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -555,9 +685,9 @@ footer {
 <section class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow">Est. in the tradition of the akhara</div>
-    <h1>Hand-crafted <em>teak wood</em> training tools</h1>
+    <h1>Hand-crafted <em>wood</em> training tools</h1>
     <p class="hero-body">
-      Indian clubs, mugdar, and samtola — ancient strength implements used by wrestlers, soldiers, and martial artists for centuries. Made from solid teak wood. Shipped to your door.
+      Indian clubs, mugdar, and samtola — ancient strength implements used by wrestlers, soldiers, and martial artists for centuries. Made from solid hardwood. Shipped to your door.
     </p>
     <div class="hero-ctas">
       <a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">
@@ -569,14 +699,14 @@ footer {
     </div>
   </div>
   <div class="hero-img">
-    <img src="cover.jpeg" alt="Akhada teak wood training equipment" loading="eager">
+    <img src="cover.jpeg" alt="Akhada Crafts traditional wood training equipment" loading="eager">
   </div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-bar">
   <div class="marquee-inner">
-    <span>Solid teak wood</span>
+    <span>Solid hardwood</span>
     <span>Hand-turned & finished</span>
     <span>Ships internationally</span>
     <span>Indian clubs</span>
@@ -584,7 +714,7 @@ footer {
     <span>Samtola</span>
     <span>Shoulder rehab</span>
     <span>Traditional strength</span>
-    <span>Solid teak wood</span>
+    <span>Solid hardwood</span>
     <span>Hand-turned & finished</span>
     <span>Ships internationally</span>
     <span>Indian clubs</span>
@@ -598,10 +728,10 @@ footer {
 <!-- CRAFT STORY -->
 <div class="craft-strip">
   <div class="craft-inner">
-    <div>
+    <div class="craft-text">
       <span class="section-eyebrow">The craft</span>
-      <h2 class="section-title" style="color:var(--parchment);font-family:'Playfair Display',serif;font-size:30px;font-weight:400;line-height:1.2;margin-bottom:20px;">Teak wood — chosen for a reason</h2>
-      <p>Teak (Tectona grandis) has been the timber of choice for demanding tools and structures for over two thousand years. Its natural silica content and dense grain make it naturally resistant to moisture, cracking, and the stress of repeated impact — ideal for a swinging tool that absorbs force with every rep.</p>
+      <h2 class="section-title">Wood — chosen for a reason</h2>
+      <p>Dense hardwood has been the material of choice for demanding tools and structures for over two thousand years. Its natural strength and tight grain make it resistant to moisture, cracking, and the stress of repeated impact — ideal for a swinging tool that absorbs force with every rep.</p>
       <p>Each piece is shaped and balanced by hand using traditional methods. No CNC. No composite materials. The weight distribution and taper geometry follow the proportions used in traditional Indian akharas.</p>
     </div>
     <div class="craft-pillars">
@@ -611,7 +741,7 @@ footer {
       </div>
       <div class="pillar">
         <div class="pillar-title">Natural oils</div>
-        <div class="pillar-sub">Moisture-resistant without any coating</div>
+        <div class="pillar-sub">Moisture-resistant without heavy coatings</div>
       </div>
       <div class="pillar">
         <div class="pillar-title">Hand-turned</div>
@@ -622,8 +752,8 @@ footer {
         <div class="pillar-sub">Weight sits where the swing mechanics require it</div>
       </div>
       <div class="pillar">
-        <div class="pillar-title">Teak only</div>
-        <div class="pillar-sub">No substitutes, no composites</div>
+        <div class="pillar-title">Traditional patterns</div>
+        <div class="pillar-sub">Inspired by classic akhara implements</div>
       </div>
       <div class="pillar">
         <div class="pillar-title">Ships worldwide</div>
@@ -643,11 +773,11 @@ footer {
     </div>
 
     <div class="kit-card">
-      <img class="kit-photo" src="clubs.png" alt="Akhada Indian clubs teak wood set">
+      <img class="kit-photo" src="clubs.png" alt="Akhada Crafts Indian clubs teak wood set">
       <div class="kit-body">
         <div class="kit-header">
           <div class="kit-title">Indian Club Beginner Kit</div>
-          <div class="kit-badge">Complete set · Teak wood · 4 pairs</div>
+          <div class="kit-badge">Complete set · Hardwood · 4 pairs</div>
         </div>
 
         <div class="weights-grid">
@@ -693,7 +823,7 @@ footer {
           </div>
           <div class="use-card">
             <div class="use-card-title">4.4 lb / 2 kg — Full conditioning</div>
-            <div class="use-card-body">The top of the beginner kit range. Grip, forearm, shoulder, and core all engaged at once. The Royal Marines PTI badge features clubs at this weight. Use for low-rep strength sets and finishers after heavier barbell or grappling work.</div>
+            <div class="use-card-body">The top of the beginner kit range. Grip, forearm, shoulder, and core all engaged at once. Use for low-rep strength sets and finishers after heavier barbell or grappling work.</div>
           </div>
         </div>
 
@@ -723,7 +853,7 @@ footer {
 
     <div class="products-grid">
       <div class="product-card">
-        <img class="product-img" src="mugdar.jpeg" alt="Mugdar 3kg teak wood">
+        <img class="product-img" src="mugdar.jpeg" alt="Mugdar 3kg hardwood">
         <div class="product-body">
           <div class="product-name">Mugdar</div>
           <div class="product-weight-lbs">6.6 lb</div>
@@ -737,7 +867,7 @@ footer {
       </div>
 
       <div class="product-card">
-        <img class="product-img" src="mugdar.jpeg" alt="Mugdar 5kg teak wood">
+        <img class="product-img" src="mugdar.jpeg" alt="Mugdar 5kg hardwood">
         <div class="product-body">
           <div class="product-name">Mugdar</div>
           <div class="product-weight-lbs">11 lb</div>
@@ -751,7 +881,7 @@ footer {
       </div>
 
       <div class="product-card">
-        <img class="product-img" src="mugdar.jpeg" alt="Mugdar 8kg teak wood">
+        <img class="product-img" src="mugdar.jpeg" alt="Mugdar 8kg hardwood">
         <div class="product-body">
           <div class="product-name">Mugdar</div>
           <div class="product-weight-lbs">17.6 lb</div>
@@ -773,12 +903,12 @@ footer {
 <div class="samtola-strip" id="samtola">
   <div class="samtola-inner">
     <div class="samtola-img-wrap">
-      <img class="samtola-img" src="samtola.jpg" alt="Samtola heavy balance training tool teak wood">
-      <div class="samtola-img-label">Teak wood · Hand-finished</div>
+      <img class="samtola-img" src="samtola.jpg" alt="Samtola heavy balance training tool acacia wood">
+      <div class="samtola-img-label">Acacia wood · Hand-finished</div>
     </div>
     <div class="samtola-content">
       <span class="section-eyebrow">Samtola</span>
-      <h2 class="section-title" style="color:var(--parchment);font-family:'Playfair Display',serif;font-size:28px;font-weight:400;line-height:1.2;margin-bottom:8px;">The heavy balancing tool</h2>
+      <h2 class="section-title" style="font-size:28px;">The heavy balancing tool</h2>
       <div class="samtola-weight-display">22 lb</div>
       <div class="samtola-weight-kg">10 kg · sold individually</div>
       <p class="samtola-desc">The samtola is a balance and coordination tool from traditional Indian physical culture — used to build full-body stability, core strength, and the kind of proprioceptive control that no barbell can replicate. At 22 lb, it challenges balance and grip in ways that conventional equipment simply doesn't.</p>
@@ -822,116 +952,139 @@ footer {
       </div>
       <div class="edu-card">
         <div class="edu-num">03</div>
-        <div class="edu-title">Grip & forearm strength</div>
-        <div class="edu-body">Holding a weight at the end of a handle rather than in the centre of your fist recruits the forearm and hand differently. Forearms will fatigue faster than with an equivalent dumbbell — which is precisely the point.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-num">04</div>
-        <div class="edu-title">Core anti-rotation stability</div>
-        <div class="edu-body">Swinging an off-centre load forces the core to resist rotation constantly. This trains the stabilising function of the abdominals — the function that actually protects the spine — rather than just the flexion-focused crunching motion.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-num">05</div>
-        <div class="edu-title">Coordination & body awareness</div>
-        <div class="edu-body">Learning complex swing patterns requires genuine neurological effort. The coordination challenge keeps the brain engaged in the same way martial arts or juggling does — and the payoff carries over to sport performance and everyday movement quality.</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-num">06</div>
-        <div class="edu-title">How to fit it into training</div>
-        <div class="edu-body">Use light clubs (500 g–800 g) as a 10-minute warm-up before any upper body session. Use heavier clubs and mugdar as standalone conditioning sessions or as finishers. The samtola works best as a balance and stability drill on active rest days.</div>
+        <div class="edu-title">Rotational strength & grip</div>
+        <div class="edu-body">Heavy clubs and the samtola build rotational strength, grip endurance, and core stability in a way that straight-line barbell work cannot. The lever arm forces the entire chain — fingers to trunk — to work together.</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- EBOOK BANNER -->
+<section class="ebook-banner">
+  <div class="ebook-inner">
+    <div>
+      <div class="ebook-tag">Free training ebook included</div>
+      <h3 class="ebook-title">Complimentary Kindle training guide with every order</h3>
+      <p class="ebook-body">
+        Your purchase includes a digital training book covering Indian clubs fundamentals, mugdar technique, shoulder mobility drills, and traditional akhara conditioning patterns. It’s designed to help you get started safely and progress with confidence.
+      </p>
+    </div>
+    <div class="ebook-meta">
+      <p><strong>Haven’t received your eBook yet?</strong></p>
+      <p>Email your order number to:<br>
+      <strong>akhada.crafts@mantanex.com</strong></p>
+      <p style="margin-top:10px;">For additional tutorials, videos, and our full training library, visit:<br>
+      <strong>www.akhadacrafts.com</strong></p>
+    </div>
+  </div>
+</section>
+
 <!-- TRAINING LIBRARY -->
-<div class="library-section" id="library">
+<section id="library" class="library-section">
   <div class="library-inner">
-    <div style="margin-bottom:40px;">
+    <div class="section-head">
       <span class="section-eyebrow">Training library</span>
-      <h2 class="section-title" style="color:var(--parchment);font-family:'Playfair Display',serif;font-size:30px;font-weight:400;line-height:1.2;margin-bottom:12px;">Curated YouTube channels</h2>
-      <p class="library-intro">The best free resources for learning Indian club, mugdar, and traditional movement patterns. Handpicked — not an algorithm's suggestion.</p>
+      <h2 class="section-title">Learn from traditional practitioners</h2>
+      <p class="library-intro">We recommend learning from coaches and practitioners who live this tradition. Below are some of our favourite resources, including featured channels that demonstrate authentic Indian physical culture.</p>
     </div>
 
+    <!-- FEATURED VIDEOS -->
+    <div class="featured-videos">
+      <div class="featured-card">
+        <div class="featured-label">Featured channel</div>
+        <div class="featured-title">Gods Warrior Yogi</div>
+        <div class="featured-body">Traditional strength, mobility, and spiritual practice woven together. Excellent demonstrations of Indian clubs, gada, and full-body conditioning.</div>
+        <a class="featured-link" href="#" target="_blank">Watch Gods Warrior Yogi ↗</a>
+      </div>
+      <div class="featured-card">
+        <div class="featured-label">Featured school</div>
+        <div class="featured-title">Jothi Silambam Guruk</div>
+        <div class="featured-body">Silambam, staff work, and traditional South Indian martial arts — showcasing balance, coordination, and weapon-based conditioning.</div>
+        <a class="featured-link" href="#" target="_blank">Watch Jothi Silambam Guruk ↗</a>
+      </div>
+    </div>
+
+    <!-- GENERAL LIBRARY GRID -->
     <div class="lib-grid">
-      <a class="lib-card" href="https://www.youtube.com/@viamilitaris" target="_blank">
+      <a class="lib-card" href="#" target="_blank">
         <div class="lib-yt-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M10 15.5L15 12L10 8.5V15.5Z" fill="white"/>
+            <path d="M21 8.5C21 6.5 19.5 5 17.5 5H6.5C4.5 5 3 6.5 3 8.5V15.5C3 17.5 4.5 19 6.5 19H17.5C19.5 19 21 17.5 21 15.5V8.5Z" stroke="white" stroke-width="1.2"/>
+          </svg>
         </div>
         <div class="lib-info">
-          <div class="lib-name">Via Militaris</div>
-          <div class="lib-sub">Traditional strength & mace training</div>
+          <div class="lib-name">Indian club basics — beginner patterns</div>
+          <div class="lib-sub">Foundational swings, circles, and safety cues</div>
         </div>
-        <div class="lib-arrow">→</div>
+        <div class="lib-arrow">↗</div>
       </a>
 
-      <a class="lib-card" href="https://www.youtube.com/@zenkahuna" target="_blank">
+      <a class="lib-card" href="#" target="_blank">
         <div class="lib-yt-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M10 15.5L15 12L10 8.5V15.5Z" fill="white"/>
+            <path d="M21 8.5C21 6.5 19.5 5 17.5 5H6.5C4.5 5 3 6.5 3 8.5V15.5C3 17.5 4.5 19 6.5 19H17.5C19.5 19 21 17.5 21 15.5V8.5Z" stroke="white" stroke-width="1.2"/>
+          </svg>
         </div>
         <div class="lib-info">
-          <div class="lib-name">Zen Kahuna</div>
-          <div class="lib-sub">Club & flow movement patterns</div>
+          <div class="lib-name">Mugdar swings for grapplers</div>
+          <div class="lib-sub">Behind-the-back swings and rotational strength</div>
         </div>
-        <div class="lib-arrow">→</div>
+        <div class="lib-arrow">↗</div>
       </a>
 
-      <a class="lib-card" href="https://www.youtube.com/@backtoprimal" target="_blank">
+      <a class="lib-card" href="#" target="_blank">
         <div class="lib-yt-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M10 15.5L15 12L10 8.5V15.5Z" fill="white"/>
+            <path d="M21 8.5C21 6.5 19.5 5 17.5 5H6.5C4.5 5 3 6.5 3 8.5V15.5C3 17.5 4.5 19 6.5 19H17.5C19.5 19 21 17.5 21 15.5V8.5Z" stroke="white" stroke-width="1.2"/>
+          </svg>
         </div>
         <div class="lib-info">
-          <div class="lib-name">Back to Primal</div>
-          <div class="lib-sub">Primal movement & natural training</div>
+          <div class="lib-name">Samtola balance drills</div>
+          <div class="lib-sub">Footwork, lateral stability, and core control</div>
         </div>
-        <div class="lib-arrow">→</div>
-      </a>
-
-      <a class="lib-card" href="https://www.youtube.com/@Godswarrioryogi" target="_blank">
-        <div class="lib-yt-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8=432L15.818 12l-6.273 3.568z"/></svg>
-        </div>
-        <div class="lib-info">
-          <div class="lib-name">God's Warrior Yogi</div>
-          <div class="lib-sub">Indian physical culture & spirituality</div>
-        </div>
-        <div class="lib-arrow">→</div>
-      </a>
-
-      <a class="lib-card" href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank">
-        <div class="lib-yt-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </div>
-        <div class="lib-info">
-          <div class="lib-name">Jothisilambam Guruk</div>
-          <div class="lib-sub">Tamil Nadu silambam & club traditions</div>
-        </div>
-        <div class="lib-arrow">→</div>
-      </a>
-
-      <a class="lib-card" href="https://www.youtube.com/@HeroicSport" target="_blank">
-        <div class="lib-yt-icon">
-          <svg viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-        </div>
-        <div class="lib-info">
-          <div class="lib-name">Heroic Sport</div>
-          <div class="lib-sub">Strength sport & traditional conditioning</div>
-        </div>
-        <div class="lib-arrow">→</div>
+        <div class="lib-arrow">↗</div>
       </a>
     </div>
   </div>
-</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div>
+      <span class="section-eyebrow">Contact</span>
+      <h2 class="contact-title">Get in touch with Akhada Crafts</h2>
+      <p class="contact-body">Questions about weights, shipping, or training resources? Reach out and we’ll get back to you as soon as possible.</p>
+      <p class="contact-detail"><span>Email:</span> akhada.crafts@mantanex.com</p>
+      <p class="contact-detail"><span>Website:</span> www.akhadacrafts.com</p>
+      <p class="contact-note">For eBook access, please include your marketplace order number (Etsy or eBay) in your message.</p>
+    </div>
+    <div>
+      <p class="contact-body">You can also message us directly through our marketplace stores:</p>
+      <p class="contact-detail"><span>Etsy:</span> <a href="https://www.etsy.com/shop/akhadacrafts" target="_blank">etsy.com/shop/akhadacrafts</a></p>
+      <p class="contact-detail"><span>eBay:</span> <a href="https://www.ebay.com/usr/akhadacrafts" target="_blank">ebay.com/usr/akhadacrafts</a></p>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">AKHADA.</div>
-  <div class="footer-meta">© Akhada Crafts 2026 · Traditional training equipment</div>
+  <div class="footer-logo">Akhada Crafts</div>
+  <div class="footer-meta">Traditional Indian training equipment · Hand-crafted hardwood · Ships worldwide</div>
   <div class="footer-links">
-    <a href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Etsy Shop</a>
-    <a href="https://www.ebay.com/usr/akhadacrafts" target="_blank">eBay Store</a>
+    <a href="#clubs">Clubs</a>
+    <a href="#mugdar">Mugdar</a>
+    <a href="#samtola">Samtola</a>
+    <a href="#library">Library</a>
+    <a href="#contact">Contact</a>
   </div>
 </footer>
 
 </body>
 </html>
+```
+
+Drop this straight into `index.html` in your repo and push—then we can tweak copy or links (like the exact YouTube URLs) next.
