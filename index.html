@@ -1,154 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Training Library</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akhada Training & Equipment</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    background: #0b0c10;
-    color: #ffffff;
-  }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0b0c10;
+  color: white;
+}
 
-  header {
-    padding: 60px 20px 30px;
-    text-align: center;
-  }
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #111;
+  border-bottom: 1px solid #222;
+}
 
-  header h1 {
-    font-size: 34px;
-    margin: 0;
-    font-weight: 600;
-  }
+nav a {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 20px;
+}
 
-  header p {
-    color: #9aa0a6;
-    margin-top: 10px;
-    font-size: 14px;
-  }
+nav a:hover {
+  color: white;
+}
 
-  .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-  }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px 50px;
+}
 
-  .search {
-    width: 100%;
-    padding: 14px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    margin-bottom: 30px;
-    font-size: 14px;
-    background: #16181d;
-    color: white;
-  }
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
+.hero p {
+  color: #aaa;
+}
 
-  .card {
-    background: #15171c;
-    border-radius: 14px;
-    padding: 18px;
-    transition: 0.2s ease;
-    border: 1px solid #22252c;
-  }
+/* SECTION */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: #3a82f7;
-  }
+.section h2 {
+  margin-bottom: 20px;
+}
 
-  .title {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    color: #ffffff;
-  }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
 
-  .link {
-    display: block;
-    color: #8ab4f8;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 6px 0;
-  }
+/* CARD */
+.card {
+  background: #15171c;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 15px;
+  transition: 0.2s;
+}
 
-  .link:hover {
-    text-decoration: underline;
-  }
+.card:hover {
+  border-color: #3a82f7;
+  transform: translateY(-4px);
+}
 
-  .tag {
-    font-size: 12px;
-    color: #9aa0a6;
-    margin-bottom: 10px;
-  }
+/* IMAGE */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-  footer {
-    text-align: center;
-    padding: 40px;
-    color: #666;
-    font-size: 12px;
-  }
+/* TITLE */
+.title {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* TEXT */
+.desc {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* LINK */
+.link {
+  display: block;
+  margin-top: 8px;
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Training Library</h1>
-  <p>Curated knowledge for movement, discipline, martial arts, and mindset</p>
-</header>
+<!-- NAVBAR -->
+<nav>
+  <div><strong>Akhada</strong></div>
+  <div>
+    <a href="#equipment">Equipment</a>
+    <a href="#catalog">Catalog</a>
+    <a href="#library">Library</a>
+  </div>
+</nav>
 
-<div class="container">
+<!-- HERO -->
+<div class="hero">
+  <h1>Traditional Strength Training</h1>
+  <p>Handcrafted teak wood equipment + curated training knowledge</p>
+</div>
 
-  <input class="search" type="text" id="search" placeholder="Search library..." onkeyup="filterCards()"/>
+<!-- EQUIPMENT -->
+<div class="section" id="equipment">
+  <h2>Equipment (Teak Wood)</h2>
 
   <div class="grid">
 
-    <!-- Martial Arts -->
-    <div class="card" data-key="silambam martial arts traditional combat">
-      <div class="title">Martial Arts</div>
-      <div class="tag">Traditional Combat Systems</div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300" />
+      <div class="title">Indian Clubs (Beginner Kit)</div>
+      <div class="desc">500g, 800g, 1.5kg, 2kg set — sold as full kit only</div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300" />
+      <div class="title">Mugdar Set</div>
+      <div class="desc">Traditional gada training pairs in multiple weights</div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300" />
+      <div class="title">Samtola</div>
+      <div class="desc">Heavy balance and strength tool — $349</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CATALOG -->
+<div class="section" id="catalog">
+  <h2>Catalog</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300" />
+      <div class="title">Full Beginner Bundle</div>
+      <div class="desc">Includes clubs + training material</div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/400x300" />
+      <div class="title">Advanced Training Kit</div>
+      <div class="desc">Heavy clubs + mugdar combination</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LIBRARY -->
+<div class="section" id="library">
+  <h2>Training Library</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="title">Silambam Training</div>
       <a class="link" href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk/videos" target="_blank">
-        Silambam Kshatriya Training
+        Watch Channel
       </a>
     </div>
 
-    <!-- Fitness -->
-    <div class="card" data-key="primal fitness movement strength conditioning">
-      <div class="title">Primal Fitness</div>
-      <div class="tag">Natural Movement & Strength</div>
+    <div class="card">
+      <div class="title">Primal Movement</div>
       <a class="link" href="https://www.youtube.com/@backtoprimal/videos" target="_blank">
-        Back to Primal
+        Watch Channel
       </a>
     </div>
 
-    <!-- Mindset -->
-    <div class="card" data-key="meditation philosophy zen mindset consciousness">
-      <div class="title">Mindset</div>
-      <div class="tag">Philosophy & Awareness</div>
+    <div class="card">
+      <div class="title">Zen Philosophy</div>
       <a class="link" href="https://www.youtube.com/@zenkahuna/videos" target="_blank">
-        Zen Kahuna
+        Watch Channel
       </a>
     </div>
 
-    <!-- Spiritual Discipline -->
-    <div class="card" data-key="yoga warrior discipline spiritual training">
-      <div class="title">Spiritual Discipline</div>
-      <div class="tag">Yoga & Warrior Path</div>
+    <div class="card">
+      <div class="title">Warrior Yoga</div>
       <a class="link" href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank">
-        God’s Warrior Yogi
+        Watch Channel
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="title">Heroic Sport</div>
+      <a class="link" href="https://www.youtube.com/@HeroicSport/videos" target="_blank">
+        Watch Channel
       </a>
     </div>
 
@@ -156,24 +232,8 @@
 </div>
 
 <footer>
-  Training Library © 2026
+Akhada Training © 2026
 </footer>
-
-<script>
-function filterCards() {
-  let input = document.getElementById("search").value.toLowerCase();
-  let cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    let key = card.getAttribute("data-key");
-    if (key.includes(input)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-</script>
 
 </body>
 </html>
