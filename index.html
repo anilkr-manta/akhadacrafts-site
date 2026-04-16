@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Akhada Crafts — Shop</title>
   <meta name="description" content="Handcrafted Indian clubs, mudgars, and samtola." />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     :root{
       --bg:#f5f0e8;
@@ -15,674 +16,226 @@
       --muted:#7a6f60;
       --line:#e4dbd0;
       --accent:#a07840;
-      --accent-soft:#f0e4cc;
       --accent-dark:#7a5c2e;
       --max:1200px;
       --r:16px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
-    img{display:block;max-width:100%}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
+    img{max-width:100%;display:block}
     a{text-decoration:none;color:inherit}
     .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
 
     /* NAV */
-    .nav{position:sticky;top:0;z-index:100;background:rgba(245,240,232,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-    .nav-inner{height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;letter-spacing:.06em;color:var(--accent)}
-    .nav-links{display:flex;gap:22px;color:var(--muted);font-size:.9rem;font-weight:400}
+    .nav{position:sticky;top:0;background:rgba(245,240,232,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;height:66px}
+    .brand{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--accent)}
+    .nav-links{display:flex;gap:20px;color:var(--muted);font-size:.9rem}
     .nav-links a:hover{color:var(--text)}
-    .cart-btn{position:relative;background:var(--text);color:#fff;border:none;border-radius:999px;padding:8px 18px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s}
-    .cart-btn:hover{background:var(--accent)}
-    .cart-count{background:#fff;color:var(--text);border-radius:999px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:500;transition:all .2s}
-    .cart-count.bump{transform:scale(1.4)}
 
     /* HERO */
-    .hero{min-height:78vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(245,238,224,0.78)),url('cover.jpeg') center/cover no-repeat}
-    .hero-inner{padding:80px 0 52px}
-    .eyebrow{display:inline-block;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--accent);margin-bottom:12px}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6.5vw,5rem);line-height:.94;letter-spacing:-.02em;max-width:11ch;margin-bottom:14px;color:var(--text)}
-    .hero p{max-width:600px;color:#4f473d;font-size:1rem;margin-bottom:28px;font-weight:300}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{min-height:44px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-weight:500;font-size:.9rem;cursor:pointer;border:1.5px solid var(--accent);transition:all .2s}
+    .hero{min-height:70vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(245,238,224,.8)),url('cover.jpeg') center/cover}
+    .hero-inner{padding:80px 0}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);line-height:1}
+
+    .btn{display:inline-block;padding:10px 18px;border-radius:999px;border:1.5px solid var(--accent);font-size:.9rem}
     .btn.primary{background:var(--accent);color:#fff}
-    .btn.primary:hover{background:var(--accent-dark)}
-    .btn.secondary{color:var(--accent);background:rgba(255,255,255,0.5)}
-    .btn.secondary:hover{background:rgba(255,255,255,0.75)}
 
-    /* SECTIONS */
-    section{padding:72px 0}
-    .section-head{text-align:center;max-width:680px;margin:0 auto 40px}
-    .section-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.02em;margin-bottom:8px}
-    .section-head p{color:var(--muted);font-weight:300}
+    section{padding:70px 0}
+    .section-head{text-align:center;margin-bottom:40px}
+    .section-head h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem}
 
-    /* FILTER BAR */
-    .filter-bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:40px}
-    .filter-btn{padding:7px 18px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--muted);cursor:pointer;transition:all .2s}
-    .filter-btn:hover{border-color:var(--accent);color:var(--accent)}
-    .filter-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
-
-    /* PRODUCTS GRID */
+    /* PRODUCTS */
     .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .product-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
-    .product-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(80,60,30,.1)}
-    .product-card.hidden{display:none}
-    .product-img-wrap{position:relative;overflow:hidden;background:#f0ebe0}
-    .product-img-wrap img{width:100%;height:260px;object-fit:cover;transition:transform .4s}
-    .product-card:hover .product-img-wrap img{transform:scale(1.04)}
-    .sold-out-badge{position:absolute;top:12px;right:12px;background:rgba(30,28,25,.72);color:#fff;font-size:.74rem;padding:4px 10px;border-radius:999px;letter-spacing:.06em;text-transform:uppercase}
-    .product-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:12px}
-    .product-category{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
-    .product-name{font-family:'Cormorant Garamond',serif;font-size:1.55rem;line-height:1.1;letter-spacing:-.01em}
-    .product-desc{font-size:.88rem;color:var(--muted);font-weight:300;flex:1}
-    .product-variants{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-    .variant-btn{padding:5px 12px;border-radius:999px;border:1.5px solid var(--line);background:transparent;font-family:'DM Sans',sans-serif;font-size:.8rem;color:var(--muted);cursor:pointer;transition:all .15s}
-    .variant-btn:hover{border-color:var(--accent);color:var(--accent)}
-    .variant-btn.selected{background:var(--accent-soft);border-color:var(--accent);color:var(--accent-dark)}
-    .product-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
-    .product-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;letter-spacing:-.01em}
-    .add-to-cart{background:var(--text);color:#fff;border:none;border-radius:999px;padding:9px 18px;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;transition:background .2s;white-space:nowrap}
-    .add-to-cart:hover{background:var(--accent)}
-    .add-to-cart:disabled{background:#c5bfb5;cursor:not-allowed}
+    .product-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+    .product-img-wrap img{height:260px;object-fit:cover;width:100%}
+    .product-body{padding:18px}
+    .product-category{font-size:.75rem;color:var(--accent);text-transform:uppercase}
+    .product-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin:6px 0}
+    .product-desc{color:var(--muted);font-size:.9rem}
 
-    /* CART DRAWER */
-    .cart-overlay{position:fixed;inset:0;background:rgba(20,18,14,.4);z-index:199;opacity:0;pointer-events:none;transition:opacity .25s}
-    .cart-overlay.open{opacity:1;pointer-events:all}
-    .cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:var(--bg-soft);z-index:200;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;border-left:1px solid var(--line)}
-    .cart-drawer.open{transform:translateX(0)}
-    .cart-header{padding:22px 24px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
-    .cart-header h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;letter-spacing:-.01em}
-    .close-btn{background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.3rem;line-height:1;padding:4px;border-radius:8px;transition:color .2s}
-    .close-btn:hover{color:var(--text)}
-    .cart-items{flex:1;overflow-y:auto;padding:16px 24px}
-    .cart-empty{text-align:center;padding:48px 0;color:var(--muted);font-weight:300}
-    .cart-item{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid var(--line)}
-    .cart-item:last-child{border-bottom:none}
-    .cart-item img{width:72px;height:72px;object-fit:cover;border-radius:10px}
-    .cart-item-info h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin-bottom:2px}
-    .cart-item-info .variant-label{font-size:.8rem;color:var(--muted)}
-    .cart-item-controls{display:flex;align-items:center;gap:8px;margin-top:8px}
-    .qty-btn{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--text);transition:all .15s}
-    .qty-btn:hover{border-color:var(--accent);color:var(--accent)}
-    .qty-display{min-width:22px;text-align:center;font-size:.9rem;font-weight:500}
-    .cart-item-price{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;white-space:nowrap}
-    .remove-item{background:none;border:none;cursor:pointer;color:#c5bfb5;font-size:.8rem;margin-top:4px;display:block;transition:color .2s}
-    .remove-item:hover{color:#e24b4a}
-    .cart-footer{padding:20px 24px;border-top:1px solid var(--line)}
-    .cart-subtotal{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
-    .cart-subtotal span:first-child{color:var(--muted);font-size:.9rem}
-    .cart-subtotal .subtotal-val{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600}
-    .cart-note{font-size:.78rem;color:var(--muted);margin-bottom:16px;font-weight:300}
-    .checkout-btn{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:999px;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;cursor:pointer;transition:background .2s}
-    .checkout-btn:hover{background:var(--accent-dark)}
-    .checkout-btn:disabled{background:#c5bfb5;cursor:not-allowed}
+    .inquire-btn{
+      margin-top:14px;
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:999px;
+      background:var(--text);
+      color:#fff;
+      font-size:.85rem;
+    }
+    .inquire-btn:hover{background:var(--accent)}
 
-    /* CHECKOUT MODAL */
-    .modal-overlay{position:fixed;inset:0;background:rgba(20,18,14,.55);z-index:300;display:none;align-items:center;justify-content:center;padding:20px}
-    .modal-overlay.open{display:flex}
-    .modal{background:var(--bg-soft);border-radius:var(--r);width:min(540px,100%);max-height:90vh;overflow-y:auto;padding:32px}
-    .modal h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:6px}
-    .modal .sub{color:var(--muted);font-size:.9rem;margin-bottom:28px;font-weight:300}
-    .order-summary{background:var(--bg);border-radius:12px;padding:16px;margin-bottom:24px}
-    .order-row{display:flex;justify-content:space-between;font-size:.88rem;padding:5px 0;color:var(--muted)}
-    .order-row.total{font-weight:500;color:var(--text);font-size:.95rem;border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
-    .stripe-placeholder{border:2px dashed var(--line);border-radius:12px;padding:28px;text-align:center;margin-bottom:20px}
-    .stripe-placeholder p{color:var(--muted);font-size:.88rem;margin-bottom:12px}
-    .stripe-placeholder code{font-size:.78rem;background:var(--bg);padding:3px 8px;border-radius:6px;color:var(--accent)}
-    .modal-actions{display:flex;gap:10px}
-    .modal-actions .btn{flex:1}
-
-    /* WORKOUTS */
-    .workouts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .workout-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-    .workout-card h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin:8px 0 6px}
-    .workout-card .wt{font-weight:500;font-size:.88rem;color:var(--text);margin-bottom:10px}
-    .workout-card ul{padding-left:16px;color:var(--muted);font-size:.88rem;font-weight:300}
-    .workout-card ul li{padding:3px 0}
+    /* BUNDLE */
+    .bundle{background:var(--text);color:#fff}
+    .bundle .section-head h2{color:#fff}
+    .bundle-box{background:rgba(255,255,255,.05);padding:24px;border-radius:16px}
 
     /* LIBRARY */
-    .library{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .library{background:var(--bg-soft)}
     .links-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .link-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;transition:border-color .2s,transform .2s;display:block}
-    .link-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-    .link-card strong{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--accent);display:block;margin-bottom:6px}
-    .link-card span{font-size:.84rem;color:var(--muted);font-weight:300}
+    .link-card{background:#fff;border:1px solid var(--line);padding:18px;border-radius:16px}
 
     /* CONTACT */
-    .contact-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:32px;text-align:center;max-width:600px;margin:0 auto}
-    .contact-card h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin:8px 0 10px}
-    .contact-card p{color:var(--muted);font-weight:300;margin-bottom:18px}
-    .contact-email{display:inline-block;font-size:1.05rem;font-weight:500;color:var(--accent)}
+    .contact-card{background:#fff;border:1px solid var(--line);padding:30px;text-align:center;border-radius:16px}
 
-    footer{padding:28px 0 36px;text-align:center;color:var(--muted);font-size:.85rem;font-weight:300;border-top:1px solid var(--line)}
+    footer{padding:30px;text-align:center;color:var(--muted);border-top:1px solid var(--line)}
 
-    @media(max-width:960px){
+    @media(max-width:900px){
       .products-grid{grid-template-columns:repeat(2,1fr)}
-      .links-grid{grid-template-columns:repeat(2,1fr)}
-      #bundle .container > div:last-of-type > div:first-child{grid-template-columns:1fr}
+      .links-grid{grid-template-columns:1fr}
     }
-    @media(max-width:680px){
-      .products-grid,.workouts-grid,.links-grid{grid-template-columns:1fr}
+    @media(max-width:600px){
+      .products-grid{grid-template-columns:1fr}
       .nav-links{display:none}
-      #bundle .bundle-grid{grid-template-columns:1fr !important}
     }
   </style>
 </head>
+
 <body>
 
 <!-- NAV -->
 <div class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="#top">Akhada Crafts</a>
+    <div class="brand">Akhada Crafts</div>
     <div class="nav-links">
-      <a href="#about">About</a>
       <a href="#shop">Shop</a>
       <a href="#bundle">Bundle</a>
-      <a href="#workouts">Workouts</a>
       <a href="#library">Library</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="cart-btn" onclick="toggleCart()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      Cart <span class="cart-count" id="cart-count">0</span>
-    </button>
   </div>
 </div>
 
 <!-- HERO -->
-<main id="top">
-  <section class="hero">
-    <div class="container hero-inner">
-      <span class="eyebrow">The legacy of Indian strength</span>
-      <h1>Handcrafted clubs, mudgars & samtola.</h1>
-      <p>Traditional Indian strength equipment — made by hand, built for practice. Shop directly and receive your equipment with care.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#shop">Shop now</a>
-        <a class="btn secondary" href="#workouts">View workouts</a>
-      </div>
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <h1>Handcrafted clubs, mudgars & traditional strength tools.</h1>
+    <p style="color:#4f473d;max-width:600px;margin-top:12px">
+      Traditional Indian training equipment made by hand for strength, flow, and discipline.
+    </p>
+    <a class="btn primary" href="#shop">Explore collection</a>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="container">
+    <div class="section-head">
+      <h2>Equipment</h2>
+      <p style="color:var(--muted)">Browse handcrafted tools. Contact for details or orders.</p>
     </div>
-  </section>
 
-  <!-- SHOP -->
-  <section id="shop">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Equipment</span>
-        <h2>Available equipment</h2>
-        <p>All pieces are handcrafted. Select a variant and add to your cart. Inquire by email for bulk or custom orders.</p>
-      </div>
+    <div class="products-grid">
 
-      <div class="filter-bar">
-        <button class="filter-btn active" onclick="filterProducts('all',this)">All</button>
-        <button class="filter-btn" onclick="filterProducts('clubs',this)">Indian Clubs</button>
-        <button class="filter-btn" onclick="filterProducts('mudgar',this)">Mudgar</button>
-        <button class="filter-btn" onclick="filterProducts('samtola',this)">Samtola</button>
-      </div>
-
-      <div class="products-grid" id="products-grid">
-
-        <!-- CLUBS -->
-        <article class="product-card" data-category="clubs">
-          <div class="product-img-wrap">
-            <img src="clubs.png" alt="Indian Clubs — Starter Pair">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Pair clubs</span>
-            <div class="product-name">Indian Clubs — Starter</div>
-            <div class="product-desc">Lighter paired tools for rhythm, mobility, and coordination. Ideal for beginners building their foundation.</div>
-            <div class="product-variants" data-product="clubs-starter">
-              <button class="variant-btn selected" data-weight="1.1 lb" data-price="38" onclick="selectVariant(this,'clubs-starter')">1.1 lb — $38</button>
-              <button class="variant-btn" data-weight="1.8–2.2 lb" data-price="48" onclick="selectVariant(this,'clubs-starter')">1.8–2.2 lb — $48</button>
-            </div>
-            <div class="product-footer">
-              <span class="product-price" id="price-clubs-starter">$38</span>
-              <button class="add-to-cart" onclick="addToCart('clubs-starter','Indian Clubs — Starter','clubs.png')">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="clubs">
-          <div class="product-img-wrap">
-            <img src="clubs.png" alt="Indian Clubs — Progression Pair">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Pair clubs</span>
-            <div class="product-name">Indian Clubs — Progression</div>
-            <div class="product-desc">Heavier pair for those who've mastered the starter weight. Builds strength and flow patterns.</div>
-            <div class="product-variants" data-product="clubs-prog">
-              <button class="variant-btn selected" data-weight="3.3 lb" data-price="58" onclick="selectVariant(this,'clubs-prog')">3.3 lb — $58</button>
-            </div>
-            <div class="product-footer">
-              <span class="product-price" id="price-clubs-prog">$58</span>
-              <button class="add-to-cart" onclick="addToCart('clubs-prog','Indian Clubs — Progression','clubs.png')">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- MUDGAR -->
-        <article class="product-card" data-category="mudgar">
-          <div class="product-img-wrap">
-            <img src="mugdar.jpeg" alt="Mudgar — Light">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Strength tools</span>
-            <div class="product-name">Mudgar — Light</div>
-            <div class="product-desc">Entry-level mudgar for learning leverage and shoulder cast patterns. Best for new users.</div>
-            <div class="product-variants" data-product="mudgar-light">
-              <button class="variant-btn selected" data-weight="4.4 lb" data-price="54" onclick="selectVariant(this,'mudgar-light')">4.4 lb — $54</button>
-            </div>
-            <div class="product-footer">
-              <span class="product-price" id="price-mudgar-light">$54</span>
-              <button class="add-to-cart" onclick="addToCart('mudgar-light','Mudgar — Light','mugdar.jpeg')">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="mudgar">
-          <div class="product-img-wrap">
-            <img src="mugdar.jpeg" alt="Mudgar — Mid">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Strength tools</span>
-            <div class="product-name">Mudgar — Mid</div>
-            <div class="product-desc">Intermediate mudgar for strength-oriented training. Requires solid technique before use.</div>
-            <div class="product-variants" data-product="mudgar-mid">
-              <button class="variant-btn selected" data-weight="11 lb" data-price="78" onclick="selectVariant(this,'mudgar-mid')">11 lb — $78</button>
-              <button class="variant-btn" data-weight="13.2 lb" data-price="88" onclick="selectVariant(this,'mudgar-mid')">13.2 lb — $88</button>
-            </div>
-            <div class="product-footer">
-              <span class="product-price" id="price-mudgar-mid">$78</span>
-              <button class="add-to-cart" onclick="addToCart('mudgar-mid','Mudgar — Mid','mugdar.jpeg')">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card" data-category="mudgar">
-          <div class="product-img-wrap">
-            <img src="mugdar.jpeg" alt="Mudgar — Heavy">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Strength tools</span>
-            <div class="product-name">Mudgar — Heavy</div>
-            <div class="product-desc">For experienced practitioners. Serious leverage conditioning. Not for beginners.</div>
-            <div class="product-variants" data-product="mudgar-heavy">
-              <button class="variant-btn selected" data-weight="17.6 lb" data-price="108" onclick="selectVariant(this,'mudgar-heavy')">17.6 lb — $108</button>
-              <button class="variant-btn" data-weight="19.8 lb" data-price="118" onclick="selectVariant(this,'mudgar-heavy')">19.8 lb — $118</button>
-            </div>
-            <div class="product-footer">
-              <span class="product-price" id="price-mudgar-heavy">$108</span>
-              <button class="add-to-cart" onclick="addToCart('mudgar-heavy','Mudgar — Heavy','mugdar.jpeg')">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- SAMTOLA -->
-        <article class="product-card" data-category="samtola">
-          <div class="product-img-wrap">
-            <img src="samtola.jpg" alt="Samtola">
-          </div>
-          <div class="product-body">
-            <span class="product-category">Traditional heavy format</span>
-            <div class="product-name">Samtola</div>
-            <div class="product-desc">A larger traditional format for heavier leverage-based conditioning. A serious tool for serious practice.</div>
-            <div class="product-variants" data-product="samtola">
-              <button class="variant-btn selected" data-weight="22 lb" data-price="148" onclick="selectVariant(this,'samtola')">22 lb — $148</button>
-            </div>
-            <div class="product-footer">
-              <span class="product-price" id="price-samtola">$148</span>
-              <button class="add-to-cart" onclick="addToCart('samtola','Samtola','samtola.jpg')">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- BUNDLE -->
-  <section id="bundle" style="background:var(--text);color:#fff;padding:72px 0">
-    <div class="container">
-      <div class="section-head" style="margin-bottom:48px">
-        <span class="eyebrow" style="color:var(--accent)">Featured kit</span>
-        <h2 style="color:#fff">Complete Beginner Kit</h2>
-        <p style="color:rgba(255,255,255,0.55)">Everything you need to start your Indian club practice — handcrafted equipment and essential knowledge, bundled together.</p>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start">
-        <div>
-          <div style="display:grid;gap:12px">
-            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Indian Clubs</div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">500g Pair</div>
-              </div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Indian Clubs</div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">800g Pair</div>
-              </div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Indian Clubs</div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">1.5 kg Pair</div>
-              </div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Mudgar</div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">2 kg Pair</div>
-              </div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <div style="background:rgba(160,120,64,0.15);border:1px solid rgba(160,120,64,0.4);border-radius:var(--r);padding:18px 20px;display:flex;align-items:center;justify-content:space-between">
-              <div>
-                <div style="font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Kindle Book</div>
-                <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;line-height:1.2">Karlakattai: Ancient Warrior Practice</div>
-                <a href="https://www.amazon.com/s?k=Karlakattai+Ancient+Warrior+Practice+Kindle" target="_blank" rel="noopener" style="font-size:.78rem;color:var(--accent);margin-top:4px;display:inline-block">View on Amazon ↗</a>
-              </div>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(160,120,64,0.6)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-          </div>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="clubs.png">
         </div>
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:20px">
-          <div>
-            <div style="font-size:.8rem;color:rgba(255,255,255,0.45);margin-bottom:6px;letter-spacing:.06em;text-transform:uppercase">Bundle price</div>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:600;line-height:1;color:#fff">$849</div>
-          </div>
-          <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
-            <div style="font-size:.85rem;color:rgba(255,255,255,0.5);margin-bottom:14px;font-weight:300;line-height:1.6">Includes 5 items shipped together. The Kindle book is a recommended third-party title available separately on Amazon.</div>
-            <ul style="list-style:none;padding:0;display:grid;gap:8px;margin-bottom:20px">
-              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> 4 handcrafted wooden pieces</li>
-              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> Progressive weight system</li>
-              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> Recommended training book included</li>
-              <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> U.S. shipping</li>
-            </ul>
-          </div>
-          <button class="add-to-cart" style="width:100%;padding:14px;font-size:.95rem;border-radius:999px;background:var(--accent);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#7a5c2e'" onmouseout="this.style.background='var(--accent)'" onclick="addBundleToCart()">Add kit to cart — $849</button>
-          <p style="font-size:.78rem;color:rgba(255,255,255,0.3);text-align:center;font-weight:300">Inquire by email for international shipping or custom orders.</p>
+        <div class="product-body">
+          <div class="product-category">Indian Clubs</div>
+          <div class="product-name">Starter Pair</div>
+          <div class="product-desc">Lightweight clubs for beginners and mobility training.</div>
+          <a class="inquire-btn" href="mailto:akhada.crafts@mantanex.com">Inquire</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- WORKOUTS -->
-  <section id="workouts" style="background:var(--bg-soft);border-top:1px solid var(--line)">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Beginner workouts</span>
-        <h2>Starter practice & weight guidance</h2>
-        <p>Begin with lighter pairs. Progress only after full control and comfort at each level.</p>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="clubs.png">
+        </div>
+        <div class="product-body">
+          <div class="product-category">Indian Clubs</div>
+          <div class="product-name">Progression Pair</div>
+          <div class="product-desc">Heavier clubs for advanced flow and strength.</div>
+          <a class="inquire-btn" href="mailto:akhada.crafts@mantanex.com">Inquire</a>
+        </div>
       </div>
-      <div class="workouts-grid">
-        <article class="workout-card">
-          <span class="eyebrow">Workout 1</span>
-          <h3>Foundation Circles</h3>
-          <div class="wt">Recommended: 1.1 lb pair clubs</div>
-          <ul>
-            <li>Front circles — 2 sets of 20</li>
-            <li>Back circles — 2 sets of 20</li>
-            <li>Pendulum swings — 2 sets of 15</li>
-            <li>Rest 45–60 seconds between sets</li>
-          </ul>
-        </article>
-        <article class="workout-card">
-          <span class="eyebrow">Workout 2</span>
-          <h3>Control & Rhythm</h3>
-          <div class="wt">Recommended: 1.8–2.2 lb pair clubs</div>
-          <ul>
-            <li>Inside circles — 3 sets of 15</li>
-            <li>Outside circles — 3 sets of 15</li>
-            <li>Cross-body swings — 2 sets of 12</li>
-            <li>Short flow rounds — 3 rounds of 45 seconds</li>
-          </ul>
-        </article>
-        <article class="workout-card">
-          <span class="eyebrow">Workout 3</span>
-          <h3>Progression Flow</h3>
-          <div class="wt">Recommended: 3.3 lb pair clubs</div>
-          <ul>
-            <li>Alternating circles — 3 sets of 12</li>
-            <li>Figure-8 pattern — 3 sets of 10</li>
-            <li>Continuous flow — 4 rounds of 30–45 seconds</li>
-            <li>Use only after lighter pairs feel fully controlled</li>
-          </ul>
-        </article>
-        <article class="workout-card">
-          <span class="eyebrow">Workout 4</span>
-          <h3>Intro to Mudgar</h3>
-          <div class="wt">Recommended: 4.4 lb mudgar</div>
-          <ul>
-            <li>Single-side swings — 2 sets of 10 each side</li>
-            <li>Shoulder cast pattern — 2 sets of 8</li>
-            <li>Slow, controlled repetitions only</li>
-            <li>Do not begin with 11 lb+ weights</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <!-- LIBRARY -->
-  <section id="library" class="library">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Training library</span>
-        <h2>Curated learning resources</h2>
-        <p>Reference channels for beginner practice, traditional forms, flow work, and movement inspiration.</p>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="mugdar.jpeg">
+        </div>
+        <div class="product-body">
+          <div class="product-category">Mudgar</div>
+          <div class="product-name">Light Mudgar</div>
+          <div class="product-desc">Beginner leverage training tool.</div>
+          <a class="inquire-btn" href="mailto:akhada.crafts@mantanex.com">Inquire</a>
+        </div>
       </div>
-      <div class="links-grid">
-        <a class="link-card" href="https://www.youtube.com/@backtoprimal/videos" target="_blank" rel="noopener">
-          <strong>Back to Primal</strong>
-          <span>Beginner-friendly movement references and accessible Indian club practice ideas.</span>
-        </a>
-        <a class="link-card" href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank" rel="noopener">
-          <strong>Silambam Gurukul</strong>
-          <span>Traditional Indian movement references and heritage-based practice forms.</span>
-        </a>
-        <a class="link-card" href="https://www.youtube.com/@viamilitaris/videos" target="_blank" rel="noopener">
-          <strong>Viamilitaris</strong>
-          <span>Indian club training with a focus on breathing, control, and traditional culture.</span>
-        </a>
-        <a class="link-card" href="https://www.youtube.com/@zenkahuna/videos" target="_blank" rel="noopener">
-          <strong>Zen Kahuna</strong>
-          <span>Club flow, coordination work, and progression-focused patterns.</span>
-        </a>
-        <a class="link-card" href="https://www.youtube.com/@HeroicSport/videos" target="_blank" rel="noopener">
-          <strong>Heroic Sport</strong>
-          <span>Indian clubs, mudgar, and traditional strength tools focused on full body-mind integration.</span>
-        </a>
-        <a class="link-card" href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank" rel="noopener">
-          <strong>Warrior Yogi</strong>
-          <span>Traditional training themes and movement-based practice inspiration.</span>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Contact</span>
-        <h2>Get in touch</h2>
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="mugdar.jpeg">
+        </div>
+        <div class="product-body">
+          <div class="product-category">Mudgar</div>
+          <div class="product-name">Heavy Mudgar</div>
+          <div class="product-desc">Advanced strength and conditioning tool.</div>
+          <a class="inquire-btn" href="mailto:akhada.crafts@mantanex.com">Inquire</a>
+        </div>
       </div>
-      <div class="contact-card">
-        <h3>Business inquiries</h3>
-        <p>For custom orders, bulk pricing, starter guide requests, and general inquiries, reach out directly.</p>
-        <a class="contact-email" href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
+
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="samtola.jpg">
+        </div>
+        <div class="product-body">
+          <div class="product-category">Traditional</div>
+          <div class="product-name">Samtola</div>
+          <div class="product-desc">Heavy traditional leverage training tool.</div>
+          <a class="inquire-btn" href="mailto:akhada.crafts@mantanex.com">Inquire</a>
+        </div>
       </div>
+
     </div>
-  </section>
-</main>
+  </div>
+</section>
+
+<!-- BUNDLE -->
+<section class="bundle" id="bundle">
+  <div class="container">
+    <div class="section-head">
+      <h2>Beginner Kit</h2>
+      <p style="color:rgba(255,255,255,.6)">Complete starter set for progression training.</p>
+    </div>
+
+    <div class="bundle-box">
+      Includes: clubs set, mudgar set, and training material.
+      <br><br>
+      <a class="btn primary" href="mailto:akhada.crafts@mantanex.com">Request bundle</a>
+    </div>
+  </div>
+</section>
+
+<!-- LIBRARY -->
+<section id="library" class="library">
+  <div class="container">
+    <div class="section-head">
+      <h2>Training Library</h2>
+    </div>
+
+    <div class="links-grid">
+      <div class="link-card">YouTube training references</div>
+      <div class="link-card">Movement tutorials</div>
+      <div class="link-card">Traditional practice guides</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <h2>Contact</h2>
+      <p>Custom orders and inquiries</p>
+      <a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <div class="container">© 2026 Akhada Crafts — Handcrafted Indian strength equipment</div>
+  © 2026 Akhada Crafts
 </footer>
 
-<!-- CART DRAWER -->
-<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
-<div class="cart-drawer" id="cart-drawer">
-  <div class="cart-header">
-    <h3>Your cart</h3>
-    <button class="close-btn" onclick="toggleCart()">✕</button>
-  </div>
-  <div class="cart-items" id="cart-items">
-    <div class="cart-empty">Your cart is empty.</div>
-  </div>
-  <div class="cart-footer">
-    <div class="cart-subtotal">
-      <span>Subtotal</span>
-      <span class="subtotal-val" id="cart-subtotal">$0</span>
-    </div>
-    <p class="cart-note">Shipping calculated at checkout. U.S. orders only.</p>
-    <button class="checkout-btn" id="checkout-btn" onclick="openCheckout()" disabled>Proceed to checkout</button>
-  </div>
-</div>
-
-<!-- CHECKOUT MODAL -->
-<div class="modal-overlay" id="checkout-modal">
-  <div class="modal">
-    <h3>Checkout</h3>
-    <p class="sub">Review your order and complete payment via Stripe.</p>
-    <div class="order-summary" id="order-summary"></div>
-    <div class="stripe-placeholder">
-      <p>Stripe Payment Link goes here. To activate:</p>
-      <p>1. Create products in your <strong>Stripe dashboard</strong><br>2. Generate a Payment Link<br>3. Replace the button below with your link</p>
-      <code>stripe.com/dashboard → Payment Links → Create</code>
-    </div>
-    <div class="modal-actions">
-      <button class="btn secondary" onclick="closeCheckout()">Back to cart</button>
-      <a class="btn primary" href="mailto:akhada.crafts@mantanex.com?subject=Order%20Inquiry" id="stripe-btn">Complete order by email ↗</a>
-    </div>
-  </div>
-</div>
-
-<script>
-let cart = [];
-
-function getSelectedVariant(productId) {
-  const wrap = document.querySelector(`[data-product="${productId}"]`);
-  const sel = wrap ? wrap.querySelector('.variant-btn.selected') : null;
-  return sel ? { weight: sel.dataset.weight, price: parseFloat(sel.dataset.price) } : null;
-}
-
-function selectVariant(btn, productId) {
-  const wrap = document.querySelector(`[data-product="${productId}"]`);
-  wrap.querySelectorAll('.variant-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
-  const priceEl = document.getElementById(`price-${productId}`);
-  if (priceEl) priceEl.textContent = `$${btn.dataset.price}`;
-}
-
-function addToCart(productId, name, img) {
-  const variant = getSelectedVariant(productId);
-  if (!variant) return;
-  const key = `${productId}-${variant.weight}`;
-  const existing = cart.find(i => i.key === key);
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({ key, productId, name, img, weight: variant.weight, price: variant.price, qty: 1 });
-  }
-  renderCart();
-  // Bump animation
-  const countEl = document.getElementById('cart-count');
-  countEl.classList.add('bump');
-  setTimeout(() => countEl.classList.remove('bump'), 300);
-}
-
-function renderCart() {
-  const container = document.getElementById('cart-items');
-  const subtotalEl = document.getElementById('cart-subtotal');
-  const countEl = document.getElementById('cart-count');
-  const checkoutBtn = document.getElementById('checkout-btn');
-  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  const totalQty = cart.reduce((s, i) => s + i.qty, 0);
-  countEl.textContent = totalQty;
-  subtotalEl.textContent = `$${total}`;
-  checkoutBtn.disabled = cart.length === 0;
-  if (cart.length === 0) {
-    container.innerHTML = '<div class="cart-empty">Your cart is empty.</div>';
-    return;
-  }
-  container.innerHTML = cart.map(item => `
-    <div class="cart-item">
-      <img src="${item.img}" alt="${item.name}">
-      <div class="cart-item-info">
-        <h4>${item.name}</h4>
-        <div class="variant-label">${item.weight}</div>
-        <div class="cart-item-controls">
-          <button class="qty-btn" onclick="changeQty('${item.key}',-1)">−</button>
-          <span class="qty-display">${item.qty}</span>
-          <button class="qty-btn" onclick="changeQty('${item.key}',1)">+</button>
-        </div>
-        <button class="remove-item" onclick="removeItem('${item.key}')">Remove</button>
-      </div>
-      <div class="cart-item-price">$${item.price * item.qty}</div>
-    </div>
-  `).join('');
-}
-
-function changeQty(key, delta) {
-  const item = cart.find(i => i.key === key);
-  if (!item) return;
-  item.qty = Math.max(1, item.qty + delta);
-  renderCart();
-}
-
-function removeItem(key) {
-  cart = cart.filter(i => i.key !== key);
-  renderCart();
-}
-
-function toggleCart() {
-  document.getElementById('cart-drawer').classList.toggle('open');
-  document.getElementById('cart-overlay').classList.toggle('open');
-}
-
-function openCheckout() {
-  const summary = document.getElementById('order-summary');
-  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  summary.innerHTML = cart.map(i =>
-    `<div class="order-row"><span>${i.name} (${i.weight}) × ${i.qty}</span><span>$${i.price * i.qty}</span></div>`
-  ).join('') + `<div class="order-row total"><span>Total</span><span>$${total}</span></div>`;
-  // Build email body with order details
-  const emailBody = cart.map(i => `${i.name} (${i.weight}) x${i.qty} = $${i.price * i.qty}`).join('%0A') + `%0A%0ATotal: $${total}`;
-  document.getElementById('stripe-btn').href = `mailto:akhada.crafts@mantanex.com?subject=Order%20from%20Akhada%20Crafts&body=${emailBody}`;
-  document.getElementById('checkout-modal').classList.add('open');
-  toggleCart();
-}
-
-function closeCheckout() {
-  document.getElementById('checkout-modal').classList.remove('open');
-}
-
-function addBundleToCart() {
-  const key = 'complete-beginner-kit';
-  const existing = cart.find(i => i.key === key);
-  if (existing) { existing.qty++; }
-  else {
-    cart.push({ key, productId: key, name: 'Complete Beginner Kit', img: 'clubs.png', weight: '500g clubs + 800g clubs + 1.5kg clubs + 2kg mudgar pair + Karlakattai book', price: 849, qty: 1 });
-  }
-  renderCart();
-  const countEl = document.getElementById('cart-count');
-  countEl.classList.add('bump');
-  setTimeout(() => countEl.classList.remove('bump'), 300);
-  toggleCart();
-}
-
-
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.product-card').forEach(card => {
-    card.classList.toggle('hidden', cat !== 'all' && card.dataset.category !== cat);
-  });
-}
-</script>
 </body>
 </html>
