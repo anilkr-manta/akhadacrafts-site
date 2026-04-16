@@ -1,426 +1,408 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Akhada Crafts — Traditional Indian Training Equipment</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#1a1612; --parchment:#f5f0e8; --accent:#8b4513; --accent-light:#c47a3a;
-  --muted:#6b5e4e; --card-bg:#faf7f2; --border:rgba(139,69,19,0.18); --border-light:rgba(139,69,19,0.09);
-  --youtube-red:#cc0000;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--parchment);color:var(--ink);line-height:1.7;font-weight:300}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Akhada Crafts — Traditional Indian Training Equipment</title>
 
-/* NAV */
-nav{position:sticky;top:0;background:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:0 40px;height:60px;z-index:50}
-.logo{font-family:'Playfair Display',serif;color:var(--parchment);font-weight:600;letter-spacing:.06em}
-.logo span{color:var(--accent-light)}
-.nav-links{display:flex;gap:28px}
-.nav-links a{color:rgba(245,240,232,.55);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-/* HERO */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:78vh;background:var(--ink);align-items:stretch;overflow:hidden}
-.hero-content{padding:64px 56px;display:flex;flex-direction:column;justify-content:center;color:var(--parchment);z-index:2}
-.hero-eyebrow{color:var(--accent-light);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
-.hero h1{font-family:'Playfair Display',serif;font-size:48px;line-height:1.05;margin-bottom:18px}
-.hero h1 em{color:var(--accent-light);font-style:italic}
-.hero-body{color:rgba(245,240,232,.75);max-width:480px;margin-bottom:28px}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.cta-primary{background:var(--accent);color:var(--parchment);padding:12px 22px;border-radius:3px;text-transform:uppercase;font-weight:500}
-.cta-ghost{border:1px solid rgba(245,240,232,.2);color:rgba(245,240,232,.7);padding:12px 22px;border-radius:3px}
+  <style>
+    :root{
+      --ink:#1a1612; --parchment:#f5f0e8; --accent:#8b4513; --accent-light:#c47a3a;
+      --muted:#6b5e4e; --card-bg:#faf7f2; --border:rgba(139,69,19,0.18); --border-light:rgba(139,69,19,0.09);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--parchment);color:var(--ink);line-height:1.7;font-weight:300}
 
-/* hero image */
-.hero-img img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.12) contrast(1.05);opacity:.95}
+    /* NAV */
+    nav{position:sticky;top:0;background:var(--ink);display:flex;justify-content:space-between;align-items:center;padding:0 28px;height:60px;z-index:50}
+    .logo{font-family:'Playfair Display',serif;color:var(--parchment);font-weight:600;letter-spacing:.06em}
+    .logo span{color:var(--accent-light)}
+    .nav-links{display:flex;gap:20px}
+    .nav-links a{color:rgba(245,240,232,.65);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
 
-/* sections */
-.section{max-width:1040px;margin:0 auto;padding:72px 40px}
-.section-eyebrow{color:var(--accent);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
-.section-title{font-family:'Playfair Display',serif;font-size:32px;margin-bottom:12px}
-.section-body{color:var(--muted);max-width:600px;line-height:1.8}
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:78vh;background:var(--ink);align-items:stretch;overflow:hidden}
+    .hero-content{padding:56px 48px;display:flex;flex-direction:column;justify-content:center;color:var(--parchment);z-index:2}
+    .hero-eyebrow{color:var(--accent-light);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+    .hero h1{font-family:'Playfair Display',serif;font-size:44px;line-height:1.05;margin-bottom:14px}
+    .hero h1 em{color:var(--accent-light);font-style:italic}
+    .hero-body{color:rgba(245,240,232,.78);max-width:520px;margin-bottom:22px}
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .cta-primary{background:var(--accent);color:var(--parchment);padding:12px 20px;border-radius:3px;text-transform:uppercase;font-weight:500}
+    .cta-ghost{border:1px solid rgba(245,240,232,.18);color:rgba(245,240,232,.78);padding:12px 20px;border-radius:3px}
 
-/* craft strip */
-.craft-strip{background:var(--ink);padding:64px 0;color:var(--parchment)}
-.craft-inner{max-width:1040px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
-.craft-pillars{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.pillar{border-left:2px solid var(--accent);padding:6px 0 6px 12px}
-.pillar-title{font-size:12px;font-weight:500;color:var(--parchment)}
-.pillar-sub{font-size:11px;color:rgba(245,240,232,.5)}
+    /* hero image */
+    .hero-img{display:block;overflow:hidden}
+    .hero-img img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.08) contrast(1.03);opacity:.98}
 
-/* kit card */
-.kit-card{background:var(--card-bg);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:20px}
-.kit-photo{width:100%;height:320px;object-fit:cover;display:block}
-.kit-body{padding:32px}
-.kit-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;gap:12px}
-.kit-title{font-family:'Playfair Display',serif;font-size:20px}
-.kit-badge{background:var(--ink);color:var(--accent-light);padding:6px 10px;border-radius:3px;font-size:11px}
+    /* sections */
+    .section{max-width:1100px;margin:0 auto;padding:64px 28px}
+    .section-eyebrow{color:var(--accent);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+    .section-title{font-family:'Playfair Display',serif;font-size:30px;margin-bottom:12px}
+    .section-body{color:var(--muted);max-width:680px;line-height:1.8}
 
-/* grids */
-.weights-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-.wt{background:white;border:1px solid var(--border);padding:14px;border-radius:4px;text-align:center}
-.wt-lbs{font-family:'Playfair Display',serif;color:var(--accent);font-size:20px}
-.use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
-.use-card{background:white;border:1px solid var(--border-light);padding:12px;border-radius:4px}
+    /* craft strip */
+    .craft-strip{background:var(--ink);padding:56px 0;color:var(--parchment)}
+    .craft-inner{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+    .pillar{border-left:2px solid var(--accent);padding:6px 0 6px 12px}
+    .pillar-title{font-size:12px;font-weight:500;color:var(--parchment)}
+    .pillar-sub{font-size:11px;color:rgba(245,240,232,.5)}
 
-/* products */
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.product-card{background:var(--card-bg);border:1px solid var(--border-light);border-radius:4px;overflow:hidden}
-.product-img{width:100%;height:200px;object-fit:cover;display:block}
+    /* kit card */
+    .kit-card{background:var(--card-bg);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:20px}
+    .kit-photo{width:100%;height:320px;object-fit:cover;display:block}
+    .kit-body{padding:28px}
+    .kit-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;gap:12px}
+    .kit-title{font-family:'Playfair Display',serif;font-size:20px}
+    .kit-badge{background:var(--ink);color:var(--accent-light);padding:6px 10px;border-radius:3px;font-size:11px}
 
-/* samtola */
-.samtola-strip{background:var(--ink);padding:64px 0;color:var(--parchment)}
-.samtola-inner{max-width:1040px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
-.samtola-img{width:100%;height:420px;object-fit:cover;border-radius:4px}
+    /* grids */
+    .weights-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+    .wt{background:white;border:1px solid var(--border);padding:14px;border-radius:4px;text-align:center}
+    .wt-lbs{font-family:'Playfair Display',serif;color:var(--accent);font-size:20px}
+    .use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px}
+    .use-card{background:white;border:1px solid var(--border-light);padding:12px;border-radius:4px}
 
-/* library */
-.library-section{background:var(--ink);padding:64px 0;color:var(--parchment)}
-.lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.lib-card{display:flex;align-items:center;gap:12px;background:rgba(245,240,232,.04);border:1px solid rgba(245,240,232,.08);padding:14px;border-radius:4px}
+    /* products */
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .product-card{background:var(--card-bg);border:1px solid var(--border-light);border-radius:4px;overflow:hidden}
+    .product-img{width:100%;height:200px;object-fit:cover;display:block}
 
-/* featured videos */
-.featured-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
-.featured-card{background:rgba(245,240,232,.06);border:1px solid rgba(245,240,232,.12);padding:14px;border-radius:4px}
+    /* samtola */
+    .samtola-strip{background:var(--ink);padding:56px 0;color:var(--parchment)}
+    .samtola-inner{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+    .samtola-img{width:100%;height:420px;object-fit:cover;border-radius:4px}
 
-/* ebook banner */
-.ebook-banner{background:var(--card-bg);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
-.ebook-inner{max-width:1040px;margin:0 auto;padding:36px 40px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
+    /* library */
+    .library-section{background:var(--ink);padding:56px 0;color:var(--parchment)}
+    .lib-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .lib-card{display:flex;align-items:center;gap:12px;background:rgba(245,240,232,.04);border:1px solid rgba(245,240,232,.08);padding:14px;border-radius:4px}
 
-/* contact */
-.contact-section{background:var(--warm-mid,#e8dece)}
-.contact-inner{max-width:1040px;margin:0 auto;padding:48px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+    /* featured videos */
+    .featured-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+    .featured-card{background:rgba(245,240,232,.06);border:1px solid rgba(245,240,232,.12);padding:14px;border-radius:4px}
 
-/* footer */
-footer{background:#111009;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.footer-logo{font-family:'Playfair Display',serif;color:var(--parchment);opacity:.8}
+    /* contact */
+    .contact-section{background:#e8dece}
+    .contact-inner{max-width:1100px;margin:0 auto;padding:48px 28px;display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
 
-/* responsive */
-@media(max-width:768px){
-  .hero{grid-template-columns:1fr}
-  .hero-img{height:300px;order:-1}
-  .craft-inner{grid-template-columns:1fr}
-  .weights-grid{grid-template-columns:repeat(2,1fr)}
-  .use-grid{grid-template-columns:1fr}
-  .products-grid{grid-template-columns:1fr 1fr}
-  .lib-grid{grid-template-columns:1fr 1fr}
-  .featured-videos{grid-template-columns:1fr}
-  .ebook-inner{grid-template-columns:1fr}
-  .contact-inner{grid-template-columns:1fr}
-}
-</style>
+    /* footer */
+    footer{background:#111009;padding:36px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-logo{font-family:'Playfair Display',serif;color:var(--parchment);opacity:.8}
+
+    /* responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .hero-img{height:320px;order:-1}
+      .craft-inner{grid-template-columns:1fr}
+      .weights-grid{grid-template-columns:repeat(2,1fr)}
+      .use-grid{grid-template-columns:1fr}
+      .products-grid{grid-template-columns:1fr 1fr}
+      .lib-grid{grid-template-columns:1fr 1fr}
+      .featured-videos{grid-template-columns:1fr}
+      .contact-inner{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">AKHADA CRAFTS<span>.</span></div>
-  <div class="nav-links">
-    <a href="#clubs">Clubs</a>
-    <a href="#mugdar">Mugdar</a>
-    <a href="#samtola">Samtola</a>
-    <a href="#education">Training</a>
-    <a href="#library">Library</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" aria-label="Hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Est. in the tradition of the akhara</div>
-    <h1>Hand-crafted <em>teak wood</em> training tools</h1>
-    <p class="hero-body">Indian clubs, mugdar, and samtola — ancient strength implements used by wrestlers, soldiers, and martial artists for centuries. Made from solid teak wood (samtola is acacia). Shipped worldwide.</p>
-    <div class="hero-ctas">
-      <a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener">Shop on Etsy ↗</a>
-      <a class="cta-ghost" href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener">Find on eBay</a>
+  <!-- NAV -->
+  <nav>
+    <div class="logo">AKHADA CRAFTS<span>.</span></div>
+    <div class="nav-links">
+      <a href="#clubs">Clubs</a>
+      <a href="#mugdar">Mugdar</a>
+      <a href="#samtola">Samtola</a>
+      <a href="#education">Training</a>
+      <a href="#library">Library</a>
+      <a href="#contact">Contact</a>
     </div>
-  </div>
-  <div class="hero-img" aria-hidden="true">
-    <!-- placeholder: replace with cover-composite.jpg in your repo -->
-    <img src="cover-composite.jpg" alt="Akhada Crafts cover image" loading="eager">
-  </div>
-</section>
+  </nav>
 
-<!-- MARQUEE -->
-<div style="background:var(--accent);padding:10px 0;white-space:nowrap;overflow:hidden">
-  <div style="display:inline-flex;animation:marquee 24s linear infinite;">
-    <span style="color:var(--parchment);padding:0 28px;font-size:11px">Solid teak wood</span>
-    <span style="color:var(--parchment);padding:0 28px;font-size:11px">Hand-turned & finished</span>
-    <span style="color:var(--parchment);padding:0 28px;font-size:11px">Ships internationally</span>
-    <span style="color:var(--parchment);padding:0 28px;font-size:11px">Indian clubs</span>
-    <span style="color:var(--parchment);padding:0 28px;font-size:11px">Mugdar</span>
-    <span style="color:var(--parchment);padding:0 28px;font-size:11px">Samtola</span>
-  </div>
-</div>
-
-<!-- CRAFT STORY -->
-<div class="craft-strip" aria-label="The craft">
-  <div class="craft-inner">
-    <div>
-      <div class="section-eyebrow">The craft</div>
-      <h2 class="section-title">Teak wood — chosen for a reason</h2>
-      <p>Teak (Tectona grandis) is the primary timber used across our clubs and mugdar for its dense grain, natural oils, and durability under repeated impact. The samtola is crafted from acacia wood for its balance and resilience.</p>
-      <p>Each piece is hand-turned and finished using traditional methods. No CNC; no composites. Weight distribution and taper geometry follow proportions used in traditional akharas.</p>
-
-      <div class="craft-pillars" aria-hidden="true">
-        <div class="pillar"><div class="pillar-title">Dense grain</div><div class="pillar-sub">Resists cracking under repeated swing loads</div></div>
-        <div class="pillar"><div class="pillar-title">Natural oils</div><div class="pillar-sub">Moisture-resistant without heavy coatings</div></div>
-        <div class="pillar"><div class="pillar-title">Hand-turned</div><div class="pillar-sub">Traditional lathe, shaped by eye and feel</div></div>
-        <div class="pillar"><div class="pillar-title">True balance</div><div class="pillar-sub">Weight sits where the swing mechanics require it</div></div>
-      </div>
-
-      <p style="margin-top:14px;font-size:13px;color:rgba(245,240,232,.6)"><strong>Material note:</strong> All clubs and mugdar are crafted from solid teak wood. The samtola is made from acacia wood.</p>
-    </div>
-    <div aria-hidden="true">
-      <!-- visual pillars area (keeps layout balanced) -->
-    </div>
-  </div>
-</div>
-
-<!-- INDIAN CLUBS -->
-<section id="clubs" class="section" aria-label="Indian clubs">
-  <div class="section-head">
-    <div class="section-eyebrow">Indian Clubs</div>
-    <h2 class="section-title">Beginner kit — four weight pairs</h2>
-    <p class="section-body">The complete starter set. Four pairs covering the full beginner-to-intermediate range so you can progress without buying again. Sold as a full kit only.</p>
-  </div>
-
-  <div class="kit-card" role="region" aria-label="Beginner kit">
-    <img class="kit-photo" src="clubs.png" alt="Indian clubs set">
-    <div class="kit-body">
-      <div class="kit-header">
-        <div class="kit-title">Indian Club Beginner Kit</div>
-        <div class="kit-badge">Complete set · Teak wood · 4 pairs</div>
-      </div>
-
-      <div class="weights-grid" role="list">
-        <div class="wt" role="listitem"><div class="wt-lbs">1.1 lb</div><div class="wt-kg">500 g pair</div><div style="height:8px"></div><div class="wt-use">Wrist & elbow rehab, coordination drills</div></div>
-        <div class="wt" role="listitem"><div class="wt-lbs">1.8 lb</div><div class="wt-kg">800 g pair</div><div style="height:8px"></div><div class="wt-use">Shoulder circles, arm casts, mills</div></div>
-        <div class="wt" role="listitem"><div class="wt-lbs">3.3 lb</div><div class="wt-kg">1.5 kg pair</div><div style="height:8px"></div><div class="wt-use">Strength endurance, figure-8s, flows</div></div>
-        <div class="wt" role="listitem"><div class="wt-lbs">4.4 lb</div><div class="wt-kg">2 kg pair</div><div style="height:8px"></div><div class="wt-use">Full conditioning, grip & forearm work</div></div>
-      </div>
-
-      <div class="use-title" style="font-family:'Playfair Display',serif;font-size:16px;margin-bottom:10px">What each pair is good for</div>
-      <div class="use-grid">
-        <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">1.1 lb / 500 g — Wrist, joint & rehab</div><div style="font-size:13px;color:var(--muted)">The entry point. Pendulum swings, wrist circles, and light arm casts. Ideal for rehab and daily mobility.</div></div>
-        <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">1.8 lb / 800 g — Shoulder mobility</div><div style="font-size:13px;color:var(--muted)">Classic weight for mills and figure-eights; builds rotator cuff stability.</div></div>
-        <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">3.3 lb / 1.5 kg — Strength endurance</div><div style="font-size:13px;color:var(--muted)">Extended lever arm increases shoulder load; use for flows and high-rep patterns.</div></div>
-        <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">4.4 lb / 2 kg — Full conditioning</div><div style="font-size:13px;color:var(--muted)">Top of the beginner kit range; grip, forearm, shoulder, and core engaged.</div></div>
-      </div>
-
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener">Buy on Etsy ↗</a>
-        <a class="cta-ghost" href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener">Buy on eBay ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr style="border:none;border-top:1px solid var(--border-light)">
-
-<!-- MUGDAR -->
-<section id="mugdar" class="section" aria-label="Mugdar">
-  <div class="section-head">
-    <div class="section-eyebrow">Mugdar</div>
-    <h2 class="section-title">Heavy club training — three weights</h2>
-    <p class="section-body">The mugdar is the heavier cousin of the Indian club, used by pehlwani wrestlers for centuries. The extended lever makes even modest weights extremely demanding. Sold individually.</p>
-  </div>
-
-  <div class="products-grid" aria-hidden="false">
-    <div class="product-card">
-      <img class="product-img" src="mugdar-3kg.jpg" alt="Mugdar 3kg teak wood">
-      <div style="padding:14px">
-        <div style="font-family:'Playfair Display',serif;font-size:16px">Mugdar</div>
-        <div style="font-weight:600;color:var(--accent);margin:6px 0">6.6 lb — 3 kg · single</div>
-        <div style="font-size:13px;color:var(--muted)">Starter mugdar crafted from solid teak wood. Grip strength, shoulder endurance, and core engagement from the first rep.</div>
-        <div style="margin-top:10px"><a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener">Etsy ↗</a></div>
+  <!-- HERO -->
+  <!-- NOTE: This hero intentionally shows only the clubs and the samtola in the foreground.
+       Background: Amber Fort at warm sunset (subtle). Product-catalog lighting on foreground.
+       Aspect ratio / export target: 1600x900 hero. No human, no eBook, no text overlays on the image itself. -->
+  <section class="hero" aria-label="Hero">
+    <div class="hero-content" role="region" aria-label="Hero content">
+      <div class="hero-eyebrow">Est. in the tradition of the akhara</div>
+      <h1>Hand-crafted <em>training tools</em></h1>
+      <p class="hero-body">Indian clubs, mugdar, and samtola — traditional strength implements shaped by hand. Life-scale, high-detail finishes; shipped worldwide.</p>
+      <div class="hero-ctas">
+        <a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener noreferrer">Shop on Etsy ↗</a>
+        <a class="cta-ghost" href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener noreferrer">Find on eBay</a>
       </div>
     </div>
 
-    <div class="product-card">
-      <img class="product-img" src="mugdar-5kg.jpg" alt="Mugdar 5kg teak wood">
-      <div style="padding:14px">
-        <div style="font-family:'Playfair Display',serif;font-size:16px">Mugdar</div>
-        <div style="font-weight:600;color:var(--accent);margin:6px 0">11 lb — 5 kg · single</div>
-        <div style="font-size:13px;color:var(--muted)">Intermediate weight; the lever challenge becomes serious here. Crafted from solid teak wood.</div>
-        <div style="margin-top:10px"><a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener">Etsy ↗</a></div>
-      </div>
+    <!-- Hero image: cover-composite.jpg (1600x900 hero). This image must contain only clubs + samtola in foreground,
+         Amber Fort subtle in background, product-catalog lighting, life-scale proportions. -->
+    <div class="hero-img" aria-hidden="true">
+      <img src="cover-composite.jpg" alt="Clubs and samtola in front of Amber Fort at sunset" loading="eager" width="1600" height="900">
     </div>
+  </section>
 
-    <div class="product-card">
-      <img class="product-img" src="mugdar-8kg.jpg" alt="Mugdar 8kg teak wood">
-      <div style="padding:14px">
-        <div style="font-family:'Playfair Display',serif;font-size:16px">Mugdar</div>
-        <div style="font-weight:600;color:var(--accent);margin:6px 0">17.6 lb — 8 kg · single</div>
-        <div style="font-size:13px;color:var(--muted)">Advanced mugdar for experienced practitioners. Crafted from solid teak wood.</div>
-        <div style="margin-top:10px"><a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener">Etsy ↗</a></div>
-      </div>
+  <!-- MARQUEE -->
+  <div style="background:var(--accent);padding:10px 0;white-space:nowrap;overflow:hidden">
+    <div style="display:inline-flex;animation:marquee 24s linear infinite;">
+      <span style="color:var(--parchment);padding:0 28px;font-size:11px">Hand-turned & finished</span>
+      <span style="color:var(--parchment);padding:0 28px;font-size:11px">Ships internationally</span>
+      <span style="color:var(--parchment);padding:0 28px;font-size:11px">Indian clubs</span>
+      <span style="color:var(--parchment);padding:0 28px;font-size:11px">Mugdar</span>
+      <span style="color:var(--parchment);padding:0 28px;font-size:11px">Samtola</span>
     </div>
   </div>
-</section>
 
-<hr style="border:none;border-top:1px solid var(--border-light)">
-
-<!-- SAMTOLA -->
-<div id="samtola" class="samtola-strip" aria-label="Samtola">
-  <div class="samtola-inner">
-    <div>
-      <img class="samtola-img" src="samtola.jpg" alt="Samtola acacia wood">
-    </div>
-    <div>
-      <div class="section-eyebrow">Samtola</div>
-      <h2 class="section-title">The heavy balancing tool</h2>
-      <div style="font-family:'Playfair Display',serif;font-size:44px;color:var(--accent-light);margin:6px 0">22 lb</div>
-      <div style="font-size:13px;color:rgba(245,240,232,.5);margin-bottom:12px">10 kg · sold individually · Acacia wood</div>
-      <p class="samtola-desc">The samtola is a balance and coordination tool from traditional Indian physical culture — used to build full-body stability, core strength, and proprioceptive control. At 22 lb it challenges balance and grip in ways that conventional equipment cannot.</p>
-      <div style="display:flex;gap:10px;margin-top:12px">
-        <a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener">Buy on Etsy ↗</a>
-        <a class="cta-ghost" href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener">Buy on eBay ↗</a>
+  <!-- CRAFT STORY -->
+  <div class="craft-strip" aria-label="The craft">
+    <div class="craft-inner">
+      <div>
+        <div class="section-eyebrow">The craft</div>
+        <h2 class="section-title">Hand-turned and balanced</h2>
+        <p style="color:var(--parchment)">Each piece is shaped and balanced by hand using traditional methods. No CNC; no composites. Weight distribution and taper geometry follow proportions used in traditional akharas.</p>
+        <p style="margin-top:12px;font-size:13px;color:rgba(245,240,232,.6)"><strong>Note:</strong> Material details are listed on each product card.</p>
       </div>
+      <div aria-hidden="true"></div>
     </div>
   </div>
-</div>
 
-<!-- EDUCATION -->
-<section id="education" class="section" aria-label="Why train">
-  <div class="section-head">
-    <div class="section-eyebrow">Why train with these tools</div>
-    <h2 class="section-title">What modern training misses</h2>
-    <p class="section-body">Indian clubs, mugdar, and samtola address movement patterns and joint angles that barbells, dumbbells, and machines simply cannot reach.</p>
-  </div>
-
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-    <div style="background:var(--card-bg);padding:18px;border:1px solid var(--border-light);border-radius:4px">
-      <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--border)">01</div>
-      <div style="font-weight:600;margin-top:8px">Full shoulder range of motion</div>
-      <div style="color:var(--muted);margin-top:8px">Club swinging uses the full 360° range of the shoulder joint — building strength and flexibility together.</div>
-    </div>
-    <div style="background:var(--card-bg);padding:18px;border:1px solid var(--border-light);border-radius:4px">
-      <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--border)">02</div>
-      <div style="font-weight:600;margin-top:8px">Rotator cuff health & prehab</div>
-      <div style="color:var(--muted);margin-top:8px">Light club work (500 g–800 g) targets stabiliser muscles with low impact — excellent for injury prevention.</div>
-    </div>
-    <div style="background:var(--card-bg);padding:18px;border:1px solid var(--border-light);border-radius:4px">
-      <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--border)">03</div>
-      <div style="font-weight:600;margin-top:8px">Rotational strength & grip</div>
-      <div style="color:var(--muted);margin-top:8px">Heavy clubs and the samtola build rotational strength, grip endurance, and core stability.</div>
-    </div>
-  </div>
-</section>
-
-<!-- EBOOK BANNER -->
-<section class="ebook-banner" aria-label="eBook">
-  <div class="ebook-inner">
-    <div>
-      <div style="font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em">Free training ebook included</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;margin:8px 0">Complimentary Kindle training guide with every order</h3>
-      <p style="color:var(--muted)">Your purchase includes a digital training book covering Indian clubs fundamentals, mugdar technique, shoulder mobility drills, and traditional akhara conditioning patterns. <strong>Beginner kit purchasers also receive a soft copy of <em>Karlakattai: Ancient Warrior Practice</em>.</strong></p>
-    </div>
-    <div style="font-size:13px;color:var(--muted)">
-      <p><strong>Haven’t received your eBook yet?</strong></p>
-      <p>Email your order number to:<br><strong>akhada.crafts@mantanex.com</strong></p>
-      <p style="margin-top:8px">For additional tutorials and our full training library visit:<br><strong>www.akhadacrafts.com</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- LIBRARY -->
-<section id="library" class="library-section" aria-label="Library">
-  <div class="library-inner" style="max-width:1040px;margin:0 auto;padding:0 40px">
-    <div style="margin-bottom:18px">
-      <div class="section-eyebrow">Training library</div>
-      <h2 class="section-title">Learn from traditional practitioners</h2>
-      <p class="library-intro" style="color:rgba(245,240,232,.45)">We recommend learning from coaches and practitioners who live this tradition. Below are featured channels and recommended videos.</p>
+  <!-- INDIAN CLUBS -->
+  <section id="clubs" class="section" aria-label="Indian clubs">
+    <div class="section-head">
+      <div class="section-eyebrow">Indian Clubs</div>
+      <h2 class="section-title">Beginner kit — four weight pairs</h2>
+      <p class="section-body">Complete starter set: four pairs covering the beginner-to-intermediate range so you can progress without buying again. Sold as a full kit only.</p>
     </div>
 
-    <div class="featured-videos" role="list">
-      <div class="featured-card" role="listitem">
-        <div style="font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em">Featured channel</div>
-        <div style="font-weight:600;font-size:14px;color:var(--parchment);margin:6px 0">Gods Warrior Yogi</div>
-        <div style="color:rgba(245,240,232,.6);margin-bottom:8px">Traditional strength, mobility, and spiritual practice — excellent demonstrations of clubs and gada.</div>
-        <a class="featured-link" href="#" style="color:var(--accent-light);font-size:12px;text-transform:uppercase">Watch Gods Warrior Yogi ↗</a>
-      </div>
-
-      <div class="featured-card" role="listitem">
-        <div style="font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em">Featured school</div>
-        <div style="font-weight:600;font-size:14px;color:var(--parchment);margin:6px 0">Jothi Silambam Guruk</div>
-        <div style="color:rgba(245,240,232,.6);margin-bottom:8px">Silambam and traditional South Indian martial arts — balance, coordination, and weapon conditioning.</div>
-        <a class="featured-link" href="#" style="color:var(--accent-light);font-size:12px;text-transform:uppercase">Watch Jothi Silambam Guruk ↗</a>
-      </div>
-    </div>
-
-    <div class="lib-grid" style="margin-top:12px">
-      <a class="lib-card" href="#" target="_blank" rel="noopener">
-        <div style="width:38px;height:38px;background:var(--youtube-red);border-radius:6px;display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M10 15.5L15 12L10 8.5V15.5Z"/></svg>
+    <div class="kit-card" role="region" aria-label="Beginner kit">
+      <img class="kit-photo" src="clubs.png" alt="Indian clubs set" width="1200" height="320">
+      <div class="kit-body">
+        <div class="kit-header">
+          <div class="kit-title">Indian Club Beginner Kit</div>
+          <div class="kit-badge">Complete set · 4 pairs</div>
         </div>
-        <div style="flex:1;min-width:0">
-          <div style="font-weight:600;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Indian club basics — beginner patterns</div>
-          <div style="font-size:12px;color:rgba(245,240,232,.35)">Foundational swings and safety cues</div>
-        </div>
-        <div style="color:rgba(245,240,232,.25)">↗</div>
-      </a>
 
-      <a class="lib-card" href="#" target="_blank" rel="noopener">
-        <div style="width:38px;height:38px;background:var(--youtube-red);border-radius:6px;display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M10 15.5L15 12L10 8.5V15.5Z"/></svg>
+        <div class="weights-grid" role="list">
+          <div class="wt" role="listitem"><div class="wt-lbs">1.1 lb</div><div class="wt-kg">500 g pair</div><div style="height:8px"></div><div class="wt-use">Wrist & elbow rehab, coordination drills</div></div>
+          <div class="wt" role="listitem"><div class="wt-lbs">1.8 lb</div><div class="wt-kg">800 g pair</div><div style="height:8px"></div><div class="wt-use">Shoulder circles, arm casts, mills</div></div>
+          <div class="wt" role="listitem"><div class="wt-lbs">3.3 lb</div><div class="wt-kg">1.5 kg pair</div><div style="height:8px"></div><div class="wt-use">Strength endurance, figure-8s, flows</div></div>
+          <div class="wt" role="listitem"><div class="wt-lbs">4.4 lb</div><div class="wt-kg">2 kg pair</div><div style="height:8px"></div><div class="wt-use">Full conditioning, grip & forearm work</div></div>
         </div>
-        <div style="flex:1;min-width:0">
-          <div style="font-weight:600;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Mugdar swings for grapplers</div>
-          <div style="font-size:12px;color:rgba(245,240,232,.35)">Behind-the-back swings and rotational strength</div>
-        </div>
-        <div style="color:rgba(245,240,232,.25)">↗</div>
-      </a>
 
-      <a class="lib-card" href="#" target="_blank" rel="noopener">
-        <div style="width:38px;height:38px;background:var(--youtube-red);border-radius:6px;display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M10 15.5L15 12L10 8.5V15.5Z"/></svg>
+        <div class="use-title" style="font-family:'Playfair Display',serif;font-size:16px;margin-bottom:10px">What each pair is good for</div>
+        <div class="use-grid">
+          <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">1.1 lb / 500 g — Wrist, joint & rehab</div><div style="font-size:13px;color:var(--muted)">Entry point. Pendulum swings, wrist circles, and light arm casts. Ideal for rehab and daily mobility.</div></div>
+          <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">1.8 lb / 800 g — Shoulder mobility</div><div style="font-size:13px;color:var(--muted)">Classic weight for mills and figure-eights; builds rotator cuff stability.</div></div>
+          <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">3.3 lb / 1.5 kg — Strength endurance</div><div style="font-size:13px;color:var(--muted)">Extended lever arm increases shoulder load; use for flows and high-rep patterns.</div></div>
+          <div class="use-card"><div style="font-weight:600;font-size:12px;color:var(--accent)">4.4 lb / 2 kg — Full conditioning</div><div style="font-size:13px;color:var(--muted)">Top of the beginner kit range; grip, forearm, shoulder, and core engaged.</div></div>
         </div>
-        <div style="flex:1;min-width:0">
-          <div style="font-weight:600;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Samtola balance drills</div>
-          <div style="font-size:12px;color:rgba(245,240,232,.35)">Footwork, lateral stability, and core control</div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener noreferrer">Buy on Etsy ↗</a>
+          <a class="cta-ghost" href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener noreferrer">Buy on eBay ↗</a>
         </div>
-        <div style="color:rgba(245,240,232,.25)">↗</div>
-      </a>
+      </div>
+    </div>
+  </section>
+
+  <hr style="border:none;border-top:1px solid var(--border-light)">
+
+  <!-- MUGDAR -->
+  <section id="mugdar" class="section" aria-label="Mugdar">
+    <div class="section-head">
+      <div class="section-eyebrow">Mugdar</div>
+      <h2 class="section-title">Heavy club training — three weights</h2>
+      <p class="section-body">The mugdar is the heavier cousin of the Indian club, used by pehlwani wrestlers for centuries. The extended lever makes even modest weights extremely demanding. Sold individually.</p>
+    </div>
+
+    <div class="products-grid" aria-hidden="false">
+      <div class="product-card">
+        <img class="product-img" src="mugdar-3kg.jpg" alt="Mugdar 3kg" width="600" height="200">
+        <div style="padding:14px">
+          <div style="font-family:'Playfair Display',serif;font-size:16px">Mugdar</div>
+          <div style="font-weight:600;color:var(--accent);margin:6px 0">6.6 lb — 3 kg · single</div>
+          <div style="font-size:13px;color:var(--muted)">Starter mugdar — grip strength, shoulder endurance, and core engagement from the first rep.</div>
+          <div style="margin-top:10px"><a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener noreferrer">Etsy ↗</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="mugdar-5kg.jpg" alt="Mugdar 5kg" width="600" height="200">
+        <div style="padding:14px">
+          <div style="font-family:'Playfair Display',serif;font-size:16px">Mugdar</div>
+          <div style="font-weight:600;color:var(--accent);margin:6px 0">11 lb — 5 kg · single</div>
+          <div style="font-size:13px;color:var(--muted)">Intermediate weight; the lever challenge becomes serious here.</div>
+          <div style="margin-top:10px"><a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener noreferrer">Etsy ↗</a></div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img class="product-img" src="mugdar-8kg.jpg" alt="Mugdar 8kg" width="600" height="200">
+        <div style="padding:14px">
+          <div style="font-family:'Playfair Display',serif;font-size:16px">Mugdar</div>
+          <div style="font-weight:600;color:var(--accent);margin:6px 0">17.6 lb — 8 kg · single</div>
+          <div style="font-size:13px;color:var(--muted)">Advanced mugdar for experienced practitioners.</div>
+          <div style="margin-top:10px"><a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener noreferrer">Etsy ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr style="border:none;border-top:1px solid var(--border-light)">
+
+  <!-- SAMTOLA -->
+  <div id="samtola" class="samtola-strip" aria-label="Samtola">
+    <div class="samtola-inner">
+      <div>
+        <img class="samtola-img" src="samtola.jpg" alt="Samtola" width="800" height="420">
+      </div>
+      <div>
+        <div class="section-eyebrow">Samtola</div>
+        <h2 class="section-title">The heavy balancing tool</h2>
+        <div style="font-family:'Playfair Display',serif;font-size:44px;color:var(--accent-light);margin:6px 0">22 lb</div>
+        <div style="font-size:13px;color:rgba(245,240,232,.5);margin-bottom:12px">10 kg · sold individually</div>
+        <p class="samtola-desc">The samtola is a balance and coordination tool from traditional Indian physical culture — used to build full-body stability, core strength, and proprioceptive control. At 22 lb it challenges balance and grip in ways that conventional equipment cannot.</p>
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <a class="cta-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener noreferrer">Buy on Etsy ↗</a>
+          <a class="cta-ghost" href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener noreferrer">Buy on eBay ↗</a>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact-section" aria-label="Contact">
-  <div class="contact-inner">
-    <div>
-      <div class="section-eyebrow">Contact</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px">Get in touch with Akhada Crafts</h2>
-      <p style="color:var(--muted)">Questions about weights, shipping, or training resources? Reach out and we’ll respond as soon as possible.</p>
-      <p style="margin-top:10px"><strong>Email:</strong> akhada.crafts@mantanex.com</p>
-      <p><strong>Website:</strong> www.akhadacrafts.com</p>
-      <p style="font-size:12px;color:var(--muted)">For eBook access, include your marketplace order number (Etsy or eBay) in your message.</p>
+  <!-- EDUCATION -->
+  <section id="education" class="section" aria-label="Why train">
+    <div class="section-head">
+      <div class="section-eyebrow">Why train with these tools</div>
+      <h2 class="section-title">What modern training misses</h2>
+      <p class="section-body">Indian clubs, mugdar, and samtola address movement patterns and joint angles that barbells, dumbbells, and machines simply cannot reach.</p>
     </div>
-    <div>
-      <p style="color:var(--muted)">Message us directly through our marketplace stores:</p>
-      <p><strong>Etsy:</strong> <a href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener">etsy.com/shop/akhadacrafts</a></p>
-      <p><strong>eBay:</strong> <a href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener">ebay.com/usr/akhadacrafts</a></p>
-    </div>
-  </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Akhada Crafts</div>
-  <div style="color:rgba(245,240,232,.45)">Traditional Indian training equipment · Hand-crafted teak wood · Ships worldwide</div>
-  <div style="display:flex;gap:12px">
-    <a href="#clubs" style="color:rgba(245,240,232,.35)">Clubs</a>
-    <a href="#mugdar" style="color:rgba(245,240,232,.35)">Mugdar</a>
-    <a href="#samtola" style="color:rgba(245,240,232,.35)">Samtola</a>
-    <a href="#library" style="color:rgba(245,240,232,.35)">Library</a>
-    <a href="#contact" style="color:rgba(245,240,232,.35)">Contact</a>
-  </div>
-</footer>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="background:var(--card-bg);padding:18px;border:1px solid var(--border-light);border-radius:4px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--border)">01</div>
+        <div style="font-weight:600;margin-top:8px">Full shoulder range of motion</div>
+        <div style="color:var(--muted);margin-top:8px">Club swinging uses the full 360° range of the shoulder joint — building strength and flexibility together.</div>
+      </div>
+      <div style="background:var(--card-bg);padding:18px;border:1px solid var(--border-light);border-radius:4px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--border)">02</div>
+        <div style="font-weight:600;margin-top:8px">Rotator cuff health & prehab</div>
+        <div style="color:var(--muted);margin-top:8px">Light club work (500 g–800 g) targets stabiliser muscles with low impact — excellent for injury prevention.</div>
+      </div>
+      <div style="background:var(--card-bg);padding:18px;border:1px solid var(--border-light);border-radius:4px">
+        <div style="font-family:'Playfair Display',serif;font-size:28px;color:var(--border)">03</div>
+        <div style="font-weight:600;margin-top:8px">Rotational strength & grip</div>
+        <div style="color:var(--muted);margin-top:8px">Heavy clubs and the samtola build rotational strength, grip endurance, and core stability.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY -->
+  <section id="library" class="library-section" aria-label="Library">
+    <div class="library-inner" style="max-width:1100px;margin:0 auto;padding:0 28px">
+      <div style="margin-bottom:18px">
+        <div class="section-eyebrow">Training library</div>
+        <h2 class="section-title">Learn from traditional practitioners</h2>
+        <p class="library-intro" style="color:rgba(245,240,232,.45)">We recommend learning from coaches and practitioners who live this tradition. Below are featured channels and recommended videos.</p>
+      </div>
+
+      <div class="featured-videos" role="list">
+        <div class="featured-card" role="listitem">
+          <div style="font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em">Featured channel</div>
+          <div style="font-weight:600;font-size:14px;color:var(--parchment);margin:6px 0">Gods Warrior Yogi</div>
+          <div style="color:rgba(245,240,232,.6);margin-bottom:8px">Traditional strength, mobility, and spiritual practice — excellent demonstrations of clubs and gada.</div>
+          <!-- Replace the sample URL below with the exact YouTube link you want -->
+          <a class="featured-link" href="https://www.youtube.com/watch?v=GWYvideo01" target="_blank" rel="noopener noreferrer" aria-label="Watch Gods Warrior Yogi on YouTube">Watch Gods Warrior Yogi ↗</a>
+        </div>
+
+        <div class="featured-card" role="listitem">
+          <div style="font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em">Featured school</div>
+          <div style="font-weight:600;font-size:14px;color:var(--parchment);margin:6px 0">Jothi Silambam Guruk</div>
+          <div style="color:rgba(245,240,232,.6);margin-bottom:8px">Silambam and traditional South Indian martial arts — balance, coordination, and weapon conditioning.</div>
+          <!-- Replace the sample URL below with the exact YouTube link you want -->
+          <a class="featured-link" href="https://www.youtube.com/watch?v=JSGvideo02" target="_blank" rel="noopener noreferrer" aria-label="Watch Jothi Silambam Guruk on YouTube">Watch Jothi Silambam Guruk ↗</a>
+        </div>
+      </div>
+
+      <div class="lib-grid" style="margin-top:12px">
+        <!-- Replace these sample URLs with the exact YouTube links you want -->
+        <a class="lib-card" href="https://www.youtube.com/watch?v=CLUBSvid03" target="_blank" rel="noopener noreferrer" aria-label="Indian club basics video">
+          <div style="width:38px;height:38px;background:#cc0000;border-radius:6px;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M10 15.5L15 12L10 8.5V15.5Z"/></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:600;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Indian club basics — beginner patterns</div>
+            <div style="font-size:12px;color:rgba(245,240,232,.35)">Foundational swings and safety cues</div>
+          </div>
+          <div style="color:rgba(245,240,232,.25)">↗</div>
+        </a>
+
+        <a class="lib-card" href="https://www.youtube.com/watch?v=MUGDARvid04" target="_blank" rel="noopener noreferrer" aria-label="Mugdar swings for grapplers video">
+          <div style="width:38px;height:38px;background:#cc0000;border-radius:6px;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M10 15.5L15 12L10 8.5V15.5Z"/></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:600;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Mugdar swings for grapplers</div>
+            <div style="font-size:12px;color:rgba(245,240,232,.35)">Behind-the-back swings and rotational strength</div>
+          </div>
+          <div style="color:rgba(245,240,232,.25)">↗</div>
+        </a>
+
+        <a class="lib-card" href="https://www.youtube.com/watch?v=SAMTOLAvid05" target="_blank" rel="noopener noreferrer" aria-label="Samtola balance drills video">
+          <div style="width:38px;height:38px;background:#cc0000;border-radius:6px;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M10 15.5L15 12L10 8.5V15.5Z"/></svg>
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:600;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Samtola balance drills</div>
+            <div style="font-size:12px;color:rgba(245,240,232,.35)">Footwork, lateral stability, and core control</div>
+          </div>
+          <div style="color:rgba(245,240,232,.25)">↗</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section" aria-label="Contact">
+    <div class="contact-inner">
+      <div>
+        <div class="section-eyebrow">Contact</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px">Get in touch with Akhada Crafts</h2>
+        <p style="color:var(--muted)">Questions about weights, shipping, or training resources? Reach out and we’ll respond as soon as possible.</p>
+        <p style="margin-top:10px"><strong>Email:</strong> akhada.crafts@mantanex.com</p>
+        <p><strong>Website:</strong> www.akhadacrafts.com</p>
+        <p style="font-size:12px;color:var(--muted)">The Karlakattai eBook is included only with the Beginner Kit. For eBook access, include your marketplace order number (Etsy or eBay) in your message.</p>
+      </div>
+      <div>
+        <p style="color:var(--muted)">Message us directly through our marketplace stores:</p>
+        <p><strong>Etsy:</strong> <a href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener noreferrer">etsy.com/shop/akhadacrafts</a></p>
+        <p><strong>eBay:</strong> <a href="https://www.ebay.com/usr/akhadacrafts" target="_blank" rel="noopener noreferrer">ebay.com/usr/akhadacrafts</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Akhada Crafts</div>
+    <div style="color:rgba(245,240,232,.45)">Traditional Indian training equipment · Hand-crafted · Ships worldwide</div>
+    <div style="display:flex;gap:12px">
+      <a href="#clubs" style="color:rgba(245,240,232,.35)">Clubs</a>
+      <a href="#mugdar" style="color:rgba(245,240,232,.35)">Mugdar</a>
+      <a href="#samtola" style="color:rgba(245,240,232,.35)">Samtola</a>
+      <a href="#library" style="color:rgba(245,240,232,.35)">Library</a>
+      <a href="#contact" style="color:rgba(245,240,232,.35)">Contact</a>
+    </div>
+  </footer>
+
+  <!-- Accessibility: simple marquee animation keyframes -->
+  <style>
+    @keyframes marquee { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+  </style>
 
 </body>
 </html>
