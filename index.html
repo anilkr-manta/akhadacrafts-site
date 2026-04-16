@@ -403,34 +403,6 @@
               <li style="font-size:.84rem;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:8px"><span style="color:var(--accent);font-size:1rem">✓</span> U.S. shipping</li>
             </ul>
           </div>
-          <!-- Gift book toggle -->
-          <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
-            <label style="display:flex;align-items:center;gap:12px;cursor:pointer">
-              <div style="position:relative;width:40px;height:22px;flex-shrink:0">
-                <input type="checkbox" id="gift-toggle" onchange="toggleGiftFields()" style="opacity:0;width:0;height:0;position:absolute">
-                <div id="gift-track" style="position:absolute;inset:0;background:rgba(255,255,255,0.15);border-radius:999px;transition:background .2s"></div>
-                <div id="gift-thumb" style="position:absolute;top:3px;left:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:transform .2s"></div>
-              </div>
-              <div>
-                <div style="font-size:.88rem;color:#fff;font-weight:500">Gift the Kindle book to someone</div>
-                <div style="font-size:.78rem;color:rgba(255,255,255,0.4);font-weight:300">We'll send the book digitally to their email</div>
-              </div>
-            </label>
-            <div id="gift-fields" style="display:none;margin-top:16px;display:grid;gap:10px;opacity:0;max-height:0;overflow:hidden;transition:all .3s">
-              <div>
-                <label style="font-size:.78rem;color:rgba(255,255,255,0.45);display:block;margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase">Recipient's name</label>
-                <input id="gift-name" type="text" placeholder="e.g. Arjun Kumar" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none">
-              </div>
-              <div>
-                <label style="font-size:.78rem;color:rgba(255,255,255,0.45);display:block;margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase">Recipient's email</label>
-                <input id="gift-email" type="email" placeholder="their@email.com" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none">
-              </div>
-              <div>
-                <label style="font-size:.78rem;color:rgba(255,255,255,0.45);display:block;margin-bottom:5px;letter-spacing:.06em;text-transform:uppercase">Gift message (optional)</label>
-                <textarea id="gift-message" placeholder="A short note for your recipient..." rows="2" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.07);color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;resize:none"></textarea>
-              </div>
-            </div>
-          </div>
           <button class="add-to-cart" style="width:100%;padding:14px;font-size:.95rem;border-radius:999px;background:var(--accent);color:#fff;border:none;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:background .2s" onmouseover="this.style.background='#7a5c2e'" onmouseout="this.style.background='var(--accent)'" onclick="addBundleToCart()">Add kit to cart — $849</button>
           <p style="font-size:.78rem;color:rgba(255,255,255,0.3);text-align:center;font-weight:300">Inquire by email for international shipping or custom orders.</p>
         </div>
@@ -644,7 +616,6 @@ function renderCart() {
       <div class="cart-item-info">
         <h4>${item.name}</h4>
         <div class="variant-label">${item.weight}</div>
-        ${item.gift ? `<div style="margin-top:6px;display:inline-flex;align-items:center;gap:5px;background:var(--accent-soft);color:var(--accent-dark);font-size:.75rem;padding:3px 10px;border-radius:999px;font-weight:500">🎁 Book gifted to ${item.gift.name || item.gift.email || 'recipient'}</div>` : ''}
         <div class="cart-item-controls">
           <button class="qty-btn" onclick="changeQty('${item.key}',-1)">−</button>
           <span class="qty-display">${item.qty}</span>
@@ -677,23 +648,11 @@ function toggleCart() {
 function openCheckout() {
   const summary = document.getElementById('order-summary');
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  let giftSection = '';
-  let emailGiftLines = '';
-  const bundleItem = cart.find(i => i.key === 'complete-beginner-kit' && i.gift);
-  if (bundleItem && bundleItem.gift && (bundleItem.gift.name || bundleItem.gift.email)) {
-    giftSection = `
-      <div style="margin-top:12px;padding:12px;background:var(--accent-soft);border-radius:10px;border:1px solid var(--line)">
-        <div style="font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:6px">🎁 Kindle book gift details</div>
-        ${bundleItem.gift.name ? `<div class="order-row"><span>Recipient name</span><span>${bundleItem.gift.name}</span></div>` : ''}
-        ${bundleItem.gift.email ? `<div class="order-row"><span>Recipient email</span><span>${bundleItem.gift.email}</span></div>` : ''}
-        ${bundleItem.gift.message ? `<div class="order-row"><span>Message</span><span style="max-width:180px;text-align:right">"${bundleItem.gift.message}"</span></div>` : ''}
-      </div>`;
-    emailGiftLines = `%0A%0A--- KINDLE BOOK GIFT ---%0ATo: ${bundleItem.gift.name || ''} <${bundleItem.gift.email || ''}>${bundleItem.gift.message ? `%0AMessage: ${bundleItem.gift.message}` : ''}`;
-  }
   summary.innerHTML = cart.map(i =>
     `<div class="order-row"><span>${i.name} (${i.weight}) × ${i.qty}</span><span>$${i.price * i.qty}</span></div>`
-  ).join('') + `<div class="order-row total"><span>Total</span><span>$${total}</span></div>` + giftSection;
-  const emailBody = cart.map(i => `${i.name} x${i.qty} = $${i.price * i.qty}`).join('%0A') + `%0A%0ATotal: $${total}` + emailGiftLines;
+  ).join('') + `<div class="order-row total"><span>Total</span><span>$${total}</span></div>`;
+  // Build email body with order details
+  const emailBody = cart.map(i => `${i.name} (${i.weight}) x${i.qty} = $${i.price * i.qty}`).join('%0A') + `%0A%0ATotal: $${total}`;
   document.getElementById('stripe-btn').href = `mailto:akhada.crafts@mantanex.com?subject=Order%20from%20Akhada%20Crafts&body=${emailBody}`;
   document.getElementById('checkout-modal').classList.add('open');
   toggleCart();
@@ -703,44 +662,12 @@ function closeCheckout() {
   document.getElementById('checkout-modal').classList.remove('open');
 }
 
-function toggleGiftFields() {
-  const toggle = document.getElementById('gift-toggle');
-  const fields = document.getElementById('gift-fields');
-  const track = document.getElementById('gift-track');
-  const thumb = document.getElementById('gift-thumb');
-  if (toggle.checked) {
-    fields.style.display = 'grid';
-    setTimeout(() => { fields.style.opacity = '1'; fields.style.maxHeight = '300px'; }, 10);
-    track.style.background = 'var(--accent)';
-    thumb.style.transform = 'translateX(18px)';
-  } else {
-    fields.style.opacity = '0';
-    fields.style.maxHeight = '0';
-    setTimeout(() => { fields.style.display = 'none'; }, 300);
-    track.style.background = 'rgba(255,255,255,0.15)';
-    thumb.style.transform = 'translateX(0)';
-  }
-}
-
 function addBundleToCart() {
   const key = 'complete-beginner-kit';
-  const isGift = document.getElementById('gift-toggle').checked;
-  const giftName = isGift ? document.getElementById('gift-name').value.trim() : '';
-  const giftEmail = isGift ? document.getElementById('gift-email').value.trim() : '';
-  const giftMessage = isGift ? document.getElementById('gift-message').value.trim() : '';
   const existing = cart.find(i => i.key === key);
-  if (existing) {
-    existing.qty++;
-    if (isGift) { existing.gift = { name: giftName, email: giftEmail, message: giftMessage }; }
-  } else {
-    cart.push({
-      key, productId: key,
-      name: 'Complete Beginner Kit',
-      img: 'clubs.png',
-      weight: '500g clubs + 800g clubs + 1.5kg clubs + 2kg mudgar pair + Karlakattai book',
-      price: 849, qty: 1,
-      gift: isGift ? { name: giftName, email: giftEmail, message: giftMessage } : null
-    });
+  if (existing) { existing.qty++; }
+  else {
+    cart.push({ key, productId: key, name: 'Complete Beginner Kit', img: 'clubs.png', weight: '500g clubs + 800g clubs + 1.5kg clubs + 2kg mudgar pair + Karlakattai book', price: 849, qty: 1 });
   }
   renderCart();
   const countEl = document.getElementById('cart-count');
