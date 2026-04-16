@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Indian Club Beginner Kit — Karlakattai Training</title>
+  <title>Indian Club Beginner Kit — Akhada Crafts</title>
   <style>
     /* ── CSS Variables ── */
     :root {
@@ -82,25 +82,25 @@
       color: var(--color-primary);
     }
 
-    /* ── FREE eBook Badge ── */
+    /* ── FREE eBook Badge (small pill) ── */
     .ebook-badge {
       display: inline-flex;
       align-items: center;
       gap: .35rem;
       background: var(--color-badge-bg);
       color: var(--color-badge-text);
-      font-size: .8rem;
+      font-size: .72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .04em;
-      padding: .3rem .75rem;
+      padding: .25rem .6rem;
       border-radius: 999px;
       white-space: nowrap;
       line-height: 1.3;
     }
     .ebook-badge svg {
-      width: 14px;
-      height: 14px;
+      width: 12px;
+      height: 12px;
       flex-shrink: 0;
       fill: currentColor;
     }
@@ -127,44 +127,27 @@
       color: var(--color-text-muted);
     }
 
-    /* ── eBook Callout ── */
-    .ebook-callout {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 1.25rem;
-      align-items: start;
-      margin: 1.5rem;
-      padding: 1.25rem;
+    /* ── eBook Bonus Note (compact, secondary) ── */
+    .ebook-bonus {
+      margin: 1rem 1.5rem;
+      padding: .75rem 1rem;
       background: var(--color-parchment);
       border: 1px solid var(--color-parchment-border);
-      border-left: 4px solid var(--color-accent);
-      border-radius: 8px;
-    }
-    .ebook-callout__cover {
-      width: 100%;
+      border-left: 3px solid var(--color-accent);
       border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(60, 40, 20, .15);
-    }
-    .ebook-callout__content h3 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      color: var(--color-primary);
-      margin-bottom: .5rem;
-    }
-    .ebook-callout__content p {
-      font-size: .92rem;
-      color: var(--color-text);
-      margin-bottom: .75rem;
-    }
-    .ebook-callout__instruction {
-      font-size: .82rem;
-      font-style: italic;
+      font-size: .85rem;
       color: var(--color-text-muted);
-      background: rgba(255,255,255,.55);
-      padding: .45rem .65rem;
-      border-radius: 6px;
-      border: 1px dashed var(--color-parchment-border);
-      line-height: 1.45;
+      line-height: 1.5;
+    }
+    .ebook-bonus strong {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .ebook-bonus .ebook-bonus__access {
+      display: block;
+      margin-top: .35rem;
+      font-size: .8rem;
+      font-style: italic;
     }
 
     /* ── Kit Footer ── */
@@ -208,14 +191,6 @@
 
     /* ── Responsive ── */
     @media (max-width: 540px) {
-      .ebook-callout {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .ebook-callout__cover {
-        max-width: 100px;
-        margin: 0 auto;
-      }
       .kit-gallery {
         grid-template-columns: 1fr 1fr;
       }
@@ -236,51 +211,34 @@
     <!-- ── Kit Card ── -->
     <article class="kit-card" aria-label="Indian Club Beginner Kit">
 
-      <!-- Kit Title + FREE eBook Badge -->
+      <!-- Kit Title + small FREE eBook pill -->
       <div class="kit-header">
         <h2>Indian Club Beginner Kit</h2>
         <span class="ebook-badge" aria-label="Free Karlakattai eBook included with this kit">
-          <!-- book icon -->
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14V4zM5 18V6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14v-2H5z"/></svg>
-          FREE Karlakattai eBook Included
+          FREE eBook Included
         </span>
       </div>
 
-      <!-- Product Images -->
+      <!-- Product Images — the real stars -->
       <div class="kit-gallery">
         <img src="clubs.png"    alt="Pair of hand-turned Indian clubs included in the Beginner Kit" />
-        <img src="mugdar.png"   alt="Traditional mugdar (heavy mace) for advanced progression" />
+        <img src="mugdar.png"   alt="Traditional mugdar for advanced progression" />
         <img src="samtola.jpg"  alt="Samtola stone lock used in classical Indian strength training" />
       </div>
 
-      <!-- Kit Description -->
+      <!-- Kit Description — craftsmanship & community first -->
       <div class="kit-body">
         <p>Everything you need to start your Indian club journey — a matched pair of hand-turned clubs, a quick-start training guide, and ongoing support from our community of traditional strength enthusiasts.</p>
       </div>
 
-      <!-- ═══ eBook Callout (prominent) ═══ -->
-      <aside class="ebook-callout" role="complementary" aria-labelledby="ebook-callout-heading">
-        <img
-          class="ebook-callout__cover"
-          src="cover.jpeg"
-          alt="Cover of the Karlakattai eBook — an illustrated guide to ancient Indian club training"
-        />
-        <div class="ebook-callout__content">
-          <h3 id="ebook-callout-heading">Karlakattai — The Ancient Training Manual</h3>
-          <p>
-            Rooted in centuries of South Indian martial tradition, this comprehensive eBook
-            unlocks the time-tested drills and conditioning methods passed down through
-            generations of Karlakattai practitioners. Inside you'll find step-by-step
-            progressions, historical context, and practical routines that pair perfectly
-            with your Beginner Kit — bridging ancient wisdom and modern fitness.
-          </p>
-          <p class="ebook-callout__instruction">
-            For eBook access include your marketplace order number (Etsy or eBay) in your message.
-          </p>
-        </div>
-      </aside>
+      <!-- eBook bonus: compact note, not a feature section -->
+      <p class="ebook-bonus" role="note">
+        <strong>Bonus:</strong> Your kit includes a free Karlakattai eBook — an ancient training manual with drills, history, and routines that complement your clubs.
+        <span class="ebook-bonus__access">For eBook access include your marketplace order number (Etsy or eBay) in your message.</span>
+      </p>
 
-      <!-- Action Buttons -->
+      <!-- Action Buttons — drive to shop -->
       <div class="kit-footer">
         <a href="#" class="btn btn--primary">Shop on Etsy</a>
         <a href="#" class="btn btn--outline">Shop on eBay</a>
