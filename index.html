@@ -1,310 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Akhada Crafts — Traditional Strength Tools</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Training Library</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#f5f0e8;
-      --soft:#faf7f2;
-      --text:#1e1c19;
-      --muted:#7a6f60;
-      --line:#e4dbd0;
-      --accent:#a07840;
-      --max:1100px;
-      --r:16px;
-    }
+<style>
+  body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #0b0c10;
+    color: #ffffff;
+  }
 
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:DM Sans,sans-serif;background:var(--bg);color:var(--text)}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
+  header {
+    padding: 60px 20px 30px;
+    text-align: center;
+  }
 
-    .container{width:min(var(--max),calc(100% - 32px));margin:auto}
+  header h1 {
+    font-size: 34px;
+    margin: 0;
+    font-weight: 600;
+  }
 
-    /* NAV */
-    .nav{
-      position:sticky;top:0;
-      background:rgba(245,240,232,.9);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
-      z-index:10;
-    }
-    .nav-inner{
-      height:64px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .brand{
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.4rem;
-      color:var(--accent);
-    }
-    .nav a{margin-left:18px;font-size:.9rem;color:var(--muted)}
-    .nav a:hover{color:var(--text)}
+  header p {
+    color: #9aa0a6;
+    margin-top: 10px;
+    font-size: 14px;
+  }
 
-    /* HERO */
-    .hero{
-      min-height:70vh;
-      display:flex;
-      align-items:flex-end;
-      background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(245,240,232,.8)),url('cover.jpeg') center/cover;
-    }
-    .hero-inner{padding:80px 0}
-    h1{
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(2.5rem,6vw,4.5rem);
-      line-height:1;
-    }
-    .sub{margin-top:12px;color:var(--muted);max-width:600px}
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+  }
 
-    .btn{
-      display:inline-block;
-      margin-top:18px;
-      padding:10px 18px;
-      border-radius:999px;
-      border:1.5px solid var(--accent);
-      color:var(--accent);
-      font-size:.9rem;
-    }
-    .btn:hover{background:var(--accent);color:#fff}
+  .search {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 30px;
+    font-size: 14px;
+    background: #16181d;
+    color: white;
+  }
 
-    section{padding:70px 0}
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
 
-    .section-head{
-      text-align:center;
-      margin-bottom:40px;
-    }
-    .section-head h2{
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.4rem;
-    }
-    .section-head p{color:var(--muted);margin-top:8px}
+  .card {
+    background: #15171c;
+    border-radius: 14px;
+    padding: 18px;
+    transition: 0.2s ease;
+    border: 1px solid #22252c;
+  }
 
-    /* GRID */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #3a82f7;
+  }
 
-    .card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:var(--r);
-      overflow:hidden;
-    }
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
 
-    .card img{
-      height:240px;
-      object-fit:cover;
-      width:100%;
-    }
+  .link {
+    display: block;
+    color: #8ab4f8;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 6px 0;
+  }
 
-    .card-body{padding:16px}
-    .tag{
-      font-size:.75rem;
-      color:var(--accent);
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-    .title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.4rem;
-      margin:6px 0;
-    }
-    .desc{color:var(--muted);font-size:.9rem}
+  .link:hover {
+    text-decoration: underline;
+  }
 
-    .link{
-      display:inline-block;
-      margin-top:12px;
-      font-size:.85rem;
-      color:var(--accent);
-    }
+  .tag {
+    font-size: 12px;
+    color: #9aa0a6;
+    margin-bottom: 10px;
+  }
 
-    /* LINKS */
-    .links{
-      background:var(--soft);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .link-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:16px;
-    }
-
-    .link-box{
-      background:#fff;
-      border:1px solid var(--line);
-      padding:18px;
-      border-radius:14px;
-    }
-
-    .link-box strong{
-      font-family:"Cormorant Garamond",serif;
-      color:var(--accent);
-      font-size:1.2rem;
-      display:block;
-      margin-bottom:6px;
-    }
-
-    /* CONTACT */
-    .contact{
-      text-align:center;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:32px;
-      max-width:600px;
-      margin:auto;
-    }
-
-    footer{
-      text-align:center;
-      padding:30px;
-      color:var(--muted);
-      border-top:1px solid var(--line);
-      font-size:.85rem;
-    }
-
-    @media(max-width:900px){
-      .grid{grid-template-columns:1fr}
-      .link-grid{grid-template-columns:1fr}
-      .nav a{display:none}
-    }
-  </style>
+  footer {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 12px;
+  }
+</style>
 </head>
 
 <body>
 
-<div class="nav">
-  <div class="container nav-inner">
-    <div class="brand">Akhada Crafts</div>
-    <div>
-      <a href="#shop">Tools</a>
-      <a href="#market">Marketplaces</a>
-      <a href="#library">Library</a>
-      <a href="#contact">Contact</a>
+<header>
+  <h1>Training Library</h1>
+  <p>Curated knowledge for movement, discipline, martial arts, and mindset</p>
+</header>
+
+<div class="container">
+
+  <input class="search" type="text" id="search" placeholder="Search library..." onkeyup="filterCards()"/>
+
+  <div class="grid">
+
+    <!-- Martial Arts -->
+    <div class="card" data-key="silambam martial arts traditional combat">
+      <div class="title">Martial Arts</div>
+      <div class="tag">Traditional Combat Systems</div>
+      <a class="link" href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk/videos" target="_blank">
+        Silambam Kshatriya Training
+      </a>
     </div>
+
+    <!-- Fitness -->
+    <div class="card" data-key="primal fitness movement strength conditioning">
+      <div class="title">Primal Fitness</div>
+      <div class="tag">Natural Movement & Strength</div>
+      <a class="link" href="https://www.youtube.com/@backtoprimal/videos" target="_blank">
+        Back to Primal
+      </a>
+    </div>
+
+    <!-- Mindset -->
+    <div class="card" data-key="meditation philosophy zen mindset consciousness">
+      <div class="title">Mindset</div>
+      <div class="tag">Philosophy & Awareness</div>
+      <a class="link" href="https://www.youtube.com/@zenkahuna/videos" target="_blank">
+        Zen Kahuna
+      </a>
+    </div>
+
+    <!-- Spiritual Discipline -->
+    <div class="card" data-key="yoga warrior discipline spiritual training">
+      <div class="title">Spiritual Discipline</div>
+      <div class="tag">Yoga & Warrior Path</div>
+      <a class="link" href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank">
+        God’s Warrior Yogi
+      </a>
+    </div>
+
   </div>
 </div>
 
-<section class="hero">
-  <div class="container hero-inner">
-    <h1>Traditional strength tools, handcrafted.</h1>
-    <div class="sub">
-      Indian clubs, mudgars, and samtola built for movement, conditioning, and heritage training practice.
-    </div>
-    <a class="btn" href="#shop">Explore tools</a>
-  </div>
-</section>
-
-<section id="shop">
-  <div class="container">
-    <div class="section-head">
-      <h2>Tools overview</h2>
-      <p>Informational catalog — not a checkout page.</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-        <img src="clubs.png">
-        <div class="card-body">
-          <div class="tag">Indian Clubs</div>
-          <div class="title">Starter & Progression Sets</div>
-          <div class="desc">Used for mobility, coordination, and flow-based strength training.</div>
-          <a class="link" href="https://www.etsy.com/shop/akhadacrafts?ref=shop-header-name&listing_id=4477783454&from_page=listing" target="_blank">View on Etsy →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="mugdar.jpeg">
-        <div class="card-body">
-          <div class="tag">Mudgar</div>
-          <div class="title">Light to Heavy Variants</div>
-          <div class="desc">Leverage-based strength training tool used in traditional conditioning systems.</div>
-          <a class="link" href="https://www.ebay.com/sch/i.html?item=397832669013&rt=nc&_ssn=akhadacrafts" target="_blank">View on eBay →</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="samtola.jpg">
-        <div class="card-body">
-          <div class="tag">Samtola</div>
-          <div class="title">Heavy Traditional Tool</div>
-          <div class="desc">Advanced strength and control training implement for experienced practitioners.</div>
-          <span class="link">Available via inquiry</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="market" class="links">
-  <div class="container">
-    <div class="section-head">
-      <h2>Where products are listed</h2>
-      <p>Official storefronts and marketplaces</p>
-    </div>
-
-    <div class="link-grid">
-
-      <div class="link-box">
-        <strong>Etsy Store</strong>
-        Handmade listings and global orders
-        <br><br>
-        <a class="link" href="https://www.etsy.com/shop/akhadacrafts?ref=shop-header-name&listing_id=4477783454&from_page=listing" target="_blank">Open Etsy</a>
-      </div>
-
-      <div class="link-box">
-        <strong>eBay Listings</strong>
-        Marketplace listings and variations
-        <br><br>
-        <a class="link" href="https://www.ebay.com/sch/i.html?item=397832669013&rt=nc&_trksid=p4429486.m3561.l161211&_ssn=akhadacrafts" target="_blank">Open eBay</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="library">
-  <div class="container">
-    <div class="section-head">
-      <h2>Training references</h2>
-      <p>External learning sources</p>
-    </div>
-
-    <div class="grid">
-      <div class="card"><div class="card-body">YouTube movement references</div></div>
-      <div class="card"><div class="card-body">Traditional training systems</div></div>
-      <div class="card"><div class="card-body">Flow-based club practice guides</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <div class="contact">
-      <h2>Contact</h2>
-      <p>Custom orders and inquiries</p>
-      <br>
-      <a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
-    </div>
-  </div>
-</section>
-
 <footer>
-  © 2026 Akhada Crafts
+  Training Library © 2026
 </footer>
+
+<script>
+function filterCards() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    let key = card.getAttribute("data-key");
+    if (key.includes(input)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
 
 </body>
 </html>
