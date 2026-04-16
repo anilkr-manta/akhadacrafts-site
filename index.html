@@ -25,7 +25,6 @@ nav {
 
 .logo {
   font-weight: 600;
-  letter-spacing: 1px;
 }
 
 nav a {
@@ -42,50 +41,37 @@ nav a:hover {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 90px 20px 60px;
+  padding: 70px 20px 40px;
 }
 
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  color: #777;
-  font-size: 15px;
+  font-size: 34px;
 }
 
 /* SECTION */
 .section {
   max-width: 900px;
   margin: auto;
-  padding: 50px 20px;
+  padding: 40px 20px;
 }
 
 .section h2 {
   font-size: 20px;
-  margin-bottom: 25px;
-  border-left: 3px solid white;
-  padding-left: 10px;
+  margin-bottom: 20px;
 }
 
-/* EQUIPMENT GRID */
-.equipment {
+/* GRID */
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 15px;
 }
 
+/* CARD */
 .card {
   border: 1px solid #1f1f1f;
   border-radius: 10px;
   padding: 18px;
-  transition: 0.2s;
-}
-
-.card:hover {
-  border-color: #444;
-  background: #111;
 }
 
 .card-title {
@@ -98,29 +84,40 @@ nav a:hover {
   margin-top: 6px;
 }
 
+/* BUTTON LINKS */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #ccc;
+}
+
+.btn:hover {
+  border-color: white;
+  color: white;
+}
+
 /* LIBRARY */
 .list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .item {
-  padding: 14px 16px;
+  padding: 12px;
   border: 1px solid #1f1f1f;
   border-radius: 8px;
-  transition: 0.2s;
-}
-
-.item:hover {
-  border-color: #444;
-  background: #111;
 }
 
 .item a {
-  text-decoration: none;
   color: #eaeaea;
-  font-size: 14px;
+  text-decoration: none;
 }
 
 /* FOOTER */
@@ -144,24 +141,25 @@ footer {
 </nav>
 
 <div class="hero">
-  <h1>Traditional Strength</h1>
-  <p>Teak wood equipment. Real training. No noise.</p>
+  <h1>Traditional Strength Training Equipment</h1>
 </div>
 
 <!-- EQUIPMENT -->
 <div class="section" id="equipment">
   <h2>Equipment</h2>
 
-  <div class="equipment">
+  <div class="grid">
 
     <div class="card">
       <div class="card-title">Indian Clubs (Beginner Kit)</div>
       <div class="card-desc">
         1.1 lb · 1.8 lb · 3.3 lb · 4.4 lb<br>
-        (500g · 800g · 1.5kg · 2kg)<br>
         Sold only as full kit<br>
-        Solid teak wood
+        Teak wood
       </div>
+
+      <a class="btn" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">View on Etsy</a>
+      <a class="btn" href="https://www.ebay.com/sch/i.html?item=397832669013" target="_blank">View on eBay</a>
     </div>
 
     <div class="card">
@@ -169,8 +167,11 @@ footer {
       <div class="card-desc">
         Approx. 2 lb – 9 lb range<br>
         Traditional gada training<br>
-        Solid teak wood
+        Teak wood
       </div>
+
+      <a class="btn" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">View on Etsy</a>
+      <a class="btn" href="https://www.ebay.com/sch/i.html?item=397832669013" target="_blank">View on eBay</a>
     </div>
 
     <div class="card">
@@ -178,8 +179,11 @@ footer {
       <div class="card-desc">
         Heavy balance training tool<br>
         Fixed build<br>
-        Solid teak wood
+        Teak wood
       </div>
+
+      <a class="btn" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">View on Etsy</a>
+      <a class="btn" href="https://www.ebay.com/sch/i.html?item=397832669013" target="_blank">View on eBay</a>
     </div>
 
   </div>
@@ -190,33 +194,12 @@ footer {
   <h2>Training Library</h2>
 
   <div class="list">
-
-    <div class="item">
-      <a href="https://www.youtube.com/@viamilitaris" target="_blank">Via Militaris</a>
-    </div>
-
-    <div class="item">
-      <a href="https://www.youtube.com/@zenkahuna" target="_blank">Zen Kahuna</a>
-    </div>
-
-    <div class="item">
-      <a href="https://www.youtube.com/@backtoprimal" target="_blank">Back to Primal</a>
-    </div>
-
-    <div class="item">
-      <a href="https://www.youtube.com/@Godswarrioryogi" target="_blank">God’s Warrior Yogi</a>
-    </div>
-
-    <div class="item">
-      <a href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank">
-        Jothisilambam Guruk
-      </a>
-    </div>
-
-    <div class="item">
-      <a href="https://www.youtube.com/@HeroicSport" target="_blank">Heroic Sport</a>
-    </div>
-
+    <div class="item"><a href="https://www.youtube.com/@viamilitaris" target="_blank">Via Militaris</a></div>
+    <div class="item"><a href="https://www.youtube.com/@zenkahuna" target="_blank">Zen Kahuna</a></div>
+    <div class="item"><a href="https://www.youtube.com/@backtoprimal" target="_blank">Back to Primal</a></div>
+    <div class="item"><a href="https://www.youtube.com/@Godswarrioryogi" target="_blank">God’s Warrior Yogi</a></div>
+    <div class="item"><a href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank">Jothisilambam Guruk</a></div>
+    <div class="item"><a href="https://www.youtube.com/@HeroicSport" target="_blank">Heroic Sport</a></div>
   </div>
 </div>
 
