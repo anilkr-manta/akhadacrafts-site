@@ -6,80 +6,167 @@
     <title>Akhada Crafts — Traditional Indian Training Equipment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --clay: #1c130d;
-            --amber: #c47a2e;
-            --sand: #f2ebe0;
-            --sand-lt: #faf7f2;
-            --muted: #8a7868;
-            --border: rgba(196,122,46,.18);
-        }
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:'Jost',sans-serif;background:var(--sand-lt);color:var(--clay);line-height:1.7;overflow-x:hidden;}
-        a{text-decoration:none;color:inherit;}
-        img{display:block;max-width:100%;height:auto;}
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-        /* Navigation */
-        nav{position:sticky;top:0;z-index:200;background:var(--clay);display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:60px;}
-        .logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--sand);letter-spacing:.1em;}
-        .logo em{color:var(--amber);font-style:normal}
-        .nav-links{display:flex;gap:30px}
-        .nav-links a{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:rgba(242,235,224,.5);transition:.2s;}
-        .nav-links a:hover{color:var(--sand)}
-        .nav-shop{font-size:11px;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber);padding:8px 18px;border-radius:2px;}
+<style>
+:root {
+  --clay: #1c130d;
+  --amber: #c47a2e;
+  --sand: #f2ebe0;
+  --sand-lt: #faf7f2;
+  --muted: #8a7868;
+  --border: rgba(196,122,46,.18);
+}
 
-        /* Hero Section */
-        .hero{background:var(--clay);display:grid;grid-template-columns:1fr 1fr;min-height:90vh;position:relative;}
-        .hero-left{display:flex;flex-direction:column;justify-content:center;padding:60px 52px;}
-        .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,70px);color:var(--sand);line-height:1.1;margin-bottom:20px;}
-        .hero h1 em{color:var(--amber);font-style:italic;}
-        .hero-desc{font-size:15px;color:rgba(242,235,224,.6);max-width:400px;margin-bottom:40px;}
-        .hero-right{position:relative;background:var(--clay);}
-        .hero-right img{width:100%;height:100%;object-fit:cover;opacity:0.9;}
-        
-        /* Product Sections */
-        .sec{padding:100px 0;max-width:1100px;margin:0 auto;padding:100px 40px;}
-        .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--amber);display:block;margin-bottom:10px;}
-        .sec-title{font-family:'Cormorant Garamond',serif;font-size:36px;margin-bottom:20px;}
-        .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-        .product-img{border-radius:4px;border:1px solid var(--border);width:100%;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--sand-lt);
+  color:var(--clay);
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
 
-        /* Responsive */
-        @media(max-width:900px){
-            .hero{grid-template-columns:1fr;}
-            .hero-right{height:350px;order:-1;}
-            .product-grid{grid-template-columns:1fr;gap:30px;}
-            nav{padding:0 20px;}
-            .nav-links{display:none;}
-        }
-    </style>
+/* NAV */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--clay);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 52px;height:58px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:500;
+  color:var(--sand);letter-spacing:.1em;
+}
+.logo em{color:var(--amber);font-style:normal}
+.nav-links{display:flex;gap:30px}
+.nav-links a{
+  font-size:11px;font-weight:400;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(242,235,224,.45);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--sand)}
+.nav-shop{
+  font-size:11px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--amber);
+  border:1px solid rgba(196,122,46,.4);
+  padding:7px 16px;border-radius:2px;
+  transition:all .2s;
+}
+
+/* HERO */
+.hero{
+  background:var(--clay);
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:92vh;overflow:hidden;
+  position:relative;
+}
+.hero-left{
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:80px 60px 80px 52px;
+  position:relative;z-index:2;
+}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(42px,5.5vw,72px);
+  font-weight:400;line-height:1.05;
+  color:var(--sand);margin-bottom:28px;
+}
+.hero h1 em{font-style:italic;color:var(--amber)}
+.hero-desc{
+  font-size:14px;color:rgba(242,235,224,.6);
+  line-height:1.85;max-width:380px;margin-bottom:44px;
+}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  opacity:.88;
+}
+
+/* SECTIONS */
+.sec{padding:88px 0; max-width:1080px; margin:0 auto; padding:88px 40px;}
+.eyebrow{font-size:10px; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--amber); margin-bottom:14px; display:block;}
+.sec-title{font-family:'Cormorant Garamond',serif; font-size:44px; margin-bottom:14px;}
+.product-grid{display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-bottom:100px;}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right{height:300px; order:-1;}
+  .product-grid{grid-template-columns:1fr; gap:40px;}
+  nav{padding:0 20px;}
+  .nav-links{display:none;}
+}
+</style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">AKHADA<em>.</em>CRAFTS</div>
-    <div class="nav-links">
-        <a href="#clubs">Clubs</a>
-        <a href="#mugdar">Mugdar</a>
-        <a href="#samtola">Samtola</a>
-    </div>
-    <a class="nav-shop" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Shop Etsy</a>
+  <div class="logo">AKHADA<em>.</em>CRAFTS</div>
+  <div class="nav-links">
+    <a href="#clubs">Clubs</a>
+    <a href="#mugdar">Mugdar</a>
+    <a href="#samtola">Samtola</a>
+  </div>
+  <a class="nav-shop" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Shop ↗</a>
 </nav>
 
 <section class="hero">
-    <div class="hero-left">
-        <span class="eyebrow">Traditional Strength</span>
-        <h1>Forged in <em>teak.</em><br>Built for power.</h1>
-        <p class="hero-desc">Authentic Indian training tools handcrafted from solid teak. Calibration based on centuries of Pehlwani tradition.</p>
-        <a class="nav-shop" style="width:fit-content" href="https://www.etsy.com/shop/akhadacrafts">Explore Collection</a>
-    </div>
-    <div class="hero-right">
-        <img src="cover.jpeg.jpg" alt="Akhada Crafts Banner">
-    </div>
+  <div class="hero-left">
+    <h1>Forged in<br><em>teak.</em><br>Built for<br>strength.</h1>
+    <p class="hero-desc">Indian clubs, mugdar, and samtola — ancient training implements handcrafted for the modern era.</p>
+    <a class="nav-shop" style="width:fit-content" href="https://www.etsy.com/shop/akhadacrafts">Explore Etsy</a>
+  </div>
+  <div class="hero-right">
+    <img src="cover.jpeg.jpg" alt="Akhada Crafts Banner">
+  </div>
 </section>
 
 <section id="clubs" class="sec">
     <div class="product-grid">
-        <img
+        <img src="clubs.png" alt="Indian Clubs Kit">
+        <div>
+            <span class="eyebrow">The Collection</span>
+            <h2 class="sec-title">Indian Club Kit</h2>
+            <p>Four weight pairs handcrafted from solid teak. Calibrated for joint mobility and restorative flow.</p>
+        </div>
+    </div>
+</section>
+
+<section id="mugdar" class="sec">
+    <div class="product-grid">
+        <div>
+            <span class="eyebrow">Heavy Training</span>
+            <h2 class="sec-title">Hand-Turned Mugdar</h2>
+            <p>Built for raw rotational power and pehlwani wrestling tradition. Available in various weights.</p>
+        </div>
+        <img src="mugdar.png" alt="Teak Mugdar">
+    </div>
+</section>
+
+<section id="samtola" class="sec">
+    <div class="product-grid">
+        <img src="samtola.jpg" alt="Samtola Balance Tool">
+        <div>
+            <span class="eyebrow">Total Body</span>
+            <h2 class="sec-title">The 10kg Samtola</h2>
+            <p>The ultimate implement for cross-body stability and functional core power.</p>
+        </div>
+    </div>
+</section>
+
+<footer style="background:var(--clay); color:var(--sand); padding:40px; text-align:center;">
+    <p>© Akhada Crafts 2026</p>
+</footer>
+
+</body>
+</html>
