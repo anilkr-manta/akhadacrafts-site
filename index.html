@@ -205,68 +205,44 @@
     }
     .value-desc { font-size: 13px; color: rgba(245,238,216,.45); line-height: 1.8; }
 
-    /* PUBLIC LIBRARY */
-    .library-section { background: var(--cream-dark); padding: 80px 40px; }
-    .library-inner { max-width: 1080px; margin: 0 auto; }
-    .library-header {
-      display: flex; align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 48px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 24px;
+    /* WATCH & LEARN — compact */
+    .watch-section {
+      background: var(--ink);
+      padding: 48px 40px;
+      border-top: 1px solid var(--border);
     }
-    .library-header-left .section-eyebrow {
-      font-size: 10px; letter-spacing: .25em; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 8px;
+    .watch-inner {
+      max-width: 1080px; margin: 0 auto;
+      display: flex; align-items: baseline;
+      gap: 40px; flex-wrap: wrap;
     }
-    .library-heading {
+    .watch-label {
       font-family: 'Cinzel', serif;
-      font-size: 32px; font-weight: 400; line-height: 1.1;
+      font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); opacity: .7; white-space: nowrap;
+      flex-shrink: 0;
     }
-    .library-tagline {
-      font-size: 13px; color: var(--muted);
-      max-width: 280px; text-align: right; line-height: 1.7;
+    .watch-links {
+      display: flex; flex-wrap: wrap; gap: 8px 6px;
     }
-    .library-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-    .library-card {
-      background: var(--cream); padding: 32px 28px;
-      border-top: 2px solid transparent;
-      transition: border-color .2s, background .2s;
+    .watch-pill {
+      font-size: 11px; letter-spacing: .06em;
+      color: rgba(245,238,216,.45);
+      border: 1px solid rgba(184,136,42,.18);
+      padding: 5px 14px; border-radius: 1px;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
     }
-    .library-card:hover { border-top-color: var(--gold); background: #fff; }
-    .library-card-num {
-      font-family: 'Cinzel', serif;
-      font-size: 11px; color: var(--gold); opacity: .5;
-      margin-bottom: 12px; display: block;
+    .watch-pill:hover {
+      color: var(--gold);
+      border-color: rgba(184,136,42,.5);
     }
-    .library-card-title {
-      font-family: 'Cinzel', serif;
-      font-size: 16px; font-weight: 400;
-      line-height: 1.3; margin-bottom: 12px;
+    .watch-disclaimer {
+      width: 100%;
+      font-size: 11px; color: rgba(245,238,216,.2);
+      letter-spacing: .03em; line-height: 1.6;
+      padding-top: 10px;
     }
-    .library-card-body {
-      font-size: 13px; color: var(--muted);
-      line-height: 1.75; margin-bottom: 20px;
-    }
-    .library-card-tag {
-      font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--gold); opacity: .7;
-    }
-    .library-ebook-note {
-      margin-top: 32px; padding: 20px 28px;
-      border: 1px solid var(--border); background: var(--cream);
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 24px; flex-wrap: wrap;
-    }
-    .library-ebook-note p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-    .library-ebook-note p strong { font-weight: 400; color: var(--ink); }
-    .library-ebook-link {
-      font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
-      color: var(--gold); white-space: nowrap;
-      border-bottom: 1px solid rgba(184,136,42,.3);
-      padding-bottom: 3px; transition: border-color .2s;
-    }
-    .library-ebook-link:hover { border-color: var(--gold); }
 
     /* SUBSCRIBE */
     .subscribe-band { background: var(--ink); padding: 80px 40px; text-align: center; }
@@ -363,11 +339,8 @@
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .values-inner { grid-template-columns: 1fr; }
-      .library-grid { grid-template-columns: 1fr; }
-      .library-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .library-tagline { text-align: left; }
+      .watch-grid { grid-template-columns: 1fr; }
       .subscribe-form { flex-direction: column; }
-      .library-ebook-note { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -379,7 +352,8 @@
     <a href="#clubs">Clubs</a>
     <a href="#mugdar">Mugdar</a>
     <a href="#samtola">Samtola</a>
-    <a href="#library">Library</a>
+    <a href="#watch">Watch</a>
+    <a href="#ebook">Ebook</a>
     <a href="#contact">Contact</a>
   </div>
   <a class="nav-cta" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Shop Etsy ↗</a>
@@ -468,60 +442,19 @@
   </div>
 </section>
 
-<!-- PUBLIC LIBRARY -->
-<section id="library" class="library-section">
-  <div class="library-inner">
-    <div class="library-header">
-      <div class="library-header-left">
-        <span class="section-eyebrow">Free Knowledge</span>
-        <h2 class="library-heading">Public Library</h2>
-      </div>
-      <p class="library-tagline">Open resources on Karlkattia martial arts, akhada training, and the tools of Indian strength culture.</p>
+<!-- WATCH & LEARN — compact -->
+<section id="watch" class="watch-section">
+  <div class="watch-inner">
+    <span class="watch-label">Watch &amp; Learn</span>
+    <div class="watch-links">
+      <a class="watch-pill" href="https://www.youtube.com/@backtoprimal/videos" target="_blank" rel="noopener">Back to Primal ↗</a>
+      <a class="watch-pill" href="https://www.youtube.com/@jothisilambamkshakthiriyaguruk" target="_blank" rel="noopener">Jothi Silambam ↗</a>
+      <a class="watch-pill" href="https://www.youtube.com/@zenkahuna/videos" target="_blank" rel="noopener">Zen Kahuna ↗</a>
+      <a class="watch-pill" href="https://www.youtube.com/@Godswarrioryogi/videos" target="_blank" rel="noopener">God's Warrior Yogi ↗</a>
+      <a class="watch-pill" href="https://www.youtube.com/@viamilitaris/videos" target="_blank" rel="noopener">Via Militaris ↗</a>
+      <a class="watch-pill" href="https://www.youtube.com/@HeroicSport/videos" target="_blank" rel="noopener">Heroic Sport ↗</a>
     </div>
-    <div class="library-grid">
-      <div class="library-card">
-        <span class="library-card-num">01</span>
-        <h3 class="library-card-title">What Is Karlkattia?</h3>
-        <p class="library-card-body">An introduction to the Karlkattia martial art — its origins, lineage, and the role of the akhada as a place of training and community in Indian culture.</p>
-        <span class="library-card-tag">History &amp; Origins</span>
-      </div>
-      <div class="library-card">
-        <span class="library-card-num">02</span>
-        <h3 class="library-card-title">Beginner Club Swinging</h3>
-        <p class="library-card-body">A step-by-step guide to the foundational club movements — grip, posture, the basic mill, and how to build shoulder health from your very first session.</p>
-        <span class="library-card-tag">Technique · Clubs</span>
-      </div>
-      <div class="library-card">
-        <span class="library-card-num">03</span>
-        <h3 class="library-card-title">The Mugdar Tradition</h3>
-        <p class="library-card-body">How the mugdar evolved from a weapon of war into a training tool for wrestlers, and why its circular loading patterns build strength that barbells cannot replicate.</p>
-        <span class="library-card-tag">History · Mugdar</span>
-      </div>
-      <div class="library-card">
-        <span class="library-card-num">04</span>
-        <h3 class="library-card-title">Samtola for Core Strength</h3>
-        <p class="library-card-body">An overview of the samtola's unique loading pattern, why it demands rotational stability, and three starter exercises to integrate it into your existing practice.</p>
-        <span class="library-card-tag">Technique · Samtola</span>
-      </div>
-      <div class="library-card">
-        <span class="library-card-num">05</span>
-        <h3 class="library-card-title">Choosing Your First Weight</h3>
-        <p class="library-card-body">A practical guide to selecting the right club and mugdar weight for your current level — with recommendations for complete beginners, intermediates, and wrestlers.</p>
-        <span class="library-card-tag">Buyer's Guide</span>
-      </div>
-      <div class="library-card">
-        <span class="library-card-num">06</span>
-        <h3 class="library-card-title">Caring for Your Implements</h3>
-        <p class="library-card-body">How to oil, store, and maintain your teak and acacia implements so they last a lifetime — and what to look for as the wood seasons with use over time.</p>
-        <span class="library-card-tag">Maintenance</span>
-      </div>
-    </div>
-
-    <div class="library-ebook-note">
-      <p><strong>Beginner Kit includes a free training guide.</strong> If you purchased the Beginner Club Kit and did not receive your copy, write to us and we will send it to you.</p>
-      <a class="library-ebook-link" href="mailto:akhada.crafts@mantanex.com">Contact us ↗</a>
-    </div>
-
+    <p class="watch-disclaimer">These are independent YouTube channels we find valuable — they are not affiliated with or produced by Akhada Crafts.</p>
   </div>
 </section>
 
@@ -530,12 +463,22 @@
   <div class="subscribe-inner">
     <span class="subscribe-eyebrow">Stay Connected</span>
     <h2 class="subscribe-title">Join the Akhada Community</h2>
-    <p class="subscribe-desc">New library articles, training notes, and equipment updates — delivered to your inbox.</p>
+    <p class="subscribe-desc">New training resources, equipment updates, and community links — delivered to your inbox.</p>
     <div class="subscribe-form">
       <input type="email" placeholder="Your email address">
       <button type="button">Subscribe</button>
     </div>
     <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+  </div>
+</section>
+
+<!-- EBOOK -->
+<section id="ebook" class="contact-band" style="background: var(--cream);">
+  <div class="contact-inner">
+    <span class="contact-eyebrow">Free with Beginner Kit</span>
+    <h2 class="contact-title">Training Guide Ebook</h2>
+    <p class="contact-desc">A free training guide is included with every Beginner Club Kit purchase — covering how to get started, basic movements, and progressions. If you bought the kit and did not receive your copy, write to us and we will send it right away.</p>
+    <a class="contact-email" href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
   </div>
 </section>
 
