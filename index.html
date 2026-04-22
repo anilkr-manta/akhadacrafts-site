@@ -19,25 +19,12 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Lato', sans-serif;
-      background: var(--cream);
-      color: var(--ink);
-      font-weight: 300;
-      line-height: 1.75;
-      overflow-x: hidden;
-    }
+    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--ink); font-weight: 300; line-height: 1.75; overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
 
     /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 200;
-      background: var(--ink);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 52px; height: 60px;
-      border-bottom: 1px solid rgba(184,136,42,0.2);
-    }
+    nav { position: sticky; top: 0; z-index: 200; background: var(--ink); display: flex; align-items: center; justify-content: space-between; padding: 0 52px; height: 60px; border-bottom: 1px solid rgba(184,136,42,0.2); }
     .logo { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; color: var(--cream); letter-spacing: .18em; }
     .logo em { color: var(--gold); font-style: normal; }
     .nav-links { display: flex; gap: 32px; }
@@ -121,6 +108,32 @@
     .subscribe-form button:hover { background: var(--gold-light); }
     .subscribe-note { font-size: 11px; color: rgba(245,238,216,.2); margin-top: 12px; letter-spacing: .04em; }
 
+    /* DISCOUNT REVEAL */
+    .discount-reveal { display: none; margin-top: 28px; padding: 24px; border: 1px solid rgba(184,136,42,.4); background: rgba(184,136,42,.07); }
+    .discount-reveal.show { display: block; }
+    .discount-reveal p { font-size: 13px; color: rgba(245,238,216,.7); margin-bottom: 12px; }
+    .discount-code {
+      font-family: 'Cinzel', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--gold);
+      letter-spacing: .2em;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .discount-fine { font-size: 11px; color: rgba(245,238,216,.3); letter-spacing: .04em; }
+    .copy-btn {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: 'Cinzel', serif;
+      font-size: 9px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink); background: var(--gold);
+      border: none; cursor: pointer;
+      padding: 10px 20px; border-radius: 1px;
+      transition: background .2s;
+    }
+    .copy-btn:hover { background: var(--gold-light); }
+
     /* CONTACT */
     .contact-band { background: var(--cream-dark); padding: 60px 40px; text-align: center; border-top: 1px solid var(--border); }
     .contact-inner { max-width: 480px; margin: 0 auto; }
@@ -147,9 +160,7 @@
       .subscribe-form { flex-direction: column; }
       .shop-grid { grid-template-columns: 1fr 1fr; }
     }
-    @media (max-width: 560px) {
-      .shop-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 560px) { .shop-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -223,7 +234,7 @@
     <div class="shop-grid">
 
       <div class="product-card" data-category="clubs">
-        <div class="product-card-img"><img src="clubs.png" alt="Indian Clubs 900g Pair"></div>
+        <div class="product-card-img"><img src="Teak Indian Clubs — 900g Pair (2 lb).png" alt="Indian Clubs 900g Pair"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Teak Indian Clubs — 900g Pair (2 lb)</div>
@@ -236,11 +247,11 @@
       </div>
 
       <div class="product-card" data-category="clubs">
-        <div class="product-card-img"><img src="clubs.png" alt="Indian Club Beginner Kit"></div>
+        <div class="product-card-img"><img src="begginer kit.png" alt="Indian Club Beginner Kit"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Indian Clubs Beginner Kit — 4 Pairs + Free Ebook</div>
-          <div class="product-card-desc">Four weight pairs for progressive training plus a free training ebook. The complete system from beginner to advanced.</div>
+          <div class="product-card-desc">8 clubs total — 4 matched teak pairs: 500g, 1kg, 1.5kg, and 2kg Mugdar. From warm-up to advanced strength training. Free Training Ebook delivered via email within 24 hours of purchase.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$899</span>
             <a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank">Buy Now →</a>
@@ -249,7 +260,7 @@
       </div>
 
       <div class="product-card" data-category="mugdar">
-        <div class="product-card-img"><img src="mugdar.png" alt="3kg Mugdar"></div>
+        <div class="product-card-img"><img src="Mugdar Indian Club — 3 kg (6.6 lbs).jpg" alt="3kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 3 kg (6.6 lbs)</div>
@@ -262,7 +273,7 @@
       </div>
 
       <div class="product-card" data-category="mugdar">
-        <div class="product-card-img"><img src="mugdar.png" alt="5kg Mugdar"></div>
+        <div class="product-card-img"><img src="Mugdar Indian Club — 5 kg (11 lbs).png" alt="5kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 5 kg (11 lbs)</div>
@@ -275,7 +286,7 @@
       </div>
 
       <div class="product-card" data-category="mugdar">
-        <div class="product-card-img"><img src="mugdar.png" alt="8kg Mugdar"></div>
+        <div class="product-card-img"><img src="Mugdar Indian Club — 8 kg (17.6 lbs).jpg" alt="8kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 8 kg (17.6 lbs)</div>
@@ -288,7 +299,7 @@
       </div>
 
       <div class="product-card" data-category="samtola">
-        <div class="product-card-img"><img src="samtola.jpg" alt="Samtola"></div>
+        <div class="product-card-img"><img src="Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg" alt="Samtola"></div>
         <div class="product-card-body">
           <span class="product-card-category">Samtola</span>
           <div class="product-card-name">Acacia Wooden Samtola — 20.5 lbs + Free Ebook</div>
@@ -344,14 +355,24 @@
 <!-- SUBSCRIBE -->
 <section class="subscribe-band">
   <div class="subscribe-inner">
-    <span class="subscribe-eyebrow">Stay Connected</span>
+    <span class="subscribe-eyebrow">Get 5% Off Your First Order</span>
     <h2 class="subscribe-title">Join the Akhada Community</h2>
-    <p class="subscribe-desc">New training resources, equipment updates, and community links — delivered to your inbox.</p>
-    <div class="subscribe-form">
-      <input type="email" placeholder="Your email address" id="subEmail">
-      <button type="button" onclick="var e=document.getElementById('subEmail').value;if(e){window.location.href='mailto:akhada.crafts@mantanex.com?subject=Subscribe&body=Please add me to your list: '+e;document.getElementById('subEmail').value='';}">Subscribe</button>
+    <p class="subscribe-desc">Subscribe and instantly receive your welcome discount code — plus training resources and updates delivered to your inbox.</p>
+
+    <div id="subFormWrap">
+      <div class="subscribe-form">
+        <input type="email" placeholder="Your email address" id="subEmail">
+        <button type="button" onclick="handleSubscribe()">Get My Code</button>
+      </div>
+      <p class="subscribe-note">No spam. Unsubscribe any time.</p>
     </div>
-    <p class="subscribe-note">No spam. Unsubscribe any time.</p>
+
+    <div class="discount-reveal" id="discountReveal">
+      <p>Welcome! Here is your 5% off code — use it at checkout on any order:</p>
+      <span class="discount-code" id="discountCode">WELCOME5</span>
+      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+      <p class="discount-fine" style="margin-top:12px;">Valid for one use on your first order. Enter this code at checkout.</p>
+    </div>
   </div>
 </section>
 
@@ -413,6 +434,27 @@
       } else {
         card.classList.add('hidden');
       }
+    });
+  }
+
+  function handleSubscribe() {
+    var email = document.getElementById('subEmail').value;
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    // Send email notification
+    window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=New Subscriber&body=New subscriber: ' + email;
+    // Show discount code
+    document.getElementById('subFormWrap').style.display = 'none';
+    document.getElementById('discountReveal').classList.add('show');
+  }
+
+  function copyCode() {
+    navigator.clipboard.writeText('WELCOME5').then(function() {
+      var btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
     });
   }
 </script>
