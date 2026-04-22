@@ -38,312 +38,117 @@
       padding: 0 52px; height: 60px;
       border-bottom: 1px solid rgba(184,136,42,0.2);
     }
-    .logo {
-      font-family: 'Cinzel', serif;
-      font-size: 17px; font-weight: 700;
-      color: var(--cream); letter-spacing: .18em;
-    }
+    .logo { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; color: var(--cream); letter-spacing: .18em; }
     .logo em { color: var(--gold); font-style: normal; }
     .nav-links { display: flex; gap: 32px; }
-    .nav-links a {
-      font-size: 10px; font-weight: 400;
-      letter-spacing: .18em; text-transform: uppercase;
-      color: rgba(245,238,216,.4);
-      transition: color .2s;
-    }
+    .nav-links a { font-size: 10px; font-weight: 400; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,238,216,.4); transition: color .2s; }
     .nav-links a:hover { color: var(--cream-dark); }
-    .nav-cta {
-      font-family: 'Cinzel', serif;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(184,136,42,.45);
-      padding: 8px 18px; border-radius: 1px;
-      transition: all .2s;
-    }
+    .nav-cta { font-family: 'Cinzel', serif; font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(184,136,42,.45); padding: 8px 18px; border-radius: 1px; transition: all .2s; }
     .nav-cta:hover { background: rgba(184,136,42,.1); }
 
     /* HERO */
-    .hero {
-      background: var(--ink);
-      display: grid; grid-template-columns: 1fr 1fr;
-      min-height: 90vh; overflow: hidden;
-      position: relative;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(184,136,42,.06) 0%, transparent 65%);
-      pointer-events: none; z-index: 1;
-    }
-    .hero-left {
-      display: flex; flex-direction: column;
-      justify-content: center;
-      padding: 80px 60px;
-      position: relative; z-index: 2;
-    }
-    .hero-eyebrow {
-      font-size: 10px; font-weight: 400;
-      letter-spacing: .25em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 24px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .hero-eyebrow::before {
-      content: ''; display: block;
-      width: 36px; height: 1px; background: var(--gold); opacity: .5;
-    }
-    .hero h1 {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(38px, 4.5vw, 64px);
-      font-weight: 400; line-height: 1.08;
-      color: var(--cream); margin-bottom: 28px;
-    }
+    .hero { background: var(--ink); display: grid; grid-template-columns: 1fr 1fr; min-height: 90vh; overflow: hidden; position: relative; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(184,136,42,.06) 0%, transparent 65%); pointer-events: none; z-index: 1; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 60px; position: relative; z-index: 2; }
+    .hero-eyebrow { font-size: 10px; font-weight: 400; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--gold); opacity: .5; }
+    .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(38px, 4.5vw, 64px); font-weight: 400; line-height: 1.08; color: var(--cream); margin-bottom: 28px; }
     .hero h1 em { color: var(--gold); font-style: normal; }
-    .hero-desc {
-      font-size: 14px; color: rgba(245,238,216,.55);
-      line-height: 1.9; max-width: 360px; margin-bottom: 48px;
-    }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: 'Cinzel', serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: var(--ink); background: var(--gold);
-      padding: 14px 28px; border-radius: 1px;
-      transition: background .2s;
-    }
+    .hero-desc { font-size: 14px; color: rgba(245,238,216,.55); line-height: 1.9; max-width: 360px; margin-bottom: 48px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 14px 28px; border-radius: 1px; transition: background .2s; }
     .btn-primary:hover { background: var(--gold-light); }
-
-    /* HERO RIGHT — fixed to show full image */
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      background: var(--cream);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-    .hero-right::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, var(--ink) 0%, transparent 12%);
-      pointer-events: none;
-    }
+    .hero-right { position: relative; overflow: hidden; background: var(--cream); display: flex; align-items: center; justify-content: center; }
+    .hero-right img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
+    .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--ink) 0%, transparent 12%); pointer-events: none; }
 
     /* DIVIDER */
-    .divider {
-      display: flex; align-items: center; gap: 16px;
-      max-width: 1080px; margin: 0 auto; padding: 0 40px;
-    }
+    .divider { display: flex; align-items: center; gap: 16px; max-width: 1080px; margin: 0 auto; padding: 0 40px; }
     .divider-line { flex: 1; height: 1px; background: var(--border); }
-    .divider-mark {
-      font-family: 'Cinzel', serif;
-      font-size: 10px; letter-spacing: .2em;
-      color: var(--gold); opacity: .6; text-transform: uppercase;
-    }
+    .divider-mark { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: .2em; color: var(--gold); opacity: .6; text-transform: uppercase; }
 
-    /* PRODUCTS */
-    .sec { max-width: 1080px; margin: 0 auto; padding: 100px 40px; }
-    .product-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 72px; align-items: center; margin-bottom: 100px;
-    }
-    .product-grid:last-of-type { margin-bottom: 0; }
-    .product-img-wrap {
-      position: relative; overflow: hidden;
-      background: var(--ink); aspect-ratio: 4/3;
-    }
-    .product-img-wrap img {
-      width: 100%; height: 100%;
-      object-fit: contain; object-position: center;
-      padding: 24px; transition: transform .6s ease;
-    }
-    .product-img-wrap:hover img { transform: scale(1.04); }
-    .product-img-wrap::before {
-      content: '';
-      position: absolute; inset: 0;
-      border: 1px solid var(--border);
-      z-index: 1; pointer-events: none;
-    }
-    .eyebrow {
-      font-size: 10px; font-weight: 400;
-      letter-spacing: .22em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 14px; display: block;
-    }
-    .product-title {
-      font-family: 'Cinzel', serif;
-      font-size: 36px; font-weight: 400;
-      line-height: 1.15; margin-bottom: 20px;
-    }
-    .product-desc {
-      font-size: 14px; color: var(--muted);
-      line-height: 1.85; margin-bottom: 32px; max-width: 360px;
-    }
-    .product-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 11px; font-weight: 400;
-      letter-spacing: .18em; text-transform: uppercase;
-      color: var(--gold);
-      border-bottom: 1px solid rgba(184,136,42,.3);
-      padding-bottom: 4px; transition: border-color .2s, gap .2s;
-    }
-    .product-link:hover { border-color: var(--gold); gap: 12px; }
+    /* SHOP */
+    .shop-section { padding: 100px 40px; background: var(--cream); }
+    .shop-inner { max-width: 1080px; margin: 0 auto; }
+    .shop-header { text-align: center; margin-bottom: 64px; }
+    .shop-header .eyebrow { font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+    .shop-header h2 { font-family: 'Cinzel', serif; font-size: clamp(24px, 3vw, 40px); font-weight: 400; color: var(--ink); }
+    .shop-tabs { display: flex; gap: 8px; margin-bottom: 48px; flex-wrap: wrap; }
+    .shop-tab { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); padding: 8px 20px; border-radius: 1px; cursor: pointer; transition: all .2s; background: transparent; }
+    .shop-tab.active, .shop-tab:hover { color: var(--ink); background: var(--gold); border-color: var(--gold); }
+    .shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .product-card { background: white; border: 1px solid var(--border); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+    .product-card.hidden { display: none; }
+    .product-card-img { background: var(--ink); aspect-ratio: 4/3; overflow: hidden; }
+    .product-card-img img { width: 100%; height: 100%; object-fit: contain; padding: 20px; transition: transform .5s ease; }
+    .product-card:hover .product-card-img img { transform: scale(1.05); }
+    .product-card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .product-card-category { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+    .product-card-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 400; line-height: 1.3; margin-bottom: 12px; color: var(--ink); }
+    .product-card-desc { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; flex: 1; }
+    .product-card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; }
+    .product-card-price { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600; color: var(--ink); }
+    .btn-buy { display: inline-flex; align-items: center; gap: 6px; font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 10px 16px; border-radius: 1px; transition: background .2s; white-space: nowrap; border: none; cursor: pointer; }
+    .btn-buy:hover { background: var(--gold-light); }
 
     /* VALUES */
     .values-band { background: var(--ink); padding: 80px 40px; }
-    .values-inner {
-      max-width: 1080px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
-    }
+    .values-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
     .value-item { border-top: 1px solid var(--border); padding-top: 28px; }
-    .value-num {
-      font-family: 'Cinzel', serif;
-      font-size: 11px; color: var(--gold); opacity: .5;
-      margin-bottom: 14px; display: block;
-    }
-    .value-title {
-      font-family: 'Cinzel', serif;
-      font-size: 18px; font-weight: 400;
-      color: var(--cream); margin-bottom: 12px;
-    }
+    .value-num { font-family: 'Cinzel', serif; font-size: 11px; color: var(--gold); opacity: .5; margin-bottom: 14px; display: block; }
+    .value-title { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 400; color: var(--cream); margin-bottom: 12px; }
     .value-desc { font-size: 13px; color: rgba(245,238,216,.45); line-height: 1.8; }
 
-    /* WATCH & LEARN */
-    .watch-section {
-      background: var(--ink);
-      padding: 48px 40px;
-      border-top: 1px solid var(--border);
-    }
-    .watch-inner {
-      max-width: 1080px; margin: 0 auto;
-      display: flex; align-items: baseline;
-      gap: 40px; flex-wrap: wrap;
-    }
-    .watch-label {
-      font-family: 'Cinzel', serif;
-      font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
-      color: var(--gold); opacity: .7; white-space: nowrap;
-      flex-shrink: 0;
-    }
+    /* WATCH */
+    .watch-section { background: var(--ink); padding: 48px 40px; border-top: 1px solid var(--border); }
+    .watch-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: baseline; gap: 40px; flex-wrap: wrap; }
+    .watch-label { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); opacity: .7; white-space: nowrap; flex-shrink: 0; }
     .watch-links { display: flex; flex-wrap: wrap; gap: 8px 6px; }
-    .watch-pill {
-      font-size: 11px; letter-spacing: .06em;
-      color: rgba(245,238,216,.45);
-      border: 1px solid rgba(184,136,42,.18);
-      padding: 5px 14px; border-radius: 1px;
-      transition: color .2s, border-color .2s;
-      white-space: nowrap;
-    }
+    .watch-pill { font-size: 11px; letter-spacing: .06em; color: rgba(245,238,216,.45); border: 1px solid rgba(184,136,42,.18); padding: 5px 14px; border-radius: 1px; transition: color .2s, border-color .2s; white-space: nowrap; }
     .watch-pill:hover { color: var(--gold); border-color: rgba(184,136,42,.5); }
-    .watch-disclaimer {
-      width: 100%;
-      font-size: 11px; color: rgba(245,238,216,.2);
-      letter-spacing: .03em; line-height: 1.6;
-      padding-top: 10px;
-    }
+    .watch-disclaimer { width: 100%; font-size: 11px; color: rgba(245,238,216,.2); letter-spacing: .03em; line-height: 1.6; padding-top: 10px; }
 
     /* SUBSCRIBE */
     .subscribe-band { background: var(--ink); padding: 80px 40px; text-align: center; }
     .subscribe-inner { max-width: 520px; margin: 0 auto; }
-    .subscribe-eyebrow {
-      font-size: 10px; letter-spacing: .25em; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 16px;
-    }
-    .subscribe-title {
-      font-family: 'Cinzel', serif;
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 400; color: var(--cream);
-      line-height: 1.2; margin-bottom: 14px;
-    }
-    .subscribe-desc {
-      font-size: 13px; color: rgba(245,238,216,.45);
-      line-height: 1.8; margin-bottom: 32px;
-    }
+    .subscribe-eyebrow { font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+    .subscribe-title { font-family: 'Cinzel', serif; font-size: clamp(22px, 3vw, 32px); font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 14px; }
+    .subscribe-desc { font-size: 13px; color: rgba(245,238,216,.45); line-height: 1.8; margin-bottom: 32px; }
     .subscribe-form { display: flex; border: 1px solid rgba(184,136,42,.4); }
-    .subscribe-form input {
-      flex: 1; background: transparent; border: none; outline: none;
-      padding: 13px 18px;
-      font-family: 'Lato', sans-serif;
-      font-size: 13px; font-weight: 300;
-      color: var(--cream); letter-spacing: .04em;
-    }
+    .subscribe-form input { flex: 1; background: transparent; border: none; outline: none; padding: 13px 18px; font-family: 'Lato', sans-serif; font-size: 13px; font-weight: 300; color: var(--cream); letter-spacing: .04em; }
     .subscribe-form input::placeholder { color: rgba(245,238,216,.3); }
-    .subscribe-form button {
-      font-family: 'Cinzel', serif;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--ink); background: var(--gold);
-      border: none; cursor: pointer;
-      padding: 13px 22px; transition: background .2s; white-space: nowrap;
-    }
+    .subscribe-form button { font-family: 'Cinzel', serif; font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); border: none; cursor: pointer; padding: 13px 22px; transition: background .2s; white-space: nowrap; }
     .subscribe-form button:hover { background: var(--gold-light); }
-    .subscribe-note {
-      font-size: 11px; color: rgba(245,238,216,.2);
-      margin-top: 12px; letter-spacing: .04em;
-    }
+    .subscribe-note { font-size: 11px; color: rgba(245,238,216,.2); margin-top: 12px; letter-spacing: .04em; }
 
     /* CONTACT */
-    .contact-band {
-      background: var(--cream-dark); padding: 60px 40px;
-      text-align: center; border-top: 1px solid var(--border);
-    }
+    .contact-band { background: var(--cream-dark); padding: 60px 40px; text-align: center; border-top: 1px solid var(--border); }
     .contact-inner { max-width: 480px; margin: 0 auto; }
-    .contact-eyebrow {
-      font-size: 10px; letter-spacing: .25em; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 14px;
-    }
-    .contact-title {
-      font-family: 'Cinzel', serif;
-      font-size: 22px; font-weight: 400; margin-bottom: 16px;
-    }
-    .contact-desc {
-      font-size: 13px; color: var(--muted);
-      line-height: 1.75; margin-bottom: 20px;
-    }
-    .contact-email {
-      font-family: 'Cinzel', serif;
-      font-size: 14px; color: var(--gold); letter-spacing: .08em;
-      border-bottom: 1px solid rgba(184,136,42,.3);
-      padding-bottom: 3px; transition: border-color .2s;
-    }
+    .contact-eyebrow { font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
+    .contact-title { font-family: 'Cinzel', serif; font-size: 22px; font-weight: 400; margin-bottom: 16px; }
+    .contact-desc { font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 20px; }
+    .contact-email { font-family: 'Cinzel', serif; font-size: 14px; color: var(--gold); letter-spacing: .08em; border-bottom: 1px solid rgba(184,136,42,.3); padding-bottom: 3px; transition: border-color .2s; }
     .contact-email:hover { border-color: var(--gold); }
 
     /* FOOTER */
-    footer {
-      background: var(--ink);
-      border-top: 1px solid var(--border);
-      padding: 40px;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 16px;
-    }
-    .footer-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 14px; font-weight: 700;
-      color: var(--cream); letter-spacing: .15em;
-    }
+    footer { background: var(--ink); border-top: 1px solid var(--border); padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--cream); letter-spacing: .15em; }
     .footer-logo em { color: var(--gold); font-style: normal; }
     .footer-copy { font-size: 11px; color: rgba(245,238,216,.3); letter-spacing: .1em; }
-    .footer-link {
-      font-size: 11px; color: var(--gold);
-      letter-spacing: .12em; text-transform: uppercase;
-      border-bottom: 1px solid rgba(184,136,42,.3); padding-bottom: 2px;
-    }
+    .footer-link { font-size: 11px; color: var(--gold); letter-spacing: .12em; text-transform: uppercase; border-bottom: 1px solid rgba(184,136,42,.3); padding-bottom: 2px; }
 
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { height: 300px; order: -1; background: var(--cream); }
       .hero-right::after { background: linear-gradient(to bottom, transparent, var(--ink) 90%); }
-      .product-grid { grid-template-columns: 1fr; gap: 32px; }
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .values-inner { grid-template-columns: 1fr; }
       .subscribe-form { flex-direction: column; }
+      .shop-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .shop-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -352,9 +157,7 @@
 <nav>
   <div class="logo">AKHADA<em>.</em>CRAFTS</div>
   <div class="nav-links">
-    <a href="#clubs">Clubs</a>
-    <a href="#mugdar">Mugdar</a>
-    <a href="#samtola">Samtola</a>
+    <a href="#shop">Shop</a>
     <a href="#watch">Watch</a>
     <a href="#ebook">Ebook</a>
     <a href="#contact">Contact</a>
@@ -362,18 +165,12 @@
   <div style="display:flex; align-items:center; gap:12px;">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 15" style="display:block; border-radius:2px; opacity:.65;">
       <rect width="24" height="15" fill="#B22234"/>
-      <rect y="1.15" width="24" height="1.15" fill="#fff"/>
-      <rect y="2.31" width="24" height="1.15" fill="#B22234"/>
-      <rect y="3.46" width="24" height="1.15" fill="#fff"/>
-      <rect y="4.62" width="24" height="1.15" fill="#B22234"/>
-      <rect y="5.77" width="24" height="1.15" fill="#fff"/>
-      <rect y="6.92" width="24" height="1.15" fill="#B22234"/>
-      <rect y="8.08" width="24" height="1.15" fill="#fff"/>
-      <rect y="9.23" width="24" height="1.15" fill="#B22234"/>
-      <rect y="10.38" width="24" height="1.15" fill="#fff"/>
-      <rect y="11.54" width="24" height="1.15" fill="#B22234"/>
-      <rect y="12.69" width="24" height="1.15" fill="#fff"/>
-      <rect y="13.85" width="24" height="1.15" fill="#B22234"/>
+      <rect y="1.15" width="24" height="1.15" fill="#fff"/><rect y="2.31" width="24" height="1.15" fill="#B22234"/>
+      <rect y="3.46" width="24" height="1.15" fill="#fff"/><rect y="4.62" width="24" height="1.15" fill="#B22234"/>
+      <rect y="5.77" width="24" height="1.15" fill="#fff"/><rect y="6.92" width="24" height="1.15" fill="#B22234"/>
+      <rect y="8.08" width="24" height="1.15" fill="#fff"/><rect y="9.23" width="24" height="1.15" fill="#B22234"/>
+      <rect y="10.38" width="24" height="1.15" fill="#fff"/><rect y="11.54" width="24" height="1.15" fill="#B22234"/>
+      <rect y="12.69" width="24" height="1.15" fill="#fff"/><rect y="13.85" width="24" height="1.15" fill="#B22234"/>
       <rect width="9.6" height="8.08" fill="#3C3B6E"/>
       <g fill="#fff">
         <circle cx="1.2" cy="1" r=".45"/><circle cx="2.4" cy="1" r=".45"/><circle cx="3.6" cy="1" r=".45"/><circle cx="4.8" cy="1" r=".45"/><circle cx="6" cy="1" r=".45"/><circle cx="7.2" cy="1" r=".45"/>
@@ -385,7 +182,7 @@
         <circle cx="1.2" cy="7" r=".45"/><circle cx="2.4" cy="7" r=".45"/><circle cx="3.6" cy="7" r=".45"/><circle cx="4.8" cy="7" r=".45"/><circle cx="6" cy="7" r=".45"/><circle cx="7.2" cy="7" r=".45"/>
       </g>
     </svg>
-    <a class="nav-cta" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Shop Etsy ↗</a>
+    <a class="nav-cta" href="#shop">Shop Now</a>
   </div>
 </nav>
 
@@ -395,7 +192,7 @@
     <span class="hero-eyebrow">Handcrafted in India | Made for the World.</span>
     <h1>Forged in<br><em>Teak.</em><br>Built for<br>Strength.</h1>
     <p class="hero-desc">Indian clubs, mugdar, and samtola — ancient training implements from the Karlakattai martial tradition, hand-turned for the modern practitioner.</p>
-    <a class="btn-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Explore the Collection →</a>
+    <a class="btn-primary" href="#shop">Shop the Collection →</a>
   </div>
   <div class="hero-right">
     <img src="cover.jpg" alt="Akhada Crafts — The Legacy of Indian Strength">
@@ -410,41 +207,99 @@
   </div>
 </div>
 
-<!-- PRODUCTS -->
-<section id="clubs" class="sec">
-  <div class="product-grid">
-    <div class="product-img-wrap">
-      <img src="clubs.png" alt="Indian Club Kit">
+<!-- SHOP -->
+<section id="shop" class="shop-section">
+  <div class="shop-inner">
+    <div class="shop-header">
+      <span class="eyebrow">Buy Direct — Ships from the US</span>
+      <h2>Shop Akhada Crafts</h2>
     </div>
-    <div>
-      <span class="eyebrow">Joint Mobility &amp; Flow</span>
-      <h2 class="product-title">Indian Club Kit</h2>
-      <p class="product-desc">Four weight pairs handcrafted from solid teak. Each set is calibrated for progressive joint mobility, restorative flow, and shoulder health — the ancient art of club swinging, refined.</p>
-      <a class="product-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">View on Etsy ↗</a>
+    <div class="shop-tabs">
+      <button class="shop-tab active" onclick="filterProducts('all', this)">All Products</button>
+      <button class="shop-tab" onclick="filterProducts('clubs', this)">Indian Clubs</button>
+      <button class="shop-tab" onclick="filterProducts('mugdar', this)">Mugdar</button>
+      <button class="shop-tab" onclick="filterProducts('samtola', this)">Samtola</button>
     </div>
-  </div>
+    <div class="shop-grid">
 
-  <div class="product-grid" id="mugdar" style="direction: rtl;">
-    <div style="direction: ltr;">
-      <span class="eyebrow">Heavy Training</span>
-      <h2 class="product-title">Hand-Turned Mugdar</h2>
-      <p class="product-desc">Built for raw rotational power and the Karlakattai wrestling tradition. Each mugdar is lathe-turned from dense teak and available in a range of weights for beginners to seasoned practitioners.</p>
-      <a class="product-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">View on Etsy ↗</a>
-    </div>
-    <div class="product-img-wrap" style="direction: ltr;">
-      <img src="mugdar.png" alt="Teak Mugdar">
-    </div>
-  </div>
+      <div class="product-card" data-category="clubs">
+        <div class="product-card-img"><img src="clubs.png" alt="Indian Clubs 900g Pair"></div>
+        <div class="product-card-body">
+          <span class="product-card-category">Indian Clubs</span>
+          <div class="product-card-name">Teak Indian Clubs — 900g Pair (2 lb)</div>
+          <div class="product-card-desc">Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination.</div>
+          <div class="product-card-footer">
+            <span class="product-card-price">$179</span>
+            <a class="btn-buy" href="https://buy.stripe.com/28E00d2hPg2pdKueAces006" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+      </div>
 
-  <div class="product-grid" id="samtola">
-    <div class="product-img-wrap">
-      <img src="samtola.jpg" alt="Samtola">
-    </div>
-    <div>
-      <span class="eyebrow">Total Body</span>
-      <h2 class="product-title">The 10 kg Samtola</h2>
-      <p class="product-desc">The ultimate implement for cross-body stability, functional core power, and full-body coordination. Crafted from solid acacia wood, rooted in the Karlakattai akhada tradition.</p>
-      <a class="product-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">View on Etsy ↗</a>
+      <div class="product-card" data-category="clubs">
+        <div class="product-card-img"><img src="clubs.png" alt="Indian Club Beginner Kit"></div>
+        <div class="product-card-body">
+          <span class="product-card-category">Indian Clubs</span>
+          <div class="product-card-name">Indian Clubs Beginner Kit — 4 Pairs + Free Ebook</div>
+          <div class="product-card-desc">Four weight pairs for progressive training plus a free training ebook. The complete system from beginner to advanced.</div>
+          <div class="product-card-footer">
+            <span class="product-card-price">$899</span>
+            <a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="mugdar">
+        <div class="product-card-img"><img src="mugdar.png" alt="3kg Mugdar"></div>
+        <div class="product-card-body">
+          <span class="product-card-category">Mugdar</span>
+          <div class="product-card-name">Mugdar Indian Club — 3 kg (6.6 lbs)</div>
+          <div class="product-card-desc">A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning.</div>
+          <div class="product-card-footer">
+            <span class="product-card-price">$199</span>
+            <a class="btn-buy" href="https://buy.stripe.com/eVq5kx09H9E16i28bOes004" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="mugdar">
+        <div class="product-card-img"><img src="mugdar.png" alt="5kg Mugdar"></div>
+        <div class="product-card-body">
+          <span class="product-card-category">Mugdar</span>
+          <div class="product-card-name">Mugdar Indian Club — 5 kg (11 lbs)</div>
+          <div class="product-card-desc">Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.</div>
+          <div class="product-card-footer">
+            <span class="product-card-price">$249</span>
+            <a class="btn-buy" href="https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="mugdar">
+        <div class="product-card-img"><img src="mugdar.png" alt="8kg Mugdar"></div>
+        <div class="product-card-body">
+          <span class="product-card-category">Mugdar</span>
+          <div class="product-card-name">Mugdar Indian Club — 8 kg (17.6 lbs)</div>
+          <div class="product-card-desc">For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.</div>
+          <div class="product-card-footer">
+            <span class="product-card-price">$289</span>
+            <a class="btn-buy" href="https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-category="samtola">
+        <div class="product-card-img"><img src="samtola.jpg" alt="Samtola"></div>
+        <div class="product-card-body">
+          <span class="product-card-category">Samtola</span>
+          <div class="product-card-name">Acacia Wooden Samtola — 20.5 lbs + Free Ebook</div>
+          <div class="product-card-desc">The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia with a free training ebook.</div>
+          <div class="product-card-footer">
+            <span class="product-card-price">$389</span>
+            <a class="btn-buy" href="https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000" target="_blank">Buy Now →</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -464,13 +319,13 @@
     </div>
     <div class="value-item">
       <span class="value-num">03</span>
-      <h3 class="value-title">Ships Worldwide</h3>
-      <p class="value-desc">From our US warehouse to your doorstep. Browse the full range on Etsy and bring traditional Indian strength training into your practice.</p>
+      <h3 class="value-title">Ships from the US</h3>
+      <p class="value-desc">Orders ship from our US warehouse directly to your doorstep. Fast, reliable delivery — no international wait times.</p>
     </div>
   </div>
 </section>
 
-<!-- WATCH & LEARN -->
+<!-- WATCH -->
 <section id="watch" class="watch-section">
   <div class="watch-inner">
     <span class="watch-label">Watch &amp; Learn</span>
@@ -482,7 +337,7 @@
       <a class="watch-pill" href="https://www.youtube.com/@viamilitaris/videos" target="_blank" rel="noopener">Via Militaris ↗</a>
       <a class="watch-pill" href="https://www.youtube.com/@HeroicSport/videos" target="_blank" rel="noopener">Heroic Sport ↗</a>
     </div>
-    <p class="watch-disclaimer">These are independent YouTube channels we find valuable — they are not affiliated with or produced by Akhada Crafts.</p>
+    <p class="watch-disclaimer">These are independent YouTube channels we find valuable — not affiliated with Akhada Crafts.</p>
   </div>
 </section>
 
@@ -494,13 +349,7 @@
     <p class="subscribe-desc">New training resources, equipment updates, and community links — delivered to your inbox.</p>
     <div class="subscribe-form">
       <input type="email" placeholder="Your email address" id="subEmail">
-      <button type="button" onclick="
-        var e=document.getElementById('subEmail').value;
-        if(e){
-          window.location.href='mailto:akhada.crafts@mantanex.com?subject=Subscribe&body=Please add me to your list: '+e;
-          document.getElementById('subEmail').value='';
-        }
-      ">Subscribe</button>
+      <button type="button" onclick="var e=document.getElementById('subEmail').value;if(e){window.location.href='mailto:akhada.crafts@mantanex.com?subject=Subscribe&body=Please add me to your list: '+e;document.getElementById('subEmail').value='';}">Subscribe</button>
     </div>
     <p class="subscribe-note">No spam. Unsubscribe any time.</p>
   </div>
@@ -509,9 +358,9 @@
 <!-- EBOOK -->
 <section id="ebook" class="contact-band" style="background: var(--cream);">
   <div class="contact-inner">
-    <span class="contact-eyebrow">Free with Beginner Kit</span>
+    <span class="contact-eyebrow">Free with Beginner Kit &amp; Samtola</span>
     <h2 class="contact-title">Training Guide Ebook</h2>
-    <p class="contact-desc">A free training guide is included with every Beginner Club Kit purchase — covering how to get started, basic movements, and progressions. If you bought the kit and did not receive your copy, write to us and we will send it right away.</p>
+    <p class="contact-desc">A free training guide is included with the Beginner Club Kit and Samtola — covering how to get started, basic movements, and progressions. If you did not receive your copy, write to us.</p>
     <a class="contact-email" href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
   </div>
 </section>
@@ -533,18 +382,12 @@
   <div style="display:flex; align-items:center; gap:10px;">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18" style="display:block; border-radius:2px; opacity:.7;">
       <rect width="28" height="18" fill="#B22234"/>
-      <rect y="1.38" width="28" height="1.38" fill="#fff"/>
-      <rect y="2.77" width="28" height="1.38" fill="#B22234"/>
-      <rect y="4.15" width="28" height="1.38" fill="#fff"/>
-      <rect y="5.54" width="28" height="1.38" fill="#B22234"/>
-      <rect y="6.92" width="28" height="1.38" fill="#fff"/>
-      <rect y="8.31" width="28" height="1.38" fill="#B22234"/>
-      <rect y="9.69" width="28" height="1.38" fill="#fff"/>
-      <rect y="11.08" width="28" height="1.38" fill="#B22234"/>
-      <rect y="12.46" width="28" height="1.38" fill="#fff"/>
-      <rect y="13.85" width="28" height="1.38" fill="#B22234"/>
-      <rect y="15.23" width="28" height="1.38" fill="#fff"/>
-      <rect y="16.62" width="28" height="1.38" fill="#B22234"/>
+      <rect y="1.38" width="28" height="1.38" fill="#fff"/><rect y="2.77" width="28" height="1.38" fill="#B22234"/>
+      <rect y="4.15" width="28" height="1.38" fill="#fff"/><rect y="5.54" width="28" height="1.38" fill="#B22234"/>
+      <rect y="6.92" width="28" height="1.38" fill="#fff"/><rect y="8.31" width="28" height="1.38" fill="#B22234"/>
+      <rect y="9.69" width="28" height="1.38" fill="#fff"/><rect y="11.08" width="28" height="1.38" fill="#B22234"/>
+      <rect y="12.46" width="28" height="1.38" fill="#fff"/><rect y="13.85" width="28" height="1.38" fill="#B22234"/>
+      <rect y="15.23" width="28" height="1.38" fill="#fff"/><rect y="16.62" width="28" height="1.38" fill="#B22234"/>
       <rect width="11.2" height="9.69" fill="#3C3B6E"/>
       <g fill="#fff">
         <circle cx="1.4" cy="1.2" r=".55"/><circle cx="2.8" cy="1.2" r=".55"/><circle cx="4.2" cy="1.2" r=".55"/><circle cx="5.6" cy="1.2" r=".55"/><circle cx="7" cy="1.2" r=".55"/><circle cx="8.4" cy="1.2" r=".55"/>
@@ -556,9 +399,22 @@
         <circle cx="1.4" cy="8.4" r=".55"/><circle cx="2.8" cy="8.4" r=".55"/><circle cx="4.2" cy="8.4" r=".55"/><circle cx="5.6" cy="8.4" r=".55"/><circle cx="7" cy="8.4" r=".55"/><circle cx="8.4" cy="8.4" r=".55"/>
       </g>
     </svg>
-    <a class="footer-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Shop on Etsy ↗</a>
+    <a class="footer-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Also on Etsy ↗</a>
   </div>
 </footer>
 
+<script>
+  function filterProducts(category, btn) {
+    document.querySelectorAll('.shop-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+</script>
 </body>
 </html>
