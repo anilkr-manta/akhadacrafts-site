@@ -17,10 +17,8 @@
       --muted: #7a6a50;
       --border: rgba(184,136,42,0.22);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Lato', sans-serif;
       background: var(--cream);
@@ -29,10 +27,8 @@
       line-height: 1.75;
       overflow-x: hidden;
     }
-
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-
     /* NAV */
     nav {
       position: sticky; top: 0; z-index: 200;
@@ -65,7 +61,6 @@
       transition: all .2s;
     }
     .nav-cta:hover { background: rgba(184,136,42,.1); }
-
     /* HERO */
     .hero {
       background: var(--ink);
@@ -126,7 +121,6 @@
       position: absolute; inset: 0;
       background: linear-gradient(to right, var(--ink) 0%, transparent 15%);
     }
-
     /* DIVIDER */
     .divider {
       display: flex; align-items: center; gap: 16px;
@@ -138,7 +132,6 @@
       font-size: 10px; letter-spacing: .2em;
       color: var(--gold); opacity: .6; text-transform: uppercase;
     }
-
     /* PRODUCTS */
     .sec { max-width: 1080px; margin: 0 auto; padding: 100px 40px; }
     .product-grid {
@@ -185,7 +178,6 @@
       padding-bottom: 4px; transition: border-color .2s, gap .2s;
     }
     .product-link:hover { border-color: var(--gold); gap: 12px; }
-
     /* VALUES */
     .values-band { background: var(--ink); padding: 80px 40px; }
     .values-inner {
@@ -204,8 +196,7 @@
       color: var(--cream); margin-bottom: 12px;
     }
     .value-desc { font-size: 13px; color: rgba(245,238,216,.45); line-height: 1.8; }
-
-    /* WATCH & LEARN — compact */
+    /* WATCH & LEARN */
     .watch-section {
       background: var(--ink);
       padding: 48px 40px;
@@ -243,7 +234,6 @@
       letter-spacing: .03em; line-height: 1.6;
       padding-top: 10px;
     }
-
     /* SUBSCRIBE */
     .subscribe-band { background: var(--ink); padding: 80px 40px; text-align: center; }
     .subscribe-inner { max-width: 520px; margin: 0 auto; }
@@ -283,7 +273,6 @@
       font-size: 11px; color: rgba(245,238,216,.2);
       margin-top: 12px; letter-spacing: .04em;
     }
-
     /* CONTACT */
     .contact-band {
       background: var(--cream-dark); padding: 60px 40px;
@@ -309,7 +298,6 @@
       padding-bottom: 3px; transition: border-color .2s;
     }
     .contact-email:hover { border-color: var(--gold); }
-
     /* FOOTER */
     footer {
       background: var(--ink);
@@ -330,7 +318,6 @@
       letter-spacing: .12em; text-transform: uppercase;
       border-bottom: 1px solid rgba(184,136,42,.3); padding-bottom: 2px;
     }
-
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { height: 260px; order: -1; }
@@ -339,13 +326,11 @@
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .values-inner { grid-template-columns: 1fr; }
-      .watch-grid { grid-template-columns: 1fr; }
       .subscribe-form { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-
 <nav>
   <div class="logo">AKHADA<em>.</em>CRAFTS</div>
   <div class="nav-links">
@@ -395,7 +380,7 @@
     <a class="btn-primary" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Explore the Collection →</a>
   </div>
   <div class="hero-right">
-    <img src="cover.jpeg.jpg" alt="Akhada Crafts — The Legacy of Indian Strength">
+    <img src="cover.jpg" alt="Akhada Crafts — The Legacy of Indian Strength">
   </div>
 </section>
 
@@ -409,7 +394,6 @@
 
 <!-- PRODUCTS -->
 <section id="clubs" class="sec">
-
   <div class="product-grid">
     <div class="product-img-wrap">
       <img src="clubs.png" alt="Indian Club Kit">
@@ -445,7 +429,6 @@
       <a class="product-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">View on Etsy ↗</a>
     </div>
   </div>
-
 </section>
 
 <!-- VALUES -->
@@ -469,7 +452,7 @@
   </div>
 </section>
 
-<!-- WATCH & LEARN — compact -->
+<!-- WATCH & LEARN -->
 <section id="watch" class="watch-section">
   <div class="watch-inner">
     <span class="watch-label">Watch &amp; Learn</span>
@@ -492,8 +475,14 @@
     <h2 class="subscribe-title">Join the Akhada Community</h2>
     <p class="subscribe-desc">New training resources, equipment updates, and community links — delivered to your inbox.</p>
     <div class="subscribe-form">
-      <input type="email" placeholder="Your email address">
-      <button type="button">Subscribe</button>
+      <input type="email" placeholder="Your email address" id="subEmail">
+      <button type="button" onclick="
+        var e=document.getElementById('subEmail').value;
+        if(e){
+          window.location.href='mailto:akhada.crafts@mantanex.com?subject=Subscribe&body=Please add me to your list: '+e;
+          document.getElementById('subEmail').value='';
+        }
+      ">Subscribe</button>
     </div>
     <p class="subscribe-note">No spam. Unsubscribe any time.</p>
   </div>
@@ -525,7 +514,6 @@
   <span class="footer-copy">© Akhada Crafts 2026</span>
   <div style="display:flex; align-items:center; gap:10px;">
     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" viewBox="0 0 28 18" style="display:block; border-radius:2px; opacity:.7;">
-      <!-- Red and white stripes -->
       <rect width="28" height="18" fill="#B22234"/>
       <rect y="1.38" width="28" height="1.38" fill="#fff"/>
       <rect y="2.77" width="28" height="1.38" fill="#B22234"/>
@@ -539,9 +527,7 @@
       <rect y="13.85" width="28" height="1.38" fill="#B22234"/>
       <rect y="15.23" width="28" height="1.38" fill="#fff"/>
       <rect y="16.62" width="28" height="1.38" fill="#B22234"/>
-      <!-- Blue canton -->
       <rect width="11.2" height="9.69" fill="#3C3B6E"/>
-      <!-- Stars — 5 rows simplified as small white dots -->
       <g fill="#fff">
         <circle cx="1.4" cy="1.2" r=".55"/><circle cx="2.8" cy="1.2" r=".55"/><circle cx="4.2" cy="1.2" r=".55"/><circle cx="5.6" cy="1.2" r=".55"/><circle cx="7" cy="1.2" r=".55"/><circle cx="8.4" cy="1.2" r=".55"/>
         <circle cx="2.1" cy="2.4" r=".55"/><circle cx="3.5" cy="2.4" r=".55"/><circle cx="4.9" cy="2.4" r=".55"/><circle cx="6.3" cy="2.4" r=".55"/><circle cx="7.7" cy="2.4" r=".55"/>
@@ -555,6 +541,5 @@
     <a class="footer-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank">Shop on Etsy ↗</a>
   </div>
 </footer>
-
 </body>
 </html>
