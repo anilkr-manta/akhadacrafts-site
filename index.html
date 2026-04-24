@@ -271,6 +271,58 @@
       .reviews-grid { grid-template-columns: 1fr; }
       .review-modal { padding: 32px 24px; }
     }
+    /* ===================== AI CHATBOT ===================== */
+    .chat-fab { position: fixed; bottom: 28px; right: 28px; z-index: 900; width: 56px; height: 56px; background: var(--gold); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(184,136,42,.45); transition: transform .2s, background .2s; }
+    .chat-fab:hover { transform: scale(1.08); background: var(--gold-light); }
+    .chat-fab svg { width: 24px; height: 24px; fill: var(--ink); }
+    .chat-fab .chat-badge { position: absolute; top: -4px; right: -4px; background: #c0392b; color: #fff; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--cream); display: none; }
+    .chat-fab .chat-badge.show { display: flex; }
+
+    .chat-window { position: fixed; bottom: 96px; right: 28px; z-index: 900; width: 360px; max-height: 520px; background: var(--cream); border: 1px solid var(--border); box-shadow: 0 20px 60px rgba(0,0,0,.18); display: flex; flex-direction: column; transform: scale(0.92) translateY(12px); opacity: 0; pointer-events: none; transition: transform .25s ease, opacity .25s ease; transform-origin: bottom right; }
+    .chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+    .chat-header { background: var(--ink); padding: 16px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .chat-header-avatar { width: 36px; height: 36px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; color: var(--ink); flex-shrink: 0; }
+    .chat-header-info { flex: 1; }
+    .chat-header-name { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 600; color: var(--cream); letter-spacing: .06em; }
+    .chat-header-status { font-size: 10px; color: rgba(245,238,216,.45); letter-spacing: .06em; display: flex; align-items: center; gap: 5px; }
+    .chat-header-status::before { content: ''; width: 6px; height: 6px; background: #5cb85c; border-radius: 50%; display: block; }
+    .chat-close { background: none; border: none; color: rgba(255,255,255,.35); font-size: 18px; cursor: pointer; padding: 0; line-height: 1; transition: color .2s; }
+    .chat-close:hover { color: #fff; }
+
+    .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+    .chat-messages::-webkit-scrollbar { width: 4px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    .chat-msg { display: flex; gap: 8px; align-items: flex-end; }
+    .chat-msg.user { flex-direction: row-reverse; }
+    .chat-msg-avatar { width: 28px; height: 28px; background: var(--ink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 10px; font-weight: 700; color: var(--gold); flex-shrink: 0; }
+    .chat-msg.user .chat-msg-avatar { background: var(--gold); color: var(--ink); }
+    .chat-msg-bubble { max-width: 75%; padding: 10px 13px; font-size: 13px; line-height: 1.6; color: var(--ink); background: white; border: 1px solid var(--border); }
+    .chat-msg.user .chat-msg-bubble { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+    .chat-msg-time { font-size: 9px; color: var(--muted); letter-spacing: .05em; margin-top: 3px; text-align: right; }
+
+    .chat-typing { display: flex; align-items: center; gap: 4px; padding: 10px 13px; background: white; border: 1px solid var(--border); width: fit-content; }
+    .chat-typing span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: typingBounce 1.2s infinite; }
+    .chat-typing span:nth-child(2) { animation-delay: .2s; }
+    .chat-typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes typingBounce { 0%,60%,100% { transform: translateY(0); opacity:.4; } 30% { transform: translateY(-6px); opacity:1; } }
+
+    .chat-suggestions { padding: 0 16px 12px; display: flex; flex-wrap: wrap; gap: 6px; flex-shrink: 0; }
+    .chat-suggestion { font-size: 11px; color: var(--gold); border: 1px solid rgba(184,136,42,.35); padding: 5px 11px; background: transparent; cursor: pointer; font-family: 'Lato', sans-serif; transition: all .2s; white-space: nowrap; }
+    .chat-suggestion:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+
+    .chat-input-row { display: flex; border-top: 1px solid var(--border); flex-shrink: 0; }
+    .chat-input { flex: 1; border: none; outline: none; padding: 13px 14px; font-family: 'Lato', sans-serif; font-size: 13px; color: var(--ink); background: white; }
+    .chat-input::placeholder { color: rgba(120,100,70,.4); }
+    .chat-send { background: var(--gold); border: none; padding: 0 18px; cursor: pointer; color: var(--ink); font-size: 16px; transition: background .2s; flex-shrink: 0; }
+    .chat-send:hover { background: var(--gold-light); }
+    .chat-powered { font-size: 9px; color: var(--muted); text-align: center; padding: 6px; letter-spacing: .08em; background: var(--cream-dark); flex-shrink: 0; }
+    @media (max-width: 420px) {
+      .chat-window { width: calc(100vw - 32px); right: 16px; bottom: 84px; }
+      .chat-fab { right: 16px; bottom: 16px; }
+    }
+    /* ===================== END CHATBOT ===================== */
   </style>
 </head>
 <body>
@@ -950,5 +1002,155 @@
     if (e.target === this) closeReviewModal();
   });
 </script>
+<!-- AI CHATBOT -->
+<button class="chat-fab" onclick="toggleChat()" title="Chat with Akhada Assistant">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+</button>
+
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">
+    <div class="chat-header-avatar">A</div>
+    <div class="chat-header-info">
+      <div class="chat-header-name">Akhada Assistant</div>
+      <div class="chat-header-status">Online — Ask me anything</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-suggestions" id="chatSuggestions">
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">Which clubs should I start with?</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">Do you ship internationally?</button>
+    <button class="chat-suggestion" onclick="sendSuggestion(this)">What's the difference between mugdar sizes?</button>
+  </div>
+  <div class="chat-input-row">
+    <input class="chat-input" id="chatInput" type="text" placeholder="Ask about our products…" onkeydown="if(event.key==='Enter') sendChat()">
+    <button class="chat-send" onclick="sendChat()">➤</button>
+  </div>
+  <div class="chat-powered">Powered by Claude AI</div>
+</div>
+
+<script>
+  // ===================== CHATBOT =====================
+  var chatOpen = false;
+  var chatHistory = [];
+  var SYSTEM_PROMPT = `You are the Akhada Crafts assistant — a knowledgeable, warm, and concise helper for an online store that sells traditional Indian training equipment handcrafted from teak and acacia wood.
+
+PRODUCTS:
+1. Indian Clubs 900g Pair — $179. Two teak clubs, 900g each (4 lbs total). Great for beginners, shoulder mobility, joint health, flow training.
+2. Indian Clubs Beginner Kit (4 Pairs + Free Ebook) — $899. 8 clubs total: 500g, 1kg, 1.5kg, 2kg Mugdar pairs. Best value for serious practitioners. Free training ebook by email within 24hrs.
+3. Mugdar 3kg (6.6 lbs) — $199. Entry-level mugdar. Rotational power, grip, shoulder conditioning.
+4. Mugdar 5kg (11 lbs) — $249. Intermediate-advanced. Serious rotational power.
+5. Mugdar 8kg (17.6 lbs) — $289. Advanced practitioners. Full-body engagement.
+6. Acacia Wooden Samtola 20.5 lbs + Free Ebook — $389. Cross-body stability, core power. Free ebook included.
+
+KEY INFO:
+- All clubs and mugdar are hand-turned from kiln-dried teak. Samtola is solid acacia.
+- Ships from the US warehouse. Fast domestic delivery, no international wait times.
+- Payments via Stripe (secure checkout).
+- Free ebook included with Beginner Kit and Samtola, delivered by email within 24 hours.
+- Contact: akhada.crafts@mantanex.com
+- Also on Etsy: etsy.com/shop/akhadacrafts
+- Discount code WELCOME5 gives 5% off first order.
+- Rooted in Karlakattai martial tradition and the akhada wrestling culture of India.
+
+STYLE: Be helpful, concise, and warm. Use 1-3 short paragraphs max. Never make up information. If you don't know something, say to contact akhada.crafts@mantanex.com. Occasionally guide customers toward a purchase when relevant.`;
+
+  function toggleChat() {
+    chatOpen = !chatOpen;
+    var win = document.getElementById('chatWindow');
+    win.classList.toggle('open', chatOpen);
+    if (chatOpen && chatHistory.length === 0) {
+      addBotMessage("Welcome to Akhada Crafts! 🙏 I'm here to help you find the right training implement — whether you're just starting out or looking to go heavier. What can I help you with?");
+    }
+    if (chatOpen) {
+      setTimeout(function() { document.getElementById('chatInput').focus(); }, 300);
+    }
+  }
+
+  function addBotMessage(text) {
+    var msgs = document.getElementById('chatMessages');
+    var now = new Date();
+    var time = now.getHours() + ':' + String(now.getMinutes()).padStart(2,'0');
+    var div = document.createElement('div');
+    div.className = 'chat-msg bot';
+    div.innerHTML = '<div class="chat-msg-avatar">A</div><div><div class="chat-msg-bubble">' + text.replace(/\n/g,'<br>') + '</div><div class="chat-msg-time">' + time + '</div></div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function addUserMessage(text) {
+    var msgs = document.getElementById('chatMessages');
+    var now = new Date();
+    var time = now.getHours() + ':' + String(now.getMinutes()).padStart(2,'0');
+    var div = document.createElement('div');
+    div.className = 'chat-msg user';
+    div.innerHTML = '<div class="chat-msg-avatar">U</div><div><div class="chat-msg-bubble">' + text + '</div><div class="chat-msg-time">' + time + '</div></div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function showTyping() {
+    var msgs = document.getElementById('chatMessages');
+    var div = document.createElement('div');
+    div.className = 'chat-msg bot';
+    div.id = 'typingIndicator';
+    div.innerHTML = '<div class="chat-msg-avatar">A</div><div class="chat-typing"><span></span><span></span><span></span></div>';
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+
+  function hideTyping() {
+    var el = document.getElementById('typingIndicator');
+    if (el) el.remove();
+  }
+
+  function hideSuggestions() {
+    document.getElementById('chatSuggestions').style.display = 'none';
+  }
+
+  function sendSuggestion(btn) {
+    var text = btn.textContent;
+    hideSuggestions();
+    sendMessage(text);
+  }
+
+  function sendChat() {
+    var input = document.getElementById('chatInput');
+    var text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    hideSuggestions();
+    sendMessage(text);
+  }
+
+  async function sendMessage(text) {
+    addUserMessage(text);
+    chatHistory.push({ role: 'user', content: text });
+    showTyping();
+
+    try {
+      var response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: SYSTEM_PROMPT,
+          messages: chatHistory
+        })
+      });
+      var data = await response.json();
+      var reply = data.content && data.content[0] ? data.content[0].text : "Sorry, I couldn't get a response. Please try again or email akhada.crafts@mantanex.com.";
+      chatHistory.push({ role: 'assistant', content: reply });
+      hideTyping();
+      addBotMessage(reply);
+    } catch (err) {
+      hideTyping();
+      addBotMessage("Sorry, I'm having trouble connecting right now. Please email us at akhada.crafts@mantanex.com and we'll get back to you quickly!");
+    }
+  }
+  // ===================== END CHATBOT =====================
+</script>
+
 </body>
 </html>
