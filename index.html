@@ -95,6 +95,33 @@
     .watch-pill:hover { color: var(--gold); border-color: rgba(184,136,42,.5); }
     .watch-disclaimer { width: 100%; font-size: 11px; color: rgba(245,238,216,.2); letter-spacing: .03em; line-height: 1.6; padding-top: 10px; }
 
+    /* ===================== PRODUCT MODAL ===================== */
+    .product-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.8); z-index: 500; align-items: center; justify-content: center; padding: 20px; }
+    .product-modal-overlay.show { display: flex; }
+    .product-modal { background: var(--cream); max-width: 860px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; max-height: 90vh; overflow: hidden; position: relative; }
+    .product-modal-img { background: var(--ink); display: flex; align-items: center; justify-content: center; min-height: 340px; }
+    .product-modal-img img { width: 100%; height: 100%; object-fit: contain; padding: 32px; max-height: 420px; }
+    .product-modal-body { padding: 40px 36px; overflow-y: auto; display: flex; flex-direction: column; }
+    .product-modal-close { position: absolute; top: 14px; right: 18px; font-size: 22px; color: var(--muted); cursor: pointer; background: none; border: none; line-height: 1; transition: color .2s; z-index: 10; }
+    .product-modal-close:hover { color: var(--ink); }
+    .product-modal-category { font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+    .product-modal-name { font-family: 'Cinzel', serif; font-size: clamp(17px, 2vw, 22px); font-weight: 400; line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
+    .product-modal-price { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 20px; }
+    .product-modal-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+    .product-modal-desc { font-size: 13px; color: var(--muted); line-height: 1.85; margin-bottom: 24px; flex: 1; }
+    .product-modal-details { margin-bottom: 28px; }
+    .product-modal-detail { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .product-modal-detail::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+    .product-modal-buy { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 15px 28px; border-radius: 1px; transition: background .2s; text-align: center; }
+    .product-modal-buy:hover { background: var(--gold-light); }
+    .product-modal-ships { font-size: 11px; color: var(--muted); text-align: center; margin-top: 10px; letter-spacing: .04em; }
+    .product-card { cursor: pointer; }
+    @media (max-width: 640px) {
+      .product-modal { grid-template-columns: 1fr; }
+      .product-modal-img { min-height: 220px; }
+    }
+    /* ===================== END PRODUCT MODAL ===================== */
+
     /* ===================== REVIEWS SECTION ===================== */
     .reviews-section { background: var(--cream); padding: 100px 40px; }
     .reviews-inner { max-width: 1080px; margin: 0 auto; }
@@ -271,6 +298,26 @@
   </div>
 </div>
 
+<!-- PRODUCT DETAIL MODAL -->
+<div class="product-modal-overlay" id="productModal">
+  <div class="product-modal" id="productModalBox">
+    <button class="product-modal-close" onclick="closeProductModal()">✕</button>
+    <div class="product-modal-img">
+      <img id="modalImg" src="" alt="">
+    </div>
+    <div class="product-modal-body">
+      <span class="product-modal-category" id="modalCategory"></span>
+      <h2 class="product-modal-name" id="modalName"></h2>
+      <div class="product-modal-price" id="modalPrice"></div>
+      <div class="product-modal-divider"></div>
+      <p class="product-modal-desc" id="modalDesc"></p>
+      <div class="product-modal-details" id="modalDetails"></div>
+      <a class="product-modal-buy" id="modalBuyBtn" href="#" target="_blank">Buy Now — Secure Checkout →</a>
+      <p class="product-modal-ships">🇺🇸 Ships from the US · Secure payment via Stripe</p>
+    </div>
+  </div>
+</div>
+
 <!-- REVIEW MODAL -->
 <div class="review-modal-overlay" id="reviewModal">
   <div class="review-modal">
@@ -391,7 +438,7 @@
       <button class="shop-tab" onclick="filterProducts('samtola', this)">Samtola</button>
     </div>
     <div class="shop-grid">
-      <div class="product-card" data-category="clubs">
+      <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','$179','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','https://buy.stripe.com/28E00d2hPg2pdKueAces006')">
         <div class="product-card-img"><img src="clubs900g.png.png" alt="Indian Clubs 900g Pair"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
@@ -399,11 +446,11 @@
           <div class="product-card-desc">Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$179</span>
-            <a class="btn-buy" href="https://buy.stripe.com/28E00d2hPg2pdKueAces006" target="_blank">Buy Now →</a>
+            <a class="btn-buy" href="https://buy.stripe.com/28E00d2hPg2pdKueAces006" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="clubs">
+      <div class="product-card" data-category="clubs" onclick="openProduct('begginer kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','$899','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005')">
         <div class="product-card-img"><img src="begginer kit.png" alt="Indian Club Beginner Kit"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
@@ -411,11 +458,11 @@
           <div class="product-card-desc">8 clubs total — 4 matched teak pairs: 500g, 1kg, 1.5kg, and 2kg Mugdar. From warm-up to advanced strength training. Free Training Ebook delivered via email within 24 hours of purchase.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$899</span>
-            <a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank">Buy Now →</a>
+            <a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="mugdar">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 3 kg (6.6 lbs).jpg','Mugdar','Mugdar Indian Club — 3 kg (6.6 lbs)','$199','A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning. Rooted in the Karlakattai martial tradition of South India.','Weight: 3 kg (6.6 lbs)|Hand-turned from dense kiln-dried teak|Ideal for building rotational power|Great entry-level mugdar for developing practitioners','https://buy.stripe.com/eVq5kx09H9E16i28bOes004')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 3 kg (6.6 lbs).jpg" alt="3kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
@@ -423,11 +470,11 @@
           <div class="product-card-desc">A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$199</span>
-            <a class="btn-buy" href="https://buy.stripe.com/eVq5kx09H9E16i28bOes004" target="_blank">Buy Now →</a>
+            <a class="btn-buy" href="https://buy.stripe.com/eVq5kx09H9E16i28bOes004" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="mugdar">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 5 kg (11 lbs).png','Mugdar','Mugdar Indian Club — 5 kg (11 lbs)','$249','Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training. A step up that challenges grip, shoulder, and core in every swing.','Weight: 5 kg (11 lbs)|Lathe-turned from dense kiln-dried teak|For intermediate to advanced practitioners|Builds serious rotational power and grip strength','https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 5 kg (11 lbs).png" alt="5kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
@@ -435,11 +482,11 @@
           <div class="product-card-desc">Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$249</span>
-            <a class="btn-buy" href="https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003" target="_blank">Buy Now →</a>
+            <a class="btn-buy" href="https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="mugdar">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 8 kg (17.6 lbs).jpg','Mugdar','Mugdar Indian Club — 8 kg (17.6 lbs)','$289','For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition. Not for the faint-hearted — this is a tool for serious conditioning.','Weight: 8 kg (17.6 lbs)|Hand-turned from the densest kiln-dried teak|For advanced and seasoned practitioners|Full-body engagement — core, grip, shoulder, and back','https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 8 kg (17.6 lbs).jpg" alt="8kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
@@ -447,11 +494,11 @@
           <div class="product-card-desc">For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$289</span>
-            <a class="btn-buy" href="https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001" target="_blank">Buy Now →</a>
+            <a class="btn-buy" href="https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="samtola">
+      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','$389','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — a harder, denser wood than teak. Trains the body in rotational patterns that no other implement can replicate. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000')">
         <div class="product-card-img"><img src="Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg" alt="Samtola"></div>
         <div class="product-card-body">
           <span class="product-card-category">Samtola</span>
@@ -459,7 +506,7 @@
           <div class="product-card-desc">The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia with a free training ebook.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$389</span>
-            <a class="btn-buy" href="https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000" target="_blank">Buy Now →</a>
+            <a class="btn-buy" href="https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
@@ -781,6 +828,31 @@
 </footer>
 
 <script>
+  // Product Modal
+  function openProduct(img, category, name, price, desc, detailsStr, buyUrl) {
+    document.getElementById('modalImg').src = img;
+    document.getElementById('modalImg').alt = name;
+    document.getElementById('modalCategory').textContent = category;
+    document.getElementById('modalName').textContent = name;
+    document.getElementById('modalPrice').textContent = price;
+    document.getElementById('modalDesc').textContent = desc;
+    document.getElementById('modalBuyBtn').href = buyUrl;
+    var details = detailsStr.split('|');
+    var detailsHtml = details.map(function(d) {
+      return '<div class="product-modal-detail">' + d + '</div>';
+    }).join('');
+    document.getElementById('modalDetails').innerHTML = detailsHtml;
+    document.getElementById('productModal').classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeProductModal() {
+    document.getElementById('productModal').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('productModal').addEventListener('click', function(e) {
+    if (e.target === this) closeProductModal();
+  });
+
   // Popup
   function closePopup() { document.getElementById('welcomePopup').classList.remove('show'); }
   function handlePopupSubscribe() {
