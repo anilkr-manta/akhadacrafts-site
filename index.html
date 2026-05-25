@@ -1433,51 +1433,163 @@
   </div>
   <div class="chat-messages" id="chatMessages"></div>
   <div class="chat-suggestions" id="chatSuggestions">
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">Which clubs should I start with?</button>
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">Do you ship internationally?</button>
-    <button class="chat-suggestion" onclick="sendSuggestion(this)">How do I return an item?</button>
   </div>
   <div class="chat-input-row">
     <input class="chat-input" id="chatInput" type="text" placeholder="Ask about our products…" onkeydown="if(event.key==='Enter') sendChat()">
     <button class="chat-send" onclick="sendChat()">➤</button>
   </div>
-  <div class="chat-powered">Powered by Claude AI</div>
+  <div class="chat-powered">Akhada Crafts Assistant — Always Online</div>
 </div>
 
 <script>
+  // ===================== SMART OFFLINE CHATBOT =====================
   var chatOpen = false;
-  var chatHistory = [];
-  var SYSTEM_PROMPT = `You are the Akhada Crafts assistant — a knowledgeable, warm, and concise helper for an online store that sells traditional Indian training equipment handcrafted from teak and acacia wood.
 
-PRODUCTS:
-1. Indian Clubs 900g Pair — $179. Two teak clubs, 900g each (4 lbs total). Great for beginners, shoulder mobility, joint health, flow training.
-2. Indian Clubs Beginner Kit (4 Pairs + Free Ebook) — $899. 8 clubs total: 500g, 1kg, 1.5kg, 2kg Mugdar pairs. Best value for serious practitioners. Free training ebook by email within 24hrs.
-3. Mugdar 3kg (6.6 lbs) — $199. Entry-level mugdar. Rotational power, grip, shoulder conditioning.
-4. Mugdar 5kg (11 lbs) — $249. Intermediate-advanced. Serious rotational power.
-5. Mugdar 8kg (17.6 lbs) — $289. Advanced practitioners. Full-body engagement.
-6. Acacia Wooden Samtola 20.5 lbs + Free Ebook — $389. Cross-body stability, core power. Free ebook included.
+  // ---- Knowledge base ----
+  var KB = {
+    beginner: {
+      reply: "For beginners, the best starting point is our <strong>Indian Clubs 900g Pair ($179)</strong> — perfect for learning the movements and building shoulder mobility. If you want a full progression from day one, the <strong>Beginner Kit ($899)</strong> gives you 4 pairs (500g → 2kg) plus a free Training Ebook. Which sounds right for you?",
+      chips: ["Tell me more about the 900g clubs", "Tell me more about the Beginner Kit", "What is a mugdar?", "Back to main menu"]
+    },
+    clubs900: {
+      reply: "The <strong>Indian Clubs 900g Pair</strong> — $179\n\nTwo hand-turned teak clubs, 900g each (4 lbs total). Great for:\n— Shoulder & wrist mobility\n— Flow and coordination training\n— Joint health and rehab\n\nIdeal if you're new to club training or want a quality starter pair.",
+      chips: ["How do I buy?", "Do you ship internationally?", "Any discount codes?", "Back to main menu"]
+    },
+    beginnerKit: {
+      reply: "The <strong>Beginner Kit — $899</strong>\n\n8 clubs total — 4 matched teak pairs:\n— 500g · 1kg · 1.5kg · 2kg Mugdar\n\nTakes you from warm-up through to serious strength work. Also includes a <strong>free Training Ebook</strong> delivered by email within 24 hours. Best value for anyone committed to the practice.",
+      chips: ["How do I buy?", "When do I get the ebook?", "Any discount codes?", "Back to main menu"]
+    },
+    mugdar: {
+      reply: "Mugdar are heavier club-mace implements rooted in the Karlakattai wrestling tradition. We have three sizes:\n\n— <strong>3kg ($199)</strong> — great entry into mugdar training\n— <strong>5kg ($249)</strong> — intermediate to advanced\n— <strong>8kg ($289)</strong> — for serious seasoned practitioners\n\nAll hand-turned from dense kiln-dried teak. Which weight interests you?",
+      chips: ["Tell me about the 3kg", "Tell me about the 5kg", "Tell me about the 8kg", "Back to main menu"]
+    },
+    mugdar3: {
+      reply: "<strong>Mugdar 3kg (6.6 lbs) — $199</strong>\n\nA great entry point into mugdar training. Builds rotational power, grip strength, and shoulder conditioning. Hand-turned from dense kiln-dried teak. Perfect if you're transitioning from clubs or starting strength work.",
+      chips: ["How do I buy?", "Compare with the 5kg", "Any discount codes?", "Back to main menu"]
+    },
+    mugdar5: {
+      reply: "<strong>Mugdar 5kg (11 lbs) — $249</strong>\n\nFor intermediate to advanced practitioners. Lathe-turned from dense teak — challenges your grip, shoulder, and core in every swing. A serious step up from the 3kg.",
+      chips: ["How do I buy?", "Compare with the 8kg", "Any discount codes?", "Back to main menu"]
+    },
+    mugdar8: {
+      reply: "<strong>Mugdar 8kg (17.6 lbs) — $289</strong>\n\nFor seasoned practitioners only. Demands full-body engagement — core, grip, shoulder, and back. Rooted in akhada tradition. Not for the faint-hearted, but the most rewarding tool in the collection.",
+      chips: ["How do I buy?", "Any discount codes?", "Back to main menu"]
+    },
+    samtola: {
+      reply: "<strong>Acacia Wooden Samtola — $389</strong>\n\nThe most unique implement we offer. At 20.5 lbs, crafted from solid acacia (harder and denser than teak), it trains cross-body stability, core power, and total-body coordination in ways no other tool can replicate.\n\nIncludes a <strong>free Training Ebook</strong> delivered by email within 24 hours.",
+      chips: ["How do I buy?", "When do I get the ebook?", "Any discount codes?", "Back to main menu"]
+    },
+    buy: {
+      reply: "Click <strong>Buy Now</strong> on any product card and you'll be taken to our secure Stripe checkout. Payment is fast and safe — we accept all major cards.\n\nAfter purchase you'll land on a confirmation page and receive a Stripe receipt by email. 🇺🇸 Ships from the US.",
+      chips: ["Any discount codes?", "How long does shipping take?", "What is your return policy?", "Back to main menu"]
+    },
+    discount: {
+      reply: "Yes! Use code <strong>WELCOME5</strong> at checkout for 5% off your first order.\n\nYou can also get it by subscribing to our newsletter at the bottom of the page.",
+      chips: ["How do I apply the code?", "How do I buy?", "Back to main menu"]
+    },
+    discountHow: {
+      reply: "At Stripe checkout, look for the <strong>\"Add promotion code\"</strong> field and enter <strong>WELCOME5</strong>. The 5% discount will apply instantly. Valid once on your first order.",
+      chips: ["How do I buy?", "Back to main menu"]
+    },
+    shipping: {
+      reply: "We ship from our <strong>US warehouse</strong> — no international delays for US customers.\n\n— Processing: 1–3 business days\n— Delivery: 3–7 business days\n— Tracking included on every order\n\nShipping cost is calculated at checkout based on your location and order weight.",
+      chips: ["Do you ship internationally?", "What is your return policy?", "Back to main menu"]
+    },
+    international: {
+      reply: "We primarily ship within the <strong>United States</strong>. If you're outside the US, email us at akhada.crafts@mantanex.com before ordering and we'll do our best to help.\n\nOur products are also on <strong>Etsy</strong> (etsy.com/shop/akhadacrafts) which may offer international shipping options.",
+      chips: ["How do I contact you?", "Back to main menu"]
+    },
+    returns: {
+      reply: "We offer a <strong>14-day return policy</strong>.\n\n— Items must be unused and in original condition\n— Return shipping is the customer's responsibility\n— Full refund issued within 5 business days of receiving the item\n\nTo start a return, use the <strong>Returns section</strong> on this page or email us directly.",
+      chips: ["How do I start a return?", "How do I contact you?", "Back to main menu"]
+    },
+    returnHow: {
+      reply: "Scroll down to the <strong>Returns section</strong> on this page and click <strong>\"Request a Return\"</strong> — it'll open a form that sends us all the details we need.\n\nOr email us directly at <strong>akhada.crafts@mantanex.com</strong> with your name, product, order ID, and reason.",
+      chips: ["What is your return policy?", "How do I contact you?", "Back to main menu"]
+    },
+    ebook: {
+      reply: "The free <strong>Training Ebook</strong> is included with the <strong>Beginner Kit</strong> and the <strong>Samtola</strong>.\n\nIt's delivered digitally to your email within <strong>24 hours</strong> of purchase. If you don't receive it, check your spam folder first — then email us at akhada.crafts@mantanex.com.",
+      chips: ["Tell me more about the Beginner Kit", "Tell me more about the Samtola", "Back to main menu"]
+    },
+    wood: {
+      reply: "All our <strong>Indian Clubs and Mugdar</strong> are hand-turned from kiln-dried <strong>teak</strong> — chosen for its density, grip, and durability.\n\nThe <strong>Samtola</strong> is crafted from solid <strong>acacia</strong>, which is harder and denser than teak — ideal for the heavier cross-body training it's designed for.",
+      chips: ["Tell me about the clubs", "Tell me about the Samtola", "Back to main menu"]
+    },
+    tradition: {
+      reply: "Our implements trace their lineage to the <strong>Karlakattai</strong> martial art and the <strong>akhadas</strong> (wrestling gyms) of India, where athletes and warriors trained for centuries with clubs and maces.\n\nThe movements build rotational power, shoulder resilience, and coordination — the same qualities prized by traditional Indian wrestlers.",
+      chips: ["Which product should I start with?", "Tell me about the mugdar", "Back to main menu"]
+    },
+    contact: {
+      reply: "The best way to reach us is by email:\n\n📧 <strong>akhada.crafts@mantanex.com</strong>\n\nWe typically reply within 1 business day. You can also find us on <strong>Instagram</strong> @akhada.crafts and <strong>Etsy</strong> at etsy.com/shop/akhadacrafts.",
+      chips: ["Open email to contact you", "Back to main menu"]
+    },
+    emailUs: {
+      reply: "Opening your email now — just hit send and we'll get back to you! 🙏",
+      chips: ["Back to main menu"],
+      action: function() { window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=Customer Enquiry'; }
+    },
+    price: {
+      reply: "Here's a quick price overview:\n\n— Indian Clubs 900g Pair — <strong>$179</strong>\n— Beginner Kit (4 Pairs + Ebook) — <strong>$899</strong>\n— Mugdar 3kg — <strong>$199</strong>\n— Mugdar 5kg — <strong>$249</strong>\n— Mugdar 8kg — <strong>$289</strong>\n— Acacia Samtola + Ebook — <strong>$389</strong>\n\nUse code <strong>WELCOME5</strong> for 5% off your first order.",
+      chips: ["Which should I start with?", "How do I buy?", "Any discount codes?", "Back to main menu"]
+    },
+    main: {
+      reply: "How can I help you? Choose a topic below or type your question:",
+      chips: ["Which product should I start with?", "View all prices", "Shipping & delivery", "Returns & refunds", "Discount codes", "About the tradition", "Contact us"]
+    }
+  };
 
-KEY INFO:
-- All clubs and mugdar are hand-turned from kiln-dried teak. Samtola is solid acacia.
-- Ships from the US warehouse. Fast domestic delivery, no international wait times.
-- Payments via Stripe (secure checkout).
-- Free ebook included with Beginner Kit and Samtola, delivered by email within 24 hours.
-- Contact: akhada.crafts@mantanex.com
-- Also on Etsy: etsy.com/shop/akhadacrafts
-- Discount code WELCOME5 gives 5% off first order.
-- Rooted in Karlakattai martial tradition and the akhada wrestling culture of India.
-- 14-day return policy. Items must be unused and in original condition. Customer pays return shipping. Refund issued within 5 business days of receiving returned item. To request a return, use the Returns section on the website or email akhada.crafts@mantanex.com.
+  // ---- Keyword matcher ----
+  function matchIntent(text) {
+    var t = text.toLowerCase();
+    if (t.includes('back') || t.includes('main menu') || t.includes('menu')) return 'main';
+    if (t.includes('open email') || t.includes('email to contact')) return 'emailUs';
+    if (t.includes('900g') || t.includes('900 g') || t.includes('starter club') || t.includes('start with') && t.includes('club')) return 'clubs900';
+    if (t.includes('beginner kit') || t.includes('kit') || t.includes('4 pair')) return 'beginnerKit';
+    if (t.includes('8kg') || t.includes('8 kg') || t.includes('17.6') || t.includes('heaviest')) return 'mugdar8';
+    if (t.includes('5kg') || t.includes('5 kg') || t.includes('11 lb')) return 'mugdar5';
+    if (t.includes('3kg') || t.includes('3 kg') || t.includes('6.6')) return 'mugdar3';
+    if (t.includes('mugdar') || t.includes('mace') || t.includes('heavy')) return 'mugdar';
+    if (t.includes('samtola') || t.includes('acacia') || t.includes('20.5')) return 'samtola';
+    if (t.includes('tradition') || t.includes('karlakattai') || t.includes('akhada') || t.includes('history') || t.includes('origin')) return 'tradition';
+    if (t.includes('wood') || t.includes('teak') || t.includes('material') || t.includes('made of') || t.includes('made from')) return 'wood';
+    if (t.includes('ebook') || t.includes('e-book') || t.includes('book') || t.includes('guide') || t.includes('training guide')) return 'ebook';
+    if (t.includes('how to apply') || t.includes('apply code') || t.includes('apply the code') || t.includes('use code') || t.includes('promotion')) return 'discountHow';
+    if (t.includes('discount') || t.includes('code') || t.includes('coupon') || t.includes('promo') || t.includes('welcome5') || t.includes('off')) return 'discount';
+    if (t.includes('international') || t.includes('outside') || t.includes('uk') || t.includes('canada') || t.includes('australia') || t.includes('europe') || t.includes('india')) return 'international';
+    if (t.includes('ship') || t.includes('deliver') || t.includes('how long') || t.includes('when') || t.includes('arrival') || t.includes('track')) return 'shipping';
+    if (t.includes('how to return') || t.includes('start a return') || t.includes('initiate') || t.includes('process return')) return 'returnHow';
+    if (t.includes('return') || t.includes('refund') || t.includes('money back') || t.includes('exchange')) return 'returns';
+    if (t.includes('buy') || t.includes('purchase') || t.includes('order') || t.includes('checkout') || t.includes('stripe') || t.includes('pay')) return 'buy';
+    if (t.includes('price') || t.includes('cost') || t.includes('how much') || t.includes('pricing') || t.includes('all product')) return 'price';
+    if (t.includes('contact') || t.includes('email') || t.includes('reach') || t.includes('support') || t.includes('help') || t.includes('question')) return 'contact';
+    if (t.includes('begin') || t.includes('start') || t.includes('new') || t.includes('first') || t.includes('recommend') || t.includes('suggest') || t.includes('which')) return 'beginner';
+    if (t.includes('club') || t.includes('indian club')) return 'clubs900';
+    return null;
+  }
 
-STYLE: Be helpful, concise, and warm. Use 1-3 short paragraphs max. Never make up information. If you don't know something, say to contact akhada.crafts@mantanex.com.`;
+  // ---- Chip renderer ----
+  function showChips(chips) {
+    var el = document.getElementById('chatSuggestions');
+    el.innerHTML = chips.map(function(c) {
+      return '<button class="chat-suggestion" onclick="sendSuggestion(this)">' + c + '</button>';
+    }).join('');
+    el.style.display = 'flex';
+  }
 
   function toggleChat() {
     chatOpen = !chatOpen;
     var win = document.getElementById('chatWindow');
     win.classList.toggle('open', chatOpen);
-    if (chatOpen && chatHistory.length === 0) {
-      addBotMessage("Welcome to Akhada Crafts! 🙏 I'm here to help you find the right training implement — whether you're just starting out or looking to go heavier. What can I help you with?");
+    if (chatOpen) {
+      var msgs = document.getElementById('chatMessages');
+      if (msgs.children.length === 0) {
+        addBotMessage("Welcome to Akhada Crafts! 🙏 How can I help you today?");
+        setTimeout(function() {
+          showChips(["Which product should I start with?", "View all prices", "Shipping & delivery", "Returns & refunds", "Discount codes", "Contact us"]);
+        }, 400);
+      }
+      setTimeout(function() { document.getElementById('chatInput').focus(); }, 300);
     }
-    if (chatOpen) { setTimeout(function() { document.getElementById('chatInput').focus(); }, 300); }
   }
 
   function addBotMessage(text) {
@@ -1512,9 +1624,19 @@ STYLE: Be helpful, concise, and warm. Use 1-3 short paragraphs max. Never make u
     msgs.scrollTop = msgs.scrollHeight;
   }
   function hideTyping() { var el = document.getElementById('typingIndicator'); if (el) el.remove(); }
-  function hideSuggestions() { document.getElementById('chatSuggestions').style.display = 'none'; }
 
-  function sendSuggestion(btn) { var text = btn.textContent; hideSuggestions(); sendMessage(text); }
+  function hideSuggestions() {
+    var el = document.getElementById('chatSuggestions');
+    el.style.display = 'none';
+    el.innerHTML = '';
+  }
+
+  function sendSuggestion(btn) {
+    var text = btn.textContent;
+    hideSuggestions();
+    sendMessage(text);
+  }
+
   function sendChat() {
     var input = document.getElementById('chatInput');
     var text = input.value.trim();
@@ -1524,31 +1646,24 @@ STYLE: Be helpful, concise, and warm. Use 1-3 short paragraphs max. Never make u
     sendMessage(text);
   }
 
-  async function sendMessage(text) {
+  function sendMessage(text) {
     addUserMessage(text);
-    chatHistory.push({ role: 'user', content: text });
     showTyping();
-    try {
-      var response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: SYSTEM_PROMPT,
-          messages: chatHistory
-        })
-      });
-      var data = await response.json();
-      var reply = data.content && data.content[0] ? data.content[0].text : "Sorry, I couldn't get a response. Please try again or email akhada.crafts@mantanex.com.";
-      chatHistory.push({ role: 'assistant', content: reply });
+    setTimeout(function() {
       hideTyping();
-      addBotMessage(reply);
-    } catch (err) {
-      hideTyping();
-      addBotMessage("Sorry, I'm having trouble connecting right now. Please email us at akhada.crafts@mantanex.com and we'll get back to you quickly!");
-    }
+      var intent = matchIntent(text);
+      var response = intent ? KB[intent] : null;
+      if (response) {
+        addBotMessage(response.reply);
+        if (response.action) response.action();
+        if (response.chips) showChips(response.chips);
+      } else {
+        addBotMessage("I'm not sure about that one — but our team can help! Email us at <strong>akhada.crafts@mantanex.com</strong> and we'll get back to you within 1 business day. 🙏");
+        showChips(["View all prices", "Shipping & delivery", "Returns & refunds", "Open email to contact you", "Back to main menu"]);
+      }
+    }, 700);
   }
+  // ===================== END CHATBOT =====================
 </script>
 </body>
 </html>
