@@ -1109,18 +1109,27 @@
     <button id="yp-gada" onclick="ytPill('gada',this)" style="font-size:11px;color:rgba(245,238,216,.5);background:transparent;border:1px solid rgba(184,136,42,.2);padding:6px 16px;cursor:pointer;font-family:'Lato',sans-serif;border-radius:1px;transition:all .2s;">Gada</button>
     <button id="yp-beginner" onclick="ytPill('beginner',this)" style="font-size:11px;color:rgba(245,238,216,.5);background:transparent;border:1px solid rgba(184,136,42,.2);padding:6px 16px;cursor:pointer;font-family:'Lato',sans-serif;border-radius:1px;transition:all .2s;">Beginners</button>
     <button id="yp-advanced" onclick="ytPill('advanced',this)" style="font-size:11px;color:rgba(245,238,216,.5);background:transparent;border:1px solid rgba(184,136,42,.2);padding:6px 16px;cursor:pointer;font-family:'Lato',sans-serif;border-radius:1px;transition:all .2s;">Advanced</button>
+    <button id="yp-karlakattai" onclick="ytPill('karlakattai',this)" style="font-size:11px;color:rgba(245,238,216,.5);background:transparent;border:1px solid rgba(184,136,42,.2);padding:6px 16px;cursor:pointer;font-family:'Lato',sans-serif;border-radius:1px;transition:all .2s;">Karlakattai</button>
   </div>
 
-  <!-- FEATURED -->
-  <div style="margin-bottom:48px;position:relative;">
+  <!-- FEATURED — AUTO-ROTATING every 30 min -->
+  <div style="margin-bottom:48px;position:relative;" id="yt-featured-wrap">
     <div style="position:relative;padding-bottom:56.25%;height:0;border:1px solid rgba(184,136,42,.25);overflow:hidden;">
-      <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/TvFAuOCGuWI" title="The Ancient Technique Modern Fitness Forgot" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <iframe id="yt-featured-frame" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/TvFAuOCGuWI" title="Featured video" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
-    <div style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--ink);font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;">&#9733; Must Watch</div>
+    <div style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--ink);font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;z-index:2;">&#9733; Featured</div>
+    <div style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,.6);color:rgba(255,255,255,.7);font-size:10px;letter-spacing:.08em;padding:4px 10px;border:1px solid rgba(184,136,42,.3);z-index:2;" id="yt-rotation-badge">Refreshes every 30 min</div>
     <div style="margin-top:16px;">
-      <span style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;">Strength Side &#8212; Featured</span>
-      <div style="font-family:'Cinzel',serif;font-size:18px;color:var(--cream);margin-bottom:6px;">The Ancient Technique Modern Fitness Forgot</div>
-      <div style="font-size:12px;color:rgba(245,238,216,.4);line-height:1.6;">Unlock the secret to resilient shoulders and natural movement. Indian clubs have been used for centuries &#8212; this video shows you why the modern world forgot them and exactly how to get started.</div>
+      <span id="yt-featured-channel" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;">Strength Side &#8212; Featured</span>
+      <div id="yt-featured-title" style="font-family:'Cinzel',serif;font-size:18px;color:var(--cream);margin-bottom:6px;">The Ancient Technique Modern Fitness Forgot</div>
+      <div id="yt-featured-desc" style="font-size:12px;color:rgba(245,238,216,.4);line-height:1.6;">Unlock the secret to resilient shoulders and natural movement. Indian clubs have been used for centuries &#8212; this video shows you why the modern world forgot them and exactly how to get started.</div>
+    </div>
+    <!-- Dot indicators -->
+    <div style="display:flex;gap:6px;margin-top:14px;" id="yt-dots">
+      <span onclick="setFeatured(0)" style="width:8px;height:8px;border-radius:50%;background:var(--gold);cursor:pointer;transition:opacity .2s;" class="yt-dot"></span>
+      <span onclick="setFeatured(1)" style="width:8px;height:8px;border-radius:50%;background:rgba(184,136,42,.3);cursor:pointer;transition:opacity .2s;" class="yt-dot"></span>
+      <span onclick="setFeatured(2)" style="width:8px;height:8px;border-radius:50%;background:rgba(184,136,42,.3);cursor:pointer;transition:opacity .2s;" class="yt-dot"></span>
+      <span onclick="setFeatured(3)" style="width:8px;height:8px;border-radius:50%;background:rgba(184,136,42,.3);cursor:pointer;transition:opacity .2s;" class="yt-dot"></span>
     </div>
   </div>
 
@@ -1232,6 +1241,43 @@
         <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--cream);line-height:1.35;margin-bottom:6px;">Clubs vs Gada: Which One Should You Start With?</div>
         <div style="font-size:11px;color:rgba(245,238,216,.35);">Indian Clubs and Gada &#183; Complete Intro</div>
         <div style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-top:8px;">Zen Kahuna</div>
+      </div>
+    </div>
+
+
+    <div class="ytv" data-t="clubs karlakattai advanced" style="border:1px solid rgba(184,136,42,.15);background:rgba(255,255,255,.03);cursor:pointer;overflow:hidden;" onmouseover="this.style.borderColor='rgba(184,136,42,.5)';this.style.background='rgba(184,136,42,.06)'" onmouseout="this.style.borderColor='rgba(184,136,42,.15)';this.style.background='rgba(255,255,255,.03)'" onclick="openYT('16VpsglSjfc','The Ancient Indian Art Karlakattai & Meipadam','A deep dive into Karlakattai — the ancient South Indian club training art — featuring master practitioners from Jothi Silambam. Rare footage of the living tradition.')">
+      <div style="position:relative;padding-bottom:56.25%;height:0;background:#111;pointer-events:none;overflow:hidden;">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/16VpsglSjfc" loading="lazy" tabindex="-1"></iframe>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;"><div style="width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:.9;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0f0b08" style="margin-left:3px;"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--cream);line-height:1.35;margin-bottom:6px;">The Ancient Art That Built India's Warriors Is Still Alive</div>
+        <div style="font-size:11px;color:rgba(245,238,216,.35);">Karlakattai & Meipadam ft. Jothi Silambam</div>
+        <div style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-top:8px;">The Flowing Dutchman</div>
+      </div>
+    </div>
+
+    <div class="ytv" data-t="karlakattai clubs beginner advanced" style="border:1px solid rgba(184,136,42,.15);background:rgba(255,255,255,.03);cursor:pointer;overflow:hidden;" onmouseover="this.style.borderColor='rgba(184,136,42,.5)';this.style.background='rgba(184,136,42,.06)'" onmouseout="this.style.borderColor='rgba(184,136,42,.15)';this.style.background='rgba(255,255,255,.03)'" onclick="openYT('kvvvQT5I2Ok','Karlakattai: The Ancient Indian Strength & Conditioning System','Inside a real Karlakattai training hall in South India. The complete strength and conditioning system that built warriors for thousands of years — still alive today.')">
+      <div style="position:relative;padding-bottom:56.25%;height:0;background:#111;pointer-events:none;overflow:hidden;">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/kvvvQT5I2Ok" loading="lazy" tabindex="-1"></iframe>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;"><div style="width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:.9;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0f0b08" style="margin-left:3px;"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--cream);line-height:1.35;margin-bottom:6px;">The Training System That Built Warriors for 2,000 Years</div>
+        <div style="font-size:11px;color:rgba(245,238,216,.35);">Karlakattai &#183; Ancient Indian Strength System</div>
+        <div style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-top:8px;">The Flowing Dutchman</div>
+      </div>
+    </div>
+
+    <div class="ytv" data-t="karlakattai clubs beginner" style="border:1px solid rgba(184,136,42,.15);background:rgba(255,255,255,.03);cursor:pointer;overflow:hidden;" onmouseover="this.style.borderColor='rgba(184,136,42,.5)';this.style.background='rgba(184,136,42,.06)'" onmouseout="this.style.borderColor='rgba(184,136,42,.15)';this.style.background='rgba(255,255,255,.03)'" onclick="openYT('0u-G-Y6JnJU','The 10 Most Important Karlakattai Rotations for Everyone','Senior Meipadam & Karlakattai coach Trushal breaks down the 10 rotations every practitioner must master — from beginner to advanced. Essential foundational knowledge.')">
+      <div style="position:relative;padding-bottom:56.25%;height:0;background:#111;pointer-events:none;overflow:hidden;">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/0u-G-Y6JnJU" loading="lazy" tabindex="-1"></iframe>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;"><div style="width:44px;height:44px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;opacity:.9;"><svg width="16" height="16" viewBox="0 0 24 24" fill="#0f0b08" style="margin-left:3px;"><path d="M8 5v14l11-7z"/></svg></div></div>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--cream);line-height:1.35;margin-bottom:6px;">10 Rotations Every Karlakattai Practitioner Must Know</div>
+        <div style="font-size:11px;color:rgba(245,238,216,.35);">10 Most Important Karlakattai Rotations &#183; All Levels</div>
+        <div style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-top:8px;">Heartful Warrior &#183; Kshakthiree Trusha</div>
       </div>
     </div>
 
@@ -1678,6 +1724,38 @@ document.getElementById('yt-lb').addEventListener('click',function(e){if(e.targe
   }
   fixYTGrid();window.addEventListener('resize',fixYTGrid);
 })();
+
+
+// ── Featured video auto-rotation ──────────────────────────────────────────
+var YT_FEATURED = [
+  {id:'TvFAuOCGuWI', title:'The Ancient Technique Modern Fitness Forgot', desc:'Unlock the secret to resilient shoulders and natural movement. Indian clubs have been used for centuries — this is why the modern world forgot them and exactly how to get started.', channel:'Strength Side'},
+  {id:'16VpsglSjfc', title:'The Ancient Indian Art Karlakattai & Meipadam', desc:'A deep dive into Karlakattai — the ancient South Indian club training art — featuring master practitioners from Jothi Silambam. Rare footage of the living tradition.', channel:'The Flowing Dutchman ft. Jothi Silambam'},
+  {id:'kvvvQT5I2Ok', title:'Karlakattai: The Ancient Indian Strength & Conditioning System', desc:'Inside a real Karlakattai training hall in South India. The complete strength and conditioning system that built warriors for thousands of years — still alive today.', channel:'The Flowing Dutchman'},
+  {id:'0u-G-Y6JnJU', title:'The 10 Most Important Karlakattai Rotations for Everyone', desc:'Senior Meipadam & Karlakattai coach Trushal breaks down the 10 rotations every practitioner must master — from beginner to advanced. Essential foundational knowledge.', channel:'Heartful Warrior — Kshakthiree Trusha'},
+];
+var ytFeaturedIdx = 0;
+
+function setFeatured(idx) {
+  ytFeaturedIdx = idx;
+  var v = YT_FEATURED[idx];
+  // Update iframe src (no autoplay on rotation to avoid interrupting user)
+  document.getElementById('yt-featured-frame').src = 'https://www.youtube.com/embed/' + v.id;
+  document.getElementById('yt-featured-title').textContent = v.title;
+  document.getElementById('yt-featured-desc').textContent = v.desc;
+  document.getElementById('yt-featured-channel').textContent = v.channel + ' — Featured';
+  // Update dots
+  document.querySelectorAll('.yt-dot').forEach(function(d, i) {
+    d.style.background = i === idx ? 'var(--gold)' : 'rgba(184,136,42,.3)';
+  });
+}
+
+// Auto-rotate every 30 minutes (1800000ms)
+setInterval(function() {
+  ytFeaturedIdx = (ytFeaturedIdx + 1) % YT_FEATURED.length;
+  setFeatured(ytFeaturedIdx);
+}, 1800000);
+
+// Also update ytPill to handle karlakattai tag
 
 </script>
 </body>
