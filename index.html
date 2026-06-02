@@ -129,7 +129,7 @@
       .product-modal-img { min-height: 220px; }
     }
 
-    /* REVIEWS SECTION */
+    /* REVIEWS */
     .reviews-section { background: var(--cream); padding: 100px 40px; }
     .reviews-inner { max-width: 1080px; margin: 0 auto; }
     .reviews-header { text-align: center; margin-bottom: 20px; }
@@ -140,7 +140,6 @@
     .reviews-summary-right { display: flex; flex-direction: column; gap: 4px; }
     .reviews-stars-large { display: flex; gap: 3px; }
     .star { color: var(--gold); font-size: 18px; }
-    .star.empty { color: rgba(184,136,42,.25); }
     .reviews-count-label { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
     .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
     .review-card { background: white; border: 1px solid var(--border); padding: 28px; display: flex; flex-direction: column; gap: 14px; transition: transform .3s, box-shadow .3s; }
@@ -173,7 +172,7 @@
     .btn-review { display: inline-flex; align-items: center; gap: 8px; font-family: 'Cinzel', serif; font-size: 10px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 13px 28px; border-radius: 1px; transition: background .2s; border: none; cursor: pointer; }
     .btn-review:hover { background: var(--gold-light); }
 
-    /* Review Modal */
+    /* REVIEW MODAL */
     .review-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.75); z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
     .review-modal-overlay.show { display: flex; }
     .review-modal { background: var(--cream); border: 1px solid var(--border); padding: 48px 40px; max-width: 520px; width: 100%; position: relative; }
@@ -214,7 +213,6 @@
     .discount-reveal.show { display: block; }
     .discount-reveal p { font-size: 13px; color: rgba(245,238,216,.7); margin-bottom: 12px; }
     .discount-code { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--gold); letter-spacing: .2em; display: block; margin-bottom: 10px; }
-    .discount-fine { font-size: 11px; color: rgba(245,238,216,.3); letter-spacing: .04em; }
     .copy-btn { display: inline-block; margin-top: 14px; font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); border: none; cursor: pointer; padding: 10px 20px; border-radius: 1px; transition: background .2s; }
     .copy-btn:hover { background: var(--gold-light); }
 
@@ -227,45 +225,7 @@
     .contact-email { font-family: 'Cinzel', serif; font-size: 14px; color: var(--gold); letter-spacing: .08em; border-bottom: 1px solid rgba(184,136,42,.3); padding-bottom: 3px; transition: border-color .2s; }
     .contact-email:hover { border-color: var(--gold); }
 
-    /* FOOTER */
-    footer { background: var(--ink); border-top: 1px solid var(--border); padding: 40px; display: flex; flex-direction: column; gap: 0; }
-    .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
-    .footer-logo { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--cream); letter-spacing: .15em; }
-    .footer-logo em { color: var(--gold); font-style: normal; }
-    .footer-social { display: flex; align-items: center; gap: 10px; }
-    .footer-social-link { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid rgba(184,136,42,.3); border-radius: 1px; transition: all .2s; }
-    .footer-social-link:hover { border-color: var(--gold); background: rgba(184,136,42,.1); }
-    .footer-social-link svg { width: 15px; height: 15px; fill: rgba(245,238,216,.5); transition: fill .2s; }
-    .footer-social-link:hover svg { fill: var(--gold); }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border); padding-top: 20px; }
-    .footer-copy { font-size: 11px; color: rgba(245,238,216,.3); letter-spacing: .1em; }
-    .footer-policy-links { display: flex; gap: 20px; flex-wrap: wrap; }
-    .footer-policy-link { font-size: 11px; color: rgba(245,238,216,.35); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: color .2s; }
-    .footer-policy-link:hover { color: var(--gold); }
-    .footer-link { font-size: 11px; color: var(--gold); letter-spacing: .12em; text-transform: uppercase; border-bottom: 1px solid rgba(184,136,42,.3); padding-bottom: 2px; }
-
-    /* POPUP */
-    .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 1000; align-items: center; justify-content: center; }
-    .popup-overlay.show { display: flex; }
-    .popup-box { background: var(--ink); border: 1px solid var(--border); padding: 48px 40px; max-width: 480px; width: 90%; text-align: center; position: relative; }
-    .popup-close { position: absolute; top: 16px; right: 20px; font-size: 20px; color: rgba(255,255,255,.3); cursor: pointer; background: none; border: none; line-height: 1; transition: color .2s; }
-    .popup-close:hover { color: #fff; }
-    .popup-eyebrow { font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
-    .popup-title { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 400; color: #fff; margin-bottom: 12px; line-height: 1.2; }
-    .popup-desc { font-size: 13px; color: rgba(255,255,255,.45); margin-bottom: 28px; line-height: 1.7; }
-    .popup-form { display: flex; border: 1px solid rgba(184,136,42,.4); margin-bottom: 12px; }
-    .popup-form input { flex: 1; background: transparent; border: none; outline: none; padding: 12px 16px; font-family: 'Lato', sans-serif; font-size: 13px; color: #fff; }
-    .popup-form input::placeholder { color: rgba(255,255,255,.3); }
-    .popup-form button { font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); border: none; cursor: pointer; padding: 12px 18px; transition: background .2s; white-space: nowrap; }
-    .popup-form button:hover { background: var(--gold-light); }
-    .popup-note { font-size: 11px; color: rgba(255,255,255,.2); }
-    .popup-code-reveal { display: none; }
-    .popup-code-reveal.show { display: block; }
-    .popup-code { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--gold); letter-spacing: .2em; display: block; margin: 16px 0; }
-    .popup-copy-btn { font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); border: none; cursor: pointer; padding: 10px 20px; border-radius: 1px; transition: background .2s; margin-top: 8px; }
-    .popup-copy-btn:hover { background: var(--gold-light); }
-
-    /* RETURNS SECTION */
+    /* RETURNS */
     .returns-section { background: var(--cream-dark); padding: 80px 40px; border-top: 1px solid var(--border); }
     .returns-inner { max-width: 860px; margin: 0 auto; }
     .returns-header { text-align: center; margin-bottom: 52px; }
@@ -290,7 +250,7 @@
     .btn-return-email { display: inline-flex; align-items: center; gap: 8px; font-family: 'Cinzel', serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); background: transparent; padding: 13px 28px; border-radius: 1px; border: 1px solid rgba(184,136,42,.45); transition: all .2s; cursor: pointer; }
     .btn-return-email:hover { background: rgba(184,136,42,.08); }
 
-    /* RETURN REQUEST MODAL */
+    /* RETURN MODAL */
     .return-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.78); z-index: 1100; align-items: center; justify-content: center; padding: 20px; }
     .return-modal-overlay.show { display: flex; }
     .return-modal { background: var(--cream); border: 1px solid var(--border); padding: 48px 44px; max-width: 540px; width: 100%; position: relative; max-height: 92vh; overflow-y: auto; }
@@ -326,7 +286,7 @@
     .mobile-menu.open { display: flex; }
     .mobile-menu a { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.75); padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
 
-    /* INSTAGRAM BAND */
+    /* INSTAGRAM */
     .instagram-band { background: var(--ink); padding: 60px 40px; border-top: 1px solid var(--border); text-align: center; }
     .instagram-inner { max-width: 480px; margin: 0 auto; }
     .instagram-eyebrow { font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
@@ -336,7 +296,7 @@
     .instagram-btn:hover { background: var(--gold-light); }
     .instagram-btn svg { width: 16px; height: 16px; fill: var(--ink); }
 
-    /* STRIPE SUCCESS PAGE */
+    /* SUCCESS PAGE */
     .success-page { display: none; position: fixed; inset: 0; background: var(--ink); z-index: 2000; overflow-y: auto; }
     .success-page.show { display: block; }
     .success-inner { max-width: 560px; margin: 0 auto; padding: 80px 40px; text-align: center; }
@@ -379,7 +339,28 @@
     .policy-contact-box p { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
     .policy-contact-box a { font-family: 'Cinzel', serif; font-size: 13px; color: var(--gold); }
 
-    /* AI CHATBOT */
+    /* POPUP */
+    .popup-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 1000; align-items: center; justify-content: center; }
+    .popup-overlay.show { display: flex; }
+    .popup-box { background: var(--ink); border: 1px solid var(--border); padding: 48px 40px; max-width: 480px; width: 90%; text-align: center; position: relative; }
+    .popup-close { position: absolute; top: 16px; right: 20px; font-size: 20px; color: rgba(255,255,255,.3); cursor: pointer; background: none; border: none; line-height: 1; transition: color .2s; }
+    .popup-close:hover { color: #fff; }
+    .popup-eyebrow { font-size: 10px; letter-spacing: .25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
+    .popup-title { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 400; color: #fff; margin-bottom: 12px; line-height: 1.2; }
+    .popup-desc { font-size: 13px; color: rgba(255,255,255,.45); margin-bottom: 28px; line-height: 1.7; }
+    .popup-form { display: flex; border: 1px solid rgba(184,136,42,.4); margin-bottom: 12px; }
+    .popup-form input { flex: 1; background: transparent; border: none; outline: none; padding: 12px 16px; font-family: 'Lato', sans-serif; font-size: 13px; color: #fff; }
+    .popup-form input::placeholder { color: rgba(255,255,255,.3); }
+    .popup-form button { font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); border: none; cursor: pointer; padding: 12px 18px; transition: background .2s; white-space: nowrap; }
+    .popup-form button:hover { background: var(--gold-light); }
+    .popup-note { font-size: 11px; color: rgba(255,255,255,.2); }
+    .popup-code-reveal { display: none; }
+    .popup-code-reveal.show { display: block; }
+    .popup-code { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--gold); letter-spacing: .2em; display: block; margin: 16px 0; }
+    .popup-copy-btn { font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); border: none; cursor: pointer; padding: 10px 20px; border-radius: 1px; transition: background .2s; margin-top: 8px; }
+    .popup-copy-btn:hover { background: var(--gold-light); }
+
+    /* CHATBOT */
     .chat-fab { position: fixed; bottom: 28px; right: 28px; z-index: 900; width: 56px; height: 56px; background: var(--gold); border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(184,136,42,.45); transition: transform .2s, background .2s; }
     .chat-fab:hover { transform: scale(1.08); background: var(--gold-light); }
     .chat-fab svg { width: 24px; height: 24px; fill: var(--ink); }
@@ -395,7 +376,6 @@
     .chat-close:hover { color: #fff; }
     .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
     .chat-messages::-webkit-scrollbar { width: 4px; }
-    .chat-messages::-webkit-scrollbar-track { background: transparent; }
     .chat-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
     .chat-msg { display: flex; gap: 8px; align-items: flex-end; }
     .chat-msg.user { flex-direction: row-reverse; }
@@ -418,14 +398,28 @@
     .chat-send { background: var(--gold); border: none; padding: 0 18px; cursor: pointer; color: var(--ink); font-size: 16px; transition: background .2s; flex-shrink: 0; }
     .chat-send:hover { background: var(--gold-light); }
     .chat-powered { font-size: 9px; color: var(--muted); text-align: center; padding: 6px; letter-spacing: .08em; background: var(--cream-dark); flex-shrink: 0; }
-    @media (max-width: 420px) {
-      .chat-window { width: calc(100vw - 32px); right: 16px; bottom: 84px; }
-      .chat-fab { right: 16px; bottom: 16px; }
-    }
+    @media (max-width: 420px) { .chat-window { width: calc(100vw - 32px); right: 16px; bottom: 84px; } .chat-fab { right: 16px; bottom: 16px; } }
+
+    /* FOOTER */
+    footer { background: var(--ink); border-top: 1px solid var(--border); padding: 40px; }
+    .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+    .footer-logo { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--cream); letter-spacing: .15em; }
+    .footer-logo em { color: var(--gold); font-style: normal; }
+    .footer-social { display: flex; align-items: center; gap: 10px; }
+    .footer-social-link { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid rgba(184,136,42,.3); border-radius: 1px; transition: all .2s; }
+    .footer-social-link:hover { border-color: var(--gold); background: rgba(184,136,42,.1); }
+    .footer-social-link svg { width: 15px; height: 15px; fill: rgba(245,238,216,.5); transition: fill .2s; }
+    .footer-social-link:hover svg { fill: var(--gold); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--border); padding-top: 20px; }
+    .footer-copy { font-size: 11px; color: rgba(245,238,216,.3); letter-spacing: .1em; }
+    .footer-policy-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-policy-link { font-size: 11px; color: rgba(245,238,216,.35); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; transition: color .2s; }
+    .footer-policy-link:hover { color: var(--gold); }
+    .footer-link { font-size: 11px; color: var(--gold); letter-spacing: .12em; text-transform: uppercase; border-bottom: 1px solid rgba(184,136,42,.3); padding-bottom: 2px; }
 
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-right { height: 300px; order: -1; background: var(--cream); }
+      .hero-right { height: 300px; order: -1; }
       .hero-right::after { background: linear-gradient(to bottom, transparent, var(--ink) 90%); }
       nav { padding: 0 20px; }
       .nav-links { display: none; }
@@ -449,13 +443,13 @@
 </head>
 <body>
 
-<!-- STRIPE SUCCESS PAGE -->
+<!-- SUCCESS PAGE -->
 <div class="success-page" id="successPage">
   <div class="success-inner">
     <span class="success-icon">🙏</span>
     <span class="success-eyebrow">Order Confirmed</span>
     <h1 class="success-title">Thank You for Your Order</h1>
-    <p class="success-desc">Your Akhada Crafts implement is being prepared. You will receive a confirmation email from Stripe with your receipt and order details.</p>
+    <p class="success-desc">Your Akhada Crafts implement is being prepared. A confirmation receipt from Stripe has been sent to your inbox.</p>
     <div class="success-steps">
       <div class="success-step">
         <span class="success-step-num">01</span>
@@ -486,7 +480,7 @@
   </div>
 </div>
 
-<!-- PRIVACY POLICY PAGE -->
+<!-- PRIVACY POLICY -->
 <div class="policy-page" id="privacyPage">
   <div class="policy-page-inner">
     <button class="policy-page-back" onclick="closePolicyPage('privacyPage')">← Back to Akhada Crafts</button>
@@ -494,56 +488,19 @@
     <h1>Privacy Policy</h1>
     <span class="policy-page-date">Last updated: May 2026</span>
     <div class="policy-page-divider"></div>
-    <div class="policy-section">
-      <h2>1. Who We Are</h2>
-      <p>Akhada Crafts operates the website akhadacrafts.com and sells traditional Indian training equipment. Contact: akhada.crafts@mantanex.com.</p>
-    </div>
-    <div class="policy-section">
-      <h2>2. Information We Collect</h2>
-      <ul>
-        <li>Email address (when you subscribe or contact us)</li>
-        <li>Name and email (when submitting a review or return request)</li>
-        <li>Payment information — processed entirely by Stripe. We never see or store your card details.</li>
-        <li>Basic usage data (pages visited, browser type) via standard server logs</li>
-      </ul>
-    </div>
-    <div class="policy-section">
-      <h2>3. How We Use Your Information</h2>
-      <ul>
-        <li>To fulfill your order and communicate about it</li>
-        <li>To send your discount code or ebook if requested</li>
-        <li>To respond to support, return, or review requests</li>
-        <li>To send occasional marketing emails (only if subscribed — unsubscribe any time)</li>
-      </ul>
-    </div>
-    <div class="policy-section">
-      <h2>4. Payment Processing</h2>
-      <p>All payments are processed by Stripe, Inc. We do not collect, store, or have access to your card information. Stripe's privacy policy applies: stripe.com/privacy.</p>
-    </div>
-    <div class="policy-section">
-      <h2>5. Data Sharing</h2>
-      <p>We do not sell or share your personal information with third parties for marketing. Data is shared only as necessary to fulfill your order (e.g. shipping carriers) or as required by law.</p>
-    </div>
-    <div class="policy-section">
-      <h2>6. Cookies</h2>
-      <p>Our website uses minimal cookies for basic functionality only. We do not use advertising or tracking cookies.</p>
-    </div>
-    <div class="policy-section">
-      <h2>7. Your Rights</h2>
-      <p>You have the right to access, correct, or request deletion of your personal data at any time. Email akhada.crafts@mantanex.com to exercise these rights.</p>
-    </div>
-    <div class="policy-section">
-      <h2>8. Changes to This Policy</h2>
-      <p>We may update this policy from time to time. The date at the top reflects the most recent revision.</p>
-    </div>
-    <div class="policy-contact-box">
-      <p>Questions about this Privacy Policy?</p>
-      <a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
-    </div>
+    <div class="policy-section"><h2>1. Who We Are</h2><p>Akhada Crafts is a traditional Indian fitness equipment brand. Contact: akhada.crafts@mantanex.com.</p></div>
+    <div class="policy-section"><h2>2. Information We Collect</h2><ul><li>Email address (when you subscribe or contact us)</li><li>Name and email (when submitting a review or return request)</li><li>Payment information — processed entirely by Stripe. We never see or store your card details.</li><li>Basic usage data (pages visited, browser type) via standard server logs</li></ul></div>
+    <div class="policy-section"><h2>3. How We Use Your Information</h2><ul><li>To fulfill your order and communicate about it</li><li>To send your discount code or ebook if requested</li><li>To respond to support, return, or review requests</li><li>To send occasional marketing emails (only if subscribed — unsubscribe any time)</li></ul></div>
+    <div class="policy-section"><h2>4. Payment Processing</h2><p>All payments are processed by Stripe, Inc. We do not collect, store, or have access to your card information. Stripe's privacy policy applies: stripe.com/privacy.</p></div>
+    <div class="policy-section"><h2>5. Data Sharing</h2><p>We do not sell or share your personal information with third parties for marketing. Data is shared only as necessary to fulfill your order (e.g. shipping carriers) or as required by law.</p></div>
+    <div class="policy-section"><h2>6. Cookies</h2><p>Our website uses minimal cookies for basic functionality only. We do not use advertising or tracking cookies.</p></div>
+    <div class="policy-section"><h2>7. Your Rights</h2><p>You have the right to access, correct, or request deletion of your personal data at any time. Email akhada.crafts@mantanex.com to exercise these rights.</p></div>
+    <div class="policy-section"><h2>8. Changes to This Policy</h2><p>We may update this policy from time to time. The date at the top reflects the most recent revision.</p></div>
+    <div class="policy-contact-box"><p>Questions about this Privacy Policy?</p><a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a></div>
   </div>
 </div>
 
-<!-- SHIPPING POLICY PAGE -->
+<!-- SHIPPING POLICY -->
 <div class="policy-page" id="shippingPage">
   <div class="policy-page-inner">
     <button class="policy-page-back" onclick="closePolicyPage('shippingPage')">← Back to Akhada Crafts</button>
@@ -551,42 +508,14 @@
     <h1>Shipping Policy</h1>
     <span class="policy-page-date">Last updated: May 2026</span>
     <div class="policy-page-divider"></div>
-    <div class="policy-section">
-      <h2>Where We Ship From</h2>
-      <p>All orders ship from our US warehouse — fast, reliable domestic delivery with no international customs delays for US customers.</p>
-    </div>
-    <div class="policy-section">
-      <h2>Processing Time</h2>
-      <p>Orders are typically processed within 1–3 business days. You will receive a shipping confirmation with tracking once dispatched.</p>
-    </div>
-    <div class="policy-section">
-      <h2>Domestic Shipping (USA)</h2>
-      <ul>
-        <li>Standard shipping: 3–7 business days</li>
-        <li>Shipping costs calculated at Stripe checkout based on your location and order weight</li>
-        <li>Tracking included on all domestic shipments</li>
-      </ul>
-    </div>
-    <div class="policy-section">
-      <h2>International Shipping</h2>
-      <p>We primarily ship within the United States. If you're outside the US, email us before ordering and we will do our best to assist. Our products are also on Etsy (etsy.com/shop/akhadacrafts) which may offer international options.</p>
-    </div>
-    <div class="policy-section">
-      <h2>Damaged or Lost Shipments</h2>
-      <p>If your order arrives damaged or is lost in transit, contact us within 7 days of the expected delivery date with your order details and photos. We will work with the carrier to resolve it quickly.</p>
-    </div>
-    <div class="policy-section">
-      <h2>Free Ebook Delivery</h2>
-      <p>The free Training Ebook (included with Beginner Kit and Samtola) is delivered digitally via email within 24 hours of purchase. Check your spam folder if you don't receive it, then contact us.</p>
-    </div>
-    <div class="policy-section">
-      <h2>Returns</h2>
-      <p>We offer a 14-day return policy. See the Returns section on the main page for full details.</p>
-    </div>
-    <div class="policy-contact-box">
-      <p>Shipping questions? We're here to help:</p>
-      <a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
-    </div>
+    <div class="policy-section"><h2>Where We Ship From</h2><p>All orders ship from our US warehouse — fast, reliable domestic delivery with no international customs delays for US customers.</p></div>
+    <div class="policy-section"><h2>Processing Time</h2><p>Orders are typically processed within 1–3 business days. You will receive a shipping confirmation with tracking once dispatched.</p></div>
+    <div class="policy-section"><h2>Domestic Shipping (USA)</h2><ul><li>Standard shipping: 3–7 business days</li><li>Shipping costs calculated at Stripe checkout based on your location and order weight</li><li>Tracking included on all domestic shipments</li></ul></div>
+    <div class="policy-section"><h2>International Shipping</h2><p>We primarily ship within the United States. If you're outside the US, email us before ordering and we will do our best to assist. Our products are also on Etsy (etsy.com/shop/akhadacrafts) which may offer international options.</p></div>
+    <div class="policy-section"><h2>Damaged or Lost Shipments</h2><p>If your order arrives damaged or is lost in transit, contact us within 7 days of the expected delivery date with your order details and photos.</p></div>
+    <div class="policy-section"><h2>Free Ebook Delivery</h2><p>The free Training Ebook (included with Beginner Kit and Samtola) is delivered digitally via email within 24 hours of purchase. Check your spam folder if you don't receive it, then contact us.</p></div>
+    <div class="policy-section"><h2>Returns</h2><p>We offer a 14-day return policy. See the Returns section on the main page for full details.</p></div>
+    <div class="policy-contact-box"><p>Shipping questions?</p><a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a></div>
   </div>
 </div>
 
@@ -605,21 +534,19 @@
       <p class="popup-note">No spam. Unsubscribe any time.</p>
     </div>
     <div class="popup-code-reveal" id="popupCodeReveal">
-      <p style="font-size:13px; color:rgba(255,255,255,.6); margin-bottom:8px;">Your 5% off code:</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;">Your 5% off code:</p>
       <span class="popup-code">WELCOME5</span>
-      <p style="font-size:11px; color:rgba(255,255,255,.3); margin-bottom:12px;">Enter this at checkout. Valid once on your first order.</p>
+      <p style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px;">Enter this at checkout. Valid once on your first order.</p>
       <button class="popup-copy-btn" onclick="copyPopupCode()">Copy Code</button>
     </div>
   </div>
 </div>
 
-<!-- PRODUCT DETAIL MODAL -->
+<!-- PRODUCT MODAL -->
 <div class="product-modal-overlay" id="productModal">
-  <div class="product-modal" id="productModalBox">
+  <div class="product-modal">
     <button class="product-modal-close" onclick="closeProductModal()">✕</button>
-    <div class="product-modal-img">
-      <img id="modalImg" src="" alt="">
-    </div>
+    <div class="product-modal-img"><img id="modalImg" src="" alt=""></div>
     <div class="product-modal-body">
       <span class="product-modal-category" id="modalCategory"></span>
       <h2 class="product-modal-name" id="modalName"></h2>
@@ -642,7 +569,7 @@
       <h2 class="review-modal-title">Write a Review</h2>
       <div class="review-form-group">
         <label class="review-form-label">Your Rating</label>
-        <div class="star-rating-input" id="starInput">
+        <div class="star-rating-input">
           <button class="star-btn" data-val="1" onclick="setRating(1)">★</button>
           <button class="star-btn" data-val="2" onclick="setRating(2)">★</button>
           <button class="star-btn" data-val="3" onclick="setRating(3)">★</button>
@@ -680,12 +607,12 @@
     <div class="review-success" id="reviewSuccess">
       <div class="review-success-icon">🙏</div>
       <h3 class="review-success-title">Thank You!</h3>
-      <p class="review-success-desc">Your review has been sent to us. Once verified, it will appear on the site. We appreciate you being part of the Akhada community.</p>
+      <p class="review-success-desc">Your review has been received. Once verified, it will appear on the site.</p>
     </div>
   </div>
 </div>
 
-<!-- RETURN REQUEST MODAL -->
+<!-- RETURN MODAL -->
 <div class="return-modal-overlay" id="returnModal">
   <div class="return-modal">
     <button class="return-modal-close" onclick="closeReturnModal()">✕</button>
@@ -739,17 +666,17 @@
       </div>
       <div class="return-form-group">
         <label class="return-form-label">Additional Details</label>
-        <textarea class="return-form-textarea" id="returnDetails" placeholder="Please describe the issue or any additional context…"></textarea>
+        <textarea class="return-form-textarea" id="returnDetails" placeholder="Please describe the issue…"></textarea>
       </div>
       <button class="return-form-submit" onclick="submitReturnForm()">Submit Return Request →</button>
       <div class="return-form-or">— or contact us directly —</div>
       <a class="return-email-btn" id="returnEmailBtn" href="#">Email akhada.crafts@mantanex.com →</a>
-      <p class="return-form-note">Items must be unused and in original condition. Return shipping is the customer's responsibility. Refunds are issued within 5 business days of receiving the item.</p>
+      <p class="return-form-note">Items must be unused and in original condition. Return shipping is the customer's responsibility. Refunds issued within 5 business days of receiving the item.</p>
     </div>
     <div class="return-success" id="returnSuccess">
       <div class="return-success-icon">✅</div>
       <h3 class="return-success-title">Request Received</h3>
-      <p class="return-success-desc">Thank you. We've received your return request and will reply to your email within 1–2 business days with next steps. Please keep the item unused and in its original packaging.</p>
+      <p class="return-success-desc">We've received your return request and will reply within 1–2 business days with next steps.</p>
     </div>
   </div>
 </div>
@@ -777,8 +704,8 @@
     <a href="#contact">Contact</a>
     <a href="https://www.instagram.com/akhada.crafts/" target="_blank" rel="noopener" style="color:var(--gold);">Instagram ↗</a>
   </div>
-  <div style="display:flex; align-items:center; gap:12px;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 15" style="display:block; border-radius:2px; opacity:.65;">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="15" viewBox="0 0 24 15" style="display:block;border-radius:2px;opacity:.65;">
       <rect width="24" height="15" fill="#B22234"/>
       <rect y="1.15" width="24" height="1.15" fill="#fff"/><rect y="2.31" width="24" height="1.15" fill="#B22234"/>
       <rect y="3.46" width="24" height="1.15" fill="#fff"/><rect y="4.62" width="24" height="1.15" fill="#B22234"/>
@@ -807,25 +734,18 @@
 <!-- PLATFORM BAR -->
 <div class="platform-bar">
   <span class="platform-bar-label">Find Us On</span>
-
-  <!-- Linktree -->
   <a class="platform-btn" href="https://tr.ee/MWl0vl0lmy" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13.51 6.2l4.68-4.69 2.12 2.12-4.68 4.69h5.88v3h-5.88l4.68 4.68-2.12 2.12L13.51 13.4V22h-3V13.4L5.82 18.12 3.7 16l4.68-4.68H2.5v-3h5.88L3.7 3.63 5.82 1.51l4.69 4.69V0h3v6.2z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M13.51 6.2l4.68-4.69 2.12 2.12-4.68 4.69h5.88v3h-5.88l4.68 4.68-2.12 2.12L13.51 13.4V22h-3V13.4L5.82 18.12 3.7 16l4.68-4.68H2.5v-3h5.88L3.7 3.63 5.82 1.51l4.69 4.69V0h3v6.2z"/></svg>
     Linktree
   </a>
-
-  <!-- Amazon -->
   <a class="platform-btn" href="https://www.amazon.com/s?me=A2FFUB4O09J8LA" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.494.124.104.172.08.342-.073.512-.19.227-.4.433-.625.616C18.485 22.606 15.5 23.5 12.34 23.5c-3.41 0-6.57-.875-9.483-2.624-.392-.234-.715-.51-.968-.833-.163-.21-.18-.38-.052-.51zm21.516-2.87c-.072-.13-.17-.19-.296-.18-.126.01-.227.07-.303.19-.204.325-.49.63-.864.91-.88.69-1.815 1.034-2.806 1.034-.612 0-1.092-.176-1.44-.528-.35-.352-.523-.82-.523-1.402 0-.52.135-.99.406-1.41.27-.42.68-.78 1.226-1.08.53-.29 1.27-.53 2.222-.72.243-.05.602-.11 1.08-.18v-.28c0-.65-.1-1.11-.3-1.38-.2-.27-.52-.4-.96-.4-.38 0-.69.1-.93.3-.24.2-.43.52-.58.96-.1.3-.28.44-.53.42l-2.01-.25c-.26-.06-.39-.2-.39-.44 0-.05.01-.1.02-.16.36-1.94 1.88-2.91 4.55-2.91.73 0 1.39.1 1.98.31.59.21 1.06.49 1.4.85.34.36.58.73.72 1.1.14.38.21.81.21 1.3v4.38c0 .63.24 1.26.72 1.89.1.13.15.27.15.41 0 .13-.06.26-.18.39-.48.44-.98.86-1.5 1.25-.12.09-.24.13-.37.13-.14 0-.28-.06-.42-.18-.26-.23-.56-.49-.9-.78zm-1.51-3.12c-.4.08-.73.16-.97.24-.5.17-.86.37-1.08.62-.22.25-.33.54-.33.87 0 .38.11.69.33.92.22.23.51.34.87.34.63 0 1.2-.21 1.71-.63v-2.36h-.53z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.494.124.104.172.08.342-.073.512-.19.227-.4.433-.625.616C18.485 22.606 15.5 23.5 12.34 23.5c-3.41 0-6.57-.875-9.483-2.624-.392-.234-.715-.51-.968-.833-.163-.21-.18-.38-.052-.51zm21.516-2.87c-.072-.13-.17-.19-.296-.18-.126.01-.227.07-.303.19-.204.325-.49.63-.864.91-.88.69-1.815 1.034-2.806 1.034-.612 0-1.092-.176-1.44-.528-.35-.352-.523-.82-.523-1.402 0-.52.135-.99.406-1.41.27-.42.68-.78 1.226-1.08.53-.29 1.27-.53 2.222-.72.243-.05.602-.11 1.08-.18v-.28c0-.65-.1-1.11-.3-1.38-.2-.27-.52-.4-.96-.4-.38 0-.69.1-.93.3-.24.2-.43.52-.58.96-.1.3-.28.44-.53.42l-2.01-.25c-.26-.06-.39-.2-.39-.44 0-.05.01-.1.02-.16.36-1.94 1.88-2.91 4.55-2.91.73 0 1.39.1 1.98.31.59.21 1.06.49 1.4.85.34.36.58.73.72 1.1.14.38.21.81.21 1.3v4.38c0 .63.24 1.26.72 1.89.1.13.15.27.15.41 0 .13-.06.26-.18.39-.48.44-.98.86-1.5 1.25-.12.09-.24.13-.37.13-.14 0-.28-.06-.42-.18-.26-.23-.56-.49-.9-.78zm-1.51-3.12c-.4.08-.73.16-.97.24-.5.17-.86.37-1.08.62-.22.25-.33.54-.33.87 0 .38.11.69.33.92.22.23.51.34.87.34.63 0 1.2-.21 1.71-.63v-2.36h-.53z"/></svg>
     Amazon
   </a>
-
-  <!-- Etsy -->
   <a class="platform-btn" href="https://www.etsy.com/shop/akhadacrafts/?etsrc=sdt" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.194 0c-.376 4.338-1.703 5.595-5.194 5.805v2.778h2.986V18.68c0 3.57 1.388 5.32 5.166 5.32 1.645 0 3.53-.47 4.583-.984l-.565-2.66a6.463 6.463 0 0 1-2.494.565c-1.51 0-2.073-.799-2.073-2.35V8.583H16l.47-2.778h-4.873V0z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M9.194 0c-.376 4.338-1.703 5.595-5.194 5.805v2.778h2.986V18.68c0 3.57 1.388 5.32 5.166 5.32 1.645 0 3.53-.47 4.583-.984l-.565-2.66a6.463 6.463 0 0 1-2.494.565c-1.51 0-2.073-.799-2.073-2.35V8.583H16l.47-2.778h-4.873V0z"/></svg>
     Etsy
   </a>
-
 </div>
 
 <!-- HERO -->
@@ -841,12 +761,8 @@
   </div>
 </section>
 
-<div style="padding: 60px 0 0;">
-  <div class="divider">
-    <div class="divider-line"></div>
-    <span class="divider-mark">The Collection</span>
-    <div class="divider-line"></div>
-  </div>
+<div style="padding:60px 0 0;">
+  <div class="divider"><div class="divider-line"></div><span class="divider-mark">The Collection</span><div class="divider-line"></div></div>
 </div>
 
 <!-- SHOP -->
@@ -857,12 +773,13 @@
       <h2>Shop Akhada Crafts</h2>
     </div>
     <div class="shop-tabs">
-      <button class="shop-tab active" onclick="filterProducts('all', this)">All Products</button>
-      <button class="shop-tab" onclick="filterProducts('clubs', this)">Indian Clubs</button>
-      <button class="shop-tab" onclick="filterProducts('mugdar', this)">Mugdar</button>
-      <button class="shop-tab" onclick="filterProducts('samtola', this)">Samtola</button>
+      <button class="shop-tab active" onclick="filterProducts('all',this)">All Products</button>
+      <button class="shop-tab" onclick="filterProducts('clubs',this)">Indian Clubs</button>
+      <button class="shop-tab" onclick="filterProducts('mugdar',this)">Mugdar</button>
+      <button class="shop-tab" onclick="filterProducts('samtola',this)">Samtola</button>
     </div>
     <div class="shop-grid">
+
       <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','$179','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','https://buy.stripe.com/28E00d2hPg2pdKueAces006')">
         <div class="product-card-img"><img src="clubs900g.png.png" alt="Indian Clubs 900g Pair"></div>
         <div class="product-card-body">
@@ -875,18 +792,20 @@
           </div>
         </div>
       </div>
+
       <div class="product-card" data-category="clubs" onclick="openProduct('begginer_kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','$899','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005')">
         <div class="product-card-img"><img src="begginer_kit.png" alt="Indian Club Beginner Kit"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Indian Clubs Beginner Kit — 4 Pairs + Free Ebook</div>
-          <div class="product-card-desc">8 clubs total — 4 matched teak pairs: 500g, 1kg, 1.5kg, and 2kg Mugdar. From warm-up to advanced strength training. Free Training Ebook delivered via email within 24 hours of purchase.</div>
+          <div class="product-card-desc">8 clubs total — 4 matched teak pairs: 500g, 1kg, 1.5kg, and 2kg Mugdar. From warm-up to advanced strength training. Free Training Ebook delivered via email within 24 hours.</div>
           <div class="product-card-footer">
             <span class="product-card-price">$899</span>
             <a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
+
       <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 3 kg (6.6 lbs).jpg','Mugdar','Mugdar Indian Club — 3 kg (6.6 lbs)','$199','A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning. Rooted in the Karlakattai martial tradition of South India.','Weight: 3 kg (6.6 lbs)|Hand-turned from dense kiln-dried teak|Ideal for building rotational power|Great entry-level mugdar for developing practitioners','https://buy.stripe.com/eVq5kx09H9E16i28bOes004')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 3 kg (6.6 lbs).jpg" alt="3kg Mugdar"></div>
         <div class="product-card-body">
@@ -899,7 +818,8 @@
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 5 kg (11 lbs).png','Mugdar','Mugdar Indian Club — 5 kg (11 lbs)','$249','Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training. A step up that challenges grip, shoulder, and core in every swing.','Weight: 5 kg (11 lbs)|Lathe-turned from dense kiln-dried teak|For intermediate to advanced practitioners|Builds serious rotational power and grip strength','https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003')">
+
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 5 kg (11 lbs).png','Mugdar','Mugdar Indian Club — 5 kg (11 lbs)','$249','Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.','Weight: 5 kg (11 lbs)|Lathe-turned from dense kiln-dried teak|For intermediate to advanced practitioners|Builds serious rotational power and grip strength','https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 5 kg (11 lbs).png" alt="5kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
@@ -911,7 +831,8 @@
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 8 kg (17.6 lbs).jpg','Mugdar','Mugdar Indian Club — 8 kg (17.6 lbs)','$289','For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition. Not for the faint-hearted — this is a tool for serious conditioning.','Weight: 8 kg (17.6 lbs)|Hand-turned from the densest kiln-dried teak|For advanced and seasoned practitioners|Full-body engagement — core, grip, shoulder, and back','https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001')">
+
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 8 kg (17.6 lbs).jpg','Mugdar','Mugdar Indian Club — 8 kg (17.6 lbs)','$289','For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.','Weight: 8 kg (17.6 lbs)|Hand-turned from the densest kiln-dried teak|For advanced and seasoned practitioners|Full-body engagement — core, grip, shoulder, and back','https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 8 kg (17.6 lbs).jpg" alt="8kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
@@ -923,7 +844,8 @@
           </div>
         </div>
       </div>
-      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','$389','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — a harder, denser wood than teak. Trains the body in rotational patterns that no other implement can replicate. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000')">
+
+      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','$389','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — harder and denser than teak. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000')">
         <div class="product-card-img"><img src="Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg" alt="Samtola"></div>
         <div class="product-card-body">
           <span class="product-card-category">Samtola</span>
@@ -935,6 +857,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -961,12 +884,8 @@
 </section>
 
 <!-- REVIEWS -->
-<div style="padding: 60px 0 0; background: var(--cream);">
-  <div class="divider">
-    <div class="divider-line"></div>
-    <span class="divider-mark">What Our Customers Say</span>
-    <div class="divider-line"></div>
-  </div>
+<div style="padding:60px 0 0;background:var(--cream);">
+  <div class="divider"><div class="divider-line"></div><span class="divider-mark">What Our Customers Say</span><div class="divider-line"></div></div>
 </div>
 
 <section id="reviews" class="reviews-section">
@@ -978,9 +897,7 @@
     <div class="reviews-summary">
       <span class="reviews-avg">4.9</span>
       <div class="reviews-summary-right">
-        <div class="reviews-stars-large">
-          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
-        </div>
+        <div class="reviews-stars-large"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
         <span class="reviews-count-label">Based on 24 reviews</span>
       </div>
     </div>
@@ -1099,15 +1016,15 @@
     </div>
     <div class="discount-reveal" id="discountReveal">
       <p>Welcome! Here is your 5% off code — use it at checkout on any order:</p>
-      <span class="discount-code" id="discountCode">WELCOME5</span>
+      <span class="discount-code">WELCOME5</span>
       <button class="copy-btn" onclick="copyCode()">Copy Code</button>
-      <p class="discount-fine" style="margin-top:12px;">Valid for one use on your first order. Enter this code at checkout.</p>
+      <p style="font-size:11px;color:rgba(245,238,216,.3);margin-top:12px;">Valid for one use on your first order.</p>
     </div>
   </div>
 </section>
 
 <!-- EBOOK -->
-<section id="ebook" class="contact-band" style="background: var(--cream);">
+<section id="ebook" class="contact-band" style="background:var(--cream);">
   <div class="contact-inner">
     <span class="contact-eyebrow">Free with Beginner Kit &amp; Samtola</span>
     <h2 class="contact-title">Training Guide Ebook</h2>
@@ -1117,12 +1034,8 @@
 </section>
 
 <!-- RETURNS -->
-<div style="padding: 60px 0 0; background: var(--cream-dark);">
-  <div class="divider">
-    <div class="divider-line"></div>
-    <span class="divider-mark">Returns &amp; Refunds</span>
-    <div class="divider-line"></div>
-  </div>
+<div style="padding:60px 0 0;background:var(--cream-dark);">
+  <div class="divider"><div class="divider-line"></div><span class="divider-mark">Returns &amp; Refunds</span><div class="divider-line"></div></div>
 </div>
 
 <section id="returns" class="returns-section">
@@ -1153,34 +1066,10 @@
       </div>
     </div>
     <div class="returns-policy-grid">
-      <div class="policy-item">
-        <span class="policy-item-icon">📅</span>
-        <div class="policy-item-text">
-          <div class="policy-item-label">Return Window</div>
-          <div class="policy-item-detail">Returns must be initiated within 14 days of receiving your order.</div>
-        </div>
-      </div>
-      <div class="policy-item">
-        <span class="policy-item-icon">🪵</span>
-        <div class="policy-item-text">
-          <div class="policy-item-label">Item Condition</div>
-          <div class="policy-item-detail">Items must be unused, undamaged, and in their original condition.</div>
-        </div>
-      </div>
-      <div class="policy-item">
-        <span class="policy-item-icon">🚚</span>
-        <div class="policy-item-text">
-          <div class="policy-item-label">Return Shipping</div>
-          <div class="policy-item-detail">Return shipping costs are the responsibility of the customer.</div>
-        </div>
-      </div>
-      <div class="policy-item">
-        <span class="policy-item-icon">✅</span>
-        <div class="policy-item-text">
-          <div class="policy-item-label">Refund Method</div>
-          <div class="policy-item-detail">Full refund issued to your original Stripe payment within 5 business days of receipt.</div>
-        </div>
-      </div>
+      <div class="policy-item"><span class="policy-item-icon">📅</span><div class="policy-item-text"><div class="policy-item-label">Return Window</div><div class="policy-item-detail">Returns must be initiated within 14 days of receiving your order.</div></div></div>
+      <div class="policy-item"><span class="policy-item-icon">🪵</span><div class="policy-item-text"><div class="policy-item-label">Item Condition</div><div class="policy-item-detail">Items must be unused, undamaged, and in their original condition.</div></div></div>
+      <div class="policy-item"><span class="policy-item-icon">🚚</span><div class="policy-item-text"><div class="policy-item-label">Return Shipping</div><div class="policy-item-detail">Return shipping costs are the responsibility of the customer.</div></div></div>
+      <div class="policy-item"><span class="policy-item-icon">✅</span><div class="policy-item-text"><div class="policy-item-label">Refund Method</div><div class="policy-item-detail">Full refund issued to your original Stripe payment within 5 business days of receipt.</div></div></div>
     </div>
     <div class="returns-cta-row">
       <button class="btn-return-form" onclick="openReturnModal()">Request a Return →</button>
@@ -1205,10 +1094,10 @@
     <div class="footer-logo">AKHADA<em>.</em>CRAFTS</div>
     <div class="footer-social">
       <a class="footer-social-link" href="https://www.instagram.com/akhada.crafts/" target="_blank" rel="noopener" title="Instagram">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       </a>
       <a class="footer-social-link" href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener" title="Etsy">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.194 0c-.376 4.338-1.703 5.595-5.194 5.805v2.778h2.986V18.68c0 3.57 1.388 5.32 5.166 5.32 1.645 0 3.53-.47 4.583-.984l-.565-2.66a6.463 6.463 0 0 1-2.494.565c-1.51 0-2.073-.799-2.073-2.35V8.583H16l.47-2.778h-4.873V0z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M9.194 0c-.376 4.338-1.703 5.595-5.194 5.805v2.778h2.986V18.68c0 3.57 1.388 5.32 5.166 5.32 1.645 0 3.53-.47 4.583-.984l-.565-2.66a6.463 6.463 0 0 1-2.494.565c-1.51 0-2.073-.799-2.073-2.35V8.583H16l.47-2.778h-4.873V0z"/></svg>
       </a>
     </div>
   </div>
@@ -1222,191 +1111,9 @@
   </div>
 </footer>
 
-<script>
-  function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
-  function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
-  function openPolicyPage(id) { document.getElementById(id).classList.add('show'); document.body.style.overflow='hidden'; }
-  function closePolicyPage(id) { document.getElementById(id).classList.remove('show'); document.body.style.overflow=''; }
-  function openSuccessPage() { document.getElementById('successPage').classList.add('show'); document.body.style.overflow='hidden'; }
-  function closeSuccessPage() {
-    document.getElementById('successPage').classList.remove('show');
-    document.body.style.overflow='';
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
-  if (new URLSearchParams(window.location.search).get('order') === 'success') {
-    window.addEventListener('DOMContentLoaded', openSuccessPage);
-  }
-
-  function openProduct(img, category, name, price, desc, detailsStr, buyUrl) {
-    document.getElementById('modalImg').src = img;
-    document.getElementById('modalImg').alt = name;
-    document.getElementById('modalCategory').textContent = category;
-    document.getElementById('modalName').textContent = name;
-    document.getElementById('modalPrice').textContent = price;
-    document.getElementById('modalDesc').textContent = desc;
-    document.getElementById('modalBuyBtn').href = buyUrl;
-    var details = detailsStr.split('|');
-    var detailsHtml = details.map(function(d) {
-      return '<div class="product-modal-detail">' + d + '</div>';
-    }).join('');
-    document.getElementById('modalDetails').innerHTML = detailsHtml;
-    document.getElementById('productModal').classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeProductModal() {
-    document.getElementById('productModal').classList.remove('show');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('productModal').addEventListener('click', function(e) {
-    if (e.target === this) closeProductModal();
-  });
-
-  function closePopup() { document.getElementById('welcomePopup').classList.remove('show'); }
-  function handlePopupSubscribe() {
-    var email = document.getElementById('popupEmail').value;
-    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
-    window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=New Subscriber&body=New subscriber: ' + email;
-    document.getElementById('popupFormWrap').style.display = 'none';
-    document.getElementById('popupCodeReveal').classList.add('show');
-  }
-  function copyPopupCode() {
-    navigator.clipboard.writeText('WELCOME5').then(function() {
-      var btn = document.querySelector('.popup-copy-btn');
-      btn.textContent = 'Copied!';
-      setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
-    });
-  }
-
-  function filterProducts(category, btn) {
-    document.querySelectorAll('.shop-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.product-card').forEach(card => {
-      if (category === 'all' || card.dataset.category === category) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  }
-
-  function handleSubscribe() {
-    var email = document.getElementById('subEmail').value;
-    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
-    window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=New Subscriber&body=New subscriber: ' + email;
-    document.getElementById('subFormWrap').style.display = 'none';
-    document.getElementById('discountReveal').classList.add('show');
-  }
-  function copyCode() {
-    navigator.clipboard.writeText('WELCOME5').then(function() {
-      var btn = document.querySelector('.copy-btn');
-      btn.textContent = 'Copied!';
-      setTimeout(function() { btn.textContent = 'Copy Code'; }, 2000);
-    });
-  }
-
-  function loadMoreReviews() {
-    var hidden = document.querySelectorAll('.hidden-review:not(.revealed)');
-    var count = 0;
-    hidden.forEach(function(card) {
-      if (count < 3) { card.classList.add('revealed'); count++; }
-    });
-    if (document.querySelectorAll('.hidden-review:not(.revealed)').length === 0) {
-      document.getElementById('loadMoreBtn').classList.add('hidden');
-    }
-  }
-
-  function openReviewModal() { document.getElementById('reviewModal').classList.add('show'); }
-  function closeReviewModal() {
-    document.getElementById('reviewModal').classList.remove('show');
-    document.getElementById('reviewSuccess').classList.remove('show');
-    document.getElementById('reviewFormWrap').style.display = 'block';
-    selectedRating = 0;
-    document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
-  }
-
-  var selectedRating = 0;
-  function setRating(val) {
-    selectedRating = val;
-    document.querySelectorAll('.star-btn').forEach(function(btn) {
-      btn.classList.toggle('active', parseInt(btn.dataset.val) <= val);
-    });
-  }
-
-  function submitReview() {
-    var name = document.getElementById('reviewName').value.trim();
-    var product = document.getElementById('reviewProduct').value;
-    var text = document.getElementById('reviewText').value.trim();
-    var location = document.getElementById('reviewLocation').value.trim();
-    if (!name || !product || !text || selectedRating === 0) {
-      alert('Please fill in all required fields and select a star rating.');
-      return;
-    }
-    var stars = '★'.repeat(selectedRating) + '☆'.repeat(5 - selectedRating);
-    var body = 'New Review:\n\nProduct: ' + product + '\nRating: ' + stars + ' (' + selectedRating + '/5)\nName: ' + name + '\nLocation: ' + location + '\n\nReview:\n' + text;
-    window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=New Customer Review — ' + product + '&body=' + encodeURIComponent(body);
-    document.getElementById('reviewFormWrap').style.display = 'none';
-    document.getElementById('reviewSuccess').classList.add('show');
-  }
-
-  document.getElementById('reviewModal').addEventListener('click', function(e) {
-    if (e.target === this) closeReviewModal();
-  });
-
-  function openReturnModal() {
-    document.getElementById('returnModal').classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeReturnModal() {
-    document.getElementById('returnModal').classList.remove('show');
-    document.body.style.overflow = '';
-    document.getElementById('returnSuccess').classList.remove('show');
-    document.getElementById('returnFormWrap').style.display = 'block';
-    ['returnName','returnEmail','returnOrderId','returnDate','returnDetails'].forEach(function(id) {
-      document.getElementById(id).value = '';
-    });
-    document.getElementById('returnProduct').value = '';
-    document.getElementById('returnReason').value = '';
-  }
-
-  function submitReturnForm() {
-    var name = document.getElementById('returnName').value.trim();
-    var email = document.getElementById('returnEmail').value.trim();
-    var product = document.getElementById('returnProduct').value;
-    var reason = document.getElementById('returnReason').value;
-    var orderId = document.getElementById('returnOrderId').value.trim();
-    var date = document.getElementById('returnDate').value;
-    var details = document.getElementById('returnDetails').value.trim();
-    if (!name || !email || !product || !reason) {
-      alert('Please fill in all required fields (marked with *).');
-      return;
-    }
-    if (!email.includes('@')) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    var body = 'Return Request\n\n'
-      + 'Name: ' + name + '\n'
-      + 'Email: ' + email + '\n'
-      + 'Product: ' + product + '\n'
-      + 'Order/Transaction ID: ' + (orderId || 'Not provided') + '\n'
-      + 'Date of Purchase: ' + (date || 'Not provided') + '\n'
-      + 'Reason: ' + reason + '\n'
-      + (details ? '\nAdditional Details:\n' + details : '');
-    window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=Return Request — ' + encodeURIComponent(product) + '&body=' + encodeURIComponent(body);
-    document.getElementById('returnFormWrap').style.display = 'none';
-    document.getElementById('returnSuccess').classList.add('show');
-  }
-
-  document.getElementById('returnEmailBtn').href = 'mailto:akhada.crafts@mantanex.com?subject=Return Request&body=' + encodeURIComponent('Hi,\n\nI would like to request a return for my recent order.\n\nName:\nProduct:\nOrder/Transaction ID:\nDate of purchase:\nReason:\n\nThank you.');
-
-  document.getElementById('returnModal').addEventListener('click', function(e) {
-    if (e.target === this) closeReturnModal();
-  });
-</script>
-
-<!-- AI CHATBOT -->
+<!-- CHATBOT -->
 <button class="chat-fab" onclick="toggleChat()" title="Chat with Akhada Assistant">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
 </button>
 
 <div class="chat-window" id="chatWindow">
@@ -1428,154 +1135,247 @@
 </div>
 
 <script>
-  var chatOpen = false;
-  var KB = {
-    beginner: { reply: "For beginners, the best starting point is our <strong>Indian Clubs 900g Pair ($179)</strong> — perfect for learning the movements and building shoulder mobility. If you want a full progression from day one, the <strong>Beginner Kit ($899)</strong> gives you 4 pairs (500g → 2kg) plus a free Training Ebook. Which sounds right for you?", chips: ["Tell me more about the 900g clubs", "Tell me more about the Beginner Kit", "What is a mugdar?", "Back to main menu"] },
-    clubs900: { reply: "The <strong>Indian Clubs 900g Pair</strong> — $179\n\nTwo hand-turned teak clubs, 900g each (4 lbs total). Great for:\n— Shoulder & wrist mobility\n— Flow and coordination training\n— Joint health and rehab\n\nIdeal if you're new to club training or want a quality starter pair.", chips: ["How do I buy?", "Do you ship internationally?", "Any discount codes?", "Back to main menu"] },
-    beginnerKit: { reply: "The <strong>Beginner Kit — $899</strong>\n\n8 clubs total — 4 matched teak pairs:\n— 500g · 1kg · 1.5kg · 2kg Mugdar\n\nTakes you from warm-up through to serious strength work. Also includes a <strong>free Training Ebook</strong> delivered by email within 24 hours. Best value for anyone committed to the practice.", chips: ["How do I buy?", "When do I get the ebook?", "Any discount codes?", "Back to main menu"] },
-    mugdar: { reply: "Mugdar are heavier club-mace implements rooted in the Karlakattai wrestling tradition. We have three sizes:\n\n— <strong>3kg ($199)</strong> — great entry into mugdar training\n— <strong>5kg ($249)</strong> — intermediate to advanced\n— <strong>8kg ($289)</strong> — for serious seasoned practitioners\n\nAll hand-turned from dense kiln-dried teak. Which weight interests you?", chips: ["Tell me about the 3kg", "Tell me about the 5kg", "Tell me about the 8kg", "Back to main menu"] },
-    mugdar3: { reply: "<strong>Mugdar 3kg (6.6 lbs) — $199</strong>\n\nA great entry point into mugdar training. Builds rotational power, grip strength, and shoulder conditioning. Hand-turned from dense kiln-dried teak.", chips: ["How do I buy?", "Compare with the 5kg", "Any discount codes?", "Back to main menu"] },
-    mugdar5: { reply: "<strong>Mugdar 5kg (11 lbs) — $249</strong>\n\nFor intermediate to advanced practitioners. Lathe-turned from dense teak — challenges your grip, shoulder, and core in every swing.", chips: ["How do I buy?", "Compare with the 8kg", "Any discount codes?", "Back to main menu"] },
-    mugdar8: { reply: "<strong>Mugdar 8kg (17.6 lbs) — $289</strong>\n\nFor seasoned practitioners only. Demands full-body engagement — core, grip, shoulder, and back. Rooted in akhada tradition.", chips: ["How do I buy?", "Any discount codes?", "Back to main menu"] },
-    samtola: { reply: "<strong>Acacia Wooden Samtola — $389</strong>\n\nThe most unique implement we offer. At 20.5 lbs, crafted from solid acacia, it trains cross-body stability, core power, and total-body coordination.\n\nIncludes a <strong>free Training Ebook</strong> delivered by email within 24 hours.", chips: ["How do I buy?", "When do I get the ebook?", "Any discount codes?", "Back to main menu"] },
-    buy: { reply: "Click <strong>Buy Now</strong> on any product card and you'll be taken to our secure Stripe checkout. Payment is fast and safe — we accept all major cards.\n\n🇺🇸 Ships from the US.", chips: ["Any discount codes?", "How long does shipping take?", "What is your return policy?", "Back to main menu"] },
-    discount: { reply: "Yes! Use code <strong>WELCOME5</strong> at checkout for 5% off your first order.\n\nYou can also get it by subscribing to our newsletter at the bottom of the page.", chips: ["How do I apply the code?", "How do I buy?", "Back to main menu"] },
-    discountHow: { reply: "At Stripe checkout, look for the <strong>\"Add promotion code\"</strong> field and enter <strong>WELCOME5</strong>. The 5% discount will apply instantly. Valid once on your first order.", chips: ["How do I buy?", "Back to main menu"] },
-    shipping: { reply: "We ship from our <strong>US warehouse</strong> — no international delays for US customers.\n\n— Processing: 1–3 business days\n— Delivery: 3–7 business days\n— Tracking included on every order", chips: ["Do you ship internationally?", "What is your return policy?", "Back to main menu"] },
-    international: { reply: "We primarily ship within the <strong>United States</strong>. If you're outside the US, email us at akhada.crafts@mantanex.com before ordering.\n\nOur products are also on <strong>Etsy</strong> (etsy.com/shop/akhadacrafts) which may offer international shipping options.", chips: ["How do I contact you?", "Back to main menu"] },
-    returns: { reply: "We offer a <strong>14-day return policy</strong>.\n\n— Items must be unused and in original condition\n— Return shipping is the customer's responsibility\n— Full refund issued within 5 business days of receiving the item", chips: ["How do I start a return?", "How do I contact you?", "Back to main menu"] },
-    returnHow: { reply: "Scroll down to the <strong>Returns section</strong> on this page and click <strong>\"Request a Return\"</strong>.\n\nOr email us directly at <strong>akhada.crafts@mantanex.com</strong> with your name, product, order ID, and reason.", chips: ["What is your return policy?", "How do I contact you?", "Back to main menu"] },
-    ebook: { reply: "The free <strong>Training Ebook</strong> is included with the <strong>Beginner Kit</strong> and the <strong>Samtola</strong>.\n\nDelivered digitally to your email within <strong>24 hours</strong> of purchase. If you don't receive it, check your spam folder first — then email us.", chips: ["Tell me more about the Beginner Kit", "Tell me more about the Samtola", "Back to main menu"] },
-    wood: { reply: "All our <strong>Indian Clubs and Mugdar</strong> are hand-turned from kiln-dried <strong>teak</strong>.\n\nThe <strong>Samtola</strong> is crafted from solid <strong>acacia</strong>, which is harder and denser than teak.", chips: ["Tell me about the clubs", "Tell me about the Samtola", "Back to main menu"] },
-    tradition: { reply: "Our implements trace their lineage to the <strong>Karlakattai</strong> martial art and the <strong>akhadas</strong> (wrestling gyms) of India, where athletes and warriors trained for centuries with clubs and maces.", chips: ["Which product should I start with?", "Tell me about the mugdar", "Back to main menu"] },
-    contact: { reply: "The best way to reach us is by email:\n\n📧 <strong>akhada.crafts@mantanex.com</strong>\n\nWe typically reply within 1 business day. You can also find us on <strong>Instagram</strong> @akhada.crafts and <strong>Etsy</strong> at etsy.com/shop/akhadacrafts.", chips: ["Open email to contact you", "Back to main menu"] },
-    emailUs: { reply: "Opening your email now — just hit send and we'll get back to you! 🙏", chips: ["Back to main menu"], action: function() { window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=Customer Enquiry'; } },
-    price: { reply: "Here's a quick price overview:\n\n— Indian Clubs 900g Pair — <strong>$179</strong>\n— Beginner Kit (4 Pairs + Ebook) — <strong>$899</strong>\n— Mugdar 3kg — <strong>$199</strong>\n— Mugdar 5kg — <strong>$249</strong>\n— Mugdar 8kg — <strong>$289</strong>\n— Acacia Samtola + Ebook — <strong>$389</strong>\n\nUse code <strong>WELCOME5</strong> for 5% off your first order.", chips: ["Which should I start with?", "How do I buy?", "Any discount codes?", "Back to main menu"] },
-    main: { reply: "How can I help you? Choose a topic below or type your question:", chips: ["Which product should I start with?", "View all prices", "Shipping & delivery", "Returns & refunds", "Discount codes", "About the tradition", "Contact us"] }
+  function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+  function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');}
+  function openPolicyPage(id){document.getElementById(id).classList.add('show');document.body.style.overflow='hidden';}
+  function closePolicyPage(id){document.getElementById(id).classList.remove('show');document.body.style.overflow='';}
+  function openSuccessPage(){document.getElementById('successPage').classList.add('show');document.body.style.overflow='hidden';}
+  function closeSuccessPage(){document.getElementById('successPage').classList.remove('show');document.body.style.overflow='';window.history.replaceState({},document.title,window.location.pathname);}
+  if(new URLSearchParams(window.location.search).get('order')==='success'){window.addEventListener('DOMContentLoaded',openSuccessPage);}
+
+  function openProduct(img,category,name,price,desc,detailsStr,buyUrl){
+    document.getElementById('modalImg').src=img;
+    document.getElementById('modalImg').alt=name;
+    document.getElementById('modalCategory').textContent=category;
+    document.getElementById('modalName').textContent=name;
+    document.getElementById('modalPrice').textContent=price;
+    document.getElementById('modalDesc').textContent=desc;
+    document.getElementById('modalBuyBtn').href=buyUrl;
+    document.getElementById('modalDetails').innerHTML=detailsStr.split('|').map(d=>'<div class="product-modal-detail">'+d+'</div>').join('');
+    document.getElementById('productModal').classList.add('show');
+    document.body.style.overflow='hidden';
+  }
+  function closeProductModal(){document.getElementById('productModal').classList.remove('show');document.body.style.overflow='';}
+  document.getElementById('productModal').addEventListener('click',function(e){if(e.target===this)closeProductModal();});
+
+  function closePopup(){document.getElementById('welcomePopup').classList.remove('show');}
+  function handlePopupSubscribe(){
+    var email=document.getElementById('popupEmail').value;
+    if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
+    window.location.href='mailto:akhada.crafts@mantanex.com?subject=New Subscriber&body=New subscriber: '+email;
+    document.getElementById('popupFormWrap').style.display='none';
+    document.getElementById('popupCodeReveal').classList.add('show');
+  }
+  function copyPopupCode(){
+    navigator.clipboard.writeText('WELCOME5').then(function(){
+      var btn=document.querySelector('.popup-copy-btn');btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Code';},2000);
+    });
+  }
+
+  function filterProducts(category,btn){
+    document.querySelectorAll('.shop-tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.product-card').forEach(card=>{
+      (category==='all'||card.dataset.category===category)?card.classList.remove('hidden'):card.classList.add('hidden');
+    });
+  }
+
+  function handleSubscribe(){
+    var email=document.getElementById('subEmail').value;
+    if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
+    window.location.href='mailto:akhada.crafts@mantanex.com?subject=New Subscriber&body=New subscriber: '+email;
+    document.getElementById('subFormWrap').style.display='none';
+    document.getElementById('discountReveal').classList.add('show');
+  }
+  function copyCode(){
+    navigator.clipboard.writeText('WELCOME5').then(function(){
+      var btn=document.querySelector('.copy-btn');btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Code';},2000);
+    });
+  }
+
+  function loadMoreReviews(){
+    var hidden=document.querySelectorAll('.hidden-review:not(.revealed)');
+    var count=0;
+    hidden.forEach(function(card){if(count<3){card.classList.add('revealed');count++;}});
+    if(document.querySelectorAll('.hidden-review:not(.revealed)').length===0){document.getElementById('loadMoreBtn').classList.add('hidden');}
+  }
+
+  function openReviewModal(){document.getElementById('reviewModal').classList.add('show');}
+  function closeReviewModal(){
+    document.getElementById('reviewModal').classList.remove('show');
+    document.getElementById('reviewSuccess').classList.remove('show');
+    document.getElementById('reviewFormWrap').style.display='block';
+    selectedRating=0;
+    document.querySelectorAll('.star-btn').forEach(b=>b.classList.remove('active'));
+  }
+  var selectedRating=0;
+  function setRating(val){
+    selectedRating=val;
+    document.querySelectorAll('.star-btn').forEach(function(btn){btn.classList.toggle('active',parseInt(btn.dataset.val)<=val);});
+  }
+  function submitReview(){
+    var name=document.getElementById('reviewName').value.trim();
+    var product=document.getElementById('reviewProduct').value;
+    var text=document.getElementById('reviewText').value.trim();
+    var location=document.getElementById('reviewLocation').value.trim();
+    if(!name||!product||!text||selectedRating===0){alert('Please fill in all required fields and select a star rating.');return;}
+    var stars='★'.repeat(selectedRating)+'☆'.repeat(5-selectedRating);
+    var body='New Review:\n\nProduct: '+product+'\nRating: '+stars+' ('+selectedRating+'/5)\nName: '+name+'\nLocation: '+location+'\n\nReview:\n'+text;
+    window.location.href='mailto:akhada.crafts@mantanex.com?subject=New Customer Review — '+product+'&body='+encodeURIComponent(body);
+    document.getElementById('reviewFormWrap').style.display='none';
+    document.getElementById('reviewSuccess').classList.add('show');
+  }
+  document.getElementById('reviewModal').addEventListener('click',function(e){if(e.target===this)closeReviewModal();});
+
+  function openReturnModal(){document.getElementById('returnModal').classList.add('show');document.body.style.overflow='hidden';}
+  function closeReturnModal(){
+    document.getElementById('returnModal').classList.remove('show');
+    document.body.style.overflow='';
+    document.getElementById('returnSuccess').classList.remove('show');
+    document.getElementById('returnFormWrap').style.display='block';
+    ['returnName','returnEmail','returnOrderId','returnDate','returnDetails'].forEach(function(id){document.getElementById(id).value='';});
+    document.getElementById('returnProduct').value='';
+    document.getElementById('returnReason').value='';
+  }
+  function submitReturnForm(){
+    var name=document.getElementById('returnName').value.trim();
+    var email=document.getElementById('returnEmail').value.trim();
+    var product=document.getElementById('returnProduct').value;
+    var reason=document.getElementById('returnReason').value;
+    var orderId=document.getElementById('returnOrderId').value.trim();
+    var date=document.getElementById('returnDate').value;
+    var details=document.getElementById('returnDetails').value.trim();
+    if(!name||!email||!product||!reason){alert('Please fill in all required fields (marked with *).');return;}
+    if(!email.includes('@')){alert('Please enter a valid email address.');return;}
+    var body='Return Request\n\nName: '+name+'\nEmail: '+email+'\nProduct: '+product+'\nOrder/Transaction ID: '+(orderId||'Not provided')+'\nDate of Purchase: '+(date||'Not provided')+'\nReason: '+reason+(details?'\n\nAdditional Details:\n'+details:'');
+    window.location.href='mailto:akhada.crafts@mantanex.com?subject=Return Request — '+encodeURIComponent(product)+'&body='+encodeURIComponent(body);
+    document.getElementById('returnFormWrap').style.display='none';
+    document.getElementById('returnSuccess').classList.add('show');
+  }
+  document.getElementById('returnEmailBtn').href='mailto:akhada.crafts@mantanex.com?subject=Return Request&body='+encodeURIComponent('Hi,\n\nI would like to request a return for my recent order.\n\nName:\nProduct:\nOrder/Transaction ID:\nDate of purchase:\nReason:\n\nThank you.');
+  document.getElementById('returnModal').addEventListener('click',function(e){if(e.target===this)closeReturnModal();});
+
+  // CHATBOT
+  var chatOpen=false;
+  var KB={
+    beginner:{reply:"For beginners, the best starting point is our <strong>Indian Clubs 900g Pair ($179)</strong> — perfect for learning the movements and building shoulder mobility. If you want a full progression from day one, the <strong>Beginner Kit ($899)</strong> gives you 4 pairs (500g → 2kg) plus a free Training Ebook. Which sounds right for you?",chips:["Tell me more about the 900g clubs","Tell me more about the Beginner Kit","What is a mugdar?","Back to main menu"]},
+    clubs900:{reply:"The <strong>Indian Clubs 900g Pair</strong> — $179\n\nTwo hand-turned teak clubs, 900g each (4 lbs total). Great for:\n— Shoulder & wrist mobility\n— Flow and coordination training\n— Joint health and rehab\n\nIdeal if you're new to club training or want a quality starter pair.",chips:["How do I buy?","Do you ship internationally?","Any discount codes?","Back to main menu"]},
+    beginnerKit:{reply:"The <strong>Beginner Kit — $899</strong>\n\n8 clubs total — 4 matched teak pairs:\n— 500g · 1kg · 1.5kg · 2kg Mugdar\n\nTakes you from warm-up through to serious strength work. Also includes a <strong>free Training Ebook</strong> delivered by email within 24 hours. Best value for anyone committed to the practice.",chips:["How do I buy?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
+    mugdar:{reply:"Mugdar are heavier club-mace implements rooted in the Karlakattai wrestling tradition. We have three sizes:\n\n— <strong>3kg ($199)</strong> — great entry into mugdar training\n— <strong>5kg ($249)</strong> — intermediate to advanced\n— <strong>8kg ($289)</strong> — for serious seasoned practitioners\n\nAll hand-turned from dense kiln-dried teak. Which weight interests you?",chips:["Tell me about the 3kg","Tell me about the 5kg","Tell me about the 8kg","Back to main menu"]},
+    mugdar3:{reply:"<strong>Mugdar 3kg (6.6 lbs) — $199</strong>\n\nA great entry point into mugdar training. Builds rotational power, grip strength, and shoulder conditioning. Hand-turned from dense kiln-dried teak.",chips:["How do I buy?","Compare with the 5kg","Any discount codes?","Back to main menu"]},
+    mugdar5:{reply:"<strong>Mugdar 5kg (11 lbs) — $249</strong>\n\nFor intermediate to advanced practitioners. Lathe-turned from dense teak — challenges your grip, shoulder, and core in every swing.",chips:["How do I buy?","Compare with the 8kg","Any discount codes?","Back to main menu"]},
+    mugdar8:{reply:"<strong>Mugdar 8kg (17.6 lbs) — $289</strong>\n\nFor seasoned practitioners only. Demands full-body engagement — core, grip, shoulder, and back. Rooted in akhada tradition.",chips:["How do I buy?","Any discount codes?","Back to main menu"]},
+    samtola:{reply:"<strong>Acacia Wooden Samtola — $389</strong>\n\nThe most unique implement we offer. At 20.5 lbs, crafted from solid acacia, it trains cross-body stability, core power, and total-body coordination.\n\nIncludes a <strong>free Training Ebook</strong> delivered by email within 24 hours.",chips:["How do I buy?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
+    buy:{reply:"Click <strong>Buy Now</strong> on any product card and you'll be taken to our secure Stripe checkout. Payment is fast and safe — we accept all major cards.\n\n🇺🇸 Ships from the US.",chips:["Any discount codes?","How long does shipping take?","What is your return policy?","Back to main menu"]},
+    discount:{reply:"Yes! Use code <strong>WELCOME5</strong> at checkout for 5% off your first order.\n\nYou can also get it by subscribing to our newsletter at the bottom of the page.",chips:["How do I apply the code?","How do I buy?","Back to main menu"]},
+    discountHow:{reply:"At Stripe checkout, look for the <strong>\"Add promotion code\"</strong> field and enter <strong>WELCOME5</strong>. The 5% discount will apply instantly. Valid once on your first order.",chips:["How do I buy?","Back to main menu"]},
+    shipping:{reply:"We ship from our <strong>US warehouse</strong> — no international delays for US customers.\n\n— Processing: 1–3 business days\n— Delivery: 3–7 business days\n— Tracking included on every order",chips:["Do you ship internationally?","What is your return policy?","Back to main menu"]},
+    international:{reply:"We primarily ship within the <strong>United States</strong>. If you're outside the US, email us at akhada.crafts@mantanex.com before ordering.\n\nOur products are also on <strong>Etsy</strong> (etsy.com/shop/akhadacrafts) which may offer international shipping options.",chips:["How do I contact you?","Back to main menu"]},
+    returns:{reply:"We offer a <strong>14-day return policy</strong>.\n\n— Items must be unused and in original condition\n— Return shipping is the customer's responsibility\n— Full refund issued within 5 business days of receiving the item",chips:["How do I start a return?","How do I contact you?","Back to main menu"]},
+    returnHow:{reply:"Scroll down to the <strong>Returns section</strong> on this page and click <strong>\"Request a Return\"</strong>.\n\nOr email us directly at <strong>akhada.crafts@mantanex.com</strong> with your name, product, order ID, and reason.",chips:["What is your return policy?","How do I contact you?","Back to main menu"]},
+    ebook:{reply:"The free <strong>Training Ebook</strong> is included with the <strong>Beginner Kit</strong> and the <strong>Samtola</strong>.\n\nDelivered digitally to your email within <strong>24 hours</strong> of purchase. If you don't receive it, check your spam folder first — then email us.",chips:["Tell me more about the Beginner Kit","Tell me more about the Samtola","Back to main menu"]},
+    wood:{reply:"All our <strong>Indian Clubs and Mugdar</strong> are hand-turned from kiln-dried <strong>teak</strong>.\n\nThe <strong>Samtola</strong> is crafted from solid <strong>acacia</strong>, which is harder and denser than teak.",chips:["Tell me about the clubs","Tell me about the Samtola","Back to main menu"]},
+    tradition:{reply:"Our implements trace their lineage to the <strong>Karlakattai</strong> martial art and the <strong>akhadas</strong> (wrestling gyms) of India, where athletes and warriors trained for centuries with clubs and maces.",chips:["Which product should I start with?","Tell me about the mugdar","Back to main menu"]},
+    contact:{reply:"The best way to reach us is by email:\n\n📧 <strong>akhada.crafts@mantanex.com</strong>\n\nWe typically reply within 1 business day. You can also find us on <strong>Instagram</strong> @akhada.crafts and <strong>Etsy</strong> at etsy.com/shop/akhadacrafts.",chips:["Open email to contact you","Back to main menu"]},
+    emailUs:{reply:"Opening your email now — just hit send and we'll get back to you! 🙏",chips:["Back to main menu"],action:function(){window.location.href='mailto:akhada.crafts@mantanex.com?subject=Customer Enquiry';}},
+    price:{reply:"Here's a quick price overview:\n\n— Indian Clubs 900g Pair — <strong>$179</strong>\n— Beginner Kit (4 Pairs + Ebook) — <strong>$899</strong>\n— Mugdar 3kg — <strong>$199</strong>\n— Mugdar 5kg — <strong>$249</strong>\n— Mugdar 8kg — <strong>$289</strong>\n— Acacia Samtola + Ebook — <strong>$389</strong>\n\nUse code <strong>WELCOME5</strong> for 5% off your first order.",chips:["Which should I start with?","How do I buy?","Any discount codes?","Back to main menu"]},
+    main:{reply:"How can I help you? Choose a topic below or type your question:",chips:["Which product should I start with?","View all prices","Shipping & delivery","Returns & refunds","Discount codes","About the tradition","Contact us"]}
   };
 
-  function matchIntent(text) {
-    var t = text.toLowerCase();
-    if (t.includes('back') || t.includes('main menu') || t.includes('menu')) return 'main';
-    if (t.includes('open email') || t.includes('email to contact')) return 'emailUs';
-    if (t.includes('900g') || t.includes('900 g') || (t.includes('start with') && t.includes('club'))) return 'clubs900';
-    if (t.includes('beginner kit') || t.includes('kit') || t.includes('4 pair')) return 'beginnerKit';
-    if (t.includes('8kg') || t.includes('8 kg') || t.includes('17.6') || t.includes('heaviest')) return 'mugdar8';
-    if (t.includes('5kg') || t.includes('5 kg') || t.includes('11 lb')) return 'mugdar5';
-    if (t.includes('3kg') || t.includes('3 kg') || t.includes('6.6')) return 'mugdar3';
-    if (t.includes('mugdar') || t.includes('mace') || t.includes('heavy')) return 'mugdar';
-    if (t.includes('samtola') || t.includes('acacia') || t.includes('20.5')) return 'samtola';
-    if (t.includes('tradition') || t.includes('karlakattai') || t.includes('akhada') || t.includes('history') || t.includes('origin')) return 'tradition';
-    if (t.includes('wood') || t.includes('teak') || t.includes('material') || t.includes('made of') || t.includes('made from')) return 'wood';
-    if (t.includes('ebook') || t.includes('e-book') || t.includes('book') || t.includes('guide') || t.includes('training guide')) return 'ebook';
-    if (t.includes('how to apply') || t.includes('apply code') || t.includes('apply the code') || t.includes('use code') || t.includes('promotion')) return 'discountHow';
-    if (t.includes('discount') || t.includes('code') || t.includes('coupon') || t.includes('promo') || t.includes('welcome5') || t.includes('off')) return 'discount';
-    if (t.includes('international') || t.includes('outside') || t.includes('uk') || t.includes('canada') || t.includes('australia') || t.includes('europe') || t.includes('india')) return 'international';
-    if (t.includes('ship') || t.includes('deliver') || t.includes('how long') || t.includes('when') || t.includes('arrival') || t.includes('track')) return 'shipping';
-    if (t.includes('how to return') || t.includes('start a return') || t.includes('initiate') || t.includes('process return')) return 'returnHow';
-    if (t.includes('return') || t.includes('refund') || t.includes('money back') || t.includes('exchange')) return 'returns';
-    if (t.includes('buy') || t.includes('purchase') || t.includes('order') || t.includes('checkout') || t.includes('stripe') || t.includes('pay')) return 'buy';
-    if (t.includes('price') || t.includes('cost') || t.includes('how much') || t.includes('pricing') || t.includes('all product')) return 'price';
-    if (t.includes('contact') || t.includes('email') || t.includes('reach') || t.includes('support') || t.includes('help') || t.includes('question')) return 'contact';
-    if (t.includes('begin') || t.includes('start') || t.includes('new') || t.includes('first') || t.includes('recommend') || t.includes('suggest') || t.includes('which')) return 'beginner';
-    if (t.includes('club') || t.includes('indian club')) return 'clubs900';
+  function matchIntent(text){
+    var t=text.toLowerCase();
+    if(t.includes('back')||t.includes('main menu')||t.includes('menu'))return'main';
+    if(t.includes('open email')||t.includes('email to contact'))return'emailUs';
+    if(t.includes('900g')||t.includes('900 g')||(t.includes('start with')&&t.includes('club')))return'clubs900';
+    if(t.includes('beginner kit')||t.includes('kit')||t.includes('4 pair'))return'beginnerKit';
+    if(t.includes('8kg')||t.includes('8 kg')||t.includes('17.6')||t.includes('heaviest'))return'mugdar8';
+    if(t.includes('5kg')||t.includes('5 kg')||t.includes('11 lb'))return'mugdar5';
+    if(t.includes('3kg')||t.includes('3 kg')||t.includes('6.6'))return'mugdar3';
+    if(t.includes('mugdar')||t.includes('mace')||t.includes('heavy'))return'mugdar';
+    if(t.includes('samtola')||t.includes('acacia')||t.includes('20.5'))return'samtola';
+    if(t.includes('tradition')||t.includes('karlakattai')||t.includes('akhada')||t.includes('history')||t.includes('origin'))return'tradition';
+    if(t.includes('wood')||t.includes('teak')||t.includes('material')||t.includes('made of')||t.includes('made from'))return'wood';
+    if(t.includes('ebook')||t.includes('e-book')||t.includes('book')||t.includes('guide')||t.includes('training guide'))return'ebook';
+    if(t.includes('how to apply')||t.includes('apply code')||t.includes('apply the code')||t.includes('use code')||t.includes('promotion'))return'discountHow';
+    if(t.includes('discount')||t.includes('code')||t.includes('coupon')||t.includes('promo')||t.includes('welcome5')||t.includes('off'))return'discount';
+    if(t.includes('international')||t.includes('outside')||t.includes('uk')||t.includes('canada')||t.includes('australia')||t.includes('europe')||t.includes('india'))return'international';
+    if(t.includes('ship')||t.includes('deliver')||t.includes('how long')||t.includes('when')||t.includes('arrival')||t.includes('track'))return'shipping';
+    if(t.includes('how to return')||t.includes('start a return')||t.includes('initiate')||t.includes('process return'))return'returnHow';
+    if(t.includes('return')||t.includes('refund')||t.includes('money back')||t.includes('exchange'))return'returns';
+    if(t.includes('buy')||t.includes('purchase')||t.includes('order')||t.includes('checkout')||t.includes('stripe')||t.includes('pay'))return'buy';
+    if(t.includes('price')||t.includes('cost')||t.includes('how much')||t.includes('pricing')||t.includes('all product'))return'price';
+    if(t.includes('contact')||t.includes('email')||t.includes('reach')||t.includes('support')||t.includes('help')||t.includes('question'))return'contact';
+    if(t.includes('begin')||t.includes('start')||t.includes('new')||t.includes('first')||t.includes('recommend')||t.includes('suggest')||t.includes('which'))return'beginner';
+    if(t.includes('club')||t.includes('indian club'))return'clubs900';
     return null;
   }
 
-  function showChips(chips) {
-    var el = document.getElementById('chatSuggestions');
-    el.innerHTML = chips.map(function(c) {
-      return '<button class="chat-suggestion" onclick="sendSuggestion(this)">' + c + '</button>';
-    }).join('');
-    el.style.display = 'flex';
+  function showChips(chips){
+    var el=document.getElementById('chatSuggestions');
+    el.innerHTML=chips.map(c=>'<button class="chat-suggestion" onclick="sendSuggestion(this)">'+c+'</button>').join('');
+    el.style.display='flex';
   }
-
-  function toggleChat() {
-    chatOpen = !chatOpen;
-    var win = document.getElementById('chatWindow');
-    win.classList.toggle('open', chatOpen);
-    if (chatOpen) {
-      var msgs = document.getElementById('chatMessages');
-      if (msgs.children.length === 0) {
+  function toggleChat(){
+    chatOpen=!chatOpen;
+    var win=document.getElementById('chatWindow');
+    win.classList.toggle('open',chatOpen);
+    if(chatOpen){
+      var msgs=document.getElementById('chatMessages');
+      if(msgs.children.length===0){
         addBotMessage("Welcome to Akhada Crafts! 🙏 How can I help you today?");
-        setTimeout(function() {
-          showChips(["Which product should I start with?", "View all prices", "Shipping & delivery", "Returns & refunds", "Discount codes", "Contact us"]);
-        }, 400);
+        setTimeout(function(){showChips(["Which product should I start with?","View all prices","Shipping & delivery","Returns & refunds","Discount codes","Contact us"]);},400);
       }
-      setTimeout(function() { document.getElementById('chatInput').focus(); }, 300);
+      setTimeout(function(){document.getElementById('chatInput').focus();},300);
     }
   }
-
-  function addBotMessage(text) {
-    var msgs = document.getElementById('chatMessages');
-    var now = new Date();
-    var time = now.getHours() + ':' + String(now.getMinutes()).padStart(2,'0');
-    var div = document.createElement('div');
-    div.className = 'chat-msg bot';
-    div.innerHTML = '<div class="chat-msg-avatar">A</div><div><div class="chat-msg-bubble">' + text.replace(/\n/g,'<br>') + '</div><div class="chat-msg-time">' + time + '</div></div>';
+  function addBotMessage(text){
+    var msgs=document.getElementById('chatMessages');
+    var now=new Date();
+    var time=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+    var div=document.createElement('div');
+    div.className='chat-msg bot';
+    div.innerHTML='<div class="chat-msg-avatar">A</div><div><div class="chat-msg-bubble">'+text.replace(/\n/g,'<br>')+'</div><div class="chat-msg-time">'+time+'</div></div>';
     msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
+    msgs.scrollTop=msgs.scrollHeight;
   }
-
-  function addUserMessage(text) {
-    var msgs = document.getElementById('chatMessages');
-    var now = new Date();
-    var time = now.getHours() + ':' + String(now.getMinutes()).padStart(2,'0');
-    var div = document.createElement('div');
-    div.className = 'chat-msg user';
-    div.innerHTML = '<div class="chat-msg-avatar">U</div><div><div class="chat-msg-bubble">' + text + '</div><div class="chat-msg-time">' + time + '</div></div>';
+  function addUserMessage(text){
+    var msgs=document.getElementById('chatMessages');
+    var now=new Date();
+    var time=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
+    var div=document.createElement('div');
+    div.className='chat-msg user';
+    div.innerHTML='<div class="chat-msg-avatar">U</div><div><div class="chat-msg-bubble">'+text+'</div><div class="chat-msg-time">'+time+'</div></div>';
     msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
+    msgs.scrollTop=msgs.scrollHeight;
   }
-
-  function showTyping() {
-    var msgs = document.getElementById('chatMessages');
-    var div = document.createElement('div');
-    div.className = 'chat-msg bot';
-    div.id = 'typingIndicator';
-    div.innerHTML = '<div class="chat-msg-avatar">A</div><div class="chat-typing"><span></span><span></span><span></span></div>';
-    msgs.appendChild(div);
-    msgs.scrollTop = msgs.scrollHeight;
+  function showTyping(){
+    var msgs=document.getElementById('chatMessages');
+    var div=document.createElement('div');
+    div.className='chat-msg bot';div.id='typingIndicator';
+    div.innerHTML='<div class="chat-msg-avatar">A</div><div class="chat-typing"><span></span><span></span><span></span></div>';
+    msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;
   }
-  function hideTyping() { var el = document.getElementById('typingIndicator'); if (el) el.remove(); }
-
-  function hideSuggestions() {
-    var el = document.getElementById('chatSuggestions');
-    el.style.display = 'none';
-    el.innerHTML = '';
-  }
-
-  function sendSuggestion(btn) {
-    var text = btn.textContent;
-    hideSuggestions();
-    sendMessage(text);
-  }
-
-  function sendChat() {
-    var input = document.getElementById('chatInput');
-    var text = input.value.trim();
-    if (!text) return;
-    input.value = '';
-    hideSuggestions();
-    sendMessage(text);
-  }
-
-  function sendMessage(text) {
-    addUserMessage(text);
-    showTyping();
-    setTimeout(function() {
+  function hideTyping(){var el=document.getElementById('typingIndicator');if(el)el.remove();}
+  function hideSuggestions(){var el=document.getElementById('chatSuggestions');el.style.display='none';el.innerHTML='';}
+  function sendSuggestion(btn){var text=btn.textContent;hideSuggestions();sendMessage(text);}
+  function sendChat(){var input=document.getElementById('chatInput');var text=input.value.trim();if(!text)return;input.value='';hideSuggestions();sendMessage(text);}
+  function sendMessage(text){
+    addUserMessage(text);showTyping();
+    setTimeout(function(){
       hideTyping();
-      var intent = matchIntent(text);
-      var response = intent ? KB[intent] : null;
-      if (response) {
+      var intent=matchIntent(text);
+      var response=intent?KB[intent]:null;
+      if(response){
         addBotMessage(response.reply);
-        if (response.action) response.action();
-        if (response.chips) showChips(response.chips);
+        if(response.action)response.action();
+        if(response.chips)showChips(response.chips);
       } else {
         addBotMessage("I'm not sure about that one — but our team can help! Email us at <strong>akhada.crafts@mantanex.com</strong> and we'll get back to you within 1 business day. 🙏");
-        showChips(["View all prices", "Shipping & delivery", "Returns & refunds", "Open email to contact you", "Back to main menu"]);
+        showChips(["View all prices","Shipping & delivery","Returns & refunds","Open email to contact you","Back to main menu"]);
       }
-    }, 700);
+    },700);
   }
 </script>
 </body>
