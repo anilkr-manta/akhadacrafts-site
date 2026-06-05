@@ -81,7 +81,10 @@
     .product-card-category { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
     .product-card-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 400; line-height: 1.3; margin-bottom: 12px; color: var(--ink); }
     .product-card-desc { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; flex: 1; }
-    .product-card-footer { display: flex; align-items: center; justify-content: flex-end; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; }
+    .product-card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; }
+    .btn-buy { display: inline-flex; align-items: center; gap: 6px; font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 10px 16px; border-radius: 1px; transition: background .2s; white-space: nowrap; border: none; cursor: pointer; }
+    .btn-buy:hover { background: var(--gold-light); }
+    .product-card-price { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600; color: var(--ink); }
     .btn-quote { display: inline-flex; align-items: center; gap: 6px; font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 10px 16px; border-radius: 1px; transition: background .2s; white-space: nowrap; border: none; cursor: pointer; }
     .btn-quote:hover { background: var(--gold-light); }
 
@@ -113,6 +116,7 @@
     .product-modal-close:hover { color: var(--ink); }
     .product-modal-category { font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
     .product-modal-name { font-family: 'Cinzel', serif; font-size: clamp(17px, 2vw, 22px); font-weight: 400; line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
+    .product-modal-price { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 20px; }
     .product-modal-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
     .product-modal-desc { font-size: 13px; color: var(--muted); line-height: 1.85; margin-bottom: 24px; flex: 1; }
     .product-modal-details { margin-bottom: 28px; }
@@ -548,11 +552,12 @@
     <div class="product-modal-body">
       <span class="product-modal-category" id="modalCategory"></span>
       <h2 class="product-modal-name" id="modalName"></h2>
+      <div class="product-modal-price" id="modalPrice"></div>
       <div class="product-modal-divider"></div>
       <p class="product-modal-desc" id="modalDesc"></p>
       <div class="product-modal-details" id="modalDetails"></div>
-      <a class="product-modal-buy" id="modalBuyBtn" href="#">✉ Get a Quote →</a>
-      <p class="product-modal-ships">🇺🇸 Ships from the US · Quote-based ordering</p>
+      <a class="product-modal-buy" id="modalBuyBtn" href="#" target="_blank">Buy Now — Secure Checkout →</a>
+      <p class="product-modal-ships">🇺🇸 Ships from the US · Secure payment via Stripe</p>
     </div>
   </div>
 </div>
@@ -766,7 +771,7 @@
 <section id="shop" class="shop-section">
   <div class="shop-inner">
     <div class="shop-header">
-      <span class="eyebrow">Quote-Based Ordering — Ships from the US</span>
+      <span class="eyebrow">Buy Direct — Ships from the US</span>
       <h2>Shop Akhada Crafts</h2>
     </div>
     <div class="shop-tabs">
@@ -777,74 +782,74 @@
     </div>
     <div class="shop-grid">
 
-      <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','Indian%20Clubs%20900g%20Pair')">
+      <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','$179','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','https://buy.stripe.com/28E00d2hPg2pdKueAces006')">
         <div class="product-card-img"><img src="clubs900g.png.png" alt="Indian Clubs 900g Pair"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb</div>
           <div class="product-card-desc">Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination.</div>
           <div class="product-card-footer">
-            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
+            <span class="product-card-price">$179</span><a class="btn-buy" href="https://buy.stripe.com/28E00d2hPg2pdKueAces006" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="clubs" onclick="openProduct('begginer_kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','Indian%20Clubs%20Beginner%20Kit')">
+      <div class="product-card" data-category="clubs" onclick="openProduct('begginer_kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','$899','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005')">
         <div class="product-card-img"><img src="begginer_kit.png" alt="Indian Club Beginner Kit"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Indian Clubs Beginner Kit — 4 Pairs + Free Ebook</div>
           <div class="product-card-desc">8 clubs total — 4 matched teak pairs: 500g, 1kg, 1.5kg, and 2kg Mugdar. From warm-up to advanced strength training. Free Training Ebook delivered via email within 24 hours.</div>
           <div class="product-card-footer">
-            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
+            <span class="product-card-price">$899</span><a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 3 kg (6.6 lbs).jpg','Mugdar','Mugdar Indian Club — 3 kg (6.6 lbs)','A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning. Rooted in the Karlakattai martial tradition of South India.','Weight: 3 kg (6.6 lbs)|Hand-turned from dense kiln-dried teak|Ideal for building rotational power|Great entry-level mugdar for developing practitioners','Mugdar%203kg')">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 3 kg (6.6 lbs).jpg','Mugdar','Mugdar Indian Club — 3 kg (6.6 lbs)','$199','A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning. Rooted in the Karlakattai martial tradition of South India.','Weight: 3 kg (6.6 lbs)|Hand-turned from dense kiln-dried teak|Ideal for building rotational power|Great entry-level mugdar for developing practitioners','https://buy.stripe.com/eVq5kx09H9E16i28bOes004')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 3 kg (6.6 lbs).jpg" alt="3kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 3 kg (6.6 lbs)</div>
           <div class="product-card-desc">A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning.</div>
           <div class="product-card-footer">
-            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
+            <span class="product-card-price">$199</span><a class="btn-buy" href="https://buy.stripe.com/eVq5kx09H9E16i28bOes004" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 5 kg (11 lbs).png','Mugdar','Mugdar Indian Club — 5 kg (11 lbs)','Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.','Weight: 5 kg (11 lbs)|Lathe-turned from dense kiln-dried teak|For intermediate to advanced practitioners|Builds serious rotational power and grip strength','Mugdar%205kg')">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 5 kg (11 lbs).png','Mugdar','Mugdar Indian Club — 5 kg (11 lbs)','$249','Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.','Weight: 5 kg (11 lbs)|Lathe-turned from dense kiln-dried teak|For intermediate to advanced practitioners|Builds serious rotational power and grip strength','https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 5 kg (11 lbs).png" alt="5kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 5 kg (11 lbs)</div>
           <div class="product-card-desc">Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.</div>
           <div class="product-card-footer">
-            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
+            <span class="product-card-price">$249</span><a class="btn-buy" href="https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 8 kg (17.6 lbs).jpg','Mugdar','Mugdar Indian Club — 8 kg (17.6 lbs)','For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.','Weight: 8 kg (17.6 lbs)|Hand-turned from the densest kiln-dried teak|For advanced and seasoned practitioners|Full-body engagement — core, grip, shoulder, and back','Mugdar%208kg')">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 8 kg (17.6 lbs).jpg','Mugdar','Mugdar Indian Club — 8 kg (17.6 lbs)','$289','For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.','Weight: 8 kg (17.6 lbs)|Hand-turned from the densest kiln-dried teak|For advanced and seasoned practitioners|Full-body engagement — core, grip, shoulder, and back','https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 8 kg (17.6 lbs).jpg" alt="8kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 8 kg (17.6 lbs)</div>
           <div class="product-card-desc">For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.</div>
           <div class="product-card-footer">
-            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
+            <span class="product-card-price">$289</span><a class="btn-buy" href="https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — harder and denser than teak. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','Acacia%20Wooden%20Samtola')">
+      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','$389','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — harder and denser than teak. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000')">
         <div class="product-card-img"><img src="Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg" alt="Samtola"></div>
         <div class="product-card-body">
           <span class="product-card-category">Samtola</span>
           <div class="product-card-name">Acacia Wooden Samtola — 20.5 lbs + Free Ebook</div>
           <div class="product-card-desc">The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia with a free training ebook.</div>
           <div class="product-card-footer">
-            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
+            <span class="product-card-price">$389</span><a class="btn-buy" href="https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
           </div>
         </div>
       </div>
@@ -1793,11 +1798,12 @@ I would like a quote for:
   function closeSuccessPage(){document.getElementById('successPage').classList.remove('show');document.body.style.overflow='';window.history.replaceState({},document.title,window.location.pathname);}
   if(new URLSearchParams(window.location.search).get('order')==='success'){window.addEventListener('DOMContentLoaded',openSuccessPage);}
 
-  function openProduct(img,category,name,desc,detailsStr,productEncoded){
-    var buyUrl='mailto:akhada.crafts@mantanex.com?subject=Quote%20Request%20%E2%80%94%20'+productEncoded+'&body=Hi%2C%0A%0AProduct%3A%20'+productEncoded+'%0AQuantity%3A%0AShipping%20address%3A%0A%0AName%3A%0A%0AThanks';
+  function openProduct(img,category,name,price,desc,detailsStr,buyUrl){
+
     document.getElementById('modalImg').src=img;
     document.getElementById('modalImg').alt=name;
     document.getElementById('modalCategory').textContent=category;
+    document.getElementById('modalPrice').textContent=price;
     document.getElementById('modalName').textContent=name;
     document.getElementById('modalDesc').textContent=desc;
     document.getElementById('modalBuyBtn').href=buyUrl;
