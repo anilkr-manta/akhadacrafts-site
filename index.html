@@ -81,10 +81,9 @@
     .product-card-category { font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
     .product-card-name { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 400; line-height: 1.3; margin-bottom: 12px; color: var(--ink); }
     .product-card-desc { font-size: 12px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; flex: 1; }
-    .product-card-footer { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; }
-    .product-card-price { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600; color: var(--ink); }
-    .btn-buy { display: inline-flex; align-items: center; gap: 6px; font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 10px 16px; border-radius: 1px; transition: background .2s; white-space: nowrap; border: none; cursor: pointer; }
-    .btn-buy:hover { background: var(--gold-light); }
+    .product-card-footer { display: flex; align-items: center; justify-content: flex-end; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; }
+    .btn-quote { display: inline-flex; align-items: center; gap: 6px; font-family: 'Cinzel', serif; font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 10px 16px; border-radius: 1px; transition: background .2s; white-space: nowrap; border: none; cursor: pointer; }
+    .btn-quote:hover { background: var(--gold-light); }
 
     /* VALUES */
     .values-band { background: var(--ink); padding: 80px 40px; }
@@ -114,7 +113,6 @@
     .product-modal-close:hover { color: var(--ink); }
     .product-modal-category { font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
     .product-modal-name { font-family: 'Cinzel', serif; font-size: clamp(17px, 2vw, 22px); font-weight: 400; line-height: 1.3; color: var(--ink); margin-bottom: 16px; }
-    .product-modal-price { font-family: 'Cinzel', serif; font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 20px; }
     .product-modal-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
     .product-modal-desc { font-size: 13px; color: var(--muted); line-height: 1.85; margin-bottom: 24px; flex: 1; }
     .product-modal-details { margin-bottom: 28px; }
@@ -536,7 +534,7 @@
     <div class="popup-code-reveal" id="popupCodeReveal">
       <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;">Your 5% off code:</p>
       <span class="popup-code">WELCOME5</span>
-      <p style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px;">Enter this at checkout. Valid once on your first order.</p>
+      <p style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px;">Mention this code in your quote request email. Valid once on your first order.</p>
       <button class="popup-copy-btn" onclick="copyPopupCode()">Copy Code</button>
     </div>
   </div>
@@ -550,12 +548,11 @@
     <div class="product-modal-body">
       <span class="product-modal-category" id="modalCategory"></span>
       <h2 class="product-modal-name" id="modalName"></h2>
-      <div class="product-modal-price" id="modalPrice"></div>
       <div class="product-modal-divider"></div>
       <p class="product-modal-desc" id="modalDesc"></p>
       <div class="product-modal-details" id="modalDetails"></div>
-      <a class="product-modal-buy" id="modalBuyBtn" href="#" target="_blank">Buy Now — Secure Checkout →</a>
-      <p class="product-modal-ships">🇺🇸 Ships from the US · Secure payment via Stripe</p>
+      <a class="product-modal-buy" id="modalBuyBtn" href="#">✉ Get a Quote →</a>
+      <p class="product-modal-ships">🇺🇸 Ships from the US · Quote-based ordering</p>
     </div>
   </div>
 </div>
@@ -635,12 +632,12 @@
         <label class="return-form-label">Product to Return <span>*</span></label>
         <select class="return-form-select" id="returnProduct">
           <option value="">Select a product…</option>
-          <option>Indian Clubs 900g Pair — $179</option>
-          <option>Indian Clubs Beginner Kit (4 Pairs) — $899</option>
-          <option>Mugdar 3kg — $199</option>
-          <option>Mugdar 5kg — $249</option>
-          <option>Mugdar 8kg — $289</option>
-          <option>Acacia Wooden Samtola — $389</option>
+          <option>Indian Clubs 900g Pair</option>
+          <option>Indian Clubs Beginner Kit (4 Pairs)</option>
+          <option>Mugdar 3kg</option>
+          <option>Mugdar 5kg</option>
+          <option>Mugdar 8kg</option>
+          <option>Acacia Wooden Samtola</option>
         </select>
       </div>
       <div class="return-form-row">
@@ -769,7 +766,7 @@
 <section id="shop" class="shop-section">
   <div class="shop-inner">
     <div class="shop-header">
-      <span class="eyebrow">Buy Direct — Ships from the US</span>
+      <span class="eyebrow">Quote-Based Ordering — Ships from the US</span>
       <h2>Shop Akhada Crafts</h2>
     </div>
     <div class="shop-tabs">
@@ -780,80 +777,74 @@
     </div>
     <div class="shop-grid">
 
-      <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','$179','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','https://buy.stripe.com/28E00d2hPg2pdKueAces006')">
+      <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','Indian%20Clubs%20900g%20Pair')">
         <div class="product-card-img"><img src="clubs900g.png.png" alt="Indian Clubs 900g Pair"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb</div>
           <div class="product-card-desc">Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination.</div>
           <div class="product-card-footer">
-            <span class="product-card-price">$179</span>
-            <a class="btn-buy" href="https://buy.stripe.com/28E00d2hPg2pdKueAces006" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
+            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="clubs" onclick="openProduct('begginer_kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','$899','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005')">
+      <div class="product-card" data-category="clubs" onclick="openProduct('begginer_kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','Indian%20Clubs%20Beginner%20Kit')">
         <div class="product-card-img"><img src="begginer_kit.png" alt="Indian Club Beginner Kit"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Indian Clubs Beginner Kit — 4 Pairs + Free Ebook</div>
           <div class="product-card-desc">8 clubs total — 4 matched teak pairs: 500g, 1kg, 1.5kg, and 2kg Mugdar. From warm-up to advanced strength training. Free Training Ebook delivered via email within 24 hours.</div>
           <div class="product-card-footer">
-            <span class="product-card-price">$899</span>
-            <a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
+            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 3 kg (6.6 lbs).jpg','Mugdar','Mugdar Indian Club — 3 kg (6.6 lbs)','$199','A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning. Rooted in the Karlakattai martial tradition of South India.','Weight: 3 kg (6.6 lbs)|Hand-turned from dense kiln-dried teak|Ideal for building rotational power|Great entry-level mugdar for developing practitioners','https://buy.stripe.com/eVq5kx09H9E16i28bOes004')">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 3 kg (6.6 lbs).jpg','Mugdar','Mugdar Indian Club — 3 kg (6.6 lbs)','A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning. Rooted in the Karlakattai martial tradition of South India.','Weight: 3 kg (6.6 lbs)|Hand-turned from dense kiln-dried teak|Ideal for building rotational power|Great entry-level mugdar for developing practitioners','Mugdar%203kg')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 3 kg (6.6 lbs).jpg" alt="3kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 3 kg (6.6 lbs)</div>
           <div class="product-card-desc">A great entry into mugdar training. Hand-turned from dense teak for rotational power, grip strength, and shoulder conditioning.</div>
           <div class="product-card-footer">
-            <span class="product-card-price">$199</span>
-            <a class="btn-buy" href="https://buy.stripe.com/eVq5kx09H9E16i28bOes004" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
+            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 5 kg (11 lbs).png','Mugdar','Mugdar Indian Club — 5 kg (11 lbs)','$249','Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.','Weight: 5 kg (11 lbs)|Lathe-turned from dense kiln-dried teak|For intermediate to advanced practitioners|Builds serious rotational power and grip strength','https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003')">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 5 kg (11 lbs).png','Mugdar','Mugdar Indian Club — 5 kg (11 lbs)','Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.','Weight: 5 kg (11 lbs)|Lathe-turned from dense kiln-dried teak|For intermediate to advanced practitioners|Builds serious rotational power and grip strength','Mugdar%205kg')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 5 kg (11 lbs).png" alt="5kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 5 kg (11 lbs)</div>
           <div class="product-card-desc">Built for serious rotational power and the Karlakattai wrestling tradition. Lathe-turned from dense teak for demanding strength training.</div>
           <div class="product-card-footer">
-            <span class="product-card-price">$249</span>
-            <a class="btn-buy" href="https://buy.stripe.com/aFa14hbSpeYlgWG77Kes003" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
+            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 8 kg (17.6 lbs).jpg','Mugdar','Mugdar Indian Club — 8 kg (17.6 lbs)','$289','For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.','Weight: 8 kg (17.6 lbs)|Hand-turned from the densest kiln-dried teak|For advanced and seasoned practitioners|Full-body engagement — core, grip, shoulder, and back','https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001')">
+      <div class="product-card" data-category="mugdar" onclick="openProduct('Mugdar Indian Club — 8 kg (17.6 lbs).jpg','Mugdar','Mugdar Indian Club — 8 kg (17.6 lbs)','For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.','Weight: 8 kg (17.6 lbs)|Hand-turned from the densest kiln-dried teak|For advanced and seasoned practitioners|Full-body engagement — core, grip, shoulder, and back','Mugdar%208kg')">
         <div class="product-card-img"><img src="Mugdar Indian Club — 8 kg (17.6 lbs).jpg" alt="8kg Mugdar"></div>
         <div class="product-card-body">
           <span class="product-card-category">Mugdar</span>
           <div class="product-card-name">Mugdar Indian Club — 8 kg (17.6 lbs)</div>
           <div class="product-card-desc">For seasoned practitioners. This heavy mugdar demands full-body engagement and builds raw rotational power rooted in akhada tradition.</div>
           <div class="product-card-footer">
-            <span class="product-card-price">$289</span>
-            <a class="btn-buy" href="https://buy.stripe.com/bJe6oB2hP7vT5dYdw8es001" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
+            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
           </div>
         </div>
       </div>
 
-      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','$389','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — harder and denser than teak. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000')">
+      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — harder and denser than teak. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','Acacia%20Wooden%20Samtola')">
         <div class="product-card-img"><img src="Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg" alt="Samtola"></div>
         <div class="product-card-body">
           <span class="product-card-category">Samtola</span>
           <div class="product-card-name">Acacia Wooden Samtola — 20.5 lbs + Free Ebook</div>
           <div class="product-card-desc">The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia with a free training ebook.</div>
           <div class="product-card-footer">
-            <span class="product-card-price">$389</span>
-            <a class="btn-buy" href="https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
+            <a class="btn-quote" href="#" onclick="event.stopPropagation()">✉ Get a Quote →</a>
           </div>
         </div>
       </div>
@@ -995,102 +986,405 @@
   <div style="font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:20px;">
     <span style="width:36px;height:1px;background:var(--gold);opacity:.5;display:block;"></span>Full Equipment Catalog
   </div>
-  <h2 style="font-family:'Cinzel',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:var(--cream);line-height:1.08;margin-bottom:16px;">The <span style="color:var(--gold);">Complete</span> Lineup</h2>
-  <p style="font-size:14px;color:rgba(245,238,216,.5);max-width:480px;line-height:1.85;">Every ancient tool from the akhada tradition — clubs, maces, barbells, stone implements, and accessories. The full arsenal of Indian physical culture.</p>
+  <h2 style="font-family:'Cinzel',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:var(--cream);line-height:1.08;margin-bottom:12px;">The <span style="color:var(--gold);">Complete</span> Lineup</h2>
+  <p style="font-size:14px;color:rgba(245,238,216,.5);max-width:520px;line-height:1.85;margin-bottom:8px;">Every implement from the akhada tradition — available to order. Select any item, choose your weight, and send us a quote request. We'll reply within 1 business day.</p>
 </div>
 </section>
 
 <section style="background:var(--cream);padding:60px 40px 80px;">
 <div style="max-width:1080px;margin:0 auto;">
 
+<style>
+.lineup-card { background:white; border:1px solid var(--border); padding:28px; transition:transform .25s,box-shadow .25s; }
+.lineup-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(0,0,0,.09); }
+.lineup-num { font-family:'Cinzel',serif; font-size:28px; font-weight:700; color:rgba(184,136,42,.2); line-height:1; margin-bottom:10px; display:block; }
+.lineup-name { font-family:'Cinzel',serif; font-size:18px; color:var(--ink); margin-bottom:4px; }
+.lineup-alt { font-size:12px; color:var(--muted); font-style:italic; margin-bottom:12px; }
+.lineup-desc { font-size:13px; color:#5a5040; line-height:1.7; margin-bottom:16px; }
+.lineup-select { width:100%; background:white; border:1px solid var(--border); padding:9px 12px; font-family:'Lato',sans-serif; font-size:13px; color:var(--ink); outline:none; border-radius:0; -webkit-appearance:none; margin-bottom:10px; cursor:pointer; }
+.lineup-select:focus { border-color:var(--gold); }
+.lineup-inquire { display:inline-flex; align-items:center; gap:6px; font-family:'Cinzel',serif; font-size:9px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); background:var(--gold); padding:10px 16px; border:none; cursor:pointer; transition:background .2s; width:100%; justify-content:center; }
+.lineup-inquire:hover { background:var(--gold-light); }
+.lineup-tag { font-size:9px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; padding:3px 10px; border-radius:20px; display:inline-block; margin-bottom:12px; }
+.tag-clubs { background:#e1f5ee; color:#085041; }
+.tag-mace { background:#fdf0e8; color:#7a2a10; }
+.tag-barbell { background:#f0eefe; color:#3a2a8c; }
+.tag-stone { background:#f0ece4; color:#4a3820; }
+.tag-accessory { background:#fdf5e4; color:#5a3a08; }
+.tag-gymnastics { background:#e8f0fc; color:#1a3a7a; }
+.tag-dumbbell { background:#f5e8fc; color:#4a1a7a; }
+</style>
+
+<!-- CLUBS -->
 <p style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:28px;">Clubs</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:52px;">
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">01</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#e1f5ee;color:#085041;">Clubs</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Teardrop Indian clubs</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Victorian / swing clubs</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">Classic teardrop-shaped wooden clubs swung in controlled arcs to restore shoulder mobility, wrist coordination, and joint health. Used historically in military fitness programs and prized for shoulder rehab and flow training.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">0.5 – 2 kg per club</span><a href="#shop" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Shop →</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;background:transparent;border:none;margin-bottom:52px;">
+
+  <div class="lineup-card">
+    <span class="lineup-num">01</span>
+    <span class="lineup-tag tag-clubs">Indian Club</span>
+    <div class="lineup-name">Indian Club Pair</div>
+    <div class="lineup-alt">Teardrop / swing clubs</div>
+    <div class="lineup-desc">Classic teardrop-shaped wooden clubs for joint mobility, shoulder health, and flow training. The foundation of Indian club practice.</div>
+    <select class="lineup-select" id="w-indianclub">
+      <option value="">Select weight per club…</option>
+      <option>1kg pair</option><option>1.5kg pair</option><option>2kg pair</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Indian Club Pair', 'w-indianclub')">✉ Request a Quote →</button>
   </div>
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">02</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#e1f5ee;color:#085041;">Clubs</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Heavy mugdar</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Mudgar / meel</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">The heavy counterpart to light clubs. Builds shoulder strength, grip endurance, and spinal resilience. Rooted in Indian akhara wrestling culture and the Persian zurkhaneh tradition — used by champions for centuries.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">2 – 15 kg</span><a href="#shop" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Shop →</a></div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">02</span>
+    <span class="lineup-tag tag-clubs">Mugdar</span>
+    <div class="lineup-name">Heavy Mugdar</div>
+    <div class="lineup-alt">Mudgar / meel</div>
+    <div class="lineup-desc">The heavy club of the akhara tradition. Builds rotational power, grip strength, and shoulder resilience. Hand-turned from dense kiln-dried teak.</div>
+    <select class="lineup-select" id="w-mugdar">
+      <option value="">Select weight…</option>
+      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option><option>5kg</option>
+      <option>6kg</option><option>7kg</option><option>8kg</option><option>10kg</option><option>12kg</option>
+      <option>15kg</option><option>18kg</option><option>20kg</option><option>25kg</option>
+      <option>30kg</option><option>40kg</option><option>50kg</option><option>60kg</option><option>75kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Heavy Mugdar', 'w-mugdar')">✉ Request a Quote →</button>
   </div>
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">05</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#e1f5ee;color:#085041;">Clubs</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Jori clubs</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Mudgar pair / heavy clubs</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">Longer and more conical than standard clubs — the extra mass further from the grip generates more torque per swing. Competed at Varanasi's annual Nag Panchami festival alongside Gada, Nal, and Dumbbell.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">4 – 12 kg per club</span><a href="#shop" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Shop →</a></div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">03</span>
+    <span class="lineup-tag tag-clubs">Jori Clubs</span>
+    <div class="lineup-name">Jori Clubs (Pair)</div>
+    <div class="lineup-alt">Heavy club pair</div>
+    <div class="lineup-desc">Longer and more conical than standard clubs — the extra mass generates more torque. Competed at Varanasi's Nag Panchami festival.</div>
+    <select class="lineup-select" id="w-jori">
+      <option value="">Select weight per club…</option>
+      <option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option><option>12kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Jori Clubs Pair', 'w-jori')">✉ Request a Quote →</button>
   </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">04</span>
+    <span class="lineup-tag tag-clubs">Persian Club</span>
+    <div class="lineup-name">Parshiyan Club (Pair)</div>
+    <div class="lineup-alt">Persian / zurkhaneh club</div>
+    <div class="lineup-desc">The Persian counterpart to Indian clubs — heavier, wider base, used in the zurkhaneh tradition. Builds shoulder and wrist strength through circular swings.</div>
+    <select class="lineup-select" id="w-persian">
+      <option value="">Select weight per club…</option>
+      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Parshiyan Club Pair', 'w-persian')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">05</span>
+    <span class="lineup-tag tag-clubs">Yoga Karlai</span>
+    <div class="lineup-name">Yoga Karlai</div>
+    <div class="lineup-alt">Yogic club / swing implement</div>
+    <div class="lineup-desc">A yogic training club combining breath, movement, and rotational flow. Used in traditional yoga-based conditioning systems for full-body awareness.</div>
+    <select class="lineup-select" id="w-yogakarlai">
+      <option value="">Select weight…</option>
+      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option><option>12kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Yoga Karlai', 'w-yogakarlai')">✉ Request a Quote →</button>
+  </div>
+
 </div>
 
+<!-- MACES & BARBELLS -->
 <p style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:28px;">Maces &amp; Barbells</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:52px;">
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">03</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#fdf0e8;color:#7a2a10;">Mace</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Gada mace</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Hanuman gada</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">A heavy ball on a meter-long handle. Sacred to Hanuman. Swung in large circular motions targeting shoulders, core, and grip. Gold gadas are still awarded as trophies at major wrestling competitions in Varanasi.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">5 – 20 kg</span><a href="mailto:akhada.crafts@mantanex.com?subject=Inquiry: Gada Mace" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Inquire →</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;background:transparent;border:none;margin-bottom:52px;">
+
+  <div class="lineup-card">
+    <span class="lineup-num">06</span>
+    <span class="lineup-tag tag-mace">Hanuman Gada</span>
+    <div class="lineup-name">Hanuman Gada — 2ft / 2.5ft</div>
+    <div class="lineup-alt">Standard gada mace</div>
+    <div class="lineup-desc">A heavy ball on a wooden handle. Sacred to Hanuman. Swung in large circular motions targeting shoulders, core, and grip. The icon of Indian strength.</div>
+    <select class="lineup-select" id="w-gada25">
+      <option value="">Select weight…</option>
+      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Hanuman Gada 2ft-2.5ft', 'w-gada25')">✉ Request a Quote →</button>
   </div>
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">04</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#f0eefe;color:#3a2a8c;">Barbell</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Samtola</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Sum-tola / Indian barbell</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">A log-shaped wooden barbell meaning "balanced weight." Originally used to level the earthen floors of wrestling pits. Handcrafted in mahogany or teak. Develops grip, core, and explosive rotational power.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">4 – 12 kg</span><a href="#shop" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Shop →</a></div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">07</span>
+    <span class="lineup-tag tag-mace">Hanuman Gada</span>
+    <div class="lineup-name">Hanuman Gada — 3ft</div>
+    <div class="lineup-alt">Competition gada</div>
+    <div class="lineup-desc">The competition-grade gada. Longer handle increases leverage and demands greater core stability. Gold gadas of this size are awarded as trophies in Varanasi.</div>
+    <select class="lineup-select" id="w-gada3">
+      <option value="">Select weight…</option>
+      <option>7kg</option><option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Hanuman Gada 3ft', 'w-gada3')">✉ Request a Quote →</button>
   </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">08</span>
+    <span class="lineup-tag tag-mace">Hanuman Gada</span>
+    <div class="lineup-name">Hanuman Gada — 4ft</div>
+    <div class="lineup-alt">Heavy long gada</div>
+    <div class="lineup-desc">The most demanding gada — full-body engagement at every swing. For advanced practitioners who have mastered the mechanics of shorter lengths.</div>
+    <select class="lineup-select" id="w-gada4">
+      <option value="">Select weight…</option>
+      <option>7kg</option><option>8kg</option><option>9kg</option><option>10kg</option><option>12kg</option>
+      <option>15kg</option><option>18kg</option><option>20kg</option><option>22kg</option><option>25kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Hanuman Gada 4ft', 'w-gada4')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">09</span>
+    <span class="lineup-tag tag-mace">Bhim Gada</span>
+    <div class="lineup-name">Bhim Gada</div>
+    <div class="lineup-alt">Warrior mace</div>
+    <div class="lineup-desc">Named after the mighty Bhim of the Mahabharata. A thick, powerful mace for raw strength development. Heavier head, shorter handle — pure power training.</div>
+    <select class="lineup-select" id="w-bhim">
+      <option value="">Select weight…</option>
+      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option><option>5kg</option>
+      <option>6kg</option><option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Bhim Gada', 'w-bhim')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">10</span>
+    <span class="lineup-tag tag-mace">Bhim Gada</span>
+    <div class="lineup-name">Big Bhim Gada — 4ft</div>
+    <div class="lineup-alt">Heavy long warrior mace</div>
+    <div class="lineup-desc">The ultimate Bhim Gada — 4ft handle with a massive head. For the serious practitioner. Full-body rotational power at competition level.</div>
+    <select class="lineup-select" id="w-bigbhim">
+      <option value="">Select weight…</option>
+      <option>20kg</option><option>22kg</option><option>25kg</option><option>28kg</option><option>30kg</option>
+      <option>35kg</option><option>40kg</option><option>45kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Big Bhim Gada 4ft', 'w-bigbhim')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">11</span>
+    <span class="lineup-tag tag-mace">Sagwan Gada</span>
+    <div class="lineup-name">Sagwan Carving Hanuman Gada</div>
+    <div class="lineup-alt">Teak carved premium gada</div>
+    <div class="lineup-desc">Hand-carved from premium Sagwan (teak) with intricate detailing. A collector-grade training implement — as beautiful as it is functional.</div>
+    <select class="lineup-select" id="w-sagwancarving">
+      <option value="">Select weight…</option>
+      <option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option>
+      <option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Sagwan Carving Hanuman Gada', 'w-sagwancarving')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">12</span>
+    <span class="lineup-tag tag-mace">Sagwan Gada</span>
+    <div class="lineup-name">Sagwan 3-Handle Hanuman Gada</div>
+    <div class="lineup-alt">Triple grip teak gada</div>
+    <div class="lineup-desc">A unique 3-grip handle design built from Sagwan (teak). The multiple grip positions allow varied training angles and progressive loading patterns.</div>
+    <select class="lineup-select" id="w-sagwan3h">
+      <option value="">Select weight…</option>
+      <option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Sagwan 3-Handle Hanuman Gada', 'w-sagwan3h')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">13</span>
+    <span class="lineup-tag tag-mace">Wooden Mace</span>
+    <div class="lineup-name">Wooden Mace</div>
+    <div class="lineup-alt">Steel mace alternative</div>
+    <div class="lineup-desc">A wooden training mace for offset-load conditioning. The uneven weight distribution challenges stability and builds functional rotational strength.</div>
+    <select class="lineup-select" id="w-woodenmace">
+      <option value="">Select weight…</option>
+      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option><option>8kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Wooden Mace', 'w-woodenmace')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">14</span>
+    <span class="lineup-tag tag-mace">Macebell</span>
+    <div class="lineup-name">Macebell</div>
+    <div class="lineup-alt">Long-handle macebell</div>
+    <div class="lineup-desc">A long-handle wooden macebell bridging traditional gada training and modern macebell fitness. Excellent for 360s, 10-to-2s, and shoulder conditioning.</div>
+    <select class="lineup-select" id="w-macebell">
+      <option value="">Select weight…</option>
+      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option>
+      <option>8kg</option><option>9kg</option><option>10kg</option><option>12kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Macebell', 'w-macebell')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">15</span>
+    <span class="lineup-tag tag-barbell">Samtola</span>
+    <div class="lineup-name">Samtola</div>
+    <div class="lineup-alt">Sum-tola / Indian barbell</div>
+    <div class="lineup-desc">A log-shaped wooden barbell originally used to level wrestling pit floors. Develops grip, core, and explosive rotational power. Crafted from acacia or teak.</div>
+    <select class="lineup-select" id="w-samtola">
+      <option value="">Select weight…</option>
+      <option>5kg</option><option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
+      <option>20kg</option><option>25kg</option><option>30kg</option><option>40kg</option><option>50kg</option>
+      <option>60kg</option><option>75kg</option><option>100kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Samtola', 'w-samtola')">✉ Request a Quote →</button>
+  </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">16</span>
+    <span class="lineup-tag tag-mace">Thoppi</span>
+    <div class="lineup-name">Thoppi</div>
+    <div class="lineup-alt">Helmet weight / head implement</div>
+    <div class="lineup-desc">A traditional Indian weighted helmet implement used in akhara conditioning. Builds neck, trap, and shoulder strength through carry and movement patterns.</div>
+    <select class="lineup-select" id="w-thoppi">
+      <option value="">Select weight…</option>
+      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option>
+      <option>10kg</option><option>12kg</option><option>15kg</option><option>18kg</option><option>20kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Thoppi', 'w-thoppi')">✉ Request a Quote →</button>
+  </div>
+
 </div>
 
+<!-- STONE IMPLEMENTS -->
 <p style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:28px;">Stone Implements</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:52px;">
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">06</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#f0ece4;color:#4a3820;">Stone</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Nal</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Stone lifting cylinder</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">A hollow stone cylinder with a handle inside. A foundational akhara strength tool for developing grip, forearm, and shoulder power. One of four competition categories at Varanasi's Nag Panchami festival.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">Varies by size</span><a href="mailto:akhada.crafts@mantanex.com?subject=Inquiry: Nal" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Inquire →</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;background:transparent;border:none;margin-bottom:52px;">
+
+  <div class="lineup-card">
+    <span class="lineup-num">17</span>
+    <span class="lineup-tag tag-stone">Nal</span>
+    <div class="lineup-name">Nal</div>
+    <div class="lineup-alt">Stone lifting cylinder</div>
+    <div class="lineup-desc">A hollow stone cylinder with a handle inside. A foundational akhara strength tool. One of four competition categories at Varanasi's Nag Panchami festival.</div>
+    <select class="lineup-select" id="w-nal">
+      <option value="">Select size / weight…</option>
+      <option>Small</option><option>Medium</option><option>Large</option><option>Custom — mention in enquiry</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Nal', 'w-nal')">✉ Request a Quote →</button>
   </div>
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">07</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#f0ece4;color:#4a3820;">Stone</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Gar Nal</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Stone neck ring</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">A circular stone ring worn over the head and around the neck during dands and baithaks. Builds neck, shoulder, and core strength in ways no modern tool replicates. Now gaining traction with MMA fighters.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">Heavy resistance</span><a href="mailto:akhada.crafts@mantanex.com?subject=Inquiry: Gar Nal" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Inquire →</a></div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">18</span>
+    <span class="lineup-tag tag-stone">Gar Nal</span>
+    <div class="lineup-name">Gar Nal</div>
+    <div class="lineup-alt">Stone neck ring</div>
+    <div class="lineup-desc">A circular stone ring worn around the neck during dands and baithaks. Builds neck, shoulder, and core strength. Gaining traction with MMA fighters worldwide.</div>
+    <select class="lineup-select" id="w-garnal">
+      <option value="">Select size…</option>
+      <option>Standard</option><option>Heavy</option><option>Custom — mention in enquiry</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Gar Nal', 'w-garnal')">✉ Request a Quote →</button>
   </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">19</span>
+    <span class="lineup-tag tag-dumbbell">Dumbbell Pair</span>
+    <div class="lineup-name">Wooden Dumbbell (Pair)</div>
+    <div class="lineup-alt">Traditional wooden dumbbells</div>
+    <div class="lineup-desc">Handcrafted wooden dumbbells from the akhara tradition. Used in dand and baithak conditioning. A natural-grip alternative to steel, easier on the joints.</div>
+    <select class="lineup-select" id="w-dumbbell">
+      <option value="">Select weight per dumbbell…</option>
+      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option>
+      <option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Wooden Dumbbell Pair', 'w-dumbbell')">✉ Request a Quote →</button>
+  </div>
+
 </div>
 
+<!-- TRAINING ACCESSORIES -->
 <p style="font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:28px;">Training Accessories</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);">
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">08</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#fdf5e4;color:#5a3a08;">Accessory</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Push-up handles for dands</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Shena boards / parallettes</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">Traditional wooden parallettes for the Dand — the Hindu push-up. A dynamic arching movement targeting chest, shoulders, triceps, and core. Elevates the wrists off the ground for deeper, joint-neutral range of motion.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">Bodyweight training</span><a href="mailto:akhada.crafts@mantanex.com?subject=Inquiry: Shena Push-up Boards" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Inquire →</a></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;background:transparent;border:none;">
+
+  <div class="lineup-card">
+    <span class="lineup-num">20</span>
+    <span class="lineup-tag tag-accessory">Shena Board</span>
+    <div class="lineup-name">Shena Board — 75cm</div>
+    <div class="lineup-alt">Standard push-up handles</div>
+    <div class="lineup-desc">Traditional wooden parallettes for the Dand — the Hindu push-up. Elevates wrists for deeper, joint-neutral range of motion. Standard 75cm size.</div>
+    <select class="lineup-select" id="w-shena75">
+      <option value="">Select quantity…</option>
+      <option>1 pair</option><option>2 pairs</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Shena Board 75cm', 'w-shena75')">✉ Request a Quote →</button>
   </div>
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">09</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#e8f0fc;color:#1a3a7a;">Gymnastics</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Mallakhamb accessories</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Pole, rope, grip chalk</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">Equipment for India's ancient pole-and-rope gymnastics sport dating to the 2th century BCE. Teak poles (6-10 ft), cotton ropes (22mm, 25 ft), magnesium chalk, and crash mats.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">Various configurations</span><a href="mailto:akhada.crafts@mantanex.com?subject=Inquiry: Mallakhamb" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Inquire →</a></div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">21</span>
+    <span class="lineup-tag tag-accessory">Shena Board</span>
+    <div class="lineup-name">Big Shena Board (Sheesham / Sagwan)</div>
+    <div class="lineup-alt">Premium push-up board</div>
+    <div class="lineup-desc">The premium large shena board — available in Sheesham (rosewood) or Sagwan (teak). Wider platform, deeper range, built to last a lifetime.</div>
+    <select class="lineup-select" id="w-shenabig">
+      <option value="">Select wood…</option>
+      <option>Sheesham (Rosewood)</option><option>Sagwan (Teak)</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Big Shena Board', 'w-shenabig')">✉ Request a Quote →</button>
   </div>
-  <div style="background:var(--cream);padding:28px;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--cream)'">
-    <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span style="font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:rgba(184,136,42,.22);">10</span><span style="font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:#fdf5e4;color:#5a3a08;">Accessory</span></div>
-    <div style="font-family:'Cinzel',serif;font-size:19px;color:var(--ink);margin-bottom:3px;">Storage racks</div>
-    <div style="font-size:12px;color:var(--muted);font-style:italic;margin-bottom:12px;">Club and mugdar display racks</div>
-    <div style="font-size:13px;color:#5a5040;line-height:1.7;margin-bottom:14px;">Wall-mount and floor-standing racks purpose-built for clubs, mugdars, gadas, and nals. Keeps a full akhara kit organized, safely stored, and displayed with the respect these tools deserve.</div>
-    <div style="display:flex;justify-content:space-between;border-top:1px solid var(--border);padding-top:12px;"><span style="font-size:12px;color:var(--muted);">Various sizes</span><a href="mailto:akhada.crafts@mantanex.com?subject=Inquiry: Storage Racks" style="font-size:11px;font-weight:600;text-transform:uppercase;color:#9b3a1a;">Inquire →</a></div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">22</span>
+    <span class="lineup-tag tag-gymnastics">Mallakhamb</span>
+    <div class="lineup-name">Mallakhamb Accessories</div>
+    <div class="lineup-alt">Pole, rope, grip chalk</div>
+    <div class="lineup-desc">Equipment for India's ancient pole-and-rope gymnastics sport. Teak poles, cotton ropes, magnesium chalk, and crash mats. Various configurations available.</div>
+    <select class="lineup-select" id="w-mallakhamb">
+      <option value="">Select item…</option>
+      <option>Teak Pole (6ft)</option><option>Teak Pole (8ft)</option><option>Teak Pole (10ft)</option>
+      <option>Cotton Rope (22mm, 25ft)</option><option>Full Setup (Pole + Rope + Chalk)</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Mallakhamb', 'w-mallakhamb')">✉ Request a Quote →</button>
   </div>
+
+  <div class="lineup-card">
+    <span class="lineup-num">23</span>
+    <span class="lineup-tag tag-accessory">Storage</span>
+    <div class="lineup-name">Storage &amp; Display Racks</div>
+    <div class="lineup-alt">Club and mugdar racks</div>
+    <div class="lineup-desc">Wall-mount and floor-standing racks built for clubs, mugdars, gadas, and nals. Keeps your full akhara kit organized and displayed with respect.</div>
+    <select class="lineup-select" id="w-rack">
+      <option value="">Select type…</option>
+      <option>Wall-mount (holds 4 clubs)</option><option>Wall-mount (holds 8 clubs)</option>
+      <option>Floor-standing (holds 6 implements)</option><option>Custom size — mention in enquiry</option>
+    </select>
+    <button class="lineup-inquire" onclick="lineupQuote('Storage Rack', 'w-rack')">✉ Request a Quote →</button>
+  </div>
+
 </div>
 
 </div>
 </section>
+
+<script>
+function lineupQuote(product, selectId) {
+  var sel = document.getElementById(selectId);
+  var weight = sel ? sel.value : '';
+  if (!weight) { sel.style.borderColor='var(--gold)'; sel.focus(); return; }
+  var subject = encodeURIComponent('Quote Request — ' + product + (weight ? ' (' + weight + ')' : ''));
+  var body = encodeURIComponent(
+    'Hi,
+
+I would like a quote for:
+
+' +
+    'Product: ' + product + '
+' +
+    'Weight / Size: ' + weight + '
+' +
+    'Quantity: 
+
+' +
+    'Name: 
+' +
+    'Shipping address: 
+
+' +
+    'Thanks'
+  );
+  window.location.href = 'mailto:akhada.crafts@mantanex.com?subject=' + subject + '&body=' + body;
+}
+</script>
+
 
 <!-- ══════════════════ WATCH / YOUTUBE SECTION ══════════════════ -->
 <section id="videos-section" style="background:var(--ink);padding:80px 40px;">
@@ -1131,14 +1425,14 @@
   <!-- FEATURED — AUTO-ROTATING every 30 min -->
   <div style="margin-bottom:48px;position:relative;" id="yt-featured-wrap">
     <div style="position:relative;padding-bottom:56.25%;height:0;border:1px solid rgba(184,136,42,.25);overflow:hidden;">
-      <iframe id="yt-featured-frame" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/TvFAuOCGuWI" title="Featured video" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <iframe id="yt-featured-frame" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" src="https://www.youtube.com/embed/w2c2KNs4npk" title="Featured video" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
     <div style="position:absolute;top:16px;left:16px;background:var(--gold);color:var(--ink);font-family:'Cinzel',serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;z-index:2;">&#9733; Featured</div>
     <div style="position:absolute;top:16px;right:16px;background:rgba(0,0,0,.6);color:rgba(255,255,255,.7);font-size:10px;letter-spacing:.08em;padding:4px 10px;border:1px solid rgba(184,136,42,.3);z-index:2;" id="yt-rotation-badge">Refreshes every 30 min</div>
     <div style="margin-top:16px;">
-      <span id="yt-featured-channel" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;">Strength Side &#8212; Featured</span>
-      <div id="yt-featured-title" style="font-family:'Cinzel',serif;font-size:18px;color:var(--cream);margin-bottom:6px;">The Ancient Technique Modern Fitness Forgot</div>
-      <div id="yt-featured-desc" style="font-size:12px;color:rgba(245,238,216,.4);line-height:1.6;">Unlock the secret to resilient shoulders and natural movement. Indian clubs have been used for centuries &#8212; this video shows you why the modern world forgot them and exactly how to get started.</div>
+      <span id="yt-featured-channel" style="font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;">Back to Primal &#8212; Featured</span>
+      <div id="yt-featured-title" style="font-family:'Cinzel',serif;font-size:18px;color:var(--cream);margin-bottom:6px;">Your Shoulders Will Never Be The Same After This</div>
+      <div id="yt-featured-desc" style="font-size:12px;color:rgba(245,238,216,.4);line-height:1.6;">The best beginner Indian club workout — learn the mills pattern and start building shoulder resilience from day one.</div>
     </div>
     <!-- Dot indicators -->
     <div style="display:flex;gap:6px;margin-top:14px;" id="yt-dots">
@@ -1350,7 +1644,7 @@
       <p>Welcome! Here is your 5% off code — use it at checkout on any order:</p>
       <span class="discount-code">WELCOME5</span>
       <button class="copy-btn" onclick="copyCode()">Copy Code</button>
-      <p style="font-size:11px;color:rgba(245,238,216,.3);margin-top:12px;">Valid for one use on your first order.</p>
+      <p style="font-size:11px;color:rgba(245,238,216,.3);margin-top:12px;">Mention this code in your quote request. Valid once.</p>
     </div>
   </div>
 </section>
@@ -1401,7 +1695,7 @@
       <div class="policy-item"><span class="policy-item-icon">📅</span><div class="policy-item-text"><div class="policy-item-label">Return Window</div><div class="policy-item-detail">Returns must be initiated within 14 days of receiving your order.</div></div></div>
       <div class="policy-item"><span class="policy-item-icon">🪵</span><div class="policy-item-text"><div class="policy-item-label">Item Condition</div><div class="policy-item-detail">Items must be unused, undamaged, and in their original condition.</div></div></div>
       <div class="policy-item"><span class="policy-item-icon">🚚</span><div class="policy-item-text"><div class="policy-item-label">Return Shipping</div><div class="policy-item-detail">Return shipping costs are the responsibility of the customer.</div></div></div>
-      <div class="policy-item"><span class="policy-item-icon">✅</span><div class="policy-item-text"><div class="policy-item-label">Refund Method</div><div class="policy-item-detail">Full refund issued to your original Stripe payment within 5 business days of receipt.</div></div></div>
+      <div class="policy-item"><span class="policy-item-icon">✅</span><div class="policy-item-text"><div class="policy-item-label">Refund Method</div><div class="policy-item-detail">Full refund issued within 5 business days of receipt.</div></div></div>
     </div>
     <div class="returns-cta-row">
       <button class="btn-return-form" onclick="openReturnModal()">Request a Return →</button>
@@ -1419,6 +1713,30 @@
     <a class="contact-email" href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
   </div>
 </section>
+
+<!-- BUSINESS CARD DOWNLOAD -->
+<section style="background:var(--cream-dark);padding:60px 40px;border-top:1px solid var(--border);text-align:center;">
+  <div style="max-width:640px;margin:0 auto;">
+    <span style="font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px;">Our Business Card</span>
+    <h2 style="font-family:'Cinzel',serif;font-size:clamp(20px,2.5vw,28px);font-weight:400;color:var(--ink);margin-bottom:12px;">Save Our Contact Details</h2>
+    <p style="font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:36px;">Download our business card to keep our details handy — or share with someone who trains.</p>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;">
+      <div style="flex:1;min-width:260px;max-width:340px;">
+        <img src="front.png" alt="Akhada Crafts Business Card Front" style="width:100%;border:1px solid var(--border);margin-bottom:12px;">
+        <a href="front.png" download="AkhadaCrafts-BusinessCard-Front.png" style="display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:11px 22px;border-radius:1px;transition:background .2s;">
+          ↓ Download Front
+        </a>
+      </div>
+      <div style="flex:1;min-width:260px;max-width:340px;">
+        <img src="back.png" alt="Akhada Crafts Business Card Back" style="width:100%;border:1px solid var(--border);margin-bottom:12px;">
+        <a href="back.png" download="AkhadaCrafts-BusinessCard-Back.png" style="display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:11px 22px;border-radius:1px;transition:background .2s;">
+          ↓ Download Back
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- FOOTER -->
 <footer>
@@ -1475,12 +1793,12 @@
   function closeSuccessPage(){document.getElementById('successPage').classList.remove('show');document.body.style.overflow='';window.history.replaceState({},document.title,window.location.pathname);}
   if(new URLSearchParams(window.location.search).get('order')==='success'){window.addEventListener('DOMContentLoaded',openSuccessPage);}
 
-  function openProduct(img,category,name,price,desc,detailsStr,buyUrl){
+  function openProduct(img,category,name,desc,detailsStr,productEncoded){
+    var buyUrl='mailto:akhada.crafts@mantanex.com?subject=Quote%20Request%20%E2%80%94%20'+productEncoded+'&body=Hi%2C%0A%0AProduct%3A%20'+productEncoded+'%0AQuantity%3A%0AShipping%20address%3A%0A%0AName%3A%0A%0AThanks';
     document.getElementById('modalImg').src=img;
     document.getElementById('modalImg').alt=name;
     document.getElementById('modalCategory').textContent=category;
     document.getElementById('modalName').textContent=name;
-    document.getElementById('modalPrice').textContent=price;
     document.getElementById('modalDesc').textContent=desc;
     document.getElementById('modalBuyBtn').href=buyUrl;
     document.getElementById('modalDetails').innerHTML=detailsStr.split('|').map(d=>'<div class="product-modal-detail">'+d+'</div>').join('');
@@ -1593,16 +1911,16 @@
   var chatOpen=false;
   var KB={
     beginner:{reply:"For beginners, the best starting point is our <strong>Indian Clubs 900g Pair ($179)</strong> — perfect for learning the movements and building shoulder mobility. If you want a full progression from day one, the <strong>Beginner Kit ($899)</strong> gives you 4 pairs (500g → 2kg) plus a free Training Ebook. Which sounds right for you?",chips:["Tell me more about the 900g clubs","Tell me more about the Beginner Kit","What is a mugdar?","Back to main menu"]},
-    clubs900:{reply:"The <strong>Indian Clubs 900g Pair</strong> — $179\n\nTwo hand-turned teak clubs, 900g each (4 lbs total). Great for:\n— Shoulder & wrist mobility\n— Flow and coordination training\n— Joint health and rehab\n\nIdeal if you're new to club training or want a quality starter pair.",chips:["How do I buy?","Do you ship internationally?","Any discount codes?","Back to main menu"]},
-    beginnerKit:{reply:"The <strong>Beginner Kit — $899</strong>\n\n8 clubs total — 4 matched teak pairs:\n— 500g · 1kg · 1.5kg · 2kg Mugdar\n\nTakes you from warm-up through to serious strength work. Also includes a <strong>free Training Ebook</strong> delivered by email within 24 hours. Best value for anyone committed to the practice.",chips:["How do I buy?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
+    clubs900:{reply:"The <strong>Indian Clubs 900g Pair</strong> — $179\n\nTwo hand-turned teak clubs, 900g each (4 lbs total). Great for:\n— Shoulder & wrist mobility\n— Flow and coordination training\n— Joint health and rehab\n\nIdeal if you're new to club training or want a quality starter pair.",chips:["How to order?","Do you ship internationally?","Any discount codes?","Back to main menu"]},
+    beginnerKit:{reply:"The <strong>Beginner Kit — $899</strong>\n\n8 clubs total — 4 matched teak pairs:\n— 500g · 1kg · 1.5kg · 2kg Mugdar\n\nTakes you from warm-up through to serious strength work. Also includes a <strong>free Training Ebook</strong> delivered by email within 24 hours. Best value for anyone committed to the practice.",chips:["How to order?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
     mugdar:{reply:"Mugdar are heavier club-mace implements rooted in the Karlakattai wrestling tradition. We have three sizes:\n\n— <strong>3kg ($199)</strong> — great entry into mugdar training\n— <strong>5kg ($249)</strong> — intermediate to advanced\n— <strong>8kg ($289)</strong> — for serious seasoned practitioners\n\nAll hand-turned from dense kiln-dried teak. Which weight interests you?",chips:["Tell me about the 3kg","Tell me about the 5kg","Tell me about the 8kg","Back to main menu"]},
-    mugdar3:{reply:"<strong>Mugdar 3kg (6.6 lbs) — $199</strong>\n\nA great entry point into mugdar training. Builds rotational power, grip strength, and shoulder conditioning. Hand-turned from dense kiln-dried teak.",chips:["How do I buy?","Compare with the 5kg","Any discount codes?","Back to main menu"]},
-    mugdar5:{reply:"<strong>Mugdar 5kg (11 lbs) — $249</strong>\n\nFor intermediate to advanced practitioners. Lathe-turned from dense teak — challenges your grip, shoulder, and core in every swing.",chips:["How do I buy?","Compare with the 8kg","Any discount codes?","Back to main menu"]},
-    mugdar8:{reply:"<strong>Mugdar 8kg (17.6 lbs) — $289</strong>\n\nFor seasoned practitioners only. Demands full-body engagement — core, grip, shoulder, and back. Rooted in akhada tradition.",chips:["How do I buy?","Any discount codes?","Back to main menu"]},
-    samtola:{reply:"<strong>Acacia Wooden Samtola — $389</strong>\n\nThe most unique implement we offer. At 20.5 lbs, crafted from solid acacia, it trains cross-body stability, core power, and total-body coordination.\n\nIncludes a <strong>free Training Ebook</strong> delivered by email within 24 hours.",chips:["How do I buy?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
-    buy:{reply:"Click <strong>Buy Now</strong> on any product card and you'll be taken to our secure Stripe checkout. Payment is fast and safe — we accept all major cards.\n\n🇺🇸 Ships from the US.",chips:["Any discount codes?","How long does shipping take?","What is your return policy?","Back to main menu"]},
-    discount:{reply:"Yes! Use code <strong>WELCOME5</strong> at checkout for 5% off your first order.\n\nYou can also get it by subscribing to our newsletter at the bottom of the page.",chips:["How do I apply the code?","How do I buy?","Back to main menu"]},
-    discountHow:{reply:"At Stripe checkout, look for the <strong>\"Add promotion code\"</strong> field and enter <strong>WELCOME5</strong>. The 5% discount will apply instantly. Valid once on your first order.",chips:["How do I buy?","Back to main menu"]},
+    mugdar3:{reply:"<strong>Mugdar 3kg (6.6 lbs) — $199</strong>\n\nA great entry point into mugdar training. Builds rotational power, grip strength, and shoulder conditioning. Hand-turned from dense kiln-dried teak.",chips:["How to order?","Compare with the 5kg","Any discount codes?","Back to main menu"]},
+    mugdar5:{reply:"<strong>Mugdar 5kg (11 lbs) — $249</strong>\n\nFor intermediate to advanced practitioners. Lathe-turned from dense teak — challenges your grip, shoulder, and core in every swing.",chips:["How to order?","Compare with the 8kg","Any discount codes?","Back to main menu"]},
+    mugdar8:{reply:"<strong>Mugdar 8kg (17.6 lbs) — $289</strong>\n\nFor seasoned practitioners only. Demands full-body engagement — core, grip, shoulder, and back. Rooted in akhada tradition.",chips:["How to order?","Any discount codes?","Back to main menu"]},
+    samtola:{reply:"<strong>Acacia Wooden Samtola — $389</strong>\n\nThe most unique implement we offer. At 20.5 lbs, crafted from solid acacia, it trains cross-body stability, core power, and total-body coordination.\n\nIncludes a <strong>free Training Ebook</strong> delivered by email within 24 hours.",chips:["How to order?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
+    howToOrder:{reply:"Click <strong>✉ Get a Quote →</strong> on any product card to send a quote request by email. Include product, quantity, and shipping address — we reply within 1 business day.\n\n🇺🇸 Ships from the US.",chips:["Any discount codes?","How long does shipping take?","What is your return policy?","Back to main menu"]},
+    discount:{reply:"Yes! Use code <strong>WELCOME5</strong> for 5% off your first order — just mention it in your quote request email.\n\nYou can also get it by subscribing to our newsletter at the bottom of the page.",chips:["How do I apply the code?","How to order?","Back to main menu"]},
+    discountHow:{reply:"Just mention <strong>WELCOME5</strong> in your quote request email and we will apply 5% off your first order automatically.",chips:["How to order?","Back to main menu"]},
     shipping:{reply:"We ship from our <strong>US warehouse</strong> — no international delays for US customers.\n\n— Processing: 1–3 business days\n— Delivery: 3–7 business days\n— Tracking included on every order",chips:["Do you ship internationally?","What is your return policy?","Back to main menu"]},
     international:{reply:"We primarily ship within the <strong>United States</strong>. If you're outside the US, email us at akhada.crafts@mantanex.com before ordering.\n\nOur products are also on <strong>Etsy</strong> (etsy.com/shop/akhadacrafts) which may offer international shipping options.",chips:["How do I contact you?","Back to main menu"]},
     returns:{reply:"We offer a <strong>14-day return policy</strong>.\n\n— Items must be unused and in original condition\n— Return shipping is the customer's responsibility\n— Full refund issued within 5 business days of receiving the item",chips:["How do I start a return?","How do I contact you?","Back to main menu"]},
@@ -1612,7 +1930,7 @@
     tradition:{reply:"Our implements trace their lineage to the <strong>Karlakattai</strong> martial art and the <strong>akhadas</strong> (wrestling gyms) of India, where athletes and warriors trained for centuries with clubs and maces.",chips:["Which product should I start with?","Tell me about the mugdar","Back to main menu"]},
     contact:{reply:"The best way to reach us is by email:\n\n📧 <strong>akhada.crafts@mantanex.com</strong>\n\nWe typically reply within 1 business day. You can also find us on <strong>Instagram</strong> @akhada.crafts and <strong>Etsy</strong> at etsy.com/shop/akhadacrafts.",chips:["Open email to contact you","Back to main menu"]},
     emailUs:{reply:"Opening your email now — just hit send and we'll get back to you! 🙏",chips:["Back to main menu"],action:function(){window.location.href='mailto:akhada.crafts@mantanex.com?subject=Customer Enquiry';}},
-    price:{reply:"Here's a quick price overview:\n\n— Indian Clubs 900g Pair — <strong>$179</strong>\n— Beginner Kit (4 Pairs + Ebook) — <strong>$899</strong>\n— Mugdar 3kg — <strong>$199</strong>\n— Mugdar 5kg — <strong>$249</strong>\n— Mugdar 8kg — <strong>$289</strong>\n— Acacia Samtola + Ebook — <strong>$389</strong>\n\nUse code <strong>WELCOME5</strong> for 5% off your first order.",chips:["Which should I start with?","How do I buy?","Any discount codes?","Back to main menu"]},
+    price:{reply:"Here's a quick price overview:\n\n— Indian Clubs 900g Pair — <strong>$179</strong>\n— Beginner Kit (4 Pairs + Ebook) — <strong>$899</strong>\n— Mugdar 3kg — <strong>$199</strong>\n— Mugdar 5kg — <strong>$249</strong>\n— Mugdar 8kg — <strong>$289</strong>\n— Acacia Samtola + Ebook — <strong>$389</strong>\n\nUse code <strong>WELCOME5</strong> for 5% off your first order.",chips:["Which should I start with?","How to order?","Any discount codes?","Back to main menu"]},
     main:{reply:"How can I help you? Choose a topic below or type your question:",chips:["Which product should I start with?","View all prices","Shipping & delivery","Returns & refunds","Discount codes","About the tradition","Contact us"]}
   };
 
@@ -1636,7 +1954,7 @@
     if(t.includes('ship')||t.includes('deliver')||t.includes('how long')||t.includes('when')||t.includes('arrival')||t.includes('track'))return'shipping';
     if(t.includes('how to return')||t.includes('start a return')||t.includes('initiate')||t.includes('process return'))return'returnHow';
     if(t.includes('return')||t.includes('refund')||t.includes('money back')||t.includes('exchange'))return'returns';
-    if(t.includes('buy')||t.includes('purchase')||t.includes('order')||t.includes('checkout')||t.includes('stripe')||t.includes('pay'))return'buy';
+    if(t.includes('buy')||t.includes('purchase')||t.includes('order')||t.includes('quote')||t.includes('how to order')||t.includes('checkout')||t.includes('pay'))return'howToOrder';
     if(t.includes('price')||t.includes('cost')||t.includes('how much')||t.includes('pricing')||t.includes('all product'))return'price';
     if(t.includes('contact')||t.includes('email')||t.includes('reach')||t.includes('support')||t.includes('help')||t.includes('question'))return'contact';
     if(t.includes('begin')||t.includes('start')||t.includes('new')||t.includes('first')||t.includes('recommend')||t.includes('suggest')||t.includes('which'))return'beginner';
@@ -1746,7 +2064,7 @@ document.getElementById('yt-lb').addEventListener('click',function(e){if(e.targe
 
 // ── Featured video auto-rotation ──────────────────────────────────────────
 var YT_FEATURED = [
-  {id:'TvFAuOCGuWI', title:'The Ancient Technique Modern Fitness Forgot', desc:'Unlock the secret to resilient shoulders and natural movement. Indian clubs have been used for centuries — this is why the modern world forgot them and exactly how to get started.', channel:'Strength Side'},
+  {id:'w2c2KNs4npk', title:'Your Shoulders Will Never Be The Same After This', desc:'Learn how to integrate Indian club mills into your warm-up routine for shoulder resilience. The best first workout for anyone starting with Indian clubs.', channel:'Back to Primal'},
   {id:'16VpsglSjfc', title:'The Ancient Indian Art Karlakattai & Meipadam', desc:'A deep dive into Karlakattai — the ancient South Indian club training art — featuring master practitioners from Jothi Silambam. Rare footage of the living tradition.', channel:'The Flowing Dutchman ft. Jothi Silambam'},
   {id:'kvvvQT5I2Ok', title:'Karlakattai: The Ancient Indian Strength & Conditioning System', desc:'Inside a real Karlakattai training hall in South India. The complete strength and conditioning system that built warriors for thousands of years — still alive today.', channel:'The Flowing Dutchman'},
   {id:'0u-G-Y6JnJU', title:'The 10 Most Important Karlakattai Rotations for Everyone', desc:'Senior Meipadam & Karlakattai coach Trushal breaks down the 10 rotations every practitioner must master — from beginner to advanced. Essential foundational knowledge.', channel:'Heartful Warrior — Kshakthiree Trusha'},
