@@ -444,46 +444,12 @@
       .return-modal { padding: 32px 24px; }
       .returns-cta-row { flex-direction: column; align-items: stretch; text-align: center; }
     }
+
+    /* INFORMATIONAL MODE: no checkout, quote, pricing, or purchase controls */
+    .btn-buy,.btn-quote,.product-card-price,.product-modal-price,.product-modal-buy,.lineup-inquire,.qcart-fab,.qcart-panel{display:none!important;}
   </style>
 </head>
 <body>
-
-<!-- SUCCESS PAGE -->
-<div class="success-page" id="successPage">
-  <div class="success-inner">
-    <span class="success-icon">🙏</span>
-    <span class="success-eyebrow">Order Confirmed</span>
-    <h1 class="success-title">Thank You for Your Order</h1>
-    <p class="success-desc">Your Akhada Crafts implement is being prepared. A confirmation receipt from Stripe has been sent to your inbox.</p>
-    <div class="success-steps">
-      <div class="success-step">
-        <span class="success-step-num">01</span>
-        <div class="success-step-text"><strong>Check Your Email</strong>A Stripe receipt has been sent to your inbox. Keep it — you may need it if you contact us about your order.</div>
-      </div>
-      <div class="success-step">
-        <span class="success-step-num">02</span>
-        <div class="success-step-text"><strong>Free Ebook (if applicable)</strong>If you ordered the Beginner Kit or Samtola, your free Training Ebook will be delivered via email within 24 hours.</div>
-      </div>
-      <div class="success-step">
-        <span class="success-step-num">03</span>
-        <div class="success-step-text"><strong>Shipping</strong>Your order ships from our US warehouse. Typical delivery is 3–7 business days. Tracking details will be sent once dispatched.</div>
-      </div>
-      <div class="success-step">
-        <span class="success-step-num">04</span>
-        <div class="success-step-text"><strong>Questions?</strong>Email akhada.crafts@mantanex.com and we will get back to you within 1 business day.</div>
-      </div>
-    </div>
-    <div class="success-cta-row">
-      <button class="btn-success-primary" onclick="closeSuccessPage()">← Back to Shop</button>
-      <a class="btn-success-secondary" href="mailto:akhada.crafts@mantanex.com">Contact Us ↗</a>
-    </div>
-    <div class="success-trust">
-      <span class="success-trust-item">Secure Payment via Stripe</span>
-      <span class="success-trust-item">Ships from the US</span>
-      <span class="success-trust-item">14-Day Returns</span>
-    </div>
-  </div>
-</div>
 
 <!-- PRIVACY POLICY -->
 <div class="policy-page" id="privacyPage">
@@ -491,59 +457,15 @@
     <button class="policy-page-back" onclick="closePolicyPage('privacyPage')">← Back to Akhada Crafts</button>
     <span class="policy-page-eyebrow">Legal</span>
     <h1>Privacy Policy</h1>
-    <span class="policy-page-date">Last updated: May 2026</span>
+    <span class="policy-page-date">Last updated: September 2026</span>
     <div class="policy-page-divider"></div>
-    <div class="policy-section"><h2>1. Who We Are</h2><p>Akhada Crafts is a traditional Indian fitness equipment brand. Contact: akhada.crafts@mantanex.com.</p></div>
-    <div class="policy-section"><h2>2. Information We Collect</h2><ul><li>Email address (when you subscribe or contact us)</li><li>Name and email (when submitting a review or return request)</li><li>Payment information — processed entirely by Stripe. We never see or store your card details.</li><li>Basic usage data (pages visited, browser type) via standard server logs</li></ul></div>
-    <div class="policy-section"><h2>3. How We Use Your Information</h2><ul><li>To fulfill your order and communicate about it</li><li>To send your discount code or ebook if requested</li><li>To respond to support, return, or review requests</li><li>To send occasional marketing emails (only if subscribed — unsubscribe any time)</li></ul></div>
-    <div class="policy-section"><h2>4. Payment Processing</h2><p>All payments are processed by Stripe, Inc. We do not collect, store, or have access to your card information. Stripe's privacy policy applies: stripe.com/privacy.</p></div>
-    <div class="policy-section"><h2>5. Data Sharing</h2><p>We do not sell or share your personal information with third parties for marketing. Data is shared only as necessary to fulfill your order (e.g. shipping carriers) or as required by law.</p></div>
-    <div class="policy-section"><h2>6. Cookies</h2><p>Our website uses minimal cookies for basic functionality only. We do not use advertising or tracking cookies.</p></div>
-    <div class="policy-section"><h2>7. Your Rights</h2><p>You have the right to access, correct, or request deletion of your personal data at any time. Email akhada.crafts@mantanex.com to exercise these rights.</p></div>
-    <div class="policy-section"><h2>8. Changes to This Policy</h2><p>We may update this policy from time to time. The date at the top reflects the most recent revision.</p></div>
+    <div class="policy-section"><h2>1. Who We Are</h2><p>Akhada Crafts is an informational website about traditional Indian strength-training equipment and practice. Contact: akhada.crafts@mantanex.com.</p></div>
+    <div class="policy-section"><h2>2. Information We Collect</h2><ul><li>Email address when you contact us or join updates</li><li>Name and optional details when submitting a review</li><li>Basic usage data provided by standard hosting logs</li></ul></div>
+    <div class="policy-section"><h2>3. How We Use Information</h2><ul><li>To respond to questions and messages</li><li>To share training resources or site updates when requested</li><li>To review community feedback submitted through this site</li></ul></div>
+    <div class="policy-section"><h2>4. Payments</h2><p>This website does not process payments or collect card information.</p></div>
+    <div class="policy-section"><h2>5. Data Sharing</h2><p>We do not sell personal information. Information may be shared only when required by law or necessary to operate basic website services.</p></div>
+    <div class="policy-section"><h2>6. Your Rights</h2><p>You may request access, correction, or deletion of information you have submitted by emailing akhada.crafts@mantanex.com.</p></div>
     <div class="policy-contact-box"><p>Questions about this Privacy Policy?</p><a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a></div>
-  </div>
-</div>
-
-<!-- SHIPPING POLICY -->
-<div class="policy-page" id="shippingPage">
-  <div class="policy-page-inner">
-    <button class="policy-page-back" onclick="closePolicyPage('shippingPage')">← Back to Akhada Crafts</button>
-    <span class="policy-page-eyebrow">Shipping</span>
-    <h1>Shipping Policy</h1>
-    <span class="policy-page-date">Last updated: May 2026</span>
-    <div class="policy-page-divider"></div>
-    <div class="policy-section"><h2>Where We Ship From</h2><p>All orders ship from our US warehouse — fast, reliable domestic delivery with no international customs delays for US customers.</p></div>
-    <div class="policy-section"><h2>Processing Time</h2><p>Orders are typically processed within 1–3 business days. You will receive a shipping confirmation with tracking once dispatched.</p></div>
-    <div class="policy-section"><h2>Domestic Shipping (USA)</h2><ul><li>Standard shipping: 3–7 business days</li><li>Shipping costs calculated at Stripe checkout based on your location and order weight</li><li>Tracking included on all domestic shipments</li></ul></div>
-    <div class="policy-section"><h2>International Shipping</h2><p>We primarily ship within the United States. If you're outside the US, email us before ordering and we will do our best to assist. Our products are also on Etsy (etsy.com/shop/akhadacrafts) which may offer international options.</p></div>
-    <div class="policy-section"><h2>Damaged or Lost Shipments</h2><p>If your order arrives damaged or is lost in transit, contact us within 7 days of the expected delivery date with your order details and photos.</p></div>
-    <div class="policy-section"><h2>Free Ebook Delivery</h2><p>The free Training Ebook (included with Beginner Kit and Samtola) is delivered digitally via email within 24 hours of purchase. Check your spam folder if you don't receive it, then contact us.</p></div>
-    <div class="policy-section"><h2>Returns</h2><p>We offer a 14-day return policy. See the Returns section on the main page for full details.</p></div>
-    <div class="policy-contact-box"><p>Shipping questions?</p><a href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a></div>
-  </div>
-</div>
-
-<!-- POPUP -->
-<div class="popup-overlay show" id="welcomePopup">
-  <div class="popup-box">
-    <button class="popup-close" onclick="closePopup()">✕</button>
-    <span class="popup-eyebrow">Welcome Gift</span>
-    <h2 class="popup-title">Get 5% Off Your First Order</h2>
-    <p class="popup-desc">Subscribe to the Akhada community and instantly receive your discount code.</p>
-    <div id="popupFormWrap">
-      <div class="popup-form">
-        <input type="email" placeholder="Your email address" id="popupEmail">
-        <button type="button" onclick="handlePopupSubscribe()">Get My Code</button>
-      </div>
-      <p class="popup-note">No spam. Unsubscribe any time.</p>
-    </div>
-    <div class="popup-code-reveal" id="popupCodeReveal">
-      <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:8px;">Your 5% off code:</p>
-      <span class="popup-code">WELCOME5</span>
-      <p style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:12px;">Mention this code in your quote request email. Valid once on your first order.</p>
-      <button class="popup-copy-btn" onclick="copyPopupCode()">Copy Code</button>
-    </div>
   </div>
 </div>
 
@@ -555,12 +477,10 @@
     <div class="product-modal-body">
       <span class="product-modal-category" id="modalCategory"></span>
       <h2 class="product-modal-name" id="modalName"></h2>
-      <div class="product-modal-price" id="modalPrice"></div>
       <div class="product-modal-divider"></div>
       <p class="product-modal-desc" id="modalDesc"></p>
       <div class="product-modal-details" id="modalDetails"></div>
-      <a class="product-modal-buy" id="modalBuyBtn" href="#" target="_blank">Buy Now — Secure Checkout →</a>
-      <p class="product-modal-ships">🇺🇸 Ships from the US · Secure payment via Stripe</p>
+      <p class="product-modal-ships">Product information only · Contact us with questions</p>
     </div>
   </div>
 </div>
@@ -617,82 +537,12 @@
   </div>
 </div>
 
-<!-- RETURN MODAL -->
-<div class="return-modal-overlay" id="returnModal">
-  <div class="return-modal">
-    <button class="return-modal-close" onclick="closeReturnModal()">✕</button>
-    <div id="returnFormWrap">
-      <span class="return-modal-eyebrow">14-Day Return Policy</span>
-      <h2 class="return-modal-title">Request a Return</h2>
-      <p class="return-modal-subtitle">Fill in the details below and we will get back to you within 1–2 business days with return instructions.</p>
-      <div class="return-form-divider"></div>
-      <div class="return-form-row">
-        <div class="return-form-group">
-          <label class="return-form-label">Full Name <span>*</span></label>
-          <input class="return-form-input" type="text" id="returnName" placeholder="Your name">
-        </div>
-        <div class="return-form-group">
-          <label class="return-form-label">Email Address <span>*</span></label>
-          <input class="return-form-input" type="email" id="returnEmail" placeholder="your@email.com">
-        </div>
-      </div>
-      <div class="return-form-group">
-        <label class="return-form-label">Product to Return <span>*</span></label>
-        <select class="return-form-select" id="returnProduct">
-          <option value="">Select a product…</option>
-          <option>Indian Clubs 900g Pair</option>
-          <option>Indian Clubs Beginner Kit (4 Pairs)</option>
-          <option>Mugdar 3kg</option>
-          <option>Mugdar 5kg</option>
-          <option>Mugdar 8kg</option>
-          <option>Acacia Wooden Samtola</option>
-        </select>
-      </div>
-      <div class="return-form-row">
-        <div class="return-form-group">
-          <label class="return-form-label">Order / Transaction ID</label>
-          <input class="return-form-input" type="text" id="returnOrderId" placeholder="From your Stripe receipt">
-        </div>
-        <div class="return-form-group">
-          <label class="return-form-label">Date of Purchase <span>*</span></label>
-          <input class="return-form-input" type="date" id="returnDate">
-        </div>
-      </div>
-      <div class="return-form-group">
-        <label class="return-form-label">Reason for Return <span>*</span></label>
-        <select class="return-form-select" id="returnReason">
-          <option value="">Select a reason…</option>
-          <option>Item not as described</option>
-          <option>Damaged or defective on arrival</option>
-          <option>Wrong item received</option>
-          <option>Changed my mind</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="return-form-group">
-        <label class="return-form-label">Additional Details</label>
-        <textarea class="return-form-textarea" id="returnDetails" placeholder="Please describe the issue…"></textarea>
-      </div>
-      <button class="return-form-submit" onclick="submitReturnForm()">Submit Return Request →</button>
-      <div class="return-form-or">— or contact us directly —</div>
-      <a class="return-email-btn" id="returnEmailBtn" href="#">Email akhada.crafts@mantanex.com →</a>
-      <p class="return-form-note">Items must be unused and in original condition. Return shipping is the customer's responsibility. Refunds issued within 5 business days of receiving the item.</p>
-    </div>
-    <div class="return-success" id="returnSuccess">
-      <div class="return-success-icon">✅</div>
-      <h3 class="return-success-title">Request Received</h3>
-      <p class="return-success-desc">We've received your return request and will reply within 1–2 business days with next steps.</p>
-    </div>
-  </div>
-</div>
-
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#shop" onclick="closeMobileMenu()">Shop</a>
+  <a href="#shop" onclick="closeMobileMenu()">Products</a>
   <a href="#lineup-section" onclick="closeMobileMenu()">Lineup</a>
   <a href="#videos-section" onclick="closeMobileMenu()">Watch</a>
   <a href="#reviews" onclick="closeMobileMenu()">Reviews</a>
-  <a href="#returns" onclick="closeMobileMenu()">Returns</a>
   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
   <a href="https://www.instagram.com/akhada.crafts/" target="_blank" rel="noopener" style="color:var(--gold);">Instagram ↗</a>
 </div>
@@ -701,11 +551,10 @@
 <nav>
   <div class="logo">AKHADA<em>.</em>CRAFTS</div>
   <div class="nav-links">
-    <a href="#shop">Shop</a>
+    <a href="#shop">Products</a>
     <a href="#lineup-section">Lineup</a>
     <a href="#videos-section">Watch</a>
     <a href="#reviews">Reviews</a>
-    <a href="#returns">Returns</a>
     <a href="#contact">Contact</a>
     <a href="https://www.instagram.com/akhada.crafts/" target="_blank" rel="noopener" style="color:var(--gold);">Instagram ↗</a>
   </div>
@@ -729,7 +578,7 @@
         <circle cx="1.2" cy="7" r=".45"/><circle cx="2.4" cy="7" r=".45"/><circle cx="3.6" cy="7" r=".45"/><circle cx="4.8" cy="7" r=".45"/><circle cx="6" cy="7" r=".45"/><circle cx="7.2" cy="7" r=".45"/>
       </g>
     </svg>
-    <a class="nav-cta" href="#shop">Shop Now</a>
+    <a class="nav-cta" href="#shop">View Products</a>
     <button class="nav-hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -738,19 +587,9 @@
 
 <!-- PLATFORM BAR -->
 <div class="platform-bar">
-  <span class="platform-bar-label">Find Us On</span>
-  <a class="platform-btn" href="https://tr.ee/MWl0vl0lmy" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M13.51 6.2l4.68-4.69 2.12 2.12-4.68 4.69h5.88v3h-5.88l4.68 4.68-2.12 2.12L13.51 13.4V22h-3V13.4L5.82 18.12 3.7 16l4.68-4.68H2.5v-3h5.88L3.7 3.63 5.82 1.51l4.69 4.69V0h3v6.2z"/></svg>
-    Linktree
-  </a>
-  <a class="platform-btn" href="https://www.amazon.com/s?me=A2FFUB4O09J8LA" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.494.124.104.172.08.342-.073.512-.19.227-.4.433-.625.616C18.485 22.606 15.5 23.5 12.34 23.5c-3.41 0-6.57-.875-9.483-2.624-.392-.234-.715-.51-.968-.833-.163-.21-.18-.38-.052-.51zm21.516-2.87c-.072-.13-.17-.19-.296-.18-.126.01-.227.07-.303.19-.204.325-.49.63-.864.91-.88.69-1.815 1.034-2.806 1.034-.612 0-1.092-.176-1.44-.528-.35-.352-.523-.82-.523-1.402 0-.52.135-.99.406-1.41.27-.42.68-.78 1.226-1.08.53-.29 1.27-.53 2.222-.72.243-.05.602-.11 1.08-.18v-.28c0-.65-.1-1.11-.3-1.38-.2-.27-.52-.4-.96-.4-.38 0-.69.1-.93.3-.24.2-.43.52-.58.96-.1.3-.28.44-.53.42l-2.01-.25c-.26-.06-.39-.2-.39-.44 0-.05.01-.1.02-.16.36-1.94 1.88-2.91 4.55-2.91.73 0 1.39.1 1.98.31.59.21 1.06.49 1.4.85.34.36.58.73.72 1.1.14.38.21.81.21 1.3v4.38c0 .63.24 1.26.72 1.89.1.13.15.27.15.41 0 .13-.06.26-.18.39-.48.44-.98.86-1.5 1.25-.12.09-.24.13-.37.13-.14 0-.28-.06-.42-.18-.26-.23-.56-.49-.9-.78zm-1.51-3.12c-.4.08-.73.16-.97.24-.5.17-.86.37-1.08.62-.22.25-.33.54-.33.87 0 .38.11.69.33.92.22.23.51.34.87.34.63 0 1.2-.21 1.71-.63v-2.36h-.53z"/></svg>
-    Amazon
-  </a>
-  <a class="platform-btn" href="https://www.etsy.com/shop/akhadacrafts/?etsrc=sdt" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24"><path d="M9.194 0c-.376 4.338-1.703 5.595-5.194 5.805v2.778h2.986V18.68c0 3.57 1.388 5.32 5.166 5.32 1.645 0 3.53-.47 4.583-.984l-.565-2.66a6.463 6.463 0 0 1-2.494.565c-1.51 0-2.073-.799-2.073-2.35V8.583H16l.47-2.778h-4.873V0z"/></svg>
-    Etsy
-  </a>
+  <span class="platform-bar-label">Connect With Akhada Crafts</span>
+  <a class="platform-btn" href="https://tr.ee/MWl0vl0lmy" target="_blank" rel="noopener">Linktree</a>
+  <a class="platform-btn" href="https://www.instagram.com/akhada.crafts/" target="_blank" rel="noopener">Instagram</a>
 </div>
 
 <!-- HERO -->
@@ -759,7 +598,7 @@
     <span class="hero-eyebrow">Handcrafted in India | Made for the World.</span>
     <h1>Forged in<br><em>Teak.</em><br>Built for<br>Strength.</h1>
     <p class="hero-desc">Indian clubs, mugdar, and samtola — ancient training implements from the Karlakattai martial tradition, hand-turned for the modern practitioner.</p>
-    <a class="btn-primary" href="#shop">Shop the Collection →</a>
+    <a class="btn-primary" href="#shop">Explore the Collection →</a>
   </div>
   <div class="hero-right">
     <img src="cover.png" alt="Akhada Crafts — Built for Strength">
@@ -774,8 +613,8 @@
 <section id="shop" class="shop-section">
   <div class="shop-inner">
     <div class="shop-header">
-      <span class="eyebrow">Buy Direct — Ships from the US</span>
-      <h2>Shop Akhada Crafts</h2>
+      <span class="eyebrow">Traditional Indian Training Equipment</span>
+      <h2>Explore Akhada Crafts</h2>
     </div>
     <div class="shop-tabs">
       <button class="shop-tab active" onclick="filterProducts('all',this)">All Products</button>
@@ -785,39 +624,33 @@
     </div>
     <div class="shop-grid">
 
-      <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','$179','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','https://buy.stripe.com/28E00d2hPg2pdKueAces006')">
+      <div class="product-card" data-category="clubs" onclick="openProduct('clubs900g.png.png','Indian Clubs','Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb','','Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination. Ideal for beginners looking to build wrist, elbow, and shoulder resilience through traditional club swinging patterns.','Hand-turned from kiln-dried teak|Pair of 2 clubs, 900g each (4 lbs total)|Great for shoulder mobility & joint health|Suitable for beginners and intermediate practitioners','')">
         <div class="product-card-img"><img src="clubs900g.png.png" alt="Indian Clubs 900g Pair"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Handcrafted Teak Wood Indian Clubs Pair (900 gm each) Total-4 lb</div>
           <div class="product-card-desc">Perfect starter clubs for joint mobility and flow training. Hand-turned from solid teak for shoulder health and coordination.</div>
-          <div class="product-card-footer">
-            <span class="product-card-price">$179</span><a class="btn-buy" href="https://buy.stripe.com/28E00d2hPg2pdKueAces006" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
-          </div>
+          <div class="product-card-footer"><span class="product-card-category" style="margin:0;">View details</span></div>
         </div>
       </div>
 
-      <div class="product-card" data-category="clubs" onclick="openProduct('begginer_kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','$899','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005')">
+      <div class="product-card" data-category="clubs" onclick="openProduct('begginer_kit.png','Indian Clubs','Indian Clubs Beginner Kit — 4 Pairs + Free Ebook','','8 clubs total — 4 matched teak pairs progressing from 500g to 2kg Mugdar. The perfect complete set to take you from warm-up through to advanced strength training. A free Training Ebook is delivered via email within 24 hours of purchase.','8 clubs total (4 matched pairs)|Sizes: 500g, 1kg, 1.5kg, 2kg Mugdar|All hand-turned from kiln-dried teak|Free Training Ebook included via email|Best value for serious practitioners','')">
         <div class="product-card-img"><img src="begginer_kit.png" alt="Indian Club Beginner Kit"></div>
         <div class="product-card-body">
           <span class="product-card-category">Indian Clubs</span>
           <div class="product-card-name">Indian Clubs Beginner Kit — 4 Pairs + Free Ebook</div>
           <div class="product-card-desc">8 clubs total — 4 matched teak pairs: 500g, 1kg, 1.5kg, and 2kg Mugdar. From warm-up to advanced strength training. Free Training Ebook delivered via email within 24 hours.</div>
-          <div class="product-card-footer">
-            <span class="product-card-price">$899</span><a class="btn-buy" href="https://buy.stripe.com/bJe9ANe0x03r7m60Jmes005" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
-          </div>
+          <div class="product-card-footer"><span class="product-card-category" style="margin:0;">View details</span></div>
         </div>
       </div>
 
-      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','$389','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — harder and denser than teak. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000')">
+      <div class="product-card" data-category="samtola" onclick="openProduct('Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg','Samtola','Acacia Wooden Samtola — 20.5 lbs + Free Ebook','','The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia — harder and denser than teak. Free training ebook included.','Weight: 20.5 lbs (approx 9.3 kg)|Crafted from solid acacia hardwood|Trains cross-body stability and core power|Free Training Ebook included via email|Ideal for advanced whole-body conditioning','')">
         <div class="product-card-img"><img src="Acacia Wooden Samtola — 20.5 lbs + Free Ebook.jpg" alt="Samtola"></div>
         <div class="product-card-body">
           <span class="product-card-category">Samtola</span>
           <div class="product-card-name">Acacia Wooden Samtola — 20.5 lbs + Free Ebook</div>
           <div class="product-card-desc">The ultimate implement for cross-body stability, core power, and total-body coordination. Crafted from solid acacia with a free training ebook.</div>
-          <div class="product-card-footer">
-            <span class="product-card-price">$389</span><a class="btn-buy" href="https://buy.stripe.com/3cI9ANf4BbM9dKudw8es000" target="_blank" onclick="event.stopPropagation()">Buy Now →</a>
-          </div>
+          <div class="product-card-footer"><span class="product-card-category" style="margin:0;">View details</span></div>
         </div>
       </div>
 
@@ -840,8 +673,8 @@
     </div>
     <div class="value-item">
       <span class="value-num">03</span>
-      <h3 class="value-title">Ships from the US</h3>
-      <p class="value-desc">Orders ship from our US warehouse directly to your doorstep. Fast, reliable delivery — no international wait times.</p>
+      <h3 class="value-title">Handcrafted Tradition</h3>
+      <p class="value-desc">Each implement reflects the forms, materials, and training heritage associated with traditional Indian strength practice.</p>
     </div>
   </div>
 </section>
@@ -930,7 +763,7 @@
   <div class="review-cta-inner">
     <span class="review-cta-eyebrow">Your Experience Matters</span>
     <h2 class="review-cta-title">Have You Trained with Akhada Crafts?</h2>
-    <p class="review-cta-desc">Share your experience and help fellow practitioners discover the tradition. All verified purchases are welcome to leave a review.</p>
+    <p class="review-cta-desc">Share your experience and help fellow practitioners discover the tradition. If you have trained with Akhada Crafts equipment, you are welcome to share your experience.</p>
     <button class="btn-review" onclick="openReviewModal()">Write a Review →</button>
   </div>
 </section>
@@ -959,7 +792,7 @@
     <span style="width:36px;height:1px;background:var(--gold);opacity:.5;display:block;"></span>Full Equipment Catalog
   </div>
   <h2 style="font-family:'Cinzel',serif;font-size:clamp(32px,4vw,56px);font-weight:400;color:var(--cream);line-height:1.08;margin-bottom:12px;">The <span style="color:var(--gold);">Complete</span> Lineup</h2>
-  <p style="font-size:14px;color:rgba(245,238,216,.5);max-width:520px;line-height:1.85;margin-bottom:8px;">Every implement from the akhada tradition — available to order. Select any item, choose your weight, and send us a quote request. We'll reply within 1 business day.</p>
+  <p style="font-size:14px;color:rgba(245,238,216,.5);max-width:520px;line-height:1.85;margin-bottom:8px;">A reference catalog of implements from the akhada tradition — presented for education, comparison, and appreciation of the training forms.</p>
 </div>
 </section>
 
@@ -997,11 +830,6 @@
     <div class="lineup-name">Indian Club Pair</div>
     <div class="lineup-alt">Teardrop / swing clubs</div>
     <div class="lineup-desc">Classic teardrop-shaped wooden clubs for joint mobility, shoulder health, and flow training. The foundation of Indian club practice.</div>
-    <select class="lineup-select" id="w-indianclub">
-      <option value="">Select weight per club…</option>
-      <option>1kg pair</option><option>1.5kg pair</option><option>2kg pair</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Indian Club Pair', 'w-indianclub')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1010,14 +838,6 @@
     <div class="lineup-name">Heavy Mugdar</div>
     <div class="lineup-alt">Mudgar / meel</div>
     <div class="lineup-desc">The heavy club of the akhara tradition. Builds rotational power, grip strength, and shoulder resilience. Hand-turned from dense kiln-dried teak.</div>
-    <select class="lineup-select" id="w-mugdar">
-      <option value="">Select weight…</option>
-      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option><option>5kg</option>
-      <option>6kg</option><option>7kg</option><option>8kg</option><option>10kg</option><option>12kg</option>
-      <option>15kg</option><option>18kg</option><option>20kg</option><option>25kg</option>
-      <option>30kg</option><option>40kg</option><option>50kg</option><option>60kg</option><option>75kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Heavy Mugdar', 'w-mugdar')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1026,11 +846,6 @@
     <div class="lineup-name">Jori Clubs (Pair)</div>
     <div class="lineup-alt">Heavy club pair</div>
     <div class="lineup-desc">Longer and more conical than standard clubs — the extra mass generates more torque. Competed at Varanasi's Nag Panchami festival.</div>
-    <select class="lineup-select" id="w-jori">
-      <option value="">Select weight per club…</option>
-      <option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option><option>12kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Jori Clubs Pair', 'w-jori')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1039,11 +854,6 @@
     <div class="lineup-name">Parshiyan Club (Pair)</div>
     <div class="lineup-alt">Persian / zurkhaneh club</div>
     <div class="lineup-desc">The Persian counterpart to Indian clubs — heavier, wider base, used in the zurkhaneh tradition. Builds shoulder and wrist strength through circular swings.</div>
-    <select class="lineup-select" id="w-persian">
-      <option value="">Select weight per club…</option>
-      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Parshiyan Club Pair', 'w-persian')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1052,11 +862,6 @@
     <div class="lineup-name">Yoga Karlai</div>
     <div class="lineup-alt">Yogic club / swing implement</div>
     <div class="lineup-desc">A yogic training club combining breath, movement, and rotational flow. Used in traditional yoga-based conditioning systems for full-body awareness.</div>
-    <select class="lineup-select" id="w-yogakarlai">
-      <option value="">Select weight…</option>
-      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option><option>12kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Yoga Karlai', 'w-yogakarlai')">+ Add to Quote →</button>
   </div>
 
 </div>
@@ -1071,11 +876,6 @@
     <div class="lineup-name">Hanuman Gada — 2ft / 2.5ft</div>
     <div class="lineup-alt">Standard gada mace</div>
     <div class="lineup-desc">A heavy ball on a wooden handle. Sacred to Hanuman. Swung in large circular motions targeting shoulders, core, and grip. The icon of Indian strength.</div>
-    <select class="lineup-select" id="w-gada25">
-      <option value="">Select weight…</option>
-      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Hanuman Gada 2ft-2.5ft', 'w-gada25')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1084,11 +884,6 @@
     <div class="lineup-name">Hanuman Gada — 3ft</div>
     <div class="lineup-alt">Competition gada</div>
     <div class="lineup-desc">The competition-grade gada. Longer handle increases leverage and demands greater core stability. Gold gadas of this size are awarded as trophies in Varanasi.</div>
-    <select class="lineup-select" id="w-gada3">
-      <option value="">Select weight…</option>
-      <option>7kg</option><option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Hanuman Gada 3ft', 'w-gada3')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1097,12 +892,6 @@
     <div class="lineup-name">Hanuman Gada — 4ft</div>
     <div class="lineup-alt">Heavy long gada</div>
     <div class="lineup-desc">The most demanding gada — full-body engagement at every swing. For advanced practitioners who have mastered the mechanics of shorter lengths.</div>
-    <select class="lineup-select" id="w-gada4">
-      <option value="">Select weight…</option>
-      <option>7kg</option><option>8kg</option><option>9kg</option><option>10kg</option><option>12kg</option>
-      <option>15kg</option><option>18kg</option><option>20kg</option><option>22kg</option><option>25kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Hanuman Gada 4ft', 'w-gada4')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1111,12 +900,6 @@
     <div class="lineup-name">Bhim Gada</div>
     <div class="lineup-alt">Warrior mace</div>
     <div class="lineup-desc">Named after the mighty Bhim of the Mahabharata. A thick, powerful mace for raw strength development. Heavier head, shorter handle — pure power training.</div>
-    <select class="lineup-select" id="w-bhim">
-      <option value="">Select weight…</option>
-      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option><option>5kg</option>
-      <option>6kg</option><option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Bhim Gada', 'w-bhim')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1125,12 +908,6 @@
     <div class="lineup-name">Big Bhim Gada — 4ft</div>
     <div class="lineup-alt">Heavy long warrior mace</div>
     <div class="lineup-desc">The ultimate Bhim Gada — 4ft handle with a massive head. For the serious practitioner. Full-body rotational power at competition level.</div>
-    <select class="lineup-select" id="w-bigbhim">
-      <option value="">Select weight…</option>
-      <option>20kg</option><option>22kg</option><option>25kg</option><option>28kg</option><option>30kg</option>
-      <option>35kg</option><option>40kg</option><option>45kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Big Bhim Gada 4ft', 'w-bigbhim')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1139,12 +916,6 @@
     <div class="lineup-name">Sagwan Carving Hanuman Gada</div>
     <div class="lineup-alt">Teak carved premium gada</div>
     <div class="lineup-desc">Hand-carved from premium Sagwan (teak) with intricate detailing. A collector-grade training implement — as beautiful as it is functional.</div>
-    <select class="lineup-select" id="w-sagwancarving">
-      <option value="">Select weight…</option>
-      <option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option>
-      <option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Sagwan Carving Hanuman Gada', 'w-sagwancarving')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1153,11 +924,6 @@
     <div class="lineup-name">Sagwan 3-Handle Hanuman Gada</div>
     <div class="lineup-alt">Triple grip teak gada</div>
     <div class="lineup-desc">A unique 3-grip handle design built from Sagwan (teak). The multiple grip positions allow varied training angles and progressive loading patterns.</div>
-    <select class="lineup-select" id="w-sagwan3h">
-      <option value="">Select weight…</option>
-      <option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Sagwan 3-Handle Hanuman Gada', 'w-sagwan3h')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1166,11 +932,6 @@
     <div class="lineup-name">Wooden Mace</div>
     <div class="lineup-alt">Steel mace alternative</div>
     <div class="lineup-desc">A wooden training mace for offset-load conditioning. The uneven weight distribution challenges stability and builds functional rotational strength.</div>
-    <select class="lineup-select" id="w-woodenmace">
-      <option value="">Select weight…</option>
-      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option><option>8kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Wooden Mace', 'w-woodenmace')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1179,12 +940,6 @@
     <div class="lineup-name">Macebell</div>
     <div class="lineup-alt">Long-handle macebell</div>
     <div class="lineup-desc">A long-handle wooden macebell bridging traditional gada training and modern macebell fitness. Excellent for 360s, 10-to-2s, and shoulder conditioning.</div>
-    <select class="lineup-select" id="w-macebell">
-      <option value="">Select weight…</option>
-      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>7kg</option>
-      <option>8kg</option><option>9kg</option><option>10kg</option><option>12kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Macebell', 'w-macebell')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1193,13 +948,6 @@
     <div class="lineup-name">Samtola</div>
     <div class="lineup-alt">Sum-tola / Indian barbell</div>
     <div class="lineup-desc">A log-shaped wooden barbell originally used to level wrestling pit floors. Develops grip, core, and explosive rotational power. Crafted from acacia or teak.</div>
-    <select class="lineup-select" id="w-samtola">
-      <option value="">Select weight…</option>
-      <option>5kg</option><option>8kg</option><option>10kg</option><option>12kg</option><option>15kg</option>
-      <option>20kg</option><option>25kg</option><option>30kg</option><option>40kg</option><option>50kg</option>
-      <option>60kg</option><option>75kg</option><option>100kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Samtola', 'w-samtola')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1208,12 +956,6 @@
     <div class="lineup-name">Thoppi</div>
     <div class="lineup-alt">Helmet weight / head implement</div>
     <div class="lineup-desc">A traditional Indian weighted helmet implement used in akhara conditioning. Builds neck, trap, and shoulder strength through carry and movement patterns.</div>
-    <select class="lineup-select" id="w-thoppi">
-      <option value="">Select weight…</option>
-      <option>3kg</option><option>4kg</option><option>5kg</option><option>6kg</option><option>8kg</option>
-      <option>10kg</option><option>12kg</option><option>15kg</option><option>18kg</option><option>20kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Thoppi', 'w-thoppi')">+ Add to Quote →</button>
   </div>
 
 </div>
@@ -1228,11 +970,6 @@
     <div class="lineup-name">Nal</div>
     <div class="lineup-alt">Stone lifting cylinder</div>
     <div class="lineup-desc">A hollow stone cylinder with a handle inside. A foundational akhara strength tool. One of four competition categories at Varanasi's Nag Panchami festival.</div>
-    <select class="lineup-select" id="w-nal">
-      <option value="">Select size / weight…</option>
-      <option>Small</option><option>Medium</option><option>Large</option><option>Custom — mention in enquiry</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Nal', 'w-nal')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1241,11 +978,6 @@
     <div class="lineup-name">Gar Nal</div>
     <div class="lineup-alt">Stone neck ring</div>
     <div class="lineup-desc">A circular stone ring worn around the neck during dands and baithaks. Builds neck, shoulder, and core strength. Gaining traction with MMA fighters worldwide.</div>
-    <select class="lineup-select" id="w-garnal">
-      <option value="">Select size…</option>
-      <option>Standard</option><option>Heavy</option><option>Custom — mention in enquiry</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Gar Nal', 'w-garnal')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1254,12 +986,6 @@
     <div class="lineup-name">Wooden Dumbbell (Pair)</div>
     <div class="lineup-alt">Traditional wooden dumbbells</div>
     <div class="lineup-desc">Handcrafted wooden dumbbells from the akhara tradition. Used in dand and baithak conditioning. A natural-grip alternative to steel, easier on the joints.</div>
-    <select class="lineup-select" id="w-dumbbell">
-      <option value="">Select weight per dumbbell…</option>
-      <option>1kg</option><option>2kg</option><option>3kg</option><option>4kg</option>
-      <option>5kg</option><option>6kg</option><option>8kg</option><option>10kg</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Wooden Dumbbell Pair', 'w-dumbbell')">+ Add to Quote →</button>
   </div>
 
 </div>
@@ -1274,11 +1000,6 @@
     <div class="lineup-name">Shena Board — 75cm</div>
     <div class="lineup-alt">Standard push-up handles</div>
     <div class="lineup-desc">Traditional wooden parallettes for the Dand — the Hindu push-up. Elevates wrists for deeper, joint-neutral range of motion. Standard 75cm size.</div>
-    <select class="lineup-select" id="w-shena75">
-      <option value="">Select quantity…</option>
-      <option>1 pair</option><option>2 pairs</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Shena Board 75cm', 'w-shena75')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1287,11 +1008,6 @@
     <div class="lineup-name">Big Shena Board (Sheesham / Sagwan)</div>
     <div class="lineup-alt">Premium push-up board</div>
     <div class="lineup-desc">The premium large shena board — available in Sheesham (rosewood) or Sagwan (teak). Wider platform, deeper range, built to last a lifetime.</div>
-    <select class="lineup-select" id="w-shenabig">
-      <option value="">Select wood…</option>
-      <option>Sheesham (Rosewood)</option><option>Sagwan (Teak)</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Big Shena Board', 'w-shenabig')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1300,12 +1016,6 @@
     <div class="lineup-name">Mallakhamb Accessories</div>
     <div class="lineup-alt">Pole, rope, grip chalk</div>
     <div class="lineup-desc">Equipment for India's ancient pole-and-rope gymnastics sport. Teak poles, cotton ropes, magnesium chalk, and crash mats. Various configurations available.</div>
-    <select class="lineup-select" id="w-mallakhamb">
-      <option value="">Select item…</option>
-      <option>Teak Pole (6ft)</option><option>Teak Pole (8ft)</option><option>Teak Pole (10ft)</option>
-      <option>Cotton Rope (22mm, 25ft)</option><option>Full Setup (Pole + Rope + Chalk)</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Mallakhamb', 'w-mallakhamb')">+ Add to Quote →</button>
   </div>
 
   <div class="lineup-card">
@@ -1314,12 +1024,6 @@
     <div class="lineup-name">Storage &amp; Display Racks</div>
     <div class="lineup-alt">Club and mugdar racks</div>
     <div class="lineup-desc">Wall-mount and floor-standing racks built for clubs, mugdars, gadas, and nals. Keeps your full akhara kit organized and displayed with respect.</div>
-    <select class="lineup-select" id="w-rack">
-      <option value="">Select type…</option>
-      <option>Wall-mount (holds 4 clubs)</option><option>Wall-mount (holds 8 clubs)</option>
-      <option>Floor-standing (holds 6 implements)</option><option>Custom size — mention in enquiry</option>
-    </select>
-    <button class="lineup-inquire" onclick="lineupQuote('Storage Rack', 'w-rack')">+ Add to Quote →</button>
   </div>
 
 </div>
@@ -1327,17 +1031,6 @@
 </div>
 </section>
 
-<script>
-function lineupQuote(product, selectId) {
-  var sel = document.getElementById(selectId);
-  var weight = sel ? sel.value : '';
-  if (!weight) { sel.style.borderColor='var(--gold)'; sel.focus(); return; }
-  addToQCart(product, weight);
-  sel.value='';
-  sel.style.borderColor='var(--gold)';
-  setTimeout(function(){sel.style.borderColor='var(--border)';},600);
-}
-</script>
 
 
 <!-- ══════════════════ WATCH / YOUTUBE SECTION ══════════════════ -->
@@ -1584,21 +1277,18 @@ function lineupQuote(product, selectId) {
 <!-- SUBSCRIBE -->
 <section class="subscribe-band">
   <div class="subscribe-inner">
-    <span class="subscribe-eyebrow">Get 5% Off Your First Order</span>
+    <span class="subscribe-eyebrow">Stay Connected</span>
     <h2 class="subscribe-title">Join the Akhada Community</h2>
-    <p class="subscribe-desc">Subscribe and instantly receive your welcome discount code — plus training resources and updates delivered to your inbox.</p>
+    <p class="subscribe-desc">Receive occasional training notes, heritage stories, and updates from Akhada Crafts.</p>
     <div id="subFormWrap">
       <div class="subscribe-form">
         <input type="email" placeholder="Your email address" id="subEmail">
-        <button type="button" onclick="handleSubscribe()">Get My Code</button>
+        <button type="button" onclick="handleSubscribe()">Join</button>
       </div>
       <p class="subscribe-note">No spam. Unsubscribe any time.</p>
     </div>
     <div class="discount-reveal" id="discountReveal">
-      <p>Welcome! Here is your 5% off code — use it at checkout on any order:</p>
-      <span class="discount-code">WELCOME5</span>
-      <button class="copy-btn" onclick="copyCode()">Copy Code</button>
-      <p style="font-size:11px;color:rgba(245,238,216,.3);margin-top:12px;">Mention this code in your quote request. Valid once.</p>
+      <p>Thank you for joining the Akhada Crafts community.</p>
     </div>
   </div>
 </section>
@@ -1606,55 +1296,10 @@ function lineupQuote(product, selectId) {
 <!-- EBOOK -->
 <section id="ebook" class="contact-band" style="background:var(--cream);">
   <div class="contact-inner">
-    <span class="contact-eyebrow">Free with Beginner Kit &amp; Samtola</span>
+    <span class="contact-eyebrow">Training Resource</span>
     <h2 class="contact-title">Training Guide Ebook</h2>
-    <p class="contact-desc">A free training guide is included with the Beginner Club Kit and Samtola — covering how to get started, basic movements, and progressions. If you did not receive your copy, write to us.</p>
+    <p class="contact-desc">A training guide covering basic movements, getting started, and progression ideas is available from Akhada Crafts. Write to us if you would like more information.</p>
     <a class="contact-email" href="mailto:akhada.crafts@mantanex.com">akhada.crafts@mantanex.com</a>
-  </div>
-</section>
-
-<!-- RETURNS -->
-<div style="padding:60px 0 0;background:var(--cream-dark);">
-  <div class="divider"><div class="divider-line"></div><span class="divider-mark">Returns &amp; Refunds</span><div class="divider-line"></div></div>
-</div>
-
-<section id="returns" class="returns-section">
-  <div class="returns-inner">
-    <div class="returns-header">
-      <span class="returns-eyebrow">Our Policy</span>
-      <h2 class="returns-title">14-Day Return Policy</h2>
-      <p class="returns-subtitle">Not satisfied with your purchase? We offer a straightforward 14-day return window. Here is how it works.</p>
-    </div>
-    <div class="returns-steps">
-      <div class="return-step">
-        <span class="return-step-num">01</span>
-        <span class="return-step-icon">📋</span>
-        <div class="return-step-title">Submit Your Request</div>
-        <p class="return-step-desc">Use the form below or email us at akhada.crafts@mantanex.com within 14 days of receiving your order. Include your name, order details, and reason for return.</p>
-      </div>
-      <div class="return-step">
-        <span class="return-step-num">02</span>
-        <span class="return-step-icon">📦</span>
-        <div class="return-step-title">Pack &amp; Ship the Item</div>
-        <p class="return-step-desc">Once we confirm your return, pack the item unused in its original condition. Ship it back using a trackable service — return shipping is the customer's responsibility.</p>
-      </div>
-      <div class="return-step">
-        <span class="return-step-num">03</span>
-        <span class="return-step-icon">💳</span>
-        <div class="return-step-title">Receive Your Refund</div>
-        <p class="return-step-desc">Once we receive and inspect the item, a full refund is issued to your original payment method within 5 business days.</p>
-      </div>
-    </div>
-    <div class="returns-policy-grid">
-      <div class="policy-item"><span class="policy-item-icon">📅</span><div class="policy-item-text"><div class="policy-item-label">Return Window</div><div class="policy-item-detail">Returns must be initiated within 14 days of receiving your order.</div></div></div>
-      <div class="policy-item"><span class="policy-item-icon">🪵</span><div class="policy-item-text"><div class="policy-item-label">Item Condition</div><div class="policy-item-detail">Items must be unused, undamaged, and in their original condition.</div></div></div>
-      <div class="policy-item"><span class="policy-item-icon">🚚</span><div class="policy-item-text"><div class="policy-item-label">Return Shipping</div><div class="policy-item-detail">Return shipping costs are the responsibility of the customer.</div></div></div>
-      <div class="policy-item"><span class="policy-item-icon">✅</span><div class="policy-item-text"><div class="policy-item-label">Refund Method</div><div class="policy-item-detail">Full refund issued within 5 business days of receipt.</div></div></div>
-    </div>
-    <div class="returns-cta-row">
-      <button class="btn-return-form" onclick="openReturnModal()">Request a Return →</button>
-      <a class="btn-return-email" href="mailto:akhada.crafts@mantanex.com?subject=Return Request&body=Hi,%0A%0AI would like to request a return for my recent order.%0A%0AName:%0AProduct:%0AOrder/Transaction ID:%0ADate of purchase:%0AReason:%0A%0AThank you.">Email Us Directly ↗</a>
-    </div>
   </div>
 </section>
 
@@ -1833,12 +1478,7 @@ function lineupQuote(product, selectId) {
       <div>
         <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#f5eed8;letter-spacing:.22em;">AKHADA<span style="color:#c49d48;">.</span>CRAFTS</div>
         <div style="font-size:9px;letter-spacing:.22em;color:rgba(196,157,72,.5);text-transform:uppercase;margin-top:5px;">Forged in Teak. Built for Strength.</div>
-
-        <!-- SHIPPING BADGE -->
-        <div style="display:inline-flex;align-items:center;gap:10px;margin-top:18px;background:rgba(196,157,72,.07);border:1px solid rgba(196,157,72,.35);padding:8px 18px;">
-          <span style="font-size:18px;line-height:1;">🇺🇸</span>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c49d48;">Ships from the USA</div>
-        </div>
+      </div>
       </div>
 
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px;margin-top:4px;">
@@ -1846,13 +1486,9 @@ function lineupQuote(product, selectId) {
           <a href="https://www.instagram.com/akhada.crafts/" target="_blank" rel="noopener" style="width:34px;height:34px;border:1px solid rgba(196,157,72,.3);display:flex;align-items:center;justify-content:center;transition:all .25s;" onmouseover="this.style.borderColor='#c49d48';this.style.background='rgba(196,157,72,.1)'" onmouseout="this.style.borderColor='rgba(196,157,72,.3)';this.style.background='transparent'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(245,238,216,.5)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
-          <a href="https://www.etsy.com/shop/akhadacrafts" target="_blank" rel="noopener" style="width:34px;height:34px;border:1px solid rgba(196,157,72,.3);display:flex;align-items:center;justify-content:center;transition:all .25s;" onmouseover="this.style.borderColor='#c49d48';this.style.background='rgba(196,157,72,.1)'" onmouseout="this.style.borderColor='rgba(196,157,72,.3)';this.style.background='transparent'">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(245,238,216,.5)"><path d="M9.194 0c-.376 4.338-1.703 5.595-5.194 5.805v2.778h2.986V18.68c0 3.57 1.388 5.32 5.166 5.32 1.645 0 3.53-.47 4.583-.984l-.565-2.66a6.463 6.463 0 0 1-2.494.565c-1.51 0-2.073-.799-2.073-2.35V8.583H16l.47-2.778h-4.873V0z"/></svg>
-          </a>
         </div>
         <div style="display:flex;gap:24px;flex-wrap:wrap;">
           <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(196,157,72,.55);cursor:pointer;transition:color .2s;" onmouseover="this.style.color='#c49d48'" onmouseout="this.style.color='rgba(196,157,72,.55)'" onclick="openPolicyPage('privacyPage')">Privacy Policy</span>
-          <span style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(196,157,72,.55);cursor:pointer;transition:color .2s;" onmouseover="this.style.color='#c49d48'" onmouseout="this.style.color='rgba(196,157,72,.55)'" onclick="openPolicyPage('shippingPage')">Shipping Policy</span>
         </div>
       </div>
     </div>
@@ -1860,7 +1496,6 @@ function lineupQuote(product, selectId) {
     <!-- BOTTOM ROW -->
     <div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;flex-wrap:wrap;gap:8px;">
       <span style="font-size:9px;letter-spacing:.14em;color:rgba(196,157,72,.28);text-transform:uppercase;">© Akhada Crafts 2026 · All rights reserved · Jacksonville, FL</span>
-      <a href="https://www.etsy.com/shop/akhadacrafts" target="_blank" style="font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#c49d48;border-bottom:1px solid rgba(184,136,42,.3);padding-bottom:2px;">Also on Etsy ↗</a>
     </div>
   </div>
 </footer>
@@ -1893,51 +1528,18 @@ function lineupQuote(product, selectId) {
   function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');}
   function openPolicyPage(id){document.getElementById(id).classList.add('show');document.body.style.overflow='hidden';}
   function closePolicyPage(id){document.getElementById(id).classList.remove('show');document.body.style.overflow='';}
-  function openSuccessPage(){document.getElementById('successPage').classList.add('show');document.body.style.overflow='hidden';}
-  function closeSuccessPage(){document.getElementById('successPage').classList.remove('show');document.body.style.overflow='';window.history.replaceState({},document.title,window.location.pathname);}
-  if(new URLSearchParams(window.location.search).get('order')==='success'){window.addEventListener('DOMContentLoaded',openSuccessPage);}
-
   function openProduct(img,category,name,price,desc,detailsStr,buyUrl,soldOut){
-
     document.getElementById('modalImg').src=img;
     document.getElementById('modalImg').alt=name;
     document.getElementById('modalCategory').textContent=category;
-    document.getElementById('modalPrice').textContent=price;
     document.getElementById('modalName').textContent=name;
     document.getElementById('modalDesc').textContent=desc;
-    var buyBtn=document.getElementById('modalBuyBtn');
-    if(soldOut){
-      buyBtn.removeAttribute('href');
-      buyBtn.textContent='Sold Out';
-      buyBtn.classList.add('sold-out-btn');
-      buyBtn.style.pointerEvents='none';
-    } else {
-      buyBtn.href=buyUrl;
-      buyBtn.textContent='Buy Now →';
-      buyBtn.classList.remove('sold-out-btn');
-      buyBtn.style.pointerEvents='';
-    }
     document.getElementById('modalDetails').innerHTML=detailsStr.split('|').map(d=>'<div class="product-modal-detail">'+d+'</div>').join('');
     document.getElementById('productModal').classList.add('show');
     document.body.style.overflow='hidden';
   }
   function closeProductModal(){document.getElementById('productModal').classList.remove('show');document.body.style.overflow='';}
   document.getElementById('productModal').addEventListener('click',function(e){if(e.target===this)closeProductModal();});
-
-  function closePopup(){document.getElementById('welcomePopup').classList.remove('show');}
-  function handlePopupSubscribe(){
-    var email=document.getElementById('popupEmail').value;
-    if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
-    window.location.href='mailto:akhada.crafts@mantanex.com?subject=New Subscriber&body=New subscriber: '+email;
-    document.getElementById('popupFormWrap').style.display='none';
-    document.getElementById('popupCodeReveal').classList.add('show');
-  }
-  function copyPopupCode(){
-    navigator.clipboard.writeText('WELCOME5').then(function(){
-      var btn=document.querySelector('.popup-copy-btn');btn.textContent='Copied!';
-      setTimeout(function(){btn.textContent='Copy Code';},2000);
-    });
-  }
 
   function filterProducts(category,btn){
     document.querySelectorAll('.shop-tab').forEach(t=>t.classList.remove('active'));
@@ -1950,15 +1552,9 @@ function lineupQuote(product, selectId) {
   function handleSubscribe(){
     var email=document.getElementById('subEmail').value;
     if(!email||!email.includes('@')){alert('Please enter a valid email address.');return;}
-    window.location.href='mailto:akhada.crafts@mantanex.com?subject=New Subscriber&body=New subscriber: '+email;
+    window.location.href='mailto:akhada.crafts@mantanex.com?subject=Akhada Crafts Updates&body=Please add this email to Akhada Crafts updates: '+encodeURIComponent(email);
     document.getElementById('subFormWrap').style.display='none';
     document.getElementById('discountReveal').classList.add('show');
-  }
-  function copyCode(){
-    navigator.clipboard.writeText('WELCOME5').then(function(){
-      var btn=document.querySelector('.copy-btn');btn.textContent='Copied!';
-      setTimeout(function(){btn.textContent='Copy Code';},2000);
-    });
   }
 
   function loadMoreReviews(){
@@ -1995,86 +1591,41 @@ function lineupQuote(product, selectId) {
   }
   document.getElementById('reviewModal').addEventListener('click',function(e){if(e.target===this)closeReviewModal();});
 
-  function openReturnModal(){document.getElementById('returnModal').classList.add('show');document.body.style.overflow='hidden';}
-  function closeReturnModal(){
-    document.getElementById('returnModal').classList.remove('show');
-    document.body.style.overflow='';
-    document.getElementById('returnSuccess').classList.remove('show');
-    document.getElementById('returnFormWrap').style.display='block';
-    ['returnName','returnEmail','returnOrderId','returnDate','returnDetails'].forEach(function(id){document.getElementById(id).value='';});
-    document.getElementById('returnProduct').value='';
-    document.getElementById('returnReason').value='';
-  }
-  function submitReturnForm(){
-    var name=document.getElementById('returnName').value.trim();
-    var email=document.getElementById('returnEmail').value.trim();
-    var product=document.getElementById('returnProduct').value;
-    var reason=document.getElementById('returnReason').value;
-    var orderId=document.getElementById('returnOrderId').value.trim();
-    var date=document.getElementById('returnDate').value;
-    var details=document.getElementById('returnDetails').value.trim();
-    if(!name||!email||!product||!reason){alert('Please fill in all required fields (marked with *).');return;}
-    if(!email.includes('@')){alert('Please enter a valid email address.');return;}
-    var body='Return Request\n\nName: '+name+'\nEmail: '+email+'\nProduct: '+product+'\nOrder/Transaction ID: '+(orderId||'Not provided')+'\nDate of Purchase: '+(date||'Not provided')+'\nReason: '+reason+(details?'\n\nAdditional Details:\n'+details:'');
-    window.location.href='mailto:akhada.crafts@mantanex.com?subject=Return Request — '+encodeURIComponent(product)+'&body='+encodeURIComponent(body);
-    document.getElementById('returnFormWrap').style.display='none';
-    document.getElementById('returnSuccess').classList.add('show');
-  }
-  document.getElementById('returnEmailBtn').href='mailto:akhada.crafts@mantanex.com?subject=Return Request&body='+encodeURIComponent('Hi,\n\nI would like to request a return for my recent order.\n\nName:\nProduct:\nOrder/Transaction ID:\nDate of purchase:\nReason:\n\nThank you.');
-  document.getElementById('returnModal').addEventListener('click',function(e){if(e.target===this)closeReturnModal();});
-
   // CHATBOT
   var chatOpen=false;
   var KB={
-    beginner:{reply:"For beginners, the best starting point is our <strong>Indian Clubs 900g Pair ($179)</strong> — perfect for learning the movements and building shoulder mobility. If you want a full progression from day one, the <strong>Beginner Kit ($899)</strong> gives you 4 pairs (500g → 2kg) plus a free Training Ebook. Which sounds right for you?",chips:["Tell me more about the 900g clubs","Tell me more about the Beginner Kit","What is a mugdar?","Back to main menu"]},
-    clubs900:{reply:"The <strong>Indian Clubs 900g Pair</strong> — $179\n\nTwo hand-turned teak clubs, 900g each (4 lbs total). Great for:\n— Shoulder & wrist mobility\n— Flow and coordination training\n— Joint health and rehab\n\nIdeal if you're new to club training or want a quality starter pair.",chips:["How to order?","Do you ship internationally?","Any discount codes?","Back to main menu"]},
-    beginnerKit:{reply:"The <strong>Beginner Kit — $899</strong>\n\n8 clubs total — 4 matched teak pairs:\n— 500g · 1kg · 1.5kg · 2kg Mugdar\n\nTakes you from warm-up through to serious strength work. Also includes a <strong>free Training Ebook</strong> delivered by email within 24 hours. Best value for anyone committed to the practice.",chips:["How to order?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
-    mugdar:{reply:"Mugdar are heavier club-mace implements rooted in the Karlakattai wrestling tradition. We have three sizes:\n\n— <strong>3kg ($199)</strong> — great entry into mugdar training\n— <strong>5kg ($249)</strong> — intermediate to advanced\n— <strong>8kg ($289)</strong> — for serious seasoned practitioners\n\nAll hand-turned from dense kiln-dried teak. Which weight interests you?",chips:["Tell me about the 3kg","Tell me about the 5kg","Tell me about the 8kg","Back to main menu"]},
-    mugdar3:{reply:"<strong>Mugdar 3kg (6.6 lbs) — $199</strong>\n\nA great entry point into mugdar training. Builds rotational power, grip strength, and shoulder conditioning. Hand-turned from dense kiln-dried teak.",chips:["How to order?","Compare with the 5kg","Any discount codes?","Back to main menu"]},
-    mugdar5:{reply:"<strong>Mugdar 5kg (11 lbs) — $249</strong>\n\nFor intermediate to advanced practitioners. Lathe-turned from dense teak — challenges your grip, shoulder, and core in every swing.",chips:["How to order?","Compare with the 8kg","Any discount codes?","Back to main menu"]},
-    mugdar8:{reply:"<strong>Mugdar 8kg (17.6 lbs) — $289</strong>\n\nFor seasoned practitioners only. Demands full-body engagement — core, grip, shoulder, and back. Rooted in akhada tradition.",chips:["How to order?","Any discount codes?","Back to main menu"]},
-    samtola:{reply:"<strong>Acacia Wooden Samtola — $389</strong>\n\nThe most unique implement we offer. At 20.5 lbs, crafted from solid acacia, it trains cross-body stability, core power, and total-body coordination.\n\nIncludes a <strong>free Training Ebook</strong> delivered by email within 24 hours.",chips:["How to order?","When do I get the ebook?","Any discount codes?","Back to main menu"]},
-    howToOrder:{reply:"Click <strong>✉ Get a Quote →</strong> on any product card to send a quote request by email. Include product, quantity, and shipping address — we reply within 1 business day.\n\n🇺🇸 Ships from the US.",chips:["Any discount codes?","How long does shipping take?","What is your return policy?","Back to main menu"]},
-    discount:{reply:"Yes! Use code <strong>WELCOME5</strong> for 5% off your first order — just mention it in your quote request email.\n\nYou can also get it by subscribing to our newsletter at the bottom of the page.",chips:["How do I apply the code?","How to order?","Back to main menu"]},
-    discountHow:{reply:"Just mention <strong>WELCOME5</strong> in your quote request email and we will apply 5% off your first order automatically.",chips:["How to order?","Back to main menu"]},
-    shipping:{reply:"We ship from our <strong>US warehouse</strong> — no international delays for US customers.\n\n— Processing: 1–3 business days\n— Delivery: 3–7 business days\n— Tracking included on every order",chips:["Do you ship internationally?","What is your return policy?","Back to main menu"]},
-    international:{reply:"We primarily ship within the <strong>United States</strong>. If you're outside the US, email us at akhada.crafts@mantanex.com before ordering.\n\nOur products are also on <strong>Etsy</strong> (etsy.com/shop/akhadacrafts) which may offer international shipping options.",chips:["How do I contact you?","Back to main menu"]},
-    returns:{reply:"We offer a <strong>14-day return policy</strong>.\n\n— Items must be unused and in original condition\n— Return shipping is the customer's responsibility\n— Full refund issued within 5 business days of receiving the item",chips:["How do I start a return?","How do I contact you?","Back to main menu"]},
-    returnHow:{reply:"Scroll down to the <strong>Returns section</strong> on this page and click <strong>\"Request a Return\"</strong>.\n\nOr email us directly at <strong>akhada.crafts@mantanex.com</strong> with your name, product, order ID, and reason.",chips:["What is your return policy?","How do I contact you?","Back to main menu"]},
-    ebook:{reply:"The free <strong>Training Ebook</strong> is included with the <strong>Beginner Kit</strong> and the <strong>Samtola</strong>.\n\nDelivered digitally to your email within <strong>24 hours</strong> of purchase. If you don't receive it, check your spam folder first — then email us.",chips:["Tell me more about the Beginner Kit","Tell me more about the Samtola","Back to main menu"]},
-    wood:{reply:"All our <strong>Indian Clubs and Mugdar</strong> are hand-turned from kiln-dried <strong>teak</strong>.\n\nThe <strong>Samtola</strong> is crafted from solid <strong>acacia</strong>, which is harder and denser than teak.",chips:["Tell me about the clubs","Tell me about the Samtola","Back to main menu"]},
-    tradition:{reply:"Our implements trace their lineage to the <strong>Karlakattai</strong> martial art and the <strong>akhadas</strong> (wrestling gyms) of India, where athletes and warriors trained for centuries with clubs and maces.",chips:["Which product should I start with?","Tell me about the mugdar","Back to main menu"]},
-    contact:{reply:"The best way to reach us is by email:\n\n📧 <strong>akhada.crafts@mantanex.com</strong>\n\nWe typically reply within 1 business day. You can also find us on <strong>Instagram</strong> @akhada.crafts and <strong>Etsy</strong> at etsy.com/shop/akhadacrafts.",chips:["Open email to contact you","Back to main menu"]},
-    emailUs:{reply:"Opening your email now — just hit send and we'll get back to you! 🙏",chips:["Back to main menu"],action:function(){window.location.href='mailto:akhada.crafts@mantanex.com?subject=Customer Enquiry';}},
-    price:{reply:"Here's a quick price overview:\n\n— Indian Clubs 900g Pair — <strong>$179</strong>\n— Beginner Kit (4 Pairs + Ebook) — <strong>$899</strong>\n— Mugdar 3kg — <strong>$199</strong>\n— Mugdar 5kg — <strong>$249</strong>\n— Mugdar 8kg — <strong>$289</strong>\n— Acacia Samtola + Ebook — <strong>$389</strong>\n\nUse code <strong>WELCOME5</strong> for 5% off your first order.",chips:["Which should I start with?","How to order?","Any discount codes?","Back to main menu"]},
-    main:{reply:"How can I help you? Choose a topic below or type your question:",chips:["Which product should I start with?","View all prices","Shipping & delivery","Returns & refunds","Discount codes","About the tradition","Contact us"]}
+    beginner:{reply:"If you are new to traditional club training, begin with lighter Indian clubs and focus on smooth, controlled movement before progressing to heavier mugdar or gada work.",chips:["Tell me about Indian clubs","What is a mugdar?","About the tradition","Back to main menu"]},
+    clubs900:{reply:"Indian clubs are lighter, elongated wooden implements used for shoulder mobility, coordination, rhythm, and circular movement practice. Akhada Crafts presents traditional handcrafted forms in several sizes.",chips:["What is a mugdar?","What wood is used?","About the tradition","Back to main menu"]},
+    beginnerKit:{reply:"A progressive club set can be useful for learning technique across different weights. The emphasis should be on movement quality, control, and gradual progression.",chips:["Tell me about Indian clubs","What is a mugdar?","Back to main menu"]},
+    mugdar:{reply:"Mugdar are heavier club-like implements rooted in Indian wrestling and akhada training. Different weights change the leverage and rotational demand on the shoulders, grip, trunk, and hips.",chips:["Tell me about the 3kg mugdar","Tell me about the 5kg mugdar","Tell me about the 8kg mugdar","Back to main menu"]},
+    mugdar3:{reply:"The 3kg mugdar is a lighter entry point for learning rotational patterns, grip control, and shoulder coordination.",chips:["Compare with the 5kg","What wood is used?","Back to main menu"]},
+    mugdar5:{reply:"The 5kg mugdar adds more rotational demand and is generally better suited to practitioners who already have experience with lighter clubs.",chips:["Compare with the 8kg","What wood is used?","Back to main menu"]},
+    mugdar8:{reply:"The 8kg mugdar is a substantially heavier traditional implement intended for experienced practitioners with established technique and control.",chips:["What is a mugdar?","About the tradition","Back to main menu"]},
+    samtola:{reply:"Samtola is a traditional offset-load strength implement used for whole-body coordination, cross-body stability, grip, and trunk strength.",chips:["What wood is used?","About the tradition","Back to main menu"]},
+    ebook:{reply:"Akhada Crafts has training-guide material covering introductory movements and progression ideas. Contact us if you would like more information.",chips:["Contact us","Back to main menu"]},
+    wood:{reply:"Akhada Crafts features implements made from traditional hardwoods including teak and acacia, selected for density, durability, grip, and visual character.",chips:["Tell me about Indian clubs","Tell me about the Samtola","Back to main menu"]},
+    tradition:{reply:"These implements are associated with Indian akhadas and traditional strength practices, including club and mace training systems that have been used by wrestlers and practitioners for generations.",chips:["Tell me about Indian clubs","What is a mugdar?","Contact us","Back to main menu"]},
+    contact:{reply:"For questions about the equipment, history, or Akhada Crafts, email <strong>akhada.crafts@mantanex.com</strong> or follow <strong>@akhada.crafts</strong> on Instagram.",chips:["Open email to contact you","Back to main menu"]},
+    emailUs:{reply:"Opening your email now.",chips:["Back to main menu"],action:function(){window.location.href='mailto:akhada.crafts@mantanex.com?subject=Akhada Crafts Enquiry';}},
+    main:{reply:"How can I help you learn more about Akhada Crafts?",chips:["Which equipment is best for beginners?","Tell me about Indian clubs","What is a mugdar?","About the tradition","What wood is used?","Contact us"]}
   };
 
   function matchIntent(text){
     var t=text.toLowerCase();
     if(t.includes('back')||t.includes('main menu')||t.includes('menu'))return'main';
     if(t.includes('open email')||t.includes('email to contact'))return'emailUs';
-    if(t.includes('900g')||t.includes('900 g')||(t.includes('start with')&&t.includes('club')))return'clubs900';
-    if(t.includes('beginner kit')||t.includes('kit')||t.includes('4 pair'))return'beginnerKit';
-    if(t.includes('8kg')||t.includes('8 kg')||t.includes('17.6')||t.includes('heaviest'))return'mugdar8';
-    if(t.includes('5kg')||t.includes('5 kg')||t.includes('11 lb'))return'mugdar5';
-    if(t.includes('3kg')||t.includes('3 kg')||t.includes('6.6'))return'mugdar3';
-    if(t.includes('mugdar')||t.includes('mace')||t.includes('heavy'))return'mugdar';
-    if(t.includes('samtola')||t.includes('acacia')||t.includes('20.5'))return'samtola';
+    if(t.includes('900g')||t.includes('900 g')||t.includes('club'))return'clubs900';
+    if(t.includes('beginner kit')||t.includes('kit'))return'beginnerKit';
+    if(t.includes('8kg')||t.includes('8 kg'))return'mugdar8';
+    if(t.includes('5kg')||t.includes('5 kg'))return'mugdar5';
+    if(t.includes('3kg')||t.includes('3 kg'))return'mugdar3';
+    if(t.includes('mugdar')||t.includes('mace')||t.includes('gada'))return'mugdar';
+    if(t.includes('samtola')||t.includes('acacia'))return'samtola';
     if(t.includes('tradition')||t.includes('karlakattai')||t.includes('akhada')||t.includes('history')||t.includes('origin'))return'tradition';
     if(t.includes('wood')||t.includes('teak')||t.includes('material')||t.includes('made of')||t.includes('made from'))return'wood';
-    if(t.includes('ebook')||t.includes('e-book')||t.includes('book')||t.includes('guide')||t.includes('training guide'))return'ebook';
-    if(t.includes('how to apply')||t.includes('apply code')||t.includes('apply the code')||t.includes('use code')||t.includes('promotion'))return'discountHow';
-    if(t.includes('discount')||t.includes('code')||t.includes('coupon')||t.includes('promo')||t.includes('welcome5')||t.includes('off'))return'discount';
-    if(t.includes('international')||t.includes('outside')||t.includes('uk')||t.includes('canada')||t.includes('australia')||t.includes('europe')||t.includes('india'))return'international';
-    if(t.includes('ship')||t.includes('deliver')||t.includes('how long')||t.includes('when')||t.includes('arrival')||t.includes('track'))return'shipping';
-    if(t.includes('how to return')||t.includes('start a return')||t.includes('initiate')||t.includes('process return'))return'returnHow';
-    if(t.includes('return')||t.includes('refund')||t.includes('money back')||t.includes('exchange'))return'returns';
-    if(t.includes('buy')||t.includes('purchase')||t.includes('order')||t.includes('quote')||t.includes('how to order')||t.includes('checkout')||t.includes('pay'))return'howToOrder';
-    if(t.includes('price')||t.includes('cost')||t.includes('how much')||t.includes('pricing')||t.includes('all product'))return'price';
+    if(t.includes('ebook')||t.includes('e-book')||t.includes('guide'))return'ebook';
     if(t.includes('contact')||t.includes('email')||t.includes('reach')||t.includes('support')||t.includes('help')||t.includes('question'))return'contact';
     if(t.includes('begin')||t.includes('start')||t.includes('new')||t.includes('first')||t.includes('recommend')||t.includes('suggest')||t.includes('which'))return'beginner';
-    if(t.includes('club')||t.includes('indian club'))return'clubs900';
     return null;
   }
 
@@ -2091,7 +1642,7 @@ function lineupQuote(product, selectId) {
       var msgs=document.getElementById('chatMessages');
       if(msgs.children.length===0){
         addBotMessage("Welcome to Akhada Crafts! 🙏 How can I help you today?");
-        setTimeout(function(){showChips(["Which product should I start with?","View all prices","Shipping & delivery","Returns & refunds","Discount codes","Contact us"]);},400);
+        setTimeout(function(){showChips(["Which equipment is best for beginners?","Tell me about Indian clubs","What is a mugdar?","About the tradition","Contact us"]);},400);
       }
       setTimeout(function(){document.getElementById('chatInput').focus();},300);
     }
@@ -2139,7 +1690,7 @@ function lineupQuote(product, selectId) {
         if(response.chips)showChips(response.chips);
       } else {
         addBotMessage("I'm not sure about that one — but our team can help! Email us at <strong>akhada.crafts@mantanex.com</strong> and we'll get back to you within 1 business day. 🙏");
-        showChips(["View all prices","Shipping & delivery","Returns & refunds","Open email to contact you","Back to main menu"]);
+        showChips(["Tell me about Indian clubs","What is a mugdar?","About the tradition","Open email to contact you","Back to main menu"]);
       }
     },700);
   }
@@ -2209,116 +1760,6 @@ setInterval(function() {
 
 // Also update ytPill to handle karlakattai tag
 
-</script>
-
-<!-- QUOTE CART -->
-<style>
-.qcart-fab{position:fixed;bottom:28px;left:28px;z-index:950;background:#0f0b08;border:1px solid rgba(184,136,42,.5);border-radius:2px;padding:10px 16px;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:all .2s;}
-.qcart-fab:hover{background:#1a1208;border-color:var(--gold);}
-.qcart-fab-label{font-family:'Cinzel',serif;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);}
-.qcart-badge{background:var(--gold);color:var(--ink);font-size:10px;font-weight:700;border-radius:99px;padding:1px 6px;min-width:18px;text-align:center;}
-.qcart-panel{position:fixed;bottom:0;left:0;width:360px;max-height:85vh;background:var(--cream);border-right:1px solid var(--border);border-top:1px solid var(--border);z-index:960;display:flex;flex-direction:column;transform:translateX(-100%);transition:transform .3s ease;box-shadow:8px 0 32px rgba(0,0,0,.15);}
-.qcart-panel.open{transform:translateX(0);}
-.qcart-head{background:var(--ink);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.qcart-title{font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--cream);letter-spacing:.12em;}
-.qcart-close{background:none;border:none;color:rgba(255,255,255,.4);font-size:20px;cursor:pointer;line-height:1;padding:0;transition:color .2s;}
-.qcart-close:hover{color:#fff;}
-.qcart-body{flex:1;overflow-y:auto;padding:16px 20px;}
-.qcart-empty{font-size:13px;color:var(--muted);text-align:center;padding:32px 0;}
-.qcart-item{display:flex;align-items:flex-start;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
-.qcart-item-name{font-size:13px;color:var(--ink);line-height:1.4;}
-.qcart-item-weight{font-size:11px;color:var(--muted);margin-top:2px;}
-.qcart-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;line-height:1;padding:0 4px;transition:color .2s;}
-.qcart-remove:hover{color:var(--ink);}
-.qcart-foot{padding:16px 20px;border-top:1px solid var(--border);flex-shrink:0;}
-.qcart-send{width:100%;font-family:'Cinzel',serif;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);border:none;padding:14px;cursor:pointer;transition:background .2s;}
-.qcart-send:hover{background:var(--gold-light);}
-.qcart-note{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;letter-spacing:.03em;}
-@media(max-width:420px){.qcart-panel{width:100%;}.qcart-fab{right:16px;bottom:90px;}}
-</style>
-
-<button class="qcart-fab" onclick="toggleQCart()" id="qcartFab" aria-label="Open quote cart">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-  <span class="qcart-fab-label">Quote List</span>
-  <span class="qcart-badge" id="qcartBadge" style="display:none">0</span>
-</button>
-
-<div class="qcart-panel" id="qcartPanel">
-  <div class="qcart-head">
-    <span class="qcart-title">Quote Request List</span>
-    <button class="qcart-close" onclick="toggleQCart()">✕</button>
-  </div>
-  <div class="qcart-body" id="qcartBody">
-    <p class="qcart-empty" id="qcartEmpty">No items yet.<br>Browse the Lineup below and tap<br><strong style="color:var(--gold);">+ Add to Quote</strong></p>
-  </div>
-  <div class="qcart-foot">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-      <span style="font-size:12px;color:var(--muted);">Items in list</span>
-      <span id="qcartCount2" style="font-family:'Cinzel',serif;font-size:16px;font-weight:600;color:var(--ink);">0</span>
-    </div>
-    <button class="qcart-send" onclick="sendQCart()">✉ Send Quote Request →</button>
-    <p class="qcart-note">Opens your email · We reply within 1 business day</p>
-  </div>
-</div>
-
-<script>
-var qcartItems=[];
-var qcartOpen=false;
-
-function toggleQCart(){
-  qcartOpen=!qcartOpen;
-  document.getElementById('qcartPanel').classList.toggle('open',qcartOpen);
-}
-
-function addToQCart(product,weight){
-  qcartItems.push({product:product,weight:weight});
-  renderQCart();
-  // flash the fab
-  var fab=document.getElementById('qcartFab');
-  fab.style.borderColor='var(--gold)';
-  fab.style.background='#1a1208';
-  setTimeout(function(){fab.style.background='#0f0b08';},400);
-  // open panel
-  qcartOpen=true;
-  document.getElementById('qcartPanel').classList.add('open');
-}
-
-function removeQCartItem(i){
-  qcartItems.splice(i,1);
-  renderQCart();
-}
-
-function renderQCart(){
-  var body=document.getElementById('qcartBody');
-  var badge=document.getElementById('qcartBadge');
-  var count2=document.getElementById('qcartCount2');
-  var n=qcartItems.length;
-  badge.textContent=n;
-  badge.style.display=n>0?'inline':'none';
-  count2.textContent=n;
-  if(n===0){
-    body.innerHTML='<p class="qcart-empty" id="qcartEmpty">No items yet.<br>Browse the Lineup below and tap<br><strong style="color:var(--gold);">+ Add to Quote</strong></p>';
-    return;
-  }
-  body.innerHTML=qcartItems.map(function(item,i){
-    return '<div class="qcart-item">'
-      +'<div><div class="qcart-item-name">'+item.product+'</div>'
-      +'<div class="qcart-item-weight">'+item.weight+'</div></div>'
-      +'<button class="qcart-remove" onclick="removeQCartItem('+i+')">×</button>'
-      +'</div>';
-  }).join('');
-}
-
-function sendQCart(){
-  if(qcartItems.length===0){
-    alert('Add at least one item to your quote list first.');return;
-  }
-  var lines=qcartItems.map(function(item){
-    return '- '+item.product+' ('+item.weight+')';
-  }).join('\n');
-  var body='Hi,\n\nI would like a quote for the following items:\n\n'+lines+'\n\nQuantity for each: \n\nName: \nShipping address: \n\nThanks';
-  window.location.href='mailto:akhada.crafts@mantanex.com?subject=Quote Request&body='+encodeURIComponent(body);
-}
 </script>
 
 </body>
